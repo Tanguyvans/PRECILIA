@@ -3,7 +3,7 @@
 $host       = "localhost";
 $username   = "root";
 $password   = "root";
-$dbname     = "PRECILIA"; 
+$dbname     = "PRECILIA";
 $dsn        = "mysql:host=$host;dbname=$dbname";
 
 ?>
