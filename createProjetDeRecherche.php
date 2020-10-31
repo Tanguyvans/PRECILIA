@@ -49,20 +49,26 @@
 		<label for="DateDebut">Date de début</label>
 		<input type="date" name="DateDebut" id="DateDebut" min="2018-01-01" max="2020-01-01">
 
-    <label for="DateDebut">Date de début</label>
-		<input type="date" name="DateDebut" id="DateDebut">
+    <label for="DateFin">Date de fin</label>
+		<input type="date" name="DateFin" id="DateFin">
 
-		<label for="Email">Adresse email</label>
-		<input type="text" name="Email" id="Email">
+		<label for="Description">Description</label>
+		<input type="text" name="Description" id="Description">
 
-		<p>
-       <label for="Annee">Choisissez l'année d'étude</label><br />
-       <select name="Annee" id="Annee">
-           <option value="2e Master">2e Master</option>
-           <option value="1er Master">1er Master</option>
-           <option value="3e Bachelier">3e Bachelier</option>
-       </select>
-   </p>
+		<label for="CollaborationAcademique">Collaboration academique</label>
+		<input type="text" name="CollaborationAcademique" id="CollaborationAcademique">
+
+		<label for="CollaborationIndustrielle">Collaboration industrielle</label>
+		<input type="text" name="CollaborationIndustrielle" id="CollaborationIndustrielle">
+
+		<label for="NumeroContact">Numéro de la peronne de contact</label>
+		<input type="number" name="NumeroContact" id="NumeroContact">
+
+		<label for="MotCle1">Le mot clé principal de la publication</label>
+		<input type="text" name="MotCle1" id="MotCle1">
+
+		<label for="MotCle2">Mot clé secondaire de la publication</label>
+		<input type="text" name="MotCle2" id="MotCle2">
 
     <input type="submit" name="submit" value="Submit">
   </form>
