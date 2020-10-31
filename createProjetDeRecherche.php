@@ -47,7 +47,7 @@
 		<input type="text" name="Titre" id="Titre">
 
 		<label for="DateDebut">Date de début</label>
-		<input type="date" name="DateDebut" id="DateDebut" min="2018-01-01" max="2020-01-01">
+		<input type="date" name="DateDebut" id="DateDebut">
 
     <label for="DateFin">Date de fin</label>
 		<input type="date" name="DateFin" id="DateFin">
