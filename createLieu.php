@@ -13,7 +13,7 @@ if (isset($_POST['submit'])) {
         $Ville  = $_POST['Ville'];
         $Pays = $_POST['Pays'];
 
-        $sql = "INSERT INTO ETUDIANT (IDLieu, Ville, Pays )
+        $sql = "INSERT INTO LIEU (IDLieu, Ville, Pays )
 			VALUES ('$IDLieu','$Ville','$Pays')";
 
         $Resultat = $bdd -> exec($sql);
