@@ -12,12 +12,15 @@ if (isset($_POST['submit'])) {
         $IDTFE= $_POST['IDTFE'];
         $Titre  = $_POST['Titre'];
         $DateDebut = $_POST['DateDebut'];
-        $CollabIndus = $_POST['CollabIndus'];
-        $Contact = $_POST['Contact'];
-        $MotCle=$_POST['MotCle'];
+        $CollaborationIndustrielle = $_POST['CollaboratinIndustrielle'];
+        $NumeroContact = $_POST['NumeroContact'];
+        $MotCle1=$_POST['MotCle1'];
+	$MotCle2=$_POST['MotCle2'];
+        $IDPMatricule=$_POST['IDPMatricule'];
+	$IDEMatricule=$_POST['IDEMatricule'];
 
-        $sql = "INSERT INTO TFE (IDTFE, Titre, DateDebut, CollabIndus, Contact, MotCle)
-			VALUES (' $IDTFE','$Titre','$DateDebut','$CollabIndus','$Contact','$MotCle')";
+        $sql = "INSERT INTO TFE (IDTFE, Titre, DateDebut, CollaboratinIndustrielle, NumeroContact, MotCle1, MotCle2, IDPMatricule, IDEMatricule)
+			VALUES (' $IDTFE','$Titre','$DateDebut','$CollaborationIndustrielle','$NumeroContact','$MotCle1','$MotCle2','$IDPMatricule','IDEMatricule')";
 
         $Resultat = $bdd -> exec($sql);
         echo "Ajout reussie avec la base de donnée<br>";
@@ -46,14 +49,23 @@ if (isset($_POST['submit'])) {
     <label for="DateDebut">Date de début</label>
     <input type="Date" name="DateDebut" id="DateDebut">
 
-    <label for="CollabIndus">Collaboration industrielle</label>
-    <input type="text" name="CollabIndus" id="CollabIndus">
+    <label for="CollaboratinIndustrielle">Collaboration industrielle</label>
+    <input type="text" name="CollaboratinIndustrielle" id="CollaboratinIndustrielle">
 
-    <label for="Contact">Contact</label>
-    <input type="text" name="Contact" id="Contact">
+    <label for="NumeroContact">Numéro de contact</label>
+    <input type="text" name="NumeroContact" id="NumeroContact">
 
-    <label for="MotCle">Mot-clé</label>
-    <input type="text" name="MotCle" id="MotCle">
+    <label for="MotCle1">Mot-clé 1</label>
+    <input type="text" name="MotCle1" id="MotCle1">
+
+    <label for="MotCle2">Mot-clé 2</label>
+    <input type="text" name="MotCle2" id="MotCle2">
+	
+    <label for="IDPMatricule">IDPMatricule</label>
+    <input type="number" name="IDPMatricule" id="IDPMatricule">
+
+    <label for="IDEMatricule">IDEMatricule</label>
+    <input type="number" name="IDEMatricule" id="IDEMatricule">
 
     <input type="submit" name="submit" value="Submit">
 </form>
