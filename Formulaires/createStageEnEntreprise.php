@@ -7,18 +7,18 @@ if (isset($_POST['submit'])) {
 
         $bdd = new PDO($dsn, $username, $password);
 
-        $IDStageEtnreprise = $_POST['IDStageEntreprise'];
+        $IDStageEntreprise = $_POST['IDStageEntreprise'];
         $DateDebut  = $_POST['DateDebut'];
         $DateFin = $_POST['DateFin'];
         $CollaborationIndustrielle = $_POST['CollaborationIndustrielle'];
         $NumeroContact = $_POST['NumeroContact'];
         $MotCle1=$_POST['MotCle1'];
-	$MotCle2=$_POST['MotCle2'];
-	$IDPMatricule=$_POST['IDPMatricule'];
-	$IDEMatricule=$_POST['IDEMatricule'];
-<
+	      $MotCle2=$_POST['MotCle2'];
+	      $IDPMatricule=$_POST['IDPMatricule'];
+	      $IDEMatricule=$_POST['IDEMatricule'];
+
         $sql = "INSERT INTO STAGE EN ENTREPRISE (IDStageEntreprise, DateDebut, DateFin, CollaborationIndustrielle, NumeroContact, MotCle1, MotCle2, IDPMatricule, IDEMatricule )
-			VALUES ('$IDStageEntreprise','$DateDebut','$DateFin','$CollaborationIndustrielle','$NumeroContact','$MotCle1','MotCle2','IDPMatricule','IDEMatricule')";
+			VALUES ('$IDStageEntreprise','$DateDebut','$DateFin','$CollaborationIndustrielle','$NumeroContact','$MotCle1','$MotCle2','$IDPMatricule','$IDEMatricule')";
 
         $Resultat = $bdd -> exec($sql);
         echo "Ajout reussie avec la base de donnée<br>";
@@ -51,7 +51,7 @@ if (isset($_POST['submit'])) {
     <input type="text" name="CollaborationIndustrielle" id="CollaborationIndustrielle">
 
     <label for="NumeroContact">Numéro de contact</label>
-    <input type="text" name="NumeroContact" id="NumeroContact">
+    <input type="number" name="NumeroContact" id="NumeroContact">
 
     <label for="MotCle1">Mot-clé 1</label>
     <input type="text" name="MotCle1" id="MotCle1">

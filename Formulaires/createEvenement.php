@@ -11,14 +11,14 @@ if (isset($_POST['submit'])) {
         $Type  = $_POST['Type'];
         $Nom = $_POST['Nom'];
         $Acronyme = $_POST['Acronyme'];
-        $Durée = $_POST['Durée'];
+        $Duree = $_POST['Duree'];
         $Description=$_POST['Description'];
         $MotCle1=$_POST['MotCle1'];
         $MotCle2=$_POST['MotCle2'];
         $IDLieu=$_POST['IDLieu'];
 
-        $sql = "INSERT INTO EVENEMENT (IDEvenement, Type, Nom , Acronyme, Duree, Presentation, MotCle1, MotCle2, IDLieu)
-			VALUES ('$IDEvenement','$Type','$Nom','$Acronyme','$Durée','$Description','$MotCle1','$MotCle2','$IDLieu')";
+        $sql = "INSERT INTO EVENEMENT (IDEvenement, Type, Nom, Acronyme, Duree, Description, MotCle1, MotCle2, IDLieu)
+			VALUES ('$IDEvenement','$Type','$Nom','$Acronyme','$Duree','$Description','$MotCle1','$MotCle2','$IDLieu')";
 
 
 
@@ -43,8 +43,14 @@ if (isset($_POST['submit'])) {
     <label for="IDEvenement">Identifiant de l'évènement</label>
     <input type="number" name="IDEvenement" id="IDEvenement">
 
-    <label for="Type">Type</label>
-    <input type="text" name="Type" id="Type">
+    <p>
+       <label for="Type">Choisissez le type</label><br />
+       <select name="Type" id="Type">
+           <option value="Hackathon">Hackathon</option>
+           <option value="Seminaire">Seminaire</option>
+           <option value="Workshop">Workshop</option>
+       </select>
+   </p>
 
     <label for="Nom">Nom</label>
     <input type="text" name="Nom" id="Nom">
@@ -52,8 +58,8 @@ if (isset($_POST['submit'])) {
     <label for="Acronyme">Acronyme</label>
     <input type="text" name="Acronyme" id="Acronyme">
 
-    <label for="Durée">Durée</label>
-    <input type="text" name="Durée" id="Durée">
+    <label for="Duree">Duree</label>
+    <input type="text" name="Duree" id="Duree">
 
     <label for="Description">Description</label>
     <input type="text" name="Description" id="Description">
