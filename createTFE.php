@@ -15,9 +15,9 @@ if (isset($_POST['submit'])) {
         $CollaborationIndustrielle = $_POST['CollaboratinIndustrielle'];
         $NumeroContact = $_POST['NumeroContact'];
         $MotCle1=$_POST['MotCle1'];
-	$MotCle2=$_POST['MotCle2'];
+	      $MotCle2=$_POST['MotCle2'];
         $IDPMatricule=$_POST['IDPMatricule'];
-	$IDEMatricule=$_POST['IDEMatricule'];
+	      $IDEMatricule=$_POST['IDEMatricule'];
 
         $sql = "INSERT INTO TFE (IDTFE, Titre, DateDebut, CollaboratinIndustrielle, NumeroContact, MotCle1, MotCle2, IDPMatricule, IDEMatricule)
 			VALUES (' $IDTFE','$Titre','$DateDebut','$CollaborationIndustrielle','$NumeroContact','$MotCle1','$MotCle2','$IDPMatricule','IDEMatricule')";
@@ -60,7 +60,7 @@ if (isset($_POST['submit'])) {
 
     <label for="MotCle2">Mot-clé 2</label>
     <input type="text" name="MotCle2" id="MotCle2">
-	
+
     <label for="IDPMatricule">IDPMatricule</label>
     <input type="number" name="IDPMatricule" id="IDPMatricule">
 

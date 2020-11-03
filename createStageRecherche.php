@@ -1,13 +1,11 @@
 <?php
 
 if (isset($_POST['submit'])) {
-    //require "../config.php";
+    require "config.php";
 
     try {
 
-        $bdd = new PDO('mysql:host=localhost;dbname=PRECILIA', 'root', 'root');
-        echo "Connection réussie avec la base de données<br>";
-        //$bdd = new PDO($dsn, $username, $password);
+        $bdd = new PDO($dsn, $username, $password);
 
         $IDStageRecherche = $_POST['IDStageRecherche'];
         $DateDebut = $_POST['DateDebut'];
@@ -73,7 +71,7 @@ if (isset($_POST['submit'])) {
 
     <label for="IDPMatricule">IDPMatricule</label>
     <input type="number" name="IDPMatricule" id="IDPMatricule">
-    
+
 
     <input type="submit" name="submit" value="Submit">
 </form>

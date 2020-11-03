@@ -1,13 +1,11 @@
 <?php
 
 if (isset($_POST['submit'])) {
-    //require "../config.php";
+    require "config.php";
 
     try {
 
-        $bdd = new PDO('mysql:host=localhost;dbname=PRECILIA', 'root', 'root');
-        echo "Connection réussie avec la base de données<br>";
-        //$bdd = new PDO($dsn, $username, $password);
+        $bdd = new PDO($dsn, $username, $password);
 
         $IDCours = $_POST['IDCours'];
         $NombreCredit = $_POST['NombreCredit'];
@@ -56,7 +54,7 @@ if (isset($_POST['submit'])) {
 
     <label for="UE">Nom de l'UE</label>
     <input type="text" name="UE" id="UE">
-    
+
     <label for="MotCle1">Mot-clé 1</label>
     <input type="text" name="MotCle1" id="MotCle1">
 

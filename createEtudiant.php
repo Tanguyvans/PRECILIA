@@ -1,13 +1,11 @@
 <?php
 
 	if (isset($_POST['submit'])) {
-  //require "../config.php";
+  require "config.php";
 
   try {
 
-		$bdd = new PDO('mysql:host=localhost;dbname=PRECILIA', 'root', 'root');
-		echo "connection reussie avec la base de donnée<br>";
-    //$bdd = new PDO($dsn, $username, $password);
+    $bdd = new PDO($dsn, $username, $password);
 
 		  $IDEMatricule = $_POST['IDEMatricule'];
 		  $Nom  = $_POST['Nom'];

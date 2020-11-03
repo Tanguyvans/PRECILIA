@@ -1,13 +1,11 @@
 <?php
 
 if (isset($_POST['submit'])) {
-    //require "../config.php";
+    require "config.php";
 
     try {
 
-        $bdd = new PDO('mysql:host=localhost;dbname=PRECILIA', 'root', 'root');
-        echo "Connection réussie avec la base de données<br>";
-        //$bdd = new PDO($dsn, $username, $password);
+        $bdd = new PDO($dsn, $username, $password);
 
         $IDThese = $_POST['IDThese'];
         $Titre  = $_POST['Titre'];
@@ -21,7 +19,7 @@ if (isset($_POST['submit'])) {
         $MotCle2=$_POST['MotCle2'];
         $DateDefence=$_POST['DateDefence'];
         $IDPMatricule=$_POST['IDPMatricule'];
-       
+
 
         $sql = "INSERT INTO THESE (IDThese, Titre, DateDebut,DateFin,Description,CollababorationAcademique,CollaborationIndustrielle,NumeroContact,MotCle1,MotCle2,DateDefence,IDPMatricule )
 			VALUES ('$IDThese','$Titre','$DateDebut','$DateFin','$Description','$CollaborationAcademique','$CollaorationIndustrielle','$NumeroContact','$MotCle1','$MotCle2','$DateDefence','$IDPMatricule')";
@@ -75,7 +73,7 @@ if (isset($_POST['submit'])) {
 
     <label for="DateDefence">Date de défense</label>
     <input type="date" name="DateDefence" id="DateDefence">
-    
+
     <label for="IDPMatricule">IDPMatricule</label>
     <input type="number" name="IDPMatricule" id="IDPMatricule">
 
