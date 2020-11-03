@@ -1,7 +1,7 @@
 <?php
 
 	if (isset($_POST['submit'])) {
-  require "config.php";
+  require "../config.php";
 
   try {
 
@@ -26,8 +26,8 @@
 	}
 ?>
 
-<? php include "templastes/header.php" ?>
-<link rel="stylesheet" href="css/style.css" />
+<? php include "../templates/header.php" ?>
+<link rel="stylesheet" href="../templates/style.css" />
 
 
 <?php //debut du formulaire, on peut utiliser action: nom de la page php qui v receptionner les donner ?>
@@ -58,6 +58,6 @@
     <input type="submit" name="submit" value="Submit">
   </form>
 
-    <a href="index.php">Retour en arrière</a>
+    <a href="../index.php">Retour en arrière</a>
 
-	<? php include "templates/footer.php" ?>
+	<? php include "../templates/footer.php" ?>

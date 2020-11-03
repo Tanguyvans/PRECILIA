@@ -1,13 +1,11 @@
 <?php
 
 if (isset($_POST['submit'])) {
-    //require "../config.php";
+    require "../config.php";
 
     try {
 
-        $bdd = new PDO('mysql:host=localhost;dbname=PRECILIA', 'root', 'root');
-        echo "connection reussie avec la base de donnée<br>";
-        //$bdd = new PDO($dsn, $username, $password);
+        $bdd = new PDO($dsn, $username, $password);
 
         $IDTFE= $_POST['IDTFE'];
         $Titre  = $_POST['Titre'];
@@ -70,6 +68,6 @@ if (isset($_POST['submit'])) {
     <input type="submit" name="submit" value="Submit">
 </form>
 
-<a href="index.php">Retour en arrière</a>
+<a href="../index.php">Retour en arrière</a>
 
 <?php include "templates/footer.php" ?>

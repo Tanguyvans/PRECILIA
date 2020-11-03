@@ -1,7 +1,7 @@
 <?php
 
 	if (isset($_POST['submit'])) {
-  require "config.php";
+  require "../config.php";
 
   try {
 
@@ -68,6 +68,6 @@
     <input type="submit" name="submit" value="Submit">
   </form>
 
-    <a href="index.php">Retour en arrière</a>
+    <a href="../index.php">Retour en arrière</a>
 
 	<?php include "templates/footer.php" ?>

@@ -1,7 +1,7 @@
 <?php
 
 if (isset($_POST['submit'])) {
-    require "config.php";
+    require "../config.php";
 
     try {
 
@@ -32,7 +32,7 @@ if (isset($_POST['submit'])) {
 }
 ?>
 
-<?php include "templastes/header.php" ?>
+<?php include 'header.php' ?>
 <link rel="stylesheet" href="css/style.css" />
 
 
@@ -68,6 +68,6 @@ if (isset($_POST['submit'])) {
     <input type="submit" name="submit" value="Submit">
 </form>
 
-<a href="index.php">Retour en arrière</a>
+<a href="../index.php">Retour en arrière</a>
 
 <?php include "templates/footer.php" ?>
