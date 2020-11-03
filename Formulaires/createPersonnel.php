@@ -28,8 +28,8 @@
 	}
 ?>
 
-<? php include "templastes/header.php" ?>
-<link rel="stylesheet" href="css/style.css" />
+<?php include "../templastes/header.php" ?>
+<link rel="stylesheet" href="../css/style.css" />
 
 <?php //debut du formulaire, on peut utiliser action: nom de la page php qui v receptionner les donner ?>
 
@@ -66,4 +66,4 @@
 
     <a href="../index.php">Back to home</a>
 
-	<? php include "templates/footer.php" ?>
+	<?php include "../templates/footer.php" ?>
