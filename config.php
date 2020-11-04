@@ -2,8 +2,8 @@
 
 $host       = "localhost";
 $username   = "root";
-$password   = "root";
-$dbname     = "PRECILIA";
+$password   = "";
+$dbname     = "PRESCILIA";
 $dsn        = "mysql:host=$host;dbname=$dbname";
 
 ?>
