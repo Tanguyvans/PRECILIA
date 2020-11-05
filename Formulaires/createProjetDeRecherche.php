@@ -22,9 +22,9 @@ if (isset($_POST['submit'])) {
         $NumeroContact = $_POST['NumeroContact'];
         $MotCle1=$_POST['MotCle1'];
 	      $MotCle2=$_POST['MotCle2'];
-        echo($DateFin_new);
-        $sql = "INSERT INTO PROJET DE RECHERCHE (IDProjet ,Titre, DateDebut, DateFin, Description, CollaborationAcademique, CollaborationIndustrielle, NumeroContact, MotCle1, MotCle2)
-			VALUES ('$IDProjet','$Titre', '$DateDebut_new','$DateFin_new','$Description','$CollaborationAcademique','$CollaborationIndustrielle','$NumeroContact','$MotCle1','$MotCle2')";
+
+        $sql = "INSERT INTO PROJETDERECHERCHE (IDProjet ,Titre, DateDebut, DateFin, Description, CollaborationAcademique, CollaborationIndustrielle, NumeroContact, MotCle1, MotCle2)
+			VALUES (NULL,'$Titre', '$DateDebut_new','$DateFin_new','$Description','$CollaborationAcademique','$CollaborationIndustrielle','$NumeroContact','$MotCle1','$MotCle2')";
 
         $Resultat = $bdd -> exec($sql);
         echo "Ajout reussie avec la base de donnée<br>";
