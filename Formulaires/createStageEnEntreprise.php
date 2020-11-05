@@ -9,7 +9,11 @@ if (isset($_POST['submit'])) {
 
         $IDStageEntreprise = $_POST['IDStageEntreprise'];
         $DateDebut  = $_POST['DateDebut'];
+        $DateDebut_new = date('Y-m-d', strtotime($DateDebut));
+
         $DateFin = $_POST['DateFin'];
+        $DateFin_new = date('Y-m-d', strtotime($DateFin));
+
         $CollaborationIndustrielle = $_POST['CollaborationIndustrielle'];
         $NumeroContact = $_POST['NumeroContact'];
         $MotCle1=$_POST['MotCle1'];
@@ -18,7 +22,7 @@ if (isset($_POST['submit'])) {
 	      $IDEMatricule=$_POST['IDEMatricule'];
 
         $sql = "INSERT INTO STAGE EN ENTREPRISE (IDStageEntreprise, DateDebut, DateFin, CollaborationIndustrielle, NumeroContact, MotCle1, MotCle2, IDPMatricule, IDEMatricule )
-			VALUES ('$IDStageEntreprise','$DateDebut','$DateFin','$CollaborationIndustrielle','$NumeroContact','$MotCle1','$MotCle2','$IDPMatricule','$IDEMatricule')";
+			VALUES ('$IDStageEntreprise','$DateDebut_new','$DateFin_new','$CollaborationIndustrielle','$NumeroContact','$MotCle1','$MotCle2','$IDPMatricule','$IDEMatricule')";
 
         $Resultat = $bdd -> exec($sql);
         echo "Ajout reussie avec la base de donnée<br>";

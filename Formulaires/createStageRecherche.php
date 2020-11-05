@@ -8,10 +8,15 @@ if (isset($_POST['submit'])) {
         $bdd = new PDO($dsn, $username, $password);
 
         $IDStageRecherche = $_POST['IDStageRecherche'];
+
         $DateDebut = $_POST['DateDebut'];
+        $DateDebut_new = date('Y-m-d', strtotime($DateDebut));
+
         $DateFin=$_POST['DateFin'];
+        $DateFin_new = date('Y-m-d', strtotime($DateFin));
+
         $Description=$_POST['Description'];
-        $CollaborationAcademique = $_POST['CollababorationAcademique'];
+        $CollaborationAcademique = $_POST['CollaborationAcademique'];
         $CollaborationIndustrielle  = $_POST['CollaborationIndustrielle'];
         $NumeroContact=$_POST['NumeroContact'];
         $MotCle1=$_POST['MotCle1'];
@@ -19,8 +24,8 @@ if (isset($_POST['submit'])) {
         $IDPMatricule=$_POST['IDPMatricule'];
 
 
-        $sql = "INSERT INTO STAGE DE RECHERCHE (IDStageRecherche, DateDebut, DateFin , Description, CollababorationAcademique, CollaborationIndustrielle,NumeroContact, MotCle1, MotCle2, IDPMatricule)
-			VALUES ('$IDStageRecherche','$DateDebut','$DateFin','$Description','$CollaborationAcademique','$CollaborationIndustrielle','$NumeroContact','$MotCle1','$MotCle2','$IDPMatricule')";
+        $sql = "INSERT INTO STAGE DE RECHERCHE (IDStageRecherche, DateDebut, DateFin , Description, CollaborationAcademique, CollaborationIndustrielle, NumeroContact, MotCle1, MotCle2, IDPMatricule)
+			VALUES ('$IDStageRecherche','$DateDebut_new','$DateFin_new','$Description','$CollaborationAcademique','$CollaborationIndustrielle','$NumeroContact','$MotCle1','$MotCle2','$IDPMatricule')";
 
 
 
@@ -51,8 +56,8 @@ if (isset($_POST['submit'])) {
     <label for="DateFin">Date de fin</label>
     <input type="date" name="DateFin" id="DateFin">
 
-    <label for="CollababorationAcademique">Collababoration académique</label>
-    <input type="text" name="CollababorationAcademique" id="CollababorationAcademique">
+    <label for="CollaborationAcademique">Collababoration académique</label>
+    <input type="text" name="CollaborationAcademique" id="CollaborationAcademique">
 
     <label for="Description">Description</label>
     <input type="text" name="Description" id="Description">

@@ -43,14 +43,8 @@ if (isset($_POST['submit'])) {
     <label for="IDEvenement">Identifiant de l'évènement</label>
     <input type="number" name="IDEvenement" id="IDEvenement">
 
-    <p>
-       <label for="Type">Choisissez le type</label><br />
-       <select name="Type" id="Type">
-           <option value="Hackathon">Hackathon</option>
-           <option value="Seminaire">Seminaire</option>
-           <option value="Workshop">Workshop</option>
-       </select>
-   </p>
+    <label for="Type">Type d'evenement</label>
+    <input type="text" name="Type" id="Type">
 
     <label for="Nom">Nom</label>
     <input type="text" name="Nom" id="Nom">

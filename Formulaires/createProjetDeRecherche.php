@@ -7,18 +7,24 @@ if (isset($_POST['submit'])) {
 
         $bdd = new PDO($dsn, $username, $password);
 
+        $IDProjet =$_POST['IDProjet'];
         $Titre = $_POST['Titre'];
+
         $DateDebut  = $_POST['DateDebut'];
+        $DateDebut_new = date('Y-m-d', strtotime($DateDebut));
+
         $DateFin = $_POST['DateFin'];
+        $DateFin_new = date('Y-m-d', strtotime($DateFin));
+
 				$CollaborationAcademique = $_POST['CollaborationAcademique'];
         $CollaborationIndustrielle = $_POST['CollaborationIndustrielle'];
 				$Description = $_POST['Description'];
         $NumeroContact = $_POST['NumeroContact'];
         $MotCle1=$_POST['MotCle1'];
 	      $MotCle2=$_POST['MotCle2'];
-
+        echo($DateFin_new);
         $sql = "INSERT INTO PROJET DE RECHERCHE (IDProjet ,Titre, DateDebut, DateFin, Description, CollaborationAcademique, CollaborationIndustrielle, NumeroContact, MotCle1, MotCle2)
-			VALUES (NULL, '$Titre','$DateDebut','$DateFin','$Description','$CollaborationAcademique','$CollaborationIndustrielle','$NumeroContact','$MotCle1','$MotCle2')";
+			VALUES ('$IDProjet','$Titre', '$DateDebut_new','$DateFin_new','$Description','$CollaborationAcademique','$CollaborationIndustrielle','$NumeroContact','$MotCle1','$MotCle2')";
 
         $Resultat = $bdd -> exec($sql);
         echo "Ajout reussie avec la base de donnée<br>";
@@ -38,6 +44,9 @@ if (isset($_POST['submit'])) {
 
 <form method="post">
 
+    <label for="IDProjet">IDProjet</label>
+    <input type="number" name="IDProjet" id="IDProjet">
+
     <label for="Titre">Titre</label>
     <input type="text" name="Titre" id="Titre">
 
@@ -47,8 +56,8 @@ if (isset($_POST['submit'])) {
     <label for="DateFin">Date de fin</label>
     <input type="Date" name="DateFin" id="DateFin">
 
-		<label for="Desccription">Description</label>
-    <input type="text" name="Description" id="Decription">
+		<label for="Description">Description</label>
+    <input type="text" name="Description" id="Description">
 
 		<label for="CollaborationAcademique">Collaboration academique</label>
 		<input type="text" name="CollaborationAcademique" id="CollaborationAcademique">

@@ -10,19 +10,24 @@ if (isset($_POST['submit'])) {
         $IDThese = $_POST['IDThese'];
         $Titre  = $_POST['Titre'];
         $DateDebut = $_POST['DateDebut'];
+        $DateDebut_new = date('Y-m-d', strtotime($DateDebut));
+
         $DateFin=$_POST['DateFin'];
+        $DateFin_new = date('Y-m-d', strtotime($DateFin));
+
         $Description=$_POST['Description'];
         $CollaborationAcademique = $_POST['CollababorationAcademique'];
-        $CollaorationIndustrielle  = $_POST['CollaborationIndustrielle'];
+        $CollaborationIndustrielle  = $_POST['CollaborationIndustrielle'];
         $NumeroContact=$_POST['NumeroContact'];
         $MotCle1=$_POST['MotCle1'];
         $MotCle2=$_POST['MotCle2'];
         $DateDefence=$_POST['DateDefence'];
+        $DateDefence_new = date('Y-m-d', strtotime($DateDefence));
         $IDPMatricule=$_POST['IDPMatricule'];
 
 
-        $sql = "INSERT INTO THESE (IDThese, Titre, DateDebut,DateFin,Description,CollababorationAcademique,CollaborationIndustrielle,NumeroContact,MotCle1,MotCle2,DateDefence,IDPMatricule )
-			VALUES ('$IDThese','$Titre','$DateDebut','$DateFin','$Description','$CollaborationAcademique','$CollaorationIndustrielle','$NumeroContact','$MotCle1','$MotCle2','$DateDefence','$IDPMatricule')";
+        $sql = "INSERT INTO THESE (IDThese, Titre, DateDebut,DateFin,Description,CollaborationAcademique,CollaborationIndustrielle,NumeroContact,MotCle1,MotCle2,DateDefence,IDPMatricule )
+			VALUES ('$IDThese','$Titre','$DateDebut_new','$DateFin_new','$Description','$CollaborationAcademique','$CollaborationIndustrielle','$NumeroContact','$MotCle1','$MotCle2','$DateDefence_new','$IDPMatricule')";
 
         $Resultat = $bdd -> exec($sql);
         echo "Ajout réussi à la base de données<br>";
@@ -56,8 +61,8 @@ if (isset($_POST['submit'])) {
     <label for="Description">Description</label>
     <input type="text" name="Description" id="Description">
 
-    <label for="CollababorationAcademique">Collababoration académique</label>
-    <input type="text" name="CollababorationAcademique" id="CollababorationAcademique">
+    <label for="CollaborationAcademique">Collababoration académique</label>
+    <input type="text" name="CollaborationAcademique" id="CollaborationAcademique">
 
     <label for="CollaborationIndustrielle">Collaboration industrielle</label>
     <input type="text" name="CollaborationIndustrielle" id="CollaborationIndustrielle">
