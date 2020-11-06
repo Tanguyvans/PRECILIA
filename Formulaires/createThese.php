@@ -16,7 +16,7 @@ if (isset($_POST['submit'])) {
         $DateFin_new = date('Y-m-d', strtotime($DateFin));
 
         $Description=$_POST['Description'];
-        $CollaborationAcademique = $_POST['CollababorationAcademique'];
+        $CollaborationAcademique = $_POST['CollaborationAcademique'];
         $CollaborationIndustrielle  = $_POST['CollaborationIndustrielle'];
         $NumeroContact=$_POST['NumeroContact'];
         $MotCle1=$_POST['MotCle1'];

@@ -16,14 +16,22 @@ if (isset($_POST['submit'])) {
         $MotCle1=$_POST['MotCle1'];
         $MotCle2=$_POST['MotCle2'];
         $IDLieu=$_POST['IDLieu'];
+        echo($IDEvenement);
+        echo($Type);
+        echo($Nom);
+        echo($Acronyme);
+        echo($Duree);
+        echo($Description);
+        echo($MotCle1);
+        echo($MotCle2);
+        echo($IDLieu);
+
 
         $sql = "INSERT INTO EVENEMENT (IDEvenement, Type, Nom, Acronyme, Duree, Description, MotCle1, MotCle2, IDLieu)
-			VALUES ('$IDEvenement','$Type','$Nom','$Acronyme','$Duree','$Description','$MotCle1','$MotCle2','$IDLieu')";
+  			VALUES ('$IDEvenement', '$Type', '$Nom', '$Acronyme', '$Duree', '$Description', '$MotCle1', '$MotCle2', '$IDLieu')";
 
-
-
-        $Resultat = $bdd -> exec($sql);
-        echo "Ajout reussie avec la base de donnée<br>";
+  			$Resultat = $bdd -> exec($sql);
+  			echo "Ajout reussie avec la base de donnée<br>";
 
     } catch(PDOException $error) {
         echo $sql . "<br>" . $error->getMessage();

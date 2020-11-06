@@ -21,7 +21,7 @@ if (isset($_POST['submit'])) {
 	      $IDPMatricule=$_POST['IDPMatricule'];
 	      $IDEMatricule=$_POST['IDEMatricule'];
 
-        $sql = "INSERT INTO STAGE EN ENTREPRISE (IDStageEntreprise, DateDebut, DateFin, CollaborationIndustrielle, NumeroContact, MotCle1, MotCle2, IDPMatricule, IDEMatricule )
+        $sql = "INSERT INTO STAGEENENTREPRISE (IDStageEntreprise, DateDebut, DateFin, CollaborationIndustrielle, NumeroContact, MotCle1, MotCle2, IDPMatricule, IDEMatricule )
 			VALUES ('$IDStageEntreprise','$DateDebut_new','$DateFin_new','$CollaborationIndustrielle','$NumeroContact','$MotCle1','$MotCle2','$IDPMatricule','$IDEMatricule')";
 
         $Resultat = $bdd -> exec($sql);

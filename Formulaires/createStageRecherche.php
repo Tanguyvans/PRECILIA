@@ -24,7 +24,7 @@ if (isset($_POST['submit'])) {
         $IDPMatricule=$_POST['IDPMatricule'];
 
 
-        $sql = "INSERT INTO STAGE DE RECHERCHE (IDStageRecherche, DateDebut, DateFin , Description, CollaborationAcademique, CollaborationIndustrielle, NumeroContact, MotCle1, MotCle2, IDPMatricule)
+        $sql = "INSERT INTO STAGEDERECHERCHE (IDStageRecherche, DateDebut, DateFin , Description, CollaborationAcademique, CollaborationIndustrielle, NumeroContact, MotCle1, MotCle2, IDPMatricule)
 			VALUES ('$IDStageRecherche','$DateDebut_new','$DateFin_new','$Description','$CollaborationAcademique','$CollaborationIndustrielle','$NumeroContact','$MotCle1','$MotCle2','$IDPMatricule')";
 
 
@@ -56,11 +56,11 @@ if (isset($_POST['submit'])) {
     <label for="DateFin">Date de fin</label>
     <input type="date" name="DateFin" id="DateFin">
 
-    <label for="CollaborationAcademique">Collababoration académique</label>
-    <input type="text" name="CollaborationAcademique" id="CollaborationAcademique">
-
     <label for="Description">Description</label>
     <input type="text" name="Description" id="Description">
+
+    <label for="CollaborationAcademique">Collababoration académique</label>
+    <input type="text" name="CollaborationAcademique" id="CollaborationAcademique">
 
     <label for="CollaborationIndustrielle">Collaboration industrielle</label>
     <input type="text" name="CollaborationIndustrielle" id="CollaborationIndustrielle">
