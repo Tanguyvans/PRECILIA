@@ -23,7 +23,7 @@ if (isset($_POST['submit'])) {
 	      $IDEMatricule=$_POST['IDEMatricule'];
 
         $sql = "INSERT INTO TFE (IDTFE, Titre, DateDebut, DateFin, CollaborationIndustrielle, NumeroContact, MotCle1, MotCle2, IDPMatricule, IDEMatricule)
-			VALUES (' $IDTFE','$Titre','$DateDebut_new','$DateFin_new', '$CollaborationIndustrielle','$NumeroContact','$MotCle1','$MotCle2','$IDPMatricule','$IDEMatricule')";
+			VALUES ('$IDTFE','$Titre','$DateDebut_new','$DateFin_new', '$CollaborationIndustrielle','$NumeroContact','$MotCle1','$MotCle2','$IDPMatricule','$IDEMatricule')";
 
         $Resultat = $bdd -> exec($sql);
         echo "Ajout reussie avec la base de donnée<br>";

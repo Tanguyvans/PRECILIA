@@ -16,8 +16,8 @@ if (isset($_POST['submit'])) {
         $DateFin_new = date('Y-m-d', strtotime($DateFin));
 
         $Description=$_POST['Description'];
-        $CollaborationAcademique = $_POST['CollaborationAcademique'];
-        $CollaborationIndustrielle  = $_POST['CollaborationIndustrielle'];
+        $CollaborateurAcademique = $_POST['CollaborateurAcademique'];
+        $CollaborateurIndustrielle  = $_POST['CollaborateurIndustrielle'];
         $NumeroContact=$_POST['NumeroContact'];
         $MotCle1=$_POST['MotCle1'];
         $MotCle2=$_POST['MotCle2'];
@@ -26,8 +26,8 @@ if (isset($_POST['submit'])) {
         $IDPMatricule=$_POST['IDPMatricule'];
 
 
-        $sql = "INSERT INTO THESE (IDThese, Titre, DateDebut,DateFin,Description,CollaborationAcademique,CollaborationIndustrielle,NumeroContact,MotCle1,MotCle2,DateDefence,IDPMatricule )
-			VALUES ('$IDThese','$Titre','$DateDebut_new','$DateFin_new','$Description','$CollaborationAcademique','$CollaborationIndustrielle','$NumeroContact','$MotCle1','$MotCle2','$DateDefence_new','$IDPMatricule')";
+        $sql = "INSERT INTO THESE (IDThese, Titre, DateDebut,DateFin,Description,CollaborateurAcademique,CollaborateurIndustrielle,NumeroContact,MotCle1,MotCle2,DateDefence,IDPMatricule )
+			VALUES ('$IDThese','$Titre','$DateDebut_new','$DateFin_new','$Description','$CollaborateurAcademique','$CollaborateurIndustrielle','$NumeroContact','$MotCle1','$MotCle2','$DateDefence_new','$IDPMatricule')";
 
         $Resultat = $bdd -> exec($sql);
         echo "Ajout réussi à la base de données<br>";
@@ -61,11 +61,11 @@ if (isset($_POST['submit'])) {
     <label for="Description">Description</label>
     <input type="text" name="Description" id="Description">
 
-    <label for="CollaborationAcademique">Collababoration académique</label>
-    <input type="text" name="CollaborationAcademique" id="CollaborationAcademique">
+    <label for="CollaborateurAcademique">Collababorateur académique</label>
+    <input type="text" name="CollaborateurAcademique" id="CollaborateurAcademique">
 
-    <label for="CollaborationIndustrielle">Collaboration industrielle</label>
-    <input type="text" name="CollaborationIndustrielle" id="CollaborationIndustrielle">
+    <label for="CollaborateurIndustrielle">Collaborateur industrielle</label>
+    <input type="text" name="CollaborateurIndustrielle" id="CollaborateurIndustrielle">
 
     <label for="NumeroContact">Numéro de contact</label>
     <input type="number" name="NumeroContact" id="NumeroContact">

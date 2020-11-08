@@ -16,15 +16,15 @@ if (isset($_POST['submit'])) {
         $DateFin = $_POST['DateFin'];
         $DateFin_new = date('Y-m-d', strtotime($DateFin));
 
-				$CollaborationAcademique = $_POST['CollaborationAcademique'];
-        $CollaborationIndustrielle = $_POST['CollaborationIndustrielle'];
+				$CollaborateurAcademique = $_POST['CollaborateurAcademique'];
+        $CollaborateurIndustrielle = $_POST['CollaborateurIndustrielle'];
 				$Description = $_POST['Description'];
         $NumeroContact = $_POST['NumeroContact'];
         $MotCle1=$_POST['MotCle1'];
 	      $MotCle2=$_POST['MotCle2'];
 
-        $sql = "INSERT INTO PROJETDERECHERCHE (IDProjet ,Titre, DateDebut, DateFin, Description, CollaborationAcademique, CollaborationIndustrielle, NumeroContact, MotCle1, MotCle2)
-			VALUES (NULL,'$Titre', '$DateDebut_new','$DateFin_new','$Description','$CollaborationAcademique','$CollaborationIndustrielle','$NumeroContact','$MotCle1','$MotCle2')";
+        $sql = "INSERT INTO PROJETDERECHERCHE (IDProjet ,Titre, DateDebut, DateFin, Description, CollaborateurAcademique, CollaborateurIndustrielle, NumeroContact, MotCle1, MotCle2)
+			VALUES (NULL,'$Titre', '$DateDebut_new','$DateFin_new','$Description','$CollaborateurAcademique','$CollaborateurIndustrielle','$NumeroContact','$MotCle1','$MotCle2')";
 
         $Resultat = $bdd -> exec($sql);
         echo "Ajout reussie avec la base de donnée<br>";
@@ -59,11 +59,11 @@ if (isset($_POST['submit'])) {
 		<label for="Description">Description</label>
     <input type="text" name="Description" id="Description">
 
-		<label for="CollaborationAcademique">Collaboration academique</label>
-		<input type="text" name="CollaborationAcademique" id="CollaborationAcademique">
+		<label for="CollaborateurAcademique">Collaboration academique</label>
+		<input type="text" name="CollaborateurAcademique" id="CollaborateurAcademique">
 
-    <label for="CollaborationIndustrielle">Collaboration industrielle</label>
-    <input type="text" name="CollaborationIndustrielle" id="CollaborationIndustrielle">
+    <label for="CollaborateurIndustrielle">Collaboration industrielle</label>
+    <input type="text" name="CollaborateurIndustrielle" id="CollaborateurIndustrielle">
 
     <label for="NumeroContact">Numéro de contact</label>
     <input type="number" name="NumeroContact" id="NumeroContact">
