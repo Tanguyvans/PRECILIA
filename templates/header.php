@@ -1,38 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html lang="fr">
+<link rel="stylesheet" type="text/css" href="pageH.css"/>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Header</title>
+    <meta content="" name="descriptison">
+    <meta content="" name="keywords">
 
-    <title>Simple Database App</title>
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+          rel="stylesheet">
 
-  <body>
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
 
-  <header id="header">
-      <div class="container d-flex">
+    <!-- Template Main CSS File -->
+    <link href="pageH.css" rel="stylesheet">
 
-          <div class="logo mr-auto">
-              <h1 class="text-light"><a href="../MainPages/Accueil.php"><span>PRESCILIA</span></a></h1>
-              <!-- Uncomment below if you prefer to use an image logo -->
-              <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-          </div>
+</head>
 
-          <nav class="nav-menu d-none d-lg-block">
-              <ul>
-                  <li class="active"><a href="../MainPages/Membres.php">Membres</a></li>
-                  <li><a href="../MainPages/Evenements.php">Evenements</a></li>
-                  <li><a href="../MainPages/Recherche.php">Recherche</a></li>
-                  <li><a href="../MainPages/Enseignement.php">Enseignement</a></li>
-                  <!--<li><a href="">Connexion</a></li>-->
-              </ul>
-          </nav><!-- .nav-menu -->
+<body>
+<header id="header">
+    <div id="container">
+        <div id="container1">
+            <h3> Prescilia </h3>
+        </div>
+        <div id="container2">
+            <a href="addressepageaccueil">Accueil</a>
+            <div class="active"><a href="#adressepagemembre">Membres</a></div>
+            <div class="active"><a href="#adressepageevenement">Evènements</a></div>
+            <a href="#adressepagedeconnexion">Connexion</a>
+        </div>
 
-      </div>
-  </header><!-- End Header -->
-
-  </body>
+    </div>
+</header><!-- End Header -->
+</body>
 </html>

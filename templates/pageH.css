@@ -1,0 +1,41 @@
+#header {
+
+    height: 85px;
+    padding: 12px 12px 0px 12px;
+    background: #344341;
+}
+#header h3 {
+    color: #fff;
+    font-size: 24px;
+    margin: 0 0 20px 0;
+    padding: 2px 0 2px 0;
+    line-height: 1;
+    font-weight: 700;
+}
+#container1{
+    height: 45px;
+    background: #3d4f4c;
+}
+#container2{
+    display:flex;
+    background: #3d4f4c;
+    justify-content:space-around;
+    align-items: start;
+    height:40px;
+    color:#fff;
+
+}
+#header a{
+    color:#fff;
+}
+
+#header .logo h1 {
+    font-size: 28px;
+    margin: 0;
+    padding: 10px 0;
+    line-height: 1;
+    font-weight: 400;
+    color: #fff;
+
+}
+
