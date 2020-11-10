@@ -6,7 +6,6 @@
     <body>
         <?php include '../templates/header.php' ?>
 
-        <h2>1. Afficher tous les clients </h2>
         <form action = '' method = 'post'>
             <input type = 'submit' value = 'These' name='BtnThese'>
         </form>
