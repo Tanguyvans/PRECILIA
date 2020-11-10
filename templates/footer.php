@@ -53,22 +53,24 @@
                 <h4>Liens utiles</h4>
                 <!-- classes identifiant pour manipuler dans css-->
                 <ul>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#">Accueil</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#">A propos de nous</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#">Autres?</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href='../MainPages/Accueil.php'>Accueil</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href='../MainPages/Enseignement.php'>Enseignement</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href='../MainPages/Evenements.php'>Evenements</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href='../MainPages/Membres.php'>Membres</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href='../MainPages/Recherche.php'>Recherche</a></li>
                 </ul>
             </div>
+            <!--<div class="col-lg-3 col-md-6 footer-links">
+                            <h4>Nos services</h4>
+                            <ul>
+                                <li><i class="bx bx-chevron-right"></i> <a href='../MainPages/Recherche.php'>Recherche</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href='../MainPages/Evenement.php'>Evènements</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href='../MainPages/Evenement.php'>Evènements</a></li>
 
-            <div class="col-lg-3 col-md-6 footer-links">
-                <h4>Nos services</h4>
-                <ul>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#">Recherche</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#">Stages</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#">Evènements</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#">Autres?</a></li>
-                </ul>
-            </div>
+                                <li><i class="bx bx-chevron-right"></i> <a href='../?'>Autres?</a></li>
+                            </ul>
+                        </div>-->
+
         </div>
     </div>
 
