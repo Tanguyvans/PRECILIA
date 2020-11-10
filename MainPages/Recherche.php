@@ -5,13 +5,11 @@
     </head>
     <body>
     <?php include '../templates/header.php' ?>
-    <div id="container">
-        <nav id="choix-projet">
-            <div class="active"><a href=''>Projet de recherche</a></div>
-            <div class="active"><a href=''>Thèse</a></div>
-            <div class="active"><a href=''>Stage De recherche</a></div>
-        </nav>
-    </div>
+    <h2>1. Afficher tous les clients </h2>
+
+    <form action = 'affichageThese.php' method = 'post'>
+        <input type = 'submit' value = 'Thèse'>
+    </form>
     <?php include '../templates/footer.php' ?>
     </body>
 </html>
