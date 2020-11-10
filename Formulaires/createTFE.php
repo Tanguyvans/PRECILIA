@@ -10,20 +10,16 @@ if (isset($_POST['submit'])) {
         $IDTFE= $_POST['IDTFE'];
         $Titre  = $_POST['Titre'];
         $DateDebut = $_POST['DateDebut'];
-        $DateDebut_new = date('Y-m-d', strtotime($DateDebut));
-
-        $DateDebut = $_POST['DateFin'];
-        $DateFin_new = date('Y-m-d', strtotime($DateFin));
-
-        $CollaborationIndustrielle = $_POST['CollaborationIndustrielle'];
+        $DateFin = $_POST['DateFin'];
+        $CollaborateurIndustrielle = $_POST['CollaborateurIndustrielle'];
         $NumeroContact = $_POST['NumeroContact'];
         $MotCle1=$_POST['MotCle1'];
 	      $MotCle2=$_POST['MotCle2'];
         $IDPMatricule=$_POST['IDPMatricule'];
 	      $IDEMatricule=$_POST['IDEMatricule'];
 
-        $sql = "INSERT INTO TFE (IDTFE, Titre, DateDebut, DateFin, CollaborationIndustrielle, NumeroContact, MotCle1, MotCle2, IDPMatricule, IDEMatricule)
-			VALUES ('$IDTFE','$Titre','$DateDebut_new','$DateFin_new', '$CollaborationIndustrielle','$NumeroContact','$MotCle1','$MotCle2','$IDPMatricule','$IDEMatricule')";
+        $sql = "INSERT INTO TFE (IDTFE, Titre, DateDebut, DateFin, CollaborateurIndustrielle, NumeroContact, MotCle1, MotCle2, IDPMatricule, IDEMatricule)
+			VALUES (NULL,'$Titre','$DateDebut','$DateFin', '$CollaborateurIndustrielle','$NumeroContact','$MotCle1','$MotCle2','$IDPMatricule','$IDEMatricule')";
 
         $Resultat = $bdd -> exec($sql);
         echo "Ajout reussie avec la base de donnée<br>";
@@ -55,8 +51,8 @@ probleme
     <label for="DateFin">Date de fin</label>
     <input type="Date" name="DateFin" id="DateFin">
 
-    <label for="CollaborationIndustrielle">Collaboration industrielle</label>
-    <input type="text" name="CollaborationIndustrielle" id="CollaborationIndustrielle">
+    <label for="CollaborateurIndustrielle">Collaborateur industrielle</label>
+    <input type="text" name="CollaborateurIndustrielle" id="CollaborateurIndustrielle">
 
     <label for="NumeroContact">Numéro de contact</label>
     <input type="number" name="NumeroContact" id="NumeroContact">
