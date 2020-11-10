@@ -1,5 +1,5 @@
 <html lang="fr">
-<link rel="stylesheet" type="text/css" href="pageF.css" />
+<link rel="stylesheet" type="text/css" href="../css/pageF.css" />
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -24,7 +24,7 @@
     <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
-    <link href="pageF.css" rel="stylesheet">
+    <link href="../css/pageF.css" rel="stylesheet">
 
 </head>
 <body>

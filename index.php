@@ -1,5 +1,4 @@
-<?php include "templates/header.php" ?>
-
+<html lang="fr">
     <ul>
       <li>
         <a href="Formulaires/createEtudiant.php"><strong>createEtudiant</strong></a> - Ajouter un Etudiant
@@ -35,4 +34,4 @@
   </body>
 </html>
 
-<?php include "templates/footer.php" ?>
+
