@@ -15,25 +15,11 @@ if (isset($_POST['submit'])) {
         $Description=$_POST['Description'];
         $MotCle1=$_POST['MotCle1'];
         $MotCle2=$_POST['MotCle2'];
-
         $DateDebut=$_POST['DateDebut'];
-        $DateDebut_new = date('Y-m-d', strtotime($DateDebut));
-
         $IDLieu=$_POST['IDLieu'];
-        echo($IDEvenement);
-        echo($Type);
-        echo($Nom);
-        echo($Acronyme);
-        echo($Duree);
-        echo($Description);
-        echo($MotCle1);
-        echo($MotCle2);
-        echo($DateDebut_new);
-        echo($IDLieu);
-
 
         $sql = "INSERT INTO EVENEMENT (IDEvenement, Type, Nom, Acronyme, Duree, Description, MotCle1, MotCle2, DateDebut, IDLieu)
-  			VALUES (NULL, '$Type', '$Nom', '$Acronyme', '$Duree', '$Description', '$MotCle1', '$MotCle2', '$DateDebut_new','$IDLieu')";
+  			VALUES (NULL, '$Type', '$Nom', '$Acronyme', '$Duree', '$Description', '$MotCle1', '$MotCle2', '$DateDebut','$IDLieu')";
 
   			$Resultat = $bdd -> exec($sql);
   			echo "Ajout reussie avec la base de donnée<br>";
@@ -78,7 +64,7 @@ if (isset($_POST['submit'])) {
     <input type="text" name="MotCle2" id="MotCle2">
 
     <label for="DateDebut">Date de début</label>
-    <input type="Date" name="DateDebut" id="DateDebut">
+    <input type="date" name="DateDebut" id="DateDebut">
 
     <label for="IDLieu">Identifiant du lieu de l'évènement</label>
     <input type="number" name="IDLieu" id="IDLieu">

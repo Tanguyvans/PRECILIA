@@ -10,24 +10,19 @@ if (isset($_POST['submit'])) {
         $IDThese = $_POST['IDThese'];
         $Titre  = $_POST['Titre'];
         $DateDebut = $_POST['DateDebut'];
-        $DateDebut_new = date('Y-m-d', strtotime($DateDebut));
-
-        $DateFin=$_POST['DateFin'];
-        $DateFin_new = date('Y-m-d', strtotime($DateFin));
-
-        $Description=$_POST['Description'];
+        $DateFin = $_POST['DateFin'];
+        $Description = $_POST['Description'];
         $CollaborateurAcademique = $_POST['CollaborateurAcademique'];
         $CollaborateurIndustrielle  = $_POST['CollaborateurIndustrielle'];
-        $NumeroContact=$_POST['NumeroContact'];
-        $MotCle1=$_POST['MotCle1'];
-        $MotCle2=$_POST['MotCle2'];
-        $DateDefence=$_POST['DateDefence'];
-        $DateDefence_new = date('Y-m-d', strtotime($DateDefence));
-        $IDPMatricule=$_POST['IDPMatricule'];
+        $NumeroContact = $_POST['NumeroContact'];
+        $MotCle1 = $_POST['MotCle1'];
+        $MotCle2 = $_POST['MotCle2'];
+        $DateDefence = $_POST['DateDefence'];
+        $IDPMatricule = $_POST['IDPMatricule'];
 
 
         $sql = "INSERT INTO THESE (IDThese, Titre, DateDebut,DateFin,Description,CollaborateurAcademique,CollaborateurIndustrielle,NumeroContact,MotCle1,MotCle2,DateDefence,IDPMatricule )
-			VALUES ('$IDThese','$Titre','$DateDebut_new','$DateFin_new','$Description','$CollaborateurAcademique','$CollaborateurIndustrielle','$NumeroContact','$MotCle1','$MotCle2','$DateDefence_new','$IDPMatricule')";
+			VALUES (NULL,'$Titre','$DateDebut','$DateFin','$Description','$CollaborateurAcademique','$CollaborateurIndustrielle','$NumeroContact','$MotCle1','$MotCle2','$DateDefence','$IDPMatricule')";
 
         $Resultat = $bdd -> exec($sql);
         echo "Ajout réussi à la base de données<br>";

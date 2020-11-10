@@ -8,13 +8,8 @@ if (isset($_POST['submit'])) {
         $bdd = new PDO($dsn, $username, $password);
 
         $IDStageRecherche = $_POST['IDStageRecherche'];
-
         $DateDebut = $_POST['DateDebut'];
-        $DateDebut_new = date('Y-m-d', strtotime($DateDebut));
-
         $DateFin=$_POST['DateFin'];
-        $DateFin_new = date('Y-m-d', strtotime($DateFin));
-
         $Description=$_POST['Description'];
         $CollaborateurAcademique = $_POST['CollaborateurAcademique'];
         $CollaborateurIndustrielle  = $_POST['CollaborateurIndustrielle'];
@@ -23,9 +18,8 @@ if (isset($_POST['submit'])) {
         $MotCle2=$_POST['MotCle2'];
         $IDPMatricule=$_POST['IDPMatricule'];
 
-
         $sql = "INSERT INTO STAGEDERECHERCHE (IDStageRecherche, DateDebut, DateFin , Description, CollaborateurAcademique, CollaborateurIndustrielle, NumeroContact, MotCle1, MotCle2, IDPMatricule)
-			VALUES ('$IDStageRecherche','$DateDebut_new','$DateFin_new','$Description','$CollaborateurAcademique','$CollaborateurIndustrielle','$NumeroContact','$MotCle1','$MotCle2','$IDPMatricule')";
+			VALUES (NULL,'$DateDebut','$DateFin','$Description','$CollaborateurAcademique','$CollaborateurIndustrielle','$NumeroContact','$MotCle1','$MotCle2','$IDPMatricule')";
 
 
 
