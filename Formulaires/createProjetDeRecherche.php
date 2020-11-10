@@ -1,13 +1,10 @@
 <?php
+require "../config.php";
+$bdd = new PDO($dsn, $username, $password);
 
 if (isset($_POST['submit'])) {
-    require "../config.php";
 
     try {
-
-        $bdd = new PDO($dsn, $username, $password);
-
-        $IDProjet =$_POST['IDProjet'];
         $Titre = $_POST['Titre'];
 
         $DateDebut  = $_POST['DateDebut'];
@@ -43,9 +40,6 @@ if (isset($_POST['submit'])) {
 <?php //debut du formulaire, on peut utiliser action: nom de la page php qui v receptionner les donner ?>
 
 <form method="post">
-
-    <label for="IDProjet">IDProjet</label>
-    <input type="number" name="IDProjet" id="IDProjet">
 
     <label for="Titre">Titre</label>
     <input type="text" name="Titre" id="Titre">

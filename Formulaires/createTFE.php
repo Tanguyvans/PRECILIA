@@ -1,13 +1,10 @@
 <?php
+require "../config.php";
+$bdd = new PDO($dsn, $username, $password);
 
 if (isset($_POST['submit'])) {
-    require "../config.php";
 
     try {
-
-        $bdd = new PDO($dsn, $username, $password);
-
-        $IDTFE= $_POST['IDTFE'];
         $Titre  = $_POST['Titre'];
         $DateDebut = $_POST['DateDebut'];
         $DateFin = $_POST['DateFin'];
@@ -38,9 +35,6 @@ if (isset($_POST['submit'])) {
 <?php //debut du formulaire, on peut utiliser action: nom de la page php qui v receptionner les donner ?>
 
 <form method="post">
-probleme
-    <label for="IDTFE">TFE</label>
-    <input type="number" name="IDTFE" id="IDTFE">
 
     <label for="Titre">Titre</label>
     <input type="text" name="Titre" id="Titre">
@@ -63,11 +57,40 @@ probleme
     <label for="MotCle2">Mot-clé 2</label>
     <input type="text" name="MotCle2" id="MotCle2">
 
+    <!--========== connexion PERSONNEL et remplissage d'une liste ==============-->
+    <?php
+      $result = $bdd->query('SELECT IDPMatricule, Nom, Prenom FROM PERSONNEL');
+      foreach ($result as $row) {
+        $IDPM[] = array('IDPMatricule' => $row['IDPMatricule'],'Nom' => $row['Nom'], 'Prenom' => $row['Prenom']);
+      }
+    ?>
     <label for="IDPMatricule">IDPMatricule</label>
-    <input type="number" name="IDPMatricule" id="IDPMatricule">
-
+    <p>
+      <!--========== Input IDPMatricule ==============-->
+      <select name="IDPMatricule" id="IDPMatricule">
+      <option value="">Select one</option>
+      <?php foreach ($IDPM as $test): ?>
+      <option value="<?php print_r($test['IDPMatricule']); ?>"><?php print_r($test['Nom']);?>  <?php print_r($test['Prenom']) ?></option>
+      <?php endforeach; ?>
+      </select>
+    </p>
+    <!--========== connexion Etudiant et remplissage d'une liste ==============-->
+    <?php
+      $result = $bdd->query('SELECT IDEMatricule, Nom, Prenom FROM ETUDIANT');
+      foreach ($result as $row) {
+        $IDEM[] = array('IDEMatricule' => $row['IDEMatricule'],'Nom' => $row['Nom'], 'Prenom' => $row['Prenom']);
+      }
+    ?>
     <label for="IDEMatricule">IDEMatricule</label>
-    <input type="number" name="IDEMatricule" id="IDEMatricule">
+    <p>
+      <!--========== Input IDEMatricule ==============-->
+      <select name="IDEMatricule" id="IDEMatricule">
+      <option value="">Select one</option>
+      <?php foreach ($IDEM as $test): ?>
+      <option value="<?php print_r($test['IDEMatricule']); ?>"><?php print_r($test['Nom']);?>  <?php print_r($test['Prenom']) ?></option>
+      <?php endforeach; ?>
+      </select>
+    </p>
 
     <input type="submit" name="submit" value="Submit">
 </form>
