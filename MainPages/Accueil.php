@@ -18,6 +18,7 @@
 
         </section>
 
+        <hr />
         <section id="who">
             <div class="who-container">
                 <h2 class="who-title">Qui sommes-nous?</h2>
@@ -29,23 +30,27 @@
             </div>
         </section>
 
+        <hr />
         <section id="projets">
             <h2>Nos projets</h2>
             <!--afficher les projets récent, une photo et surtout le titre et peu etre l auteur-->
             <!--[...] qui emmene vers la page projet -->
         </section>
 
+        <hr />
         <section id="what">
             <!--que faisons-nous? que du texte comme dans qui somme nous-->
             <h2>Que faisons-nous?</h2>
         </section>
 
+        <hr />
         <section id="equipe">
             <h2>Notre équipe</h2>
             <!-- a reflechir si on le laisse -->
             <!--[...] qui emmene vers la page membre -->
         </section>
 
+        <hr />
         <section id="partenaires">
             <h2 class = "partenaires-title">Nos partenaires</h2>
             <ul>

@@ -27,60 +27,45 @@
     <link href="../css/pageF.css" rel="stylesheet">
 
 </head>
-<body>
-<footer id="footer">
-    <div class="footer-top">
-        <h3>Prescilia</h3>
-        <div id="conteneur1">
+    <body>
+        <footer id="footer">
+            <div class="footer-top">
+                <h3>Prescilia</h3>
+                <div id="conteneur1">
+                    <div class="col-lg-3 col-md-6 footer-info">
+                        <h4>Nous contacter</h4>
+                        <p> Adresse? <br>
+                            7000 Mons, Belgique<br><br>
+                            <strong>Téléphone:</strong> +32 ???<br>
+                            <strong>Email:</strong> ???<br>
+                        </p>
 
-            <div class="col-lg-3 col-md-6 footer-info">
-                <h4>Nous contacter</h4>
-                <p>
-                    Adresse? <br>
-                    7000 Mons, Belgique<br><br>
-                    <strong>Téléphone:</strong> +32 ???<br>
-                    <strong>Email:</strong> ???<br>
-                </p>
+                        <div class="social-links mt-3">
+                            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                            <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                            <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                        </div>
+                    </div>
 
-                <div class="social-links mt-3">
-                    <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                    <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                    <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                    <div class="col-lg-2 col-md-6 footer-links">
+                        <h4>Liens utiles</h4>
+                        <!-- classes identifiant pour manipuler dans css-->
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href='../MainPages/Accueil.php'>Accueil</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href='../MainPages/Enseignement.php'>Enseignement</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href='../MainPages/Evenements.php'>Evenements</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href='../MainPages/Membres.php'>Membres</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href='../MainPages/Recherche.php'>Recherche</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
-            <div class="col-lg-2 col-md-6 footer-links">
-                <h4>Liens utiles</h4>
-                <!-- classes identifiant pour manipuler dans css-->
-                <ul>
-                    <li><i class="bx bx-chevron-right"></i> <a href='../MainPages/Accueil.php'>Accueil</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href='../MainPages/Enseignement.php'>Enseignement</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href='../MainPages/Evenements.php'>Evenements</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href='../MainPages/Membres.php'>Membres</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href='../MainPages/Recherche.php'>Recherche</a></li>
-                </ul>
+            <div class="conteneur2">
+                <div class="copyright">
+                    &copy; Copyright <strong><span>Prescilia</span></strong>. Tous droits réservés
+                </div>
             </div>
-            <!--<div class="col-lg-3 col-md-6 footer-links">
-                            <h4>Nos services</h4>
-                            <ul>
-                                <li><i class="bx bx-chevron-right"></i> <a href='../MainPages/Recherche.php'>Recherche</a></li>
-                                <li><i class="bx bx-chevron-right"></i> <a href='../MainPages/Evenement.php'>Evènements</a></li>
-                                <li><i class="bx bx-chevron-right"></i> <a href='../MainPages/Evenement.php'>Evènements</a></li>
-
-                                <li><i class="bx bx-chevron-right"></i> <a href='../?'>Autres?</a></li>
-                            </ul>
-                        </div>-->
-
-        </div>
-    </div>
-
-    <div class="conteneur2">
-        <div class="copyright">
-            &copy; Copyright <strong><span>Prescilia</span></strong>. Tous droits réservés
-        </div>
-    </div>
-</footer>
-
-
-</body>
+        </footer>
+    </body>
 </html>
