@@ -22,7 +22,7 @@
             $MotCle1 = $ligne['MotCle1'];
             $MotCle2 = $ligne['MotCle2'];
             $DateDefence = $ligne['DateDefence'];
-            $IDPMatricule = $ligne['$IDPMatricule'];
+            $IDPMatricule = $ligne['IDPMatricule'];
             echo "$IDThese, $Titre, $DateDebut, $DateFin, $Description, $CollaborateurAcademique, $CollaborateurIndustrielle, 
                   $NumeroContact, $MotCle1, $MotCle2, $DateDefence, $IDPMatricule";
         }
