@@ -23,3 +23,17 @@ section {
   display: flex;
   text-align: center;
 }
+
+#AllPartenaires {
+  display: flex;
+}
+
+.partenaire{
+  display: flex;
+  flex-direction: column;
+}
+
+.images-partenaire-taille {
+  height: 100px;
+  width: 100px;
+}

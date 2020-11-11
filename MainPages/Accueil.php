@@ -83,6 +83,27 @@
 
         <section>
             <h2>Nos partenaires</h2>
+            <div id="AllPartenaires">
+                <div class="partenaire">
+                    <img src="../Images/facebook.jpg" class="images-partenaire-taille">
+                    <h3>Facebook</h3>
+                    <p>La vie c'est des étapes... La plus douce c'est l'amour...
+                        La plus dure c'est la séparation... La plus pénible c'est les adieux...
+                        La plus belle c'est les retrouvailles.</p>
+                </div>
+                <div class="partenaire">
+                    <img src="../Images/insta.jpg" class="images-partenaire-taille">
+                    <h3>Instagram</h3>
+                    <p>Exige beaucoup de toi-même et attends peu des autres.
+                        Ainsi beaucoup d'ennuis te seront épargnés.</p>
+                </div>
+                <div class="partenaire">
+                    <img src="../Images/twitter.jpg" class="images-partenaire-taille">
+                    <h3>Twitter</h3>
+                    <p>Dans la vie on ne fait pas ce que l'on veut mais on
+                        est responsable de ce que l'on est.</p>
+                </div>
+            </div>
         </section>
 
         <?php include '../templates/footer.php' ?>
