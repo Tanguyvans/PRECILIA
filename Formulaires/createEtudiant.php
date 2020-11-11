@@ -26,7 +26,7 @@
 	}
 ?>
 
-<?php include "../templates/header.php" ?>
+
 <link rel="stylesheet" href="../css/style.css" />
 
 
@@ -60,4 +60,3 @@
 
     <a href="../index.php">Retour en arrière</a>
 
-	<?php include "../templates/footer.php" ?>

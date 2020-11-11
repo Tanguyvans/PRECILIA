@@ -29,7 +29,7 @@ if (isset($_POST['submit'])) {
 }
 ?>
 
-<?php include "../templates/header.php" ?>
+
 <link rel="stylesheet" href="../css/style.css" />
 
 
@@ -84,4 +84,4 @@ if (isset($_POST['submit'])) {
 
 <a href="../index.php">Retour en arrière</a>
 
-<?php include "../templates/footer.php" ?>
+

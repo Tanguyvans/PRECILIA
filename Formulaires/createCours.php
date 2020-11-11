@@ -3,9 +3,7 @@ require "../config.php";
 $bdd = new PDO($dsn, $username, $password);
 
 if (isset($_POST['submit'])) {
-
     try {
-
         $NombreCredit = $_POST['NombreCredit'];
         $NombreHeure=$_POST['NombreHeure'];
         $Titulaire=$_POST['Titulaire'];
@@ -26,8 +24,6 @@ if (isset($_POST['submit'])) {
 
 }
 ?>
-
-<?php include '../templates/header.php' ?>
 <link rel="stylesheet" href="../css/style.css" />
 
 
@@ -75,5 +71,3 @@ if (isset($_POST['submit'])) {
 </form>
 
 <a href="../index.php">Retour en arrière</a>
-
-<?php include "../templates/footer.php" ?>

@@ -34,7 +34,7 @@
                     <div class="active"><a href='../MainPages/Membres.php'>Membres</a></div>
                     <div class="active"><a href='../MainPages/Evenements.php'>Evènements</a></div>
                     <div class="active"><a href='../MainPages/Enseignement.php'>Enseignements</a></div>
-                    <a href="?">Connexion</a>
+                    <div class="active"><a href="../MainPages/Connexion.php">Connexion</a></div>
                 </nav>
             </div>
         </header>

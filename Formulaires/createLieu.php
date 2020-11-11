@@ -23,7 +23,6 @@ if (isset($_POST['submit'])) {
 }
 ?>
 
-<?php include "../templates/header.php" ?>
 <link rel="stylesheet" href="../css/style.css" />
 
 <?php //debut du formulaire, on peut utiliser action: nom de la page php qui v receptionner les donner ?>
@@ -40,5 +39,3 @@ if (isset($_POST['submit'])) {
 </form>
 
 <a href="../index.php">Retour en arrière</a>
-
-<?php include "../templates/footer.php" ?>
