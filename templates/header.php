@@ -1,5 +1,4 @@
 <html lang="fr">
-    <link rel="stylesheet" type="text/css" href="../css/pageH.css"/>
 
     <head>
         <meta charset="utf-8">
@@ -34,7 +33,7 @@
                     <div class="active"><a href='../MainPages/Recherche.php'>Recherche</a></div>
                     <div class="active"><a href='../MainPages/Membres.php'>Membres</a></div>
                     <div class="active"><a href='../MainPages/Evenements.php'>Evènements</a></div>
-                    <div class="active"><a href='../MainPages/Evenements.php'>Evènements</a></div>
+                    <div class="active"><a href='../MainPages/Enseignement.php'>Enseignements</a></div>
                     <a href="?">Connexion</a>
                 </nav>
             </div>
