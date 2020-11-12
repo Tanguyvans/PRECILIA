@@ -14,10 +14,13 @@ h2 {
 section {
   border: 1px solid gray;
 }
-
+p{
+  width: 740px;
+}
 .doubleParagraphe {
   display: flex;
-  text-align: center;
+  text-align: start;
+  justify-content:space-around;
 }
 /*=============Section : Partenaire=============*/
 #AllPartenaires {

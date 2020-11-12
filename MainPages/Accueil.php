@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <!--adaptive response to the width of the device-->
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <title>PRESCILIA - Acceuil</title>
+        <title>PRESCILIA - Accueil</title>
         <!--Description du site lors de la recherche-->
         <meta content="" name="descriptison">
         <meta content="" name="keywords">
