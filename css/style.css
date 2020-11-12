@@ -14,7 +14,7 @@ h2 {
 section {
   border: 1px solid gray;
 }
-p{
+.doubleParagraphe p{
   width: 740px;
 }
 .doubleParagraphe {
@@ -25,6 +25,7 @@ p{
 /*=============Section : Partenaire=============*/
 #AllPartenaires {
   display: flex;
+  justify-content:space-around;
 }
 .partenaire{
   display: flex;
