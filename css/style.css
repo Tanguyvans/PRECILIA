@@ -31,6 +31,9 @@ section {
   display: flex;
   flex-direction: column;
 }
+.partenaire p{
+  width: 500px;
+}
 .images-partenaire-taille {
   height: 100px;
   width: 100px;
