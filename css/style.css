@@ -15,7 +15,12 @@ section {
   border: 1px solid gray;
 }
 .doubleParagraphe p{
-  width: 740px;
+
+  width:90%;
+  min-width: 100px;
+  max-width: 740px;
+  text-align:justify;
+
 }
 .doubleParagraphe {
   display: flex;
@@ -25,14 +30,20 @@ section {
 /*=============Section : Partenaire=============*/
 #AllPartenaires {
   display: flex;
+  flex-wrap:wrap;
   justify-content:space-around;
+  align-items: center;
 }
 .partenaire{
   display: flex;
   flex-direction: column;
+  max-width:400px;
+  justify-content:space-around;
 }
 .partenaire p{
-  width: 500px;
+  text-align:justify;
+  min-width: 100px;
+  max-width:300px;
 }
 .images-partenaire-taille {
   height: 100px;
