@@ -15,36 +15,23 @@ Description de la page
     <body>
     <?php include '../templates/header.php' ?>
     <div class="container-choix-creation">
-        <form action = '' method = 'post'>
-            <input type = 'submit' value = 'Cours' name='BtnCours'>
-        </form>
-        <form action = '' method = 'post'>
-            <input type = 'submit' value = 'Etudiant' name='BtnEtudiant'>
-        </form>
-        <form action = '' method = 'post'>
-            <input type = 'submit' value = 'Evenement' name='BtnEvenement'>
-        </form>
-        <form action = '' method = 'post'>
-            <input type = 'submit' value = 'Lieu' name='BtnLieu'>
-        </form>
-        <form action = '' method = 'post'>
-            <input type = 'submit' value = 'Personnel' name='BtnPersonnel'>
-        </form>
-        <form action = '' method = 'post'>
-            <input type = 'submit' value = 'Projet de recherche' name='BtnProjetderecherche'>
-        </form>
-        <form action = '' method = 'post'>
-            <input type = 'submit' value = 'Stage en entreprise' name='BtnStageenentreprise'>
-        </form>
-        <form action = '' method = 'post'>
-            <input type = 'submit' value = 'Stage de recherche' name='BtnStagederecherche'>
-        </form>
-        <form action = '' method = 'post'>
-            <input type = 'submit' value = 'TFE' name='BtnTFE'>
-        </form>
-        <form action = '' method = 'post'>
-            <input type = 'submit' value = 'These' name='BtnThese'>
-        </form>
+
+        <a href="Ajout.php?f=../Formulaires/createCours">Cours</a>
+        <a href="Ajout.php?f=../Formulaires/createEtudiant">Etudiant</a>
+        <a href="Ajout.php?f=../Formulaires/createEvenement">Evenement</a>
+        <a href="Ajout.php?f=../Formulaires/createLieu">lieu</a>
+        <a href="Ajout.php?f=../Formulaires/createPersonnel">Personnel</a>
+        <a href="Ajout.php?f=../Formulaires/createProjetDeRecherche">ProjetDeRecherche</a>
+        <a href="Ajout.php?f=../Formulaires/createStageEnEntreprise">StageEntreprise</a>
+        <a href="Ajout.php?f=../Formulaires/createStageRecherche">StageRecherche</a>
+        <a href="Ajout.php?f=../Formulaires/createTFE">TFE</a>
+        <a href="Ajout.php?f=../Formulaires/createThese">These</a>
+
+        <?php
+        error_reporting(0);
+        if ($_GET['f']) {include ($_GET['f'].".php");}
+        ?>
+
     </div>
     <?php
     if (isset($_POST['BtnCours'])) {
