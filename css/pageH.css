@@ -1,10 +1,9 @@
 #header {
-
     height: 85px;
     padding: 12px 12px 0px 12px;
     background: #344341;
 }
-#header h3 {
+#header h1 {
     color: #fff;
     font-size: 24px;
     margin: 0 0 20px 0;
@@ -22,20 +21,9 @@
     justify-content:space-around;
     align-items: start;
     height:40px;
-    color:#fff;
-
-}
-#header a{
-    color:#fff;
 }
 
-#header .logo h1 {
-    font-size: 28px;
-    margin: 0;
-    padding: 10px 0;
-    line-height: 1;
-    font-weight: 400;
-    color: #fff;
-
+a{
+    color:#fff;
 }
 

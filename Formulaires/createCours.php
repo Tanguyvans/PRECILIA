@@ -1,13 +1,9 @@
 <?php
+require "../config.php";
+$bdd = new PDO($dsn, $username, $password);
 
 if (isset($_POST['submit'])) {
-    require "../config.php";
-
     try {
-
-        $bdd = new PDO($dsn, $username, $password);
-
-        $IDCours = $_POST['IDCours'];
         $NombreCredit = $_POST['NombreCredit'];
         $NombreHeure=$_POST['NombreHeure'];
         $Titulaire=$_POST['Titulaire'];
@@ -16,11 +12,8 @@ if (isset($_POST['submit'])) {
         $MotCle2=$_POST['MotCle2'];
         $IDPMatricule=$_POST['IDPMatricule'];
 
-
         $sql = "INSERT INTO COURS (IDCours, NombreCredit, NombreHeure , Titulaire, UE, MotCle1, MotCle2, IDPMatricule)
-			VALUES ('$IDCours','$NombreCredit','$NombreHeure','$Titulaire','$UE','$MotCle1','$MotCle2','$IDPMatricule')";
-
-
+			VALUES (NULL,'$NombreCredit','$NombreHeure','$Titulaire','$UE','$MotCle1','$MotCle2','$IDPMatricule')";
 
         $Resultat = $bdd -> exec($sql);
         echo "Ajout reussie avec la base de donnée<br>";
@@ -31,17 +24,12 @@ if (isset($_POST['submit'])) {
 
 }
 ?>
-
-<?php include '../templates/header.php' ?>
 <link rel="stylesheet" href="../css/style.css" />
 
 
 <?php //debut du formulaire, on peut utiliser action: nom de la page php qui v receptionner les donner ?>
 
 <form method="post">
-
-    <label for="IDCours">Identifiant du cours</label>
-    <input type="number" name="IDCours" id="IDCours">
 
     <label for="NombreCredit">Nombre de crédit</label>
     <input type="number" name="NombreCredit" id="NombreCredit">
@@ -61,13 +49,25 @@ if (isset($_POST['submit'])) {
     <label for="MotCle2">Mot-clé 2</label>
     <input type="text" name="MotCle2" id="MotCle2">
 
-    <label for="IDPMatricule">IDPMatricule</label>
-    <input type="number" name="IDPMatricule" id="IDPMatricule">
+    <!--========== connexion PERSONNEL et remplissage d'une liste ==============-->
+    <?php
+      $result = $bdd->query('SELECT IDPMatricule, Nom, Prenom FROM PERSONNEL');
+      foreach ($result as $row) {
+        $IDPM[] = array('IDPMatricule' => $row['IDPMatricule'],'Nom' => $row['Nom'], 'Prenom' => $row['Prenom']);
+      }
+    ?>
 
+    <label for="IDPMatricule">IDPMatricule</label>
+
+    <!--========== Input IDPMatricule ==============-->
+    <select name="IDPMatricule" id="IDPMatricule">
+      <option value="">Select one</option>
+      <?php foreach ($IDPM as $test): ?>
+      <option value="<?php print_r($test['IDPMatricule']); ?>"><?php print_r($test['Nom']);?>  <?php print_r($test['Prenom']) ?></option>
+      <?php endforeach; ?>
+    </select>
 
     <input type="submit" name="submit" value="Submit">
 </form>
 
 <a href="../index.php">Retour en arrière</a>
-
-<?php include "../templates/footer.php" ?>

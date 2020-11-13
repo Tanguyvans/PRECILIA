@@ -1,3 +1,55 @@
+body {
+  font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
+  background-image: url("../Images/back.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+h2 {
+  text-align: center;
+}
+section {
+  border: 1px solid gray;
+}
+.doubleParagraphe p{
+
+  width:90%;
+  min-width: 100px;
+  max-width: 740px;
+  text-align:justify;
+
+}
+.doubleParagraphe {
+  display: flex;
+  text-align: start;
+  justify-content:space-around;
+}
+/*=============Section : Partenaire=============*/
+#AllPartenaires {
+  display: flex;
+  flex-wrap:wrap;
+  justify-content:space-around;
+  align-items: center;
+}
+.partenaire{
+  display: flex;
+  flex-direction: column;
+  max-width:400px;
+  justify-content:space-around;
+}
+.partenaire p{
+  text-align:justify;
+  min-width: 100px;
+  max-width:300px;
+}
+.images-partenaire-taille {
+  height: 100px;
+  width: 100px;
+}
+/*==============================================*/
 label {
   display: block;
   margin: 5px 0;

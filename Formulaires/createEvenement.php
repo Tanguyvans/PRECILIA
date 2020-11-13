@@ -1,13 +1,11 @@
 <?php
+require "../config.php";
+$bdd = new PDO($dsn, $username, $password);
 
 if (isset($_POST['submit'])) {
-    require "../config.php";
 
     try {
 
-        $bdd = new PDO($dsn, $username, $password);
-
-        $IDEvenement = $_POST['IDEvenement'];
         $Type  = $_POST['Type'];
         $Nom = $_POST['Nom'];
         $Acronyme = $_POST['Acronyme'];
@@ -31,16 +29,13 @@ if (isset($_POST['submit'])) {
 }
 ?>
 
-<?php include "../templates/header.php" ?>
+
 <link rel="stylesheet" href="../css/style.css" />
 
 
 <?php //debut du formulaire, on peut utiliser action: nom de la page php qui v receptionner les donner ?>
 
 <form method="post">
-
-    <label for="IDEvenement">Identifiant de l'évènement</label>
-    <input type="number" name="IDEvenement" id="IDEvenement">
 
     <label for="Type">Type d'evenement</label>
     <input type="text" name="Type" id="Type">
@@ -66,12 +61,27 @@ if (isset($_POST['submit'])) {
     <label for="DateDebut">Date de début</label>
     <input type="date" name="DateDebut" id="DateDebut">
 
-    <label for="IDLieu">Identifiant du lieu de l'évènement</label>
-    <input type="number" name="IDLieu" id="IDLieu">
+    <!--========== connexion Lieu et remplissage d'une liste ==============-->
+    <?php
+      $result = $bdd->query('SELECT IDLieu, Ville, Pays FROM LIEU');
+      foreach ($result as $row) {
+        $IDL[] = array('IDLieu' => $row['IDLieu'],'Ville' => $row['Ville'], 'Pays' => $row['Pays']);
+      }
+    ?>
+
+    <label for="IDLieu">IDLieu</label>
+
+    <!--========== Input IDPMatricule ==============-->
+    <select name="IDLieu" id="IDLieu">
+      <option value="">Select one</option>
+      <?php foreach ($IDL as $test): ?>
+      <option value="<?php print_r($test['IDLieu']); ?>"><?php print_r($test['Ville']);?>  <?php print_r($test['Pays']) ?></option>
+      <?php endforeach; ?>
+    </select>
 
     <input type="submit" name="submit" value="Submit">
 </form>
 
 <a href="../index.php">Retour en arrière</a>
 
-<?php include "../templates/footer.php" ?>
+

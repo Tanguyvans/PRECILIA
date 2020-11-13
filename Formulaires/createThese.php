@@ -1,13 +1,12 @@
 <?php
 
+require "../config.php";
+$bdd = new PDO($dsn, $username, $password);
+
 if (isset($_POST['submit'])) {
-    require "../config.php";
 
     try {
 
-        $bdd = new PDO($dsn, $username, $password);
-
-        $IDThese = $_POST['IDThese'];
         $Titre  = $_POST['Titre'];
         $DateDebut = $_POST['DateDebut'];
         $DateFin = $_POST['DateFin'];
@@ -34,15 +33,11 @@ if (isset($_POST['submit'])) {
 }
 ?>
 
-<?php include "../templates/header.php" ?>
 <link rel="stylesheet" href="../css/style.css" />
 
 <?php //debut du formulaire, on peut utiliser action: nom de la page php qui v receptionner les donner ?>
 
 <form method="post">
-
-    <label for="IDThese">Identifiant de la thèse</label>
-    <input type="number" name="IDThese" id="IDThese">
 
     <label for="Titre">Titre</label>
     <input type="text" name="Titre" id="Titre">
@@ -74,13 +69,25 @@ if (isset($_POST['submit'])) {
     <label for="DateDefence">Date de défense</label>
     <input type="date" name="DateDefence" id="DateDefence">
 
+    <?php
+      $result = $bdd->query('SELECT IDPMatricule, Nom, Prenom FROM PERSONNEL');
+      foreach ($result as $row) {
+        $IDPM[] = array('IDPMatricule' => $row['IDPMatricule'],'Nom' => $row['Nom'], 'Prenom' => $row['Prenom']);
+      }
+    ?>
+
     <label for="IDPMatricule">IDPMatricule</label>
-    <input type="number" name="IDPMatricule" id="IDPMatricule">
+
+    <!--========== Input IDPMatricule ==============-->
+    <select name="IDPMatricule" id="IDPMatricule">
+      <option value="">Select one</option>
+      <?php foreach ($IDPM as $test): ?>
+      <option value="<?php print_r($test['IDPMatricule']); ?>"><?php print_r($test['Nom']);?>  <?php print_r($test['Prenom']) ?></option>
+      <?php endforeach; ?>
+    </select>
 
     <input type="submit" name="submit" value="Submit">
 
 </form>
 
 <a href="../index.php">Retour en arrière</a>
-
-<?php include "../templates/footer.php" ?>

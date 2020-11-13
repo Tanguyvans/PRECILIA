@@ -1,21 +1,13 @@
 <?php
+require "../config.php";
+$bdd = new PDO($dsn, $username, $password);
 
 if (isset($_POST['submit'])) {
-    require "../config.php";
 
     try {
-
-        $bdd = new PDO($dsn, $username, $password);
-
-        $IDProjet =$_POST['IDProjet'];
         $Titre = $_POST['Titre'];
-
         $DateDebut  = $_POST['DateDebut'];
-        $DateDebut_new = date('Y-m-d', strtotime($DateDebut));
-
         $DateFin = $_POST['DateFin'];
-        $DateFin_new = date('Y-m-d', strtotime($DateFin));
-
 				$CollaborateurAcademique = $_POST['CollaborateurAcademique'];
         $CollaborateurIndustrielle = $_POST['CollaborateurIndustrielle'];
 				$Description = $_POST['Description'];
@@ -35,17 +27,12 @@ if (isset($_POST['submit'])) {
 
 }
 ?>
-
-<?php include "../templates/header.php" ?>
 <link rel="stylesheet" href="../css/style.css" />
 
 
 <?php //debut du formulaire, on peut utiliser action: nom de la page php qui v receptionner les donner ?>
 
 <form method="post">
-
-    <label for="IDProjet">IDProjet</label>
-    <input type="number" name="IDProjet" id="IDProjet">
 
     <label for="Titre">Titre</label>
     <input type="text" name="Titre" id="Titre">
@@ -78,5 +65,3 @@ if (isset($_POST['submit'])) {
 </form>
 
 <a href="../index.php">Retour en arrière</a>
-
-<?php include "../templates/footer.php" ?>
