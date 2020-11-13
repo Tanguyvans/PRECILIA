@@ -33,49 +33,7 @@ Description de la page
         ?>
 
     </div>
-    <?php
-    if (isset($_POST['BtnCours'])) {
-        require "../config.php";
-        include '../Formulaires/createCours.php';
-    }
-    if (isset($_POST['BtnEtudiant'])) {
-        require "../config.php";
-        include '../Formulaires/createEtudiant.php';
-    }
-    if (isset($_POST['BtnEvenement'])) {
-        require "../config.php";
-        include '../Formulaires/BtnEvenement.php';
-    }
-    if (isset($_POST['BtnLieu'])) {
-        require "../config.php";
-        include '../Formulaires/createLieu.php';
-    }
-    if (isset($_POST['BtnPersonnel'])) {
-        require "../config.php";
-        include '../Formulaires/createPersonnel.php';
-    }
-    if (isset($_POST['BtnProjetderecherche'])) {
-        require "../config.php";
-        include '../Formulaires/createProjetDeRecherche.php';
-    }
-    if (isset($_POST['BtnStageenentreprise'])) {
-        require "../config.php";
-        include '../Formulaires/createStageEnEntreprise.php';
-    }
-    if (isset($_POST['BtnStagederecherche'])) {
-        require "../config.php";
-        include '../Formulaires/createStageRecherche.php';
-    }
-    if (isset($_POST['BtnTFE'])) {
-        require "../config.php";
-        include '../Formulaires/createTFE.php';
-    }
-    if (isset($_POST['BtnThese'])) {
-        require "../config.php";
-        include '../Formulaires/createThese.php';
-    }
 
-    ?>
     <?php include '../templates/footer.php' ?>
     </body>
 </html>
