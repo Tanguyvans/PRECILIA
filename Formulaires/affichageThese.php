@@ -8,26 +8,52 @@
 
         echo "le nombre de these dans la base de donnees est : ".$resultat->rowCount().'</strong>';
         echo "<br>";
-        echo "<br>";
-        while($ligne = $resultat->fetch(PDO::FETCH_ASSOC))
-        {
-            $IDThese = $ligne['IDThese'];
-            $Titre = $ligne['Titre'];
-            $DateDebut = $ligne['DateDebut'];
-            $DateFin = $ligne['DateFin'];
-            $Description = $ligne['Description'];
-            $CollaborateurAcademique = $ligne['CollaborateurAcademique'];
-            $CollaborateurIndustrielle = $ligne['CollaborateurIndustrielle'];
-            $NumeroContact = $ligne['NumeroContact'];
-            $MotCle1 = $ligne['MotCle1'];
-            $MotCle2 = $ligne['MotCle2'];
-            $DateDefence = $ligne['DateDefence'];
-            $IDPMatricule = $ligne['$IDPMatricule'];
-            echo "$IDThese, $Titre, $DateDebut, $DateFin, $Description, $CollaborateurAcademique, $CollaborateurIndustrielle, 
-                  $NumeroContact, $MotCle1, $MotCle2, $DateDefence, $IDPMatricule";
-        }
     }
     catch (Exception $e){
         die('Erreur : '.$e->getMessage());
     }
 ?>
+
+<section>
+    <h1>Tableau</h1>
+    <!-- contruction de la table-->
+    <table>
+        <tr>
+            <th>Titre</th>
+            <th>Date de debut</th>
+            <th>date de fin</th>
+            <th>Description</th>
+            <th>Collaboration academique</th>
+            <th>Collaboration industrielle</th>
+            <th>description</th>
+            <th>Numero de contact</th>
+            <th>Mot cle 1</th>
+            <th>Mot cle 2</th>
+            <th>Date de defence</th>
+            <th>IDPMatricule</th>
+        </tr>
+        <!-- PHP CODE pour remplir la table-->
+        <?php
+        while($ligne = $resultat->fetch(PDO::FETCH_ASSOC))
+        {
+            ?>
+            <tr>
+                <!--remplissage de la table avec la base de donnée-->
+                <td><?php echo $ligne['Titre'];?></td>
+                <td><?php echo $ligne['DateDebut'];?></td>
+                <td><?php echo $ligne['DateFin'];?></td>
+                <td><?php echo $ligne['Description'];?></td>
+                <td><?php echo $ligne['CollaborateurAcademique'];?></td>
+                <td><?php echo $ligne['CollaborateurIndustrielle'];?></td>
+                <td><?php echo $ligne['Description'];?></td>
+                <td><?php echo $ligne['NumeroContact'];?></td>
+                <td><?php echo $ligne['MotCle1'];?></td>
+                <td><?php echo $ligne['MotCle2'];?></td>
+                <td><?php echo $ligne['DateDefence'];?></td>
+                <td><?php echo $ligne['IDPMatricule'];?></td>
+            </tr>
+            <?php
+        }
+        ?>
+    </table>
+</section>

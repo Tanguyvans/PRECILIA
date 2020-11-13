@@ -7,31 +7,16 @@
     <body>
         <?php include '../templates/header.php' ?>
 
-        <form action = '' method = 'post'>
-            <input type = 'submit' value = 'These' name='BtnThese'>
-        </form>
-        <form action = '' method = 'post'>
-            <input type = 'submit' value = 'ProjetDeRecherche' name='ProjetDeRecherche'>
-        </form>
-        <form action = '' method = 'post'>
-            <input type = 'submit' value = 'StageEnEntreprise' name='StageEnEntreprise'>
-        </form>
+        <a href="Recherche.php?f=../Formulaires/AffichageThese">These</a>
+        <a href="Recherche.php?f=../Formulaires/AffichageProjetDeRecherche">ProjetRecherche</a>
+        <a href="Recherche.php?f=../Formulaires/AffichageStageEnEntreprise">Stage en entreprise</a>
 
         <?php
-            if (isset($_POST['BtnThese'])) {
-              include '../Formulaires/affichageThese.php';
-            }
+        error_reporting(0);
+        if ($_GET['f']) {include ($_GET['f'].".php");}
         ?>
-        <?php
-            if (isset($_POST['ProjetDeRecherche'])) {
-              include '../Formulaires/affichageProjetDeRecherche.php';
-            }
-        ?>
-        <?php
-            if (isset($_POST['StageEnEntreprise'])) {
-              include '../Formulaires/affichageStageEnEntreprise.php';
-            }
-        ?>
+
+        <?php include '../templates/footer.php' ?>
 
         <?php include '../templates/footer.php' ?>
     </body>

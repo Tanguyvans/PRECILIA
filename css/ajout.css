@@ -1,7 +1,20 @@
+body{
+    color:black;
+}
 form {
     display: inline-block;
 }
-
-a{
-    color: #333333;
+.container-choix-creation a{
+    min-height:50px;
+    max-width:250px;
+    display:flex;
+    flex-direction: column;
+    justify-content:space-around;
+    color:black;
+}
+.Ensemble{
+    display:flex;
+}
+.php{
+    margin: auto;
 }
