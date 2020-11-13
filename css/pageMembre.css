@@ -1,0 +1,8 @@
+.wrapper {
+    display: grid;
+
+
+    grid-template-columns: 1fr 1fr 1fr; /*ici,trois colonne qui prennent toutes la largeur dispo*/
+
+
+}
