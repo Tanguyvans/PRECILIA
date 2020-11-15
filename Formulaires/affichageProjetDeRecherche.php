@@ -8,7 +8,6 @@
 
         $sql = "SELECT * FROM ProjetdeRecherche";
         $resultat = $bdd->query($sql);
-        echo "le nombre de Projets de recherches dans la base de donnees est : ".$resultat->rowCount().'</strong>';
 
     }
     catch (Exception $e){
@@ -17,7 +16,6 @@
 ?>
 
 <section>
-        <h1>Tableau</h1>
         <!-- contruction de la table-->
         <table>
             <tr>

@@ -6,8 +6,6 @@ try{
     $sql = "SELECT * FROM Personnel";
     $resultat = $bdd->query($sql);
 
-    echo "le nombre de these dans la base de donnees est : ".$resultat->rowCount().'</strong>';
-    echo "<br>";
 }
 catch (Exception $e){
     die('Erreur : '.$e->getMessage());
@@ -15,7 +13,6 @@ catch (Exception $e){
 ?>
 
 <section>
-    <h1>Tableau</h1>
     <!-- contruction de la table-->
     <table>
         <tr>

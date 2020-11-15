@@ -1,7 +1,5 @@
-<?php include '../templates/header.php' ?>
-    <!DOCTYPE html>
-    <html lang="fr">
-
+<!DOCTYPE html>
+<html lang="fr">
     <head>
         <meta charset="utf-8">
         <!--adaptive response to the width of the device-->
@@ -10,24 +8,24 @@
         <!--Description du site lors de la recherche-->
         <meta content="" name="descriptison">
         <meta content="" name="keywords">
-        <link rel="stylesheet" href="../css/pageMembre.css"/>
-
+        <link rel="stylesheet" href="../css/style.css"/>
     </head>
-  <body>
-    <?php include '../templates/header.php' ?>
-    <div class="wrapper">
-        <div>Un</div>
-        <div>Deux</div>
-        <div>Trois</div>
-        <div>Quatre</div>
-        <div>Cinq</div>
-    </div>
 
+    <body>
+        <?php include '../templates/header.php' ?>
+            <!-- <div class="wrapper">
+            <div>Un</div>
+            <div>Deux</div>
+            <div>Trois</div>
+            <div>Quatre</div>
+            <div>Cinq</div>
+            </div> -->
+        <h2>Personnel</h2>
+        <?php include '../Formulaires/affichagePersonnel.php'?>
 
+        <h2>Etudiant</h2>
+        <?php include '../Formulaires/affichageEtudiant.php'?>
 
-    <?php include '../templates/footer.php' ?>
-  </body>
-
-</html>
-
+        <?php include '../templates/footer.php' ?>
+    </body>
 </html>

@@ -1,3 +1,4 @@
+/* parametre de la page générale */
 body {
   font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
   background-color: white;
@@ -6,22 +7,25 @@ body {
   padding: 0;
 }
 
-a .lienAffichage{
-  color: black;
-  text-decoration: underline;
-  text-decoration-color: black;
-}
-.container-lienAffichage{
-  display: flex;
-  justify-content:space-around;
-}
+/* centrage des titres */
 h2 {
   text-align: center;
 }
+
+/* mise de bordure autour des section */
 section {
   border: 1px solid gray;
 }
 
+/* parametre des tableaux d'affichage */
+table {
+  border-style: solid;
+  border-collapse: collapse;
+  empty-cells: show;
+}
+
+/* === ACCUEIL.PHP === */
+/* séparation des paragraphes en deux parties */
 .doubleParagraphe p{
   width:90%;
   min-width: 100px;
@@ -33,7 +37,7 @@ section {
   text-align: start;
   justify-content:space-around;
 }
-/*=============Section : Partenaire=============*/
+/* section partenaire */
 #AllPartenaires {
   display: flex;
   flex-wrap:wrap;
@@ -55,14 +59,27 @@ section {
   height: 100px;
   width: 100px;
 }
-/*==============================================*/
+
+/* === RECHERCHE.PHP === */
+/* parametre des bouton d'affichage */
+a .lienAffichage{
+  color: black;
+  text-decoration: underline;
+  text-decoration-color: black;
+}
+.container-lienAffichage{
+  display: flex;
+  justify-content:space-around;
+}
+
+/* === MEMBRE.PHP === */
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /*ici,trois colonne qui prennent toutes la largeur dispo*/
+}
+
 label {
   display: block;
   margin: 5px 0;
 }
 
-table {
-  border-style: solid;
-  border-collapse: collapse;
-  empty-cells: show;
-}

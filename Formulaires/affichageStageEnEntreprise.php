@@ -8,7 +8,6 @@
 
         $sql = "SELECT * FROM StageEnEntreprise";
         $resultat = $bdd->query($sql);
-        echo "le nombre de Stage en entreprise dans la base de donnees est : ".$resultat->rowCount().'</strong>';
 
     }
     catch (Exception $e){
@@ -17,9 +16,7 @@
 ?>
 
 <section>
-        <h1>Tableau</h1>
-
-        <!-- Contruction de la table-->
+     <!-- Contruction de la table-->
         <table>
             <tr>
                 <th>Date de debut</th>

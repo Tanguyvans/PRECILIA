@@ -10,21 +10,17 @@
         <meta content="" name="descriptison">
         <meta content="" name="keywords">
         <link rel="stylesheet" href="../css/style.css"/>
-        <style>
-            .mySlides{display: none;}
-        </style>
     </head>
 
     <body>
         <?php include '../templates/header.php' ?>
-        <!--========== Section carousel ==============-->
-        <section class="actu">
-            <div class="w3-content">
+
+        <section>
+            <div>
                 <img class="mySlides" src="../Images/ph1.jpg" style="width:100%">
                 <img class="mySlides" src="../Images/ph2.jpg" style="width:100%">
                 <img class="mySlides" src="../Images/ph3.jpg" style="width:100%">
             </div>
-
             <script>
                 var slideIndex = 0;
                 carousel();
@@ -64,11 +60,9 @@
             </div>
         </section>
 
-
         <section>
             <h2>Nos projets</h2>
         </section>
-
 
         <section>
             <h2>Que faisons-nous?</h2>
@@ -96,11 +90,6 @@
                         J'enfonce mes éperons dans les flancs de mon cheval. Invaincu, incapable de demander grâce,
                         c'est contre toi que je m'élance, ô Mort. "</p></div>
             </div>
-        </section>
-
-
-        <section>
-            <h2>Notre équipe</h2>
         </section>
 
         <section>
