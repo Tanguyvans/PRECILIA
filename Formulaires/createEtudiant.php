@@ -46,7 +46,7 @@
 		<label for="Email">Adresse email</label>
 		<input type="text" name="Email" id="Email">
 
-		<p>
+        <p>
        <label for="Annee">Choisissez l'année d'étude</label><br />
        <select name="Annee" id="Annee">
            <option value="2e Master">2e Master</option>

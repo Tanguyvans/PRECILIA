@@ -11,9 +11,9 @@
 <!--==========================================
 Description de la page
 =============================================-->
-<body>
-<?php include '../templates/header.php' ?>
-<div class="Ensemble">
+ <body>
+  <?php include '../templates/header.php' ?>
+  <div class="Ensemble">
     <div class="container-choix-creation">
         <a href="Ajout.php?f=../Formulaires/createCours">Cours</a>
         <a href="Ajout.php?f=../Formulaires/createEtudiant">Etudiant</a>
@@ -32,7 +32,7 @@ Description de la page
         if ($_GET['f']) {include ($_GET['f'].".php");}
         ?>
     </div>
-</div>
-<?php include '../templates/footer.php' ?>
-</body>
+  </div>
+  <?php include '../templates/footer.php' ?>
+ </body>
 </html>
