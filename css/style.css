@@ -1,12 +1,19 @@
 body {
   font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
-  background-image: url("../Images/back.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  color: #333;
+  background-color: white;
+  color: #333333;
   margin: 0;
   padding: 0;
+}
+
+a .lienAffichage{
+  color: black;
+  text-decoration: underline;
+  text-decoration-color: black;
+}
+.container-lienAffichage{
+  display: flex;
+  justify-content:space-around;
 }
 h2 {
   text-align: center;
@@ -14,13 +21,12 @@ h2 {
 section {
   border: 1px solid gray;
 }
-.doubleParagraphe p{
 
+.doubleParagraphe p{
   width:90%;
   min-width: 100px;
   max-width: 740px;
   text-align:justify;
-
 }
 .doubleParagraphe {
   display: flex;
@@ -53,4 +59,10 @@ section {
 label {
   display: block;
   margin: 5px 0;
+}
+
+table {
+  border-style: solid;
+  border-collapse: collapse;
+  empty-cells: show;
 }

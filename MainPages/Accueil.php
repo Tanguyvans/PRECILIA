@@ -10,15 +10,37 @@
         <meta content="" name="descriptison">
         <meta content="" name="keywords">
         <link rel="stylesheet" href="../css/style.css"/>
-
-
+        <style>
+            .mySlides{display: none;}
+        </style>
     </head>
 
     <body>
         <?php include '../templates/header.php' ?>
         <!--========== Section carousel ==============-->
-        <section id="actu">
+        <section class="actu">
+            <div class="w3-content">
+                <img class="mySlides" src="../Images/ph1.jpg" style="width:100%">
+                <img class="mySlides" src="../Images/ph2.jpg" style="width:100%">
+                <img class="mySlides" src="../Images/ph3.jpg" style="width:100%">
+            </div>
 
+            <script>
+                var slideIndex = 0;
+                carousel();
+
+                function carousel() {
+                    var i;
+                    var x = document.getElementsByClassName("mySlides");
+                    for (i = 0; i < x.length; i++) {
+                        x[i].style.display = "none";
+                    }
+                    slideIndex++;
+                    if (slideIndex > x.length) {slideIndex = 1}
+                    x[slideIndex-1].style.display = "block";
+                    setTimeout(carousel, 3000); // Change image every 2 seconds
+                }
+            </script>
         </section>
 
         <section>
