@@ -38,7 +38,12 @@ if (isset($_POST['submit'])) {
 <form method="post">
 
     <label for="Type">Type d'evenement</label>
-    <input type="text" name="Type" id="Type">
+    <select name="Type" id="type">
+        <option value="">Select one</option>
+        <option value="Hackathon">Hackathon</option>
+        <option value="Seminaire">Seminaire</option>
+        <option value="Workshop">Workshop</option>
+    </select>
 
     <label for="Nom">Nom</label>
     <input type="text" name="Nom" id="Nom">

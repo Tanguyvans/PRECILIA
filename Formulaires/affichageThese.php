@@ -1,8 +1,10 @@
 <?php
     require "../config.php";
-    try{
-        $bdd = new PDO($dsn, $username, $password);
+    $bdd = new PDO($dsn, $username, $password);
+?>
 
+<?php
+    try{
         $sql = "SELECT * FROM These";
         $resultat = $bdd->query($sql);
 
@@ -12,6 +14,44 @@
     }
 ?>
 
+<form method="post">
+    <!--========== Mot cle 1 ==============-->
+    <?php
+    $result = $bdd->query('SELECT DISTINCT MotCle1 FROM These');
+    foreach ($result as $row) {
+        $MC1[] = array('MotCle1' => $row['MotCle1']);
+    }
+    ?>
+
+    <label for="MotCle1">MotCle1</label>
+    <select name="MotCle1" id="MotCle1">
+        <option value="">Select one</option>
+        <?php foreach ($MC1 as $test): ?>
+            <option value="<?php print_r($test['MotCle1']); ?>"><?php print_r($test['MotCle1']);?></option>
+        <?php endforeach; ?>
+    </select>
+    <!--========== Mot cle 2 ==============-->
+    <?php
+    $result = $bdd->query('SELECT DISTINCT MotCle2 FROM These');
+    foreach ($result as $row) {
+        $MC2[] = array('MotCle2' => $row['MotCle2']);
+    }
+    ?>
+
+    <label for="MotCle2">MotCle2</label>
+    <select name="MotCle2" id="MotCle2">
+        <option value="">Select one</option>
+        <?php foreach ($MC2 as $test): ?>
+            <option value="<?php print_r($test['MotCle2']); ?>"><?php print_r($test['MotCle2']);?></option>
+        <?php endforeach; ?>
+    </select>
+
+    <input type="submit" name="submit" value="Submit">
+
+</form>
+
+
+<!--========== Tableau ==============-->
 <section>
     <!-- contruction de la table-->
     <table>
