@@ -8,7 +8,7 @@
             $Promo  = $_POST['Promo'];
             $These = $_POST['These'];
 
-            $sql = "INSERT INTO promoteur_these (IDPMatricule, IDThese) VALUES ('Promo', 'These')";
+            $sql = "INSERT INTO promoteur_these (IDPMatricule, IDThese) VALUES ('$Promo', '$These')";
             $Resultat = $bdd -> exec($sql);
 
             echo "Ajout reussie avec la base de donnée<br>";

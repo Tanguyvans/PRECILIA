@@ -33,6 +33,9 @@
         <li>
             <a href="Formulaires/jointurePromoThese.php"><strong>jointurePromoteur_These</strong></a> - ajouter une jointure
         </li>
+        <li>
+            <a href="Formulaires/jointureMembreEvent.php"><strong>jointureMembre_Event</strong></a> - ajouter une jointure
+        </li>
     </ul>
   </body>
 </html>
