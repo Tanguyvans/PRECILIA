@@ -30,6 +30,9 @@
       <li>
         <a href="Formulaires/createThese.php"><strong>CreateThese</strong></a> - ajouter une these
       </li>
+        <li>
+            <a href="Formulaires/jointurePromoThese.php"><strong>jointurePromoteur_These</strong></a> - ajouter une jointure
+        </li>
     </ul>
   </body>
 </html>
