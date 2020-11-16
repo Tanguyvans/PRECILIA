@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
-
+<link rel="stylesheet" href="../css/affichagetables.css"/>
 <?php
     require "../config.php";
     try{
@@ -51,3 +51,4 @@
             ?>
       </table>
 </section>
+</html>

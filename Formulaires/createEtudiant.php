@@ -9,9 +9,9 @@
 
 		  $IDEMatricule = $_POST['IDEMatricule'];
 		  $Nom  = $_POST['Nom'];
-		 	$Prenom = $_POST['Prenom'];
+		  $Prenom = $_POST['Prenom'];
 		  $Email = $_POST['Email'];
-			$Annee = $_POST['Annee'];
+		  $Annee = $_POST['Annee'];
 
 			$sql = "INSERT INTO ETUDIANT (IDEMatricule, Nom, Prenom, Email, Annee)
 			VALUES ('$IDEMatricule','$Nom','$Prenom','$Email','$Annee')";
