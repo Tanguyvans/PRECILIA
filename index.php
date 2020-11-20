@@ -31,10 +31,16 @@
         <a href="Formulaires/createThese.php"><strong>CreateThese</strong></a> - ajouter une these
       </li>
         <li>
-            <a href="Formulaires/jointurePromoThese.php"><strong>jointurePromoteur_These</strong></a> - ajouter une jointure
+            <a href="Formulaires/jointurePromoThese.php"><strong>jointurePromoThese</strong></a> - ajouter une jointure
         </li>
         <li>
-            <a href="Formulaires/jointureMembreEvent.php"><strong>jointureMembre_Event</strong></a> - ajouter une jointure
+            <a href="Formulaires/jointureMembreEvent.php"><strong>jointureMembreEvent</strong></a> - ajouter une jointure
+        </li>
+        <li>
+            <a href="Formulaires/jointurePersonnelCours.php"><strong>jointurePersonnelCours</strong></a> - ajouter une jointure
+        </li>
+        <li>
+            <a href="Formulaires/jointurePersonnelProjet.php"><strong>jointurePersonnelProjet</strong></a> - ajouter une jointure
         </li>
     </ul>
   </body>
