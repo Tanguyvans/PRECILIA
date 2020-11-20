@@ -12,27 +12,51 @@
 Description de la page
 =============================================-->
  <body>
-  <?php include '../templates/header.php' ?>
-  <div class="Ensemble">
-    <div class="container-choix-creation">
-        <a href="Ajout.php?f=../Formulaires/createCours">Cours</a>
-        <a href="Ajout.php?f=../Formulaires/createEtudiant">Etudiant</a>
-        <a href="Ajout.php?f=../Formulaires/createEvenement">Evenement</a>
-        <a href="Ajout.php?f=../Formulaires/createLieu">Lieu</a>
-        <a href="Ajout.php?f=../Formulaires/createPersonnel">Personnel</a>
-        <a href="Ajout.php?f=../Formulaires/createProjetDeRecherche">ProjetDeRecherche</a>
-        <a href="Ajout.php?f=../Formulaires/createStageEnEntreprise">StageEntreprise</a>
-        <a href="Ajout.php?f=../Formulaires/createStageRecherche">StageRecherche</a>
-        <a href="Ajout.php?f=../Formulaires/createTFE">TFE</a>
-        <a href="Ajout.php?f=../Formulaires/createThese">These</a>
-    </div>
-    <div class="php">
-        <?php
-        error_reporting(0);
-        if ($_GET['f']) {include ($_GET['f'].".php");}
-        ?>
-    </div>
+
+  <div class="tout">
+
+      <div class="haut">
+          <?php include '../templates/header.php' ?>
+      </div>
+
+      <div class="milieu">
+          <div class="toolbar">
+              <?php include '../templates/toolbar.php' ?>
+
+          </div>
+
+
+          <div class="page">
+
+              <div class="Ensemble">
+
+                <div class="container-choix-creation">
+                    <a href="Ajout.php?f=../Formulaires/createCours">Cours</a>
+                    <a href="Ajout.php?f=../Formulaires/createEtudiant">Etudiant</a>
+                    <a href="Ajout.php?f=../Formulaires/createEvenement">Evenement</a>
+                    <a href="Ajout.php?f=../Formulaires/createLieu">Lieu</a>
+                    <a href="Ajout.php?f=../Formulaires/createPersonnel">Personnel</a>
+                    <a href="Ajout.php?f=../Formulaires/createProjetDeRecherche">ProjetDeRecherche</a>
+                    <a href="Ajout.php?f=../Formulaires/createStageEnEntreprise">StageEntreprise</a>
+                    <a href="Ajout.php?f=../Formulaires/createStageRecherche">StageRecherche</a>
+                    <a href="Ajout.php?f=../Formulaires/createTFE">TFE</a>
+                    <a href="Ajout.php?f=../Formulaires/createThese">These</a>
+                </div>
+
+                <div class="php">
+                    <?php
+                    error_reporting(0);
+                    if ($_GET['f']) {include ($_GET['f'].".php");}
+                    ?>
+                </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="bas">
+          <?php include '../templates/footer.php' ?>
+      </div>
+
   </div>
-  <?php include '../templates/footer.php' ?>
  </body>
 </html>

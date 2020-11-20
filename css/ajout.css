@@ -2,9 +2,6 @@ body{
     color:black;
 
 }
-form {
-    display: inline-block;
-}
 .container-choix-creation a{
     min-height:50px;
     max-width:250px;
@@ -17,6 +14,8 @@ form {
 .Ensemble{
     display:flex;
 }
-.php{
-    margin: auto;
+
+.tout{
+
+    display: flex;
 }
