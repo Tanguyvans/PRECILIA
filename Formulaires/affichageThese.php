@@ -8,38 +8,45 @@
     <?php
     $result = $bdd->query('SELECT DISTINCT MotCle1 FROM These');
     foreach ($result as $row) {
-        $MCA[] = array('MotCle1' => $row['MotCle1']);
+        $MCA[] = array('MotCleP' => $row['MotCle1']);
     }
     $result = $bdd->query('SELECT DISTINCT MotCle2 FROM These');
     foreach ($result as $row) {
-        $MCB[] = array('MotCle1' => $row['MotCle2']);
+        $MCB[] = array('MotCleP' => $row['MotCle2']);
     }
 
-    $MC1 = array_merge($MCA, $MCB);
-    $MC1 = array_unique($MC1, SORT_REGULAR);
+    $MCP = array_merge($MCA, $MCB);
+    $MCP = array_unique($MCP, SORT_REGULAR);
     ?>
 
-    <label for="MotCle1">MotCle1</label>
-    <select name="MotCle1" id="MotCle1">
+    <label for="MotCleP">MotCle principal</label>
+    <select name="MotCleP" id="MotCleP">
         <option value="All">Select one</option>
-        <?php foreach ($MC1 as $test): ?>
-            <option value="<?php print_r($test['MotCle1']); ?>"><?php print_r($test['MotCle1']);?></option>
+        <?php foreach ($MCP as $test): ?>
+            <option value="<?php print_r($test['MotCleP']); ?>"><?php print_r($test['MotCleP']);?></option>
         <?php endforeach; ?>
     </select>
 
     <!--========== Mot cle 2 ==============-->
     <?php
+    $result = $bdd->query('SELECT DISTINCT MotCle1 FROM These');
+    foreach ($result as $row) {
+        $MCC[] = array('MotCleS' => $row['MotCle1']);
+    }
     $result = $bdd->query('SELECT DISTINCT MotCle2 FROM These');
     foreach ($result as $row) {
-        $MC2[] = array('MotCle2' => $row['MotCle2']);
+        $MCD[] = array('MotCleS' => $row['MotCle2']);
     }
+
+    $MCS = array_merge($MCC, $MCD);
+    $MCS = array_unique($MCS, SORT_REGULAR);
     ?>
 
-    <label for="MotCle2">MotCle2</label>
-    <select name="MotCle2" id="MotCle2">
+    <label for="MotCleS">MotCle secondaire</label>
+    <select name="MotCleS" id="MotCleS">
         <option value="All">Select one</option>
-        <?php foreach ($MC2 as $test): ?>
-            <option value="<?php print_r($test['MotCle2']); ?>"><?php print_r($test['MotCle2']);?></option>
+        <?php foreach ($MCS as $test): ?>
+            <option value="<?php print_r($test['MotCleS']); ?>"><?php print_r($test['MotCleS']);?></option>
         <?php endforeach; ?>
     </select>
 
@@ -50,26 +57,24 @@
 <?php
 if (isset($_POST['Recherche'])) {
     try{
-        $MotCle1  = $_POST['MotCle1'];
-        $MotCle2 = $_POST['MotCle2'];
+        $MotCleP  = $_POST['MotCleP'];
+        $MotCleS = $_POST['MotCleS'];
 
-        if($MotCle1 == "All" and $MotCle2 == "All"){
+        if($MotCleP == "All" and $MotCleS == "All"){
             $sql = "SELECT * FROM These";
             $resultat = $bdd->query($sql);
-        }elseif ($MotCle1 != "All" and $MotCle2 == "All"){
-            $sql = "SELECT * FROM These WHERE MotCle1= '$MotCle1'";
+        }elseif ($MotCleP != "All" and $MotCleS == "All"){
+            $sql = "SELECT * FROM These WHERE MotCle1='$MotCleP' OR MotCleS='$MotCleP'";
             $resultat = $bdd->query($sql);
-        }elseif ($MotCle1 == 'All' and $MotCle2 != "All"){
-            $sql = "SELECT * FROM These WHERE MotCle2= '$MotCle2'";
+        }elseif ($MotCleP == 'All' and $MotCleS != "All"){
+            $sql = "SELECT * FROM These WHERE MotCle2= '$MotCleS' OR MotCle1= '$MotCleS'";
             $resultat = $bdd->query($sql);
         }else{
             $sql = "SELECT * FROM These 
-                    WHERE MotCle1= '$MotCle1' 
-                    AND MotCle2= '$MotCle2'";
+                    WHERE MotCle1= '$MotCleP' AND MotCle2= '$MotCleS' 
+                    OR MotCle1 = '$MotCleS' AND MotCle2= '$MotCleP' ";
             $resultat = $bdd->query($sql);
         }
-
-
     }
     catch (Exception $e){
         die('Erreur : '.$e->getMessage());
@@ -86,7 +91,6 @@ if (isset($_POST['Recherche'])) {
             <th>Description</th>
             <th>Collaboration academique</th>
             <th>Collaboration industrielle</th>
-            <th>description</th>
             <th>Numero de contact</th>
             <th>Mot cle 1</th>
             <th>Mot cle 2</th>
@@ -106,7 +110,6 @@ if (isset($_POST['Recherche'])) {
                 <td><?php echo $ligne['Description'];?></td>
                 <td><?php echo $ligne['CollaborateurAcademique'];?></td>
                 <td><?php echo $ligne['CollaborateurIndustrielle'];?></td>
-                <td><?php echo $ligne['Description'];?></td>
                 <td><?php echo $ligne['NumeroContact'];?></td>
                 <td><?php echo $ligne['MotCle1'];?></td>
                 <td><?php echo $ligne['MotCle2'];?></td>
