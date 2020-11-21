@@ -64,7 +64,7 @@ if (isset($_POST['Recherche'])) {
             $sql = "SELECT * FROM These";
             $resultat = $bdd->query($sql);
         }elseif ($MotCleP != "All" and $MotCleS == "All"){
-            $sql = "SELECT * FROM These WHERE MotCle1='$MotCleP' OR MotCleS='$MotCleP'";
+            $sql = "SELECT * FROM These WHERE MotCle1='$MotCleP' OR MotCle2='$MotCleP'";
             $resultat = $bdd->query($sql);
         }elseif ($MotCleP == 'All' and $MotCleS != "All"){
             $sql = "SELECT * FROM These WHERE MotCle2= '$MotCleS' OR MotCle1= '$MotCleS'";
