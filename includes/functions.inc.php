@@ -45,7 +45,7 @@ function uidExist($conn, $IDPMatricule){
 
     $resultData = mysqli_stmt_get_result($stmt);
     if($row = mysqli_fetch_assoc($resultData)){
-        return true;
+        return $row;
     }else{
         return false;
     }
@@ -72,7 +72,8 @@ function createPersonnel($conn, $IDPMatricule, $Nom, $Prenom, $Email, $Telephone
 }
 
 
-    function emptyInputLogin($IDPMatricule, $MDP){
+function emptyInputLogin($IDPMatricule, $MDP){
+
     if(empty($IDPMatricule) || empty($MDP)){
         $result = true;
     }
@@ -82,7 +83,29 @@ function createPersonnel($conn, $IDPMatricule, $Nom, $Prenom, $Email, $Telephone
     return $result;
 }
 
-function loginUser($bdd, $IDPMatricule, $MDP){
+function loginUser($conn, $IDPMatricule, $MDP){
+    $uidExist = uidExist($conn, $IDPMatricule);
+
+    if($uidExist === false){
+        echo("identifiant n'existe pas");
+        //header("location: ../login.php?error=wronglogin");
+        //exit();
+    }
+
+    $MDPhashed = $uidExist["MotDePasse"];
+    $checkMDP = password_verify($MDP, $MDPhashed);
+
+    if($checkMDP === false){
+        //header("location: ../login.php?error=wronglogin");
+        //exit();
+    }
+    else if ($checkMDP ===true){
+        session_start();
+        $_SESSION["Matricule"]= $uidExist["IDPMatricule"];
+
+        header("location: MainPages/Accueil.php");
+        exit();
+    }
 
 }
 
