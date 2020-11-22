@@ -1,6 +1,6 @@
 <?php
 
-function emptyInput($IDPMatricule, $Nom, $Prenom, $Email, $Grade, $MDP, $MDPR){
+function emptyInputSignup($IDPMatricule, $Nom, $Prenom, $Email, $Grade, $MDP, $MDPR){
     if(empty($IDPMatricule) || empty($Nom) || empty($Prenom) || empty($Email) || empty($Grade) || empty($MDP) || empty($MDPR)){
         $result = true;
     }
@@ -31,18 +31,60 @@ function pwdMatch($MDP, $MDPR){
     return $result;
 }
 
-function uidExist($bdd, $IDPMatricule){
+function uidExist($conn, $IDPMatricule){
+
+    $sql = "SELECT * FROM PERSONNEL WHERE IDPMatricule = ? ;";
+    $stmt = mysqli_stmt_init($conn);
+
+    if(!mysqli_stmt_prepare($stmt, $sql)){
+        echo"there is an error";
+    }
+
+    mysqli_stmt_bind_param($stmt, "s", $IDPMatricule);
+    mysqli_stmt_execute($stmt);
+
+    $resultData = mysqli_stmt_get_result($stmt);
+    if($row = mysqli_fetch_assoc($resultData)){
+        return true;
+    }else{
+        return false;
+    }
+    misqli_stmt_close($stmt);
+}
+
+function createPersonnel($conn, $IDPMatricule, $Nom, $Prenom, $Email, $Telephone, $Grade, $MDP)
+{
+
+    $sql = "INSERT INTO PERSONNEL (IDPMatricule, Nom, Prenom, Email, Telephone, Grade, MotDePasse)
+		VALUES ( ?, ?, ?, ?, ?, ?, ?);";
+
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        echo "there is an error";
+    }
+
+    $hashedMDP = password_hash($MDP, PASSWORD_DEFAULT);
+
+    mysqli_stmt_bind_param($stmt, "sssssss", $IDPMatricule, $Nom, $Prenom, $Email, $Telephone, $Grade, $hashedMDP);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+
+}
 
 
-    $check= "SELECT COUNT(*) FROM PERSONNEL WHERE IDPMatricule = '$IDPMatricule'";
-    if (mysqli_query($bdd,$check)>0)
-    {
+    function emptyInputLogin($IDPMatricule, $MDP){
+    if(empty($IDPMatricule) || empty($MDP)){
         $result = true;
     }
-    else{
-
+    else {
         $result = false;
     }
     return $result;
 }
+
+function loginUser($bdd, $IDPMatricule, $MDP){
+
+}
+
+
 

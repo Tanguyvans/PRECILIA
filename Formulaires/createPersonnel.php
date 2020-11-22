@@ -19,7 +19,7 @@ if (isset($_POST['submit'])) {
 
       require "../Includes/functions.inc.php";
 
-      if(emptyInput($IDPMatricule, $Nom, $Prenom,$Email, $Grade, $MDP, $MDPR) !==false){
+      if(emptyInputSignup($IDPMatricule, $Nom, $Prenom,$Email, $Grade, $MDP, $MDPR) !==false){
           echo("empty input");
       }
 
@@ -31,19 +31,20 @@ if (isset($_POST['submit'])) {
           echo(" mot de passe incorrect");
       }
 
-      /*
-      if(uidExist($bdd, $IDPMatricule) !== false){
+
+      if(uidExist($conn, $IDPMatricule) !== false){
           echo"utilisateur deja exitant<br>";
       }
-      */
-      $hashedMDP = password_hash($MDP, PASSWORD_DEFAULT);
 
+
+      createPersonnel($conn, $IDPMatricule, $Nom, $Prenom, $Email, $Telephone, $Grade, $MDP);
+/*
       $sql = "INSERT INTO PERSONNEL (IDPMatricule, Nom, Prenom, Email, Telephone, Grade, MotDePasse)
 		VALUES ('$IDPMatricule','$Nom','$Prenom','$Email','$Telephone', '$Grade', '$hashedMDP')";
 
       $Resultat = $bdd -> exec($sql);
       echo "Ajout reussie avec la base de donnée<br>";
-
+*/
   } catch(PDOException $error) {
     echo $sql . "<br>" . $error->getMessage();
   }
