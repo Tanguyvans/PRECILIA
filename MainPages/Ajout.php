@@ -13,13 +13,13 @@ Description de la page
 =============================================-->
  <body>
 
-  <div class="tout">
+  <div id="tout">
 
       <div class="haut">
           <?php include '../templates/header.php' ?>
       </div>
 
-      <div class="milieu">
+      <div id="milieu">
           <div class="toolbar">
               <?php include '../templates/toolbar.php' ?>
 

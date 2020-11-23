@@ -4,18 +4,40 @@ body{
 }
 .container-choix-creation a{
     min-height:50px;
-    max-width:250px;
+    width:400px;
     display:flex;
     flex-direction: column;
     justify-content:space-around;
     color:black;
-    margin-left:15%;
+    margin-left:4%;
 }
 .Ensemble{
     display:flex;
+    justify-content:space-between;
+
 }
-
-.tout{
-
+.php{
+    width:200px;
+}
+#tout{
     display: flex;
+    flex-direction: column;
+
+
+
+}
+#milieu{
+    display: flex;
+    flex-direction: row;
+    padding-left: 0;
+    border: 2px solid #ff0000;
+
+}
+.toolbar{
+    height:auto;
+    width:200px;
+    border: 2px solid black;
+}
+.haut{
+    border: 2px solid green;
 }
