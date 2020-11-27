@@ -1,20 +1,23 @@
-header {
-    height: auto;
-    width:70px;
+#ensemble {
+
     background: #344341;
     text-align: center;
+    width:70px;
+    height:100%;
+
 
 }
-#container.active{
-    height:200px;
-    width:300px
+#ensemble.active{
+    height: auto;
+    width:70px; /* si on impose une valeur ca bug*/
 }
-#container{
-    height:80%;
+#Liens{
+    height:100%;
     display: flex;
     flex-direction: column;
     justify-content:space-around;
     align-items: center;
+
 }
 a{
     color:#fff;

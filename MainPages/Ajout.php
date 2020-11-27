@@ -26,9 +26,8 @@ Description de la page
           </div>
 
 
-          <div class="page">
 
-              <div class="Ensemble">
+          <div class="Ensemble">
 
                 <div class="container-choix-creation">
                     <a href="Ajout.php?f=../Formulaires/createCours">Cours</a>
@@ -49,8 +48,8 @@ Description de la page
                     if ($_GET['f']) {include ($_GET['f'].".php");}
                     ?>
                 </div>
-              </div>
           </div>
+
       </div>
 
       <div class="bas">

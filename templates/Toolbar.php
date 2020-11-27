@@ -12,8 +12,8 @@
     <link href="../css/pageT.css" rel="stylesheet">
 </head>
 <body>
-<header id="header">
-    <div id="container">
+<header id="ensemble">
+    <div id="Liens">
         <div class="active"><a href='../MainPages/adresseprofil'>Profil</a></div>
         <div class="active"><a href='../MainPages/Ajout.php'>Ajouter</a></div>
         <div class="active"><a href='../MainPages/adresse'>Autre?</a></div>
