@@ -8,10 +8,12 @@ if (isset($_POST['submit'])) {
         $IDMembre  = $_POST['IDMembre'];
         $IDEvent = $_POST['Event'];
 
-        if($IDMembre.parentNode == 'Personnel'){
+        if($IDMembre[0] == 'P'){
+            $IDMembre = substr($IDMembre, 1);;
             $sql = "INSERT INTO personnel_evenement (IDPMatricule, IDEvenement) VALUES ('$IDMembre', '$IDEvent')";
         }
-        else{
+        elseif ($IDMembre[0] == 'E'){
+            $IDMembre = substr($IDMembre, 1);;
             $sql = "INSERT INTO etudiant_evenement (IDEMatricule, IDEvenement) VALUES ('$IDMembre', '$IDEvent')";
         }
 
@@ -45,14 +47,16 @@ if (isset($_POST['submit'])) {
 
     <select name="IDMembre" id="IDMembre">
         <option value="">Select one</option>
+        <!-- ======================== Personnel ======================= -->
         <optgroup label="Personnel">
             <?php foreach ($IDPM as $test): ?>
-                <option value="<?php print_r($test['IDPMatricule']);?>"> <?php print_r($test['Nom']);?>  <?php print_r($test['Prenom']) ?></option>
+                <option value="P<?php print_r($test['IDPMatricule']);?>"> <?php print_r($test['Nom']);?>  <?php print_r($test['Prenom']) ?></option>
             <?php endforeach; ?>
         </optgroup>
+        <!-- ======================== Etudiant ======================= -->
         <optgroup label="Etudiant">
             <?php foreach ($IDEM as $test): ?>
-                <option value="<?php print_r($test['IDEMatricule']);?>"> <?php print_r($test['Nom']);?>  <?php print_r($test['Prenom']) ?></option>
+                <option value="E<?php print_r($test['IDEMatricule']);?>"> <?php print_r($test['Nom']);?>  <?php print_r($test['Prenom']) ?></option>
             <?php endforeach; ?>
         </optgroup>
     </select>
