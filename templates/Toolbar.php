@@ -12,16 +12,11 @@
     <link href="../css/pageT.css" rel="stylesheet">
 </head>
 <body>
-<header id="header">
-    <div id="container">
-        <div id="container1">
-            <a href='../MainPages/Accueil.php'> <h1> Prescilia </h1> </a>
-        </div>
-        <nav id="container2">
-            <div class="active"><a href='../MainPages/adresseprofil'>Profil</a></div>
-            <div class="active"><a href='../MainPages/Ajout.php'>Ajouter</a></div>
-            <div class="active"><a href='../MainPages/adresse'>Autre?</a></div>
-        </nav>
+<header id="ensemble">
+    <div id="Liens">
+        <div class="active"><a href='../MainPages/adresseprofil'>Profil</a></div>
+        <div class="active"><a href='../MainPages/Ajout.php'>Ajouter</a></div>
+        <div class="active"><a href='../MainPages/adresse'>Autre?</a></div>
     </div>
 </header>
 </body>

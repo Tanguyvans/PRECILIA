@@ -2,21 +2,40 @@ body{
     color:black;
 
 }
-form {
-    display: inline-block;
-}
 .container-choix-creation a{
     min-height:50px;
-    max-width:250px;
+    min-width:200px;
+    max-width:500px;
     display:flex;
     flex-direction: column;
     justify-content:space-around;
     color:black;
-    margin-left:15%;
+    margin-left:4%;
 }
 .Ensemble{
     display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+    border: 3px solid red;
 }
 .php{
-    margin: auto;
+
+}
+#tout{
+    display: flex;
+    flex-direction: column;
+
+}
+#milieu{
+    display: flex;
+    flex-direction: row;
+
+
+}
+.toolbar{
+    height:auto;
+    width:70px;
+    border: 3px solid white;
+}
+.haut{
 }

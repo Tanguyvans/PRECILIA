@@ -1,4 +1,24 @@
-.container{
+#ensemble {
+
+    background: #344341;
+    text-align: center;
+    width:70px;
+    height:100%;
+
+
+}
+#ensemble.active{
+    height: auto;
+    width:70px; /* si on impose une valeur ca bug*/
+}
+#Liens{
+    height:100%;
     display: flex;
     flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+
+}
+a{
+    color:#fff;
 }
