@@ -19,9 +19,7 @@
 
             </div>
             <div class="page">
-
              <section>
-
                <div>
                    <img class="mySlides" src="../Images/ph1.jpg" style="width:100%">
                    <img class="mySlides" src="../Images/ph2.jpg" style="width:100%">
@@ -30,13 +28,11 @@
                <script>
                    var slideIndex = 0;
                    carousel();
-
                    function carousel() {
                        var i;
                        var x = document.getElementsByClassName("mySlides");
                        for (i = 0; i < x.length; i++) {
-                           x[i].style.display = "none";
-                       }
+                           x[i].style.display = "none"; }
                        slideIndex++;
                        if (slideIndex > x.length) {slideIndex = 1}
                        x[slideIndex-1].style.display = "block";
@@ -67,9 +63,11 @@
                </div>
              </section>
 
+
              <section>
                <h2>Nos projets</h2>
              </section>
+
 
              <section>
                <h2>Que faisons-nous?</h2>
@@ -98,6 +96,7 @@
                         c'est contre toi que je m'élance, ô Mort. "</p></div>
                </div>
              </section>
+
 
              <section>
                <h2>Nos partenaires</h2>

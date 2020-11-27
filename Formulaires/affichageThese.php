@@ -89,15 +89,8 @@ if (isset($_POST['Recherche'])) {
     <table>
         <tr>
             <th>Titre</th>
-            <th>Date de debut</th>
-            <th>date de fin</th>
-            <th>Description</th>
-            <th>Collaboration academique</th>
-            <th>Collaboration industrielle</th>
-            <th>Numero de contact</th>
             <th>Mot cle 1</th>
             <th>Mot cle 2</th>
-            <th>Date de defence</th>
             <th>IDPMatricule</th>
         </tr>
         <!-- PHP CODE pour remplir la table-->
@@ -108,16 +101,9 @@ if (isset($_POST['Recherche'])) {
             <tr>
                 <?php $nom = $ligne['IDThese'];?>
                 <!--remplissage de la table avec la base de donnée-->
-                <td><a href="Recherche.php?type=These&amp;ID=<?php echo($nom);?>"><?php echo $ligne['Titre'];?></a></td>
-                <td><?php echo $ligne['DateDebut'];?></td>
-                <td><?php echo $ligne['DateFin'];?></td>
-                <td><?php echo $ligne['Description'];?></td>
-                <td><?php echo $ligne['CollaborateurAcademique'];?></td>
-                <td><?php echo $ligne['CollaborateurIndustrielle'];?></td>
-                <td><?php echo $ligne['NumeroContact'];?></td>
+                <td><a href="Recherche.php?type=These&amp;ID=<?php echo($nom);?>"><p class="lienAffichage"> <?php echo $ligne['Titre'];?> </p></a></td>
                 <td><?php echo $ligne['MotCle1'];?></td>
                 <td><?php echo $ligne['MotCle2'];?></td>
-                <td><?php echo $ligne['DateDefence'];?></td>
                 <td><?php echo $ligne['IDPMatricule'];?></td>
             </tr>
             <?php
