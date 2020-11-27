@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="fr">
-
+<html>
+<link rel="stylesheet" href="../css/affichagetables.css"/>
+</html>
 <?php
     require "../config.php";
     try{

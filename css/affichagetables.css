@@ -1,8 +1,21 @@
 section{
-    height:100px;
+    max-height:200px;
     overflow:scroll;
 }
 
 table{ /* Pq agit aussi sur la table personnel???????*/
     width:100%;
+}
+td{
+    border-bottom: 3px black double;
+
+    text-align:center;
+}
+th{
+    font-size: 14px;
+    text-decoration-line: underline;
+
+}
+#td.Main{
+    font-size:18px;
 }

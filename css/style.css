@@ -19,7 +19,8 @@ section {
 
 /* parametre des tableaux d'affichage */
 table {
-  border-style: solid;
+
+  border:1px solid black;
   border-collapse: collapse;
   empty-cells: show;
 }

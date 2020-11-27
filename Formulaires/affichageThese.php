@@ -1,3 +1,6 @@
+<html>
+<link rel="stylesheet" href="../css/affichagetables.css"/>
+</html>
 <?php
     require "../config.php";
     $bdd = new PDO($dsn, $username, $password);
