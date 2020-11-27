@@ -103,8 +103,9 @@ if (isset($_POST['Recherche'])) {
         {
             ?>
             <tr>
+                <?php $nom = $ligne['IDThese'];?>
                 <!--remplissage de la table avec la base de donnée-->
-                <td><?php echo $ligne['Titre'];?></td>
+                <td><a href="Recherche.php?type=These&amp;ID=<?php echo($nom);?>"><?php echo $ligne['Titre'];?></a></td>
                 <td><?php echo $ligne['DateDebut'];?></td>
                 <td><?php echo $ligne['DateFin'];?></td>
                 <td><?php echo $ligne['Description'];?></td>

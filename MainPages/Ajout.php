@@ -30,7 +30,7 @@ Description de la page
           <div class="Ensemble">
 
                 <div class="container-choix-creation">
-                    <a href="Ajout.php?f=../Formulaires/createCours">Coursss</a>
+                    <a href="Ajout.php?f=../Formulaires/createCours">Cours</a>
                     <a href="Ajout.php?f=../Formulaires/createEtudiant">Etudiant</a>
                     <a href="Ajout.php?f=../Formulaires/createEvenement">Evenement</a>
                     <a href="Ajout.php?f=../Formulaires/createLieu">Lieu</a>

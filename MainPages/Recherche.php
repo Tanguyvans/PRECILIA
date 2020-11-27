@@ -25,6 +25,22 @@
         ?>
 
         <?php include '../templates/footer.php' ?>
+
+        <?php
+        require "../config.php";
+        $bdd = new PDO($dsn, $username, $password);
+        ?>
+
+        <?php
+        $ID = $_GET['ID'];
+        if ($_GET['type'] == 'These'){
+            $sql = "SELECT * FROM these WHERE IDThese = '$ID'";
+            $result = $bdd->query($sql);
+            $ligne = $result->fetch(PDO::FETCH_ASSOC);
+            print_r($ligne);
+        }
+
+        ?>
     </body>
 
 </html>
