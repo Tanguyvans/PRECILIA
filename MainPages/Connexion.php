@@ -1,3 +1,22 @@
+<?php
+
+if (isset($_POST[submit])){
+
+    $IDPMatricule = $_POST["IDPMatricule"];
+    $MDP = $_POST["MDP"];
+
+    require "../config.php";
+    require "../includes/functions.inc.php";
+
+    if(emptyInputLogin($IDPMatricule, $MDP) !==false){
+        echo"une case n'est pas completée";
+    }
+
+    loginUser($conn, $IDPMatricule, $MDP);
+
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -16,8 +35,10 @@
         <?php include '../templates/header.php' ?>
         <h1>Page de connexion</h1>
 
-        <form action = 'Ajout.php' method = 'post'>
-            <input type = 'submit' value = 'Connecte toi' name="connexion">
+        <form method="post">
+            <input type="text" name="IDPMatricule" placeholder="Matricule...">
+            <input type="password" name="MDP" placeholder="Password...">
+            <button type="submit" name="submit">Log in</button>
         </form>
 
         <?php include '../templates/footer.php' ?>

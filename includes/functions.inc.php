@@ -102,8 +102,7 @@ function loginUser($conn, $IDPMatricule, $MDP){
     else if ($checkMDP ===true){
         session_start();
         $_SESSION["Matricule"]= $uidExist["IDPMatricule"];
-
-        header("location: profil.php");
+        header("location: Accueil.php");
         exit();
     }
 

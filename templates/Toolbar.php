@@ -14,7 +14,7 @@
 <body>
 <header id="ensemble">
     <div id="Liens">
-        <div class="active"><a href='../MainPages/adresseprofil'>Profil</a></div>
+        <div class="active"><a href='../MainPages/Profil.php'>Profil</a></div>
         <div class="active"><a href='../MainPages/Ajout.php'>Ajouter</a></div>
         <div class="active"><a href='../MainPages/adresse'>Autre?</a></div>
     </div>

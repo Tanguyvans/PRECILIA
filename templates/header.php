@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <html lang="fr">
 
 <head>
@@ -22,7 +26,14 @@
             <div class="active"><a href='../MainPages/Membres.php'>Membres</a></div>
             <div class="active"><a href='../MainPages/Evenements.php'>Evènements</a></div>
             <div class="active"><a href='../MainPages/Enseignement.php'>Enseignements</a></div>
-            <div class="active"><a href="../MainPages/Connexion.php">Connexion</a></div>
+            <?php
+                if(isset($_SESSION["Matricule"])){
+                    echo "<div class='active'><a href='../MainPages/Profil.php'>Profil</a></div>";
+                    echo "<div class='active'><a href='../MainPages/logout.inc.php'>log out</a></div>";
+                }else{
+                    echo "<div class='active'><a href='../MainPages/Connexion.php'>Connexion</a></div>";
+                }
+            ?>
         </nav>
     </div>
 </header>
