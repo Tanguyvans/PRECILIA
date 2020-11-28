@@ -1,6 +1,6 @@
 <?php
 
-if (isset($_POST[submit])){
+if (isset($_POST["submit"])){
 
     $IDPMatricule = $_POST["IDPMatricule"];
     $MDP = $_POST["MDP"];
