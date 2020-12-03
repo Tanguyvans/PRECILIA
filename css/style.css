@@ -89,3 +89,12 @@ img{
   width: 100%;
   height: 600px;
 }
+
+.Page{
+  display:flex;
+  flex-direction:column;
+  min-height:250px;
+  height:100%;
+  justify-content: center;
+}
+.Page div

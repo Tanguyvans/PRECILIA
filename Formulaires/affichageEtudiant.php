@@ -73,14 +73,14 @@ if (isset($_POST['Recherche'])) {
             $sql = "SELECT * FROM etudiant";
             $resultat = $bdd->query($sql);
         } elseif ( $NomE != "All" and $PrenomE == "All") {
-            $sql = "SELECT * FROM etudiant WHERE Nom=' $NomE'";
+            $sql = "SELECT * FROM etudiant WHERE Nom='$NomE'";
             $resultat = $bdd->query($sql);
         } elseif ( $NomE == 'All' and $PrenomE != "All") {
             $sql = "SELECT * FROM etudiant WHERE Prenom= '$PrenomE'";
             $resultat = $bdd->query($sql);
         } else {
             $sql = "SELECT * FROM etudiant 
-                    WHERE Nom= ' $NomE' AND Prenom= '$PrenomE' ";
+                    WHERE Nom= '$NomE' AND Prenom= '$PrenomE' ";
             $resultat = $bdd->query($sql);
         }
     } catch (Exception $e) {

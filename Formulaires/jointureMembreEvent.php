@@ -73,11 +73,11 @@ if (isset($_POST['submit'])) {
 
     <select name="Event" id="Event">
         <option
-            value="">Select one
+                value="">Select one
         </option>
         <?php foreach ($IDE as $test): ?>
             <option
-                value="<?php print_r($test['IDEvenement']); ?>"> <?php print_r($test['Type']);?> <?php print_r($test['Nom']);?>
+                    value="<?php print_r($test['IDEvenement']); ?>"> <?php print_r($test['Type']);?> <?php print_r($test['Nom']);?>
             </option>
         <?php endforeach; ?>
     </select>

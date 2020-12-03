@@ -17,6 +17,7 @@
         <div class="active"><a href='../MainPages/Profil.php'>Profil</a></div>
         <div class="active"><a href='../MainPages/Ajout.php'>Ajouter</a></div>
         <div class="active"><a href='../MainPages/adresse'>Autre?</a></div>
+        <div class="active"><a href='../MainPages/inscrire.php'>S'inscire</a></div>
     </div>
 </header>
 </body>

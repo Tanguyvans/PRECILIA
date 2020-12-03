@@ -1,9 +1,18 @@
+<!DOCTYPE html>
 <html>
 <link rel="stylesheet" href="../css/affichagetables.css"/>
-</html>
 <?php
-    require "../config.php";
+require "../config.php";
+try{
     $bdd = new PDO($dsn, $username, $password);
+
+    $sql = "SELECT * FROM These";
+    $resultat = $bdd->query($sql);
+
+}
+catch (Exception $e){
+    die('Erreur : '.$e->getMessage());
+}
 ?>
 
 <form method="post">
@@ -59,29 +68,29 @@
 <!--========== Il faut appuyer sur le boutton recherche ==============-->
 <?php
 if (isset($_POST['Recherche'])) {
-    try{
-        $MotCleP  = $_POST['MotCleP'];
+    try {
+        $MotCleP = $_POST['MotCleP'];
         $MotCleS = $_POST['MotCleS'];
 
-        if($MotCleP == "All" and $MotCleS == "All"){
+        if ($MotCleP == "All" and $MotCleS == "All") {
             $sql = "SELECT * FROM These";
             $resultat = $bdd->query($sql);
-        }elseif ($MotCleP != "All" and $MotCleS == "All"){
+        } elseif ($MotCleP != "All" and $MotCleS == "All") {
             $sql = "SELECT * FROM These WHERE MotCle1='$MotCleP' OR MotCle2='$MotCleP'";
             $resultat = $bdd->query($sql);
-        }elseif ($MotCleP == 'All' and $MotCleS != "All"){
+        } elseif ($MotCleP == 'All' and $MotCleS != "All") {
             $sql = "SELECT * FROM These WHERE MotCle2= '$MotCleS' OR MotCle1= '$MotCleS'";
             $resultat = $bdd->query($sql);
-        }else{
+        } else {
             $sql = "SELECT * FROM These 
                     WHERE MotCle1= '$MotCleP' AND MotCle2= '$MotCleS' 
                     OR MotCle1 = '$MotCleS' AND MotCle2= '$MotCleP' ";
             $resultat = $bdd->query($sql);
         }
+    } catch (Exception $e) {
+        die('Erreur : ' . $e->getMessage());
     }
-    catch (Exception $e){
-        die('Erreur : '.$e->getMessage());
-    }
+}
 ?>
 <!--========== Tableau ==============-->
 <section>
@@ -111,6 +120,4 @@ if (isset($_POST['Recherche'])) {
         ?>
     </table>
 </section>
-<?php
-}
-?>
+</html>
