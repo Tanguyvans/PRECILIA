@@ -32,7 +32,7 @@ if (isset($_POST['submit'])) {
       }
 
 
-      if(uidExist($conn, $IDPMatricule) !== false){
+      if(PersonnelExist($conn, $IDPMatricule) !== false){
           echo"utilisateur deja exitant<br>";
       }
 

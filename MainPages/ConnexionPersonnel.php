@@ -12,7 +12,7 @@ if (isset($_POST["submit"])){
         echo"une case n'est pas completée";
     }
 
-    loginUser($conn, $IDPMatricule, $MDP);
+    loginPersonnel($conn, $IDPMatricule, $MDP);
 
 }
 ?>

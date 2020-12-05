@@ -40,35 +40,22 @@
         ?>
 
         <table>
-            <tr>
-                <th>Titre</th>
-                <th>Date de debut</th>
-                <th>date de fin</th>
-                <th>Description</th>
-                <th>Collaboration academique</th>
-                <th>Collaboration industrielle</th>
-                <th>Numero de contact</th>
-                <th>Mot cle 1</th>
-                <th>Mot cle 2</th>
-                <th>Date de defence</th>
-                <th>IDPMatricule</th>
-            </tr>
             <!-- PHP CODE pour remplir la table-->
             <?php $ligne = $result->fetch(PDO::FETCH_ASSOC); ?>
-                <tr>
+
                     <!--remplissage de la table avec la base de donnée-->
-                    <td><?php echo $ligne['Titre'];?></td>
-                    <td><?php echo $ligne['DateDebut'];?></td>
-                    <td><?php echo $ligne['DateFin'];?></td>
-                    <td><?php echo $ligne['Description'];?></td>
-                    <td><?php echo $ligne['CollaborateurAcademique'];?></td>
-                    <td><?php echo $ligne['CollaborateurIndustrielle'];?></td>
-                    <td><?php echo $ligne['NumeroContact'];?></td>
-                    <td><?php echo $ligne['MotCle1'];?></td>
-                    <td><?php echo $ligne['MotCle2'];?></td>
-                    <td><?php echo $ligne['DateDefence'];?></td>
-                    <td><?php echo $ligne['IDPMatricule'];?></td>
-                </tr>
+            <tr><td>Titre:</td><td><?php echo $ligne['Titre'];?></td></tr>
+            <tr><td>Date de debut:</td><td><?php echo $ligne['DateDebut'];?></td></tr>
+            <tr><td>Date de fin:</td><td><?php echo $ligne['DateFin'];?></td></tr>
+            <tr><td>Description:</td><td><?php echo $ligne['Description'];?></td></tr>
+            <tr><td>Collaboration academique:</td><td><?php echo $ligne['CollaborateurAcademique'];?></td></tr>
+            <tr><td>Collaboration industrielle:</td><td><?php echo $ligne['CollaborateurIndustrielle'];?></td></tr>
+            <tr><td>Numero de contact:</td><td><?php echo $ligne['NumeroContact'];?></td></tr>
+            <tr><td>Mot cle 1:</td><td><?php echo $ligne['MotCle1'];?></td></tr>
+            <tr><td>Mot cle 2:</td><td><?php echo $ligne['MotCle2'];?></td></tr>
+            <tr><td>Date de defence:</td><td><?php echo $ligne['DateDefence'];?></td></tr>
+            <tr><td>IDPMatricule:</td><td><?php echo $ligne['IDPMatricule'];?></td></tr>
+
         </table>
         <?php } ?>
 

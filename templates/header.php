@@ -27,11 +27,15 @@
             <div class="active"><a href='../MainPages/Evenements.php'>Evènements</a></div>
             <div class="active"><a href='../MainPages/Enseignement.php'>Enseignements</a></div>
             <?php
-                if(isset($_SESSION["Matricule"])){
+                if(isset($_SESSION["Psession"])){
+                    echo "<div class='active'><a href='../MainPages/Profil.php'>Profil</a></div>";
+                    echo "<div class='active'><a href='../MainPages/logout.inc.php'>log out</a></div>";
+                }elseif (isset($_SESSION["Esession"])){
                     echo "<div class='active'><a href='../MainPages/Profil.php'>Profil</a></div>";
                     echo "<div class='active'><a href='../MainPages/logout.inc.php'>log out</a></div>";
                 }else{
-                    echo "<div class='active'><a href='../MainPages/Connexion.php'>Connexion</a></div>";
+                    echo "<div class='active'><a href='../MainPages/ConnexionPersonnel.php'>Connexion Personnel</a></div>";
+                    echo "<div class='active'><a href='../MainPages/ConnexionEtudiant.php'>Connexion Etudiant</a></div>";
                 }
             ?>
         </nav>

@@ -12,13 +12,23 @@
 		  $Prenom = $_POST['Prenom'];
 		  $Email = $_POST['Email'];
 		  $Annee = $_POST['Annee'];
+		  $MDP = $_POST['MDP'];
+		  $MDPR = $_POST['MDPR'];
 
-			$sql = "INSERT INTO ETUDIANT (IDEMatricule, Nom, Prenom, Email, Annee)
-			VALUES ('$IDEMatricule','$Nom','$Prenom','$Email','$Annee')";
+		  require "../Includes/functions.inc.php";
 
-			$Resultat = $bdd -> exec($sql);
-			echo "Ajout reussie avec la base de donnée<br>";
+          if(uidExist($conn, $IDEMatricule) !== false){
+              echo"utilisateur deja exitant<br>";
+          }
 
+          createEtudiant($conn, $IDEMatricule, $Nom, $Prenom, $Email, $Annee, $MDP);
+/*
+		  $sql = "INSERT INTO ETUDIANT (IDEMatricule, Nom, Prenom, Email, Annee)
+		    VALUES ('$IDEMatricule','$Nom','$Prenom','$Email','$Annee')";
+
+		  $Resultat = $bdd -> exec($sql);
+		  echo "Ajout reussie avec la base de donnée<br>";
+*/
   } catch(PDOException $error) {
     echo $sql . "<br>" . $error->getMessage();
   }
@@ -54,6 +64,11 @@
            <option value="3e Bachelier">3e Bachelier</option>
        </select>
    </p>
+        <label for="MDP">Mot de passe</label>
+        <input type="password" name="MDP" id="MDP">
+
+        <label for="MDPR">confirmer le mot de passe</label>
+        <input type="password" name="MDPR" id="MDPR">
 
     <input type="submit" name="submit" value="Submit">
   </form>
