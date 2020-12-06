@@ -17,7 +17,7 @@
 
 		  require "../Includes/functions.inc.php";
 
-          if(uidExist($conn, $IDEMatricule) !== false){
+          if(EtudiantExist($conn, $IDEMatricule) !== false){
               echo"utilisateur deja exitant<br>";
           }
 
