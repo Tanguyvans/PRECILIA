@@ -54,7 +54,17 @@
             <tr><td>Mot cle 1:</td><td><?php echo $ligne['MotCle1'];?></td></tr>
             <tr><td>Mot cle 2:</td><td><?php echo $ligne['MotCle2'];?></td></tr>
             <tr><td>Date de defence:</td><td><?php echo $ligne['DateDefence'];?></td></tr>
-            <tr><td>IDPMatricule:</td><td><?php echo $ligne['IDPMatricule'];?></td></tr>
+            <tr><td>Auteur:</td>
+                <?php
+                    $Matricule = $ligne['IDPMatricule'];
+                    $perso = $bdd->query("SELECT Nom, Prenom FROM PERSONNEL WHERE IDPMatricule = '$Matricule' ");
+                    while($line = $perso->fetch(PDO::FETCH_ASSOC))
+                    {
+                    ?>
+                <td><?php echo $line['Nom'];?> <?php echo $line['Prenom'];?></td>
+                <?php
+                }
+                ?></tr>
 
         </table>
         <?php } ?>

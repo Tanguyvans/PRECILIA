@@ -100,7 +100,7 @@ if (isset($_POST['Recherche'])) {
             <th>Titre</th>
             <th>Mot cle 1</th>
             <th>Mot cle 2</th>
-            <th>IDPMatricule</th>
+            <th>Auteur</th>
         </tr>
         <!-- PHP CODE pour remplir la table-->
         <?php
@@ -113,7 +113,17 @@ if (isset($_POST['Recherche'])) {
                 <td><a href="Recherche.php?type=These&amp;ID=<?php echo($nom);?>"><p class="lienAffichage"> <?php echo $ligne['Titre'];?> </p></a></td>
                 <td><?php echo $ligne['MotCle1'];?></td>
                 <td><?php echo $ligne['MotCle2'];?></td>
-                <td><?php echo $ligne['IDPMatricule'];?></td>
+
+                <?php
+                $Matricule = $ligne['IDPMatricule'];
+                $perso = $bdd->query("SELECT Nom, Prenom FROM PERSONNEL WHERE IDPMatricule = '$Matricule' ");
+                while($line = $perso->fetch(PDO::FETCH_ASSOC))
+                {
+                ?>
+                    <td><?php echo $line['Nom'];?> <?php echo $line['Prenom'];?></td>
+                <?php
+                }
+                ?>
             </tr>
             <?php
         }
