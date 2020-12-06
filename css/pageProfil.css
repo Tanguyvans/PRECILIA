@@ -1,0 +1,20 @@
+img {
+    width:80%;
+    height: auto;
+}
+.pageprincipale{
+    display:flex;
+    flex-direction:row;
+    justify-content: flex-start;
+}
+.texte{
+    width:65%;
+    text-align:start;
+}
+.Image{
+    width:35%;
+}
+table{
+    text-align:center;
+    margin:auto;
+}

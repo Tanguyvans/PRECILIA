@@ -1,38 +1,38 @@
 <?php
 
 	if (isset($_POST['submit'])) {
-  require "../config.php";
+	    echo "coucou";
+        require "../config.php";
+        try {
 
-  try {
+              $bdd = new PDO($dsn, $username, $password);
 
-    $bdd = new PDO($dsn, $username, $password);
+              $IDEMatricule = $_POST['IDEMatricule'];
+              $Nom  = $_POST['Nom'];
+              $Prenom = $_POST['Prenom'];
+              $Email = $_POST['Email'];
+              $Annee = $_POST['Annee'];
+              $MDP = $_POST['MDP'];
+              $MDPR = $_POST['MDPR'];
 
-		  $IDEMatricule = $_POST['IDEMatricule'];
-		  $Nom  = $_POST['Nom'];
-		  $Prenom = $_POST['Prenom'];
-		  $Email = $_POST['Email'];
-		  $Annee = $_POST['Annee'];
-		  $MDP = $_POST['MDP'];
-		  $MDPR = $_POST['MDPR'];
+              require "../includes/functions.inc.php";
 
-		  require "../Includes/functions.inc.php";
+              if(EtudiantExist($conn, $IDEMatricule) !== false){
+                  echo"utilisateur deja exitant<br>";
+              }
 
-          if(EtudiantExist($conn, $IDEMatricule) !== false){
-              echo"utilisateur deja exitant<br>";
-          }
+              createEtudiant($conn, $IDEMatricule, $Nom, $Prenom, $Email, $Annee, $MDP);
+    /*
+              $sql = "INSERT INTO ETUDIANT (IDEMatricule, Nom, Prenom, Email, Annee)
+                VALUES ('$IDEMatricule','$Nom','$Prenom','$Email','$Annee')";
 
-          createEtudiant($conn, $IDEMatricule, $Nom, $Prenom, $Email, $Annee, $MDP);
-/*
-		  $sql = "INSERT INTO ETUDIANT (IDEMatricule, Nom, Prenom, Email, Annee)
-		    VALUES ('$IDEMatricule','$Nom','$Prenom','$Email','$Annee')";
+              $Resultat = $bdd -> exec($sql);
 
-		  $Resultat = $bdd -> exec($sql);
-		  echo "Ajout reussie avec la base de donnée<br>";
-*/
-  } catch(PDOException $error) {
-    echo $sql . "<br>" . $error->getMessage();
-  }
-
+        */
+            echo "Ajout reussie avec la base de donnée<br>";
+        } catch(PDOException $error) {
+            echo $sql . "<br>" . $error->getMessage();
+        }
 	}
 ?>
 

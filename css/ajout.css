@@ -5,7 +5,7 @@ body{
 .container-choix-creation a{
     min-height:50px;
     min-width:200px;
-    max-width:500px;
+    max-width:200px;
     display:flex;
     flex-direction: column;
     justify-content:space-around;
@@ -13,12 +13,15 @@ body{
     margin-left:4%;
 }
 .Ensemble{
+    width:100%;
     display:flex;
     flex-direction:row;
-    justify-content:space-around;
-    border: 3px solid red;
+    justify-content: flex-start;
 }
 .php{
+    width:auto;
+    text-align: center;
+    justify-content: space-around;
 
 }
 #tout{

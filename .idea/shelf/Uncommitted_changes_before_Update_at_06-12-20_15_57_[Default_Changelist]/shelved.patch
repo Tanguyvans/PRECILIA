@@ -1,0 +1,122 @@
+Index: config.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\r\n\r\n$host       = \"localhost\";\r\n$username   = \"root\";\r\n$password   = \"root\";\r\n$dbname     = \"prescilia\";\r\n$dsn        = \"mysql:host=$host;dbname=$dbname\";\r\n\r\n$conn = mysqli_connect($host, $username, $password, $dbname);\r\n\r\nif (!$conn) {\r\n    die(\"connection failed:\" . misqli_connect_error());\r\n}\r\n?>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- config.php	(revision 7a6b668fba0e963b5eab1042f3634d0601087762)
++++ config.php	(date 1607005527389)
+@@ -2,7 +2,7 @@
+ 
+ $host       = "localhost";
+ $username   = "root";
+-$password   = "root";
++$password   = "";
+ $dbname     = "prescilia";
+ $dsn        = "mysql:host=$host;dbname=$dbname";
+ 
+Index: Formulaires/createEtudiant.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\r\n\r\n\tif (isset($_POST['submit'])) {\r\n  require \"../config.php\";\r\n\r\n  try {\r\n\r\n    $bdd = new PDO($dsn, $username, $password);\r\n\r\n\t\t  $IDEMatricule = $_POST['IDEMatricule'];\r\n\t\t  $Nom  = $_POST['Nom'];\r\n\t\t  $Prenom = $_POST['Prenom'];\r\n\t\t  $Email = $_POST['Email'];\r\n\t\t  $Annee = $_POST['Annee'];\r\n\t\t  $MDP = $_POST['MDP'];\r\n\t\t  $MDPR = $_POST['MDPR'];\r\n\r\n\t\t  require \"../Includes/functions.inc.php\";\r\n\r\n          if(uidExist($conn, $IDEMatricule) !== false){\r\n              echo\"utilisateur deja exitant<br>\";\r\n          }\r\n\r\n          createEtudiant($conn, $IDEMatricule, $Nom, $Prenom, $Email, $Annee, $MDP);\r\n/*\r\n\t\t  $sql = \"INSERT INTO ETUDIANT (IDEMatricule, Nom, Prenom, Email, Annee)\r\n\t\t    VALUES ('$IDEMatricule','$Nom','$Prenom','$Email','$Annee')\";\r\n\r\n\t\t  $Resultat = $bdd -> exec($sql);\r\n\t\t  echo \"Ajout reussie avec la base de donnée<br>\";\r\n*/\r\n  } catch(PDOException $error) {\r\n    echo $sql . \"<br>\" . $error->getMessage();\r\n  }\r\n\r\n\t}\r\n?>\r\n\r\n\r\n<link rel=\"stylesheet\" href=\"../css/style.css\" />\r\n\r\n\r\n<?php //debut du formulaire, on peut utiliser action: nom de la page php qui v receptionner les donner ?>\r\n\r\n\t<form method=\"post\">\r\n\r\n\t\t<label for=\"IDEMatricule\">Matricule</label>\r\n\t\t<input type=\"number\" name=\"IDEMatricule\" id=\"IDEMatricule\">\r\n\r\n\t\t<label for=\"Nom\">Nom</label>\r\n\t\t<input type=\"text\" name=\"Nom\" id=\"Nom\">\r\n\r\n\t\t<label for=\"Prenom\">Prenom</label>\r\n\t\t<input type=\"text\" name=\"Prenom\" id=\"Prenom\">\r\n\r\n\t\t<label for=\"Email\">Adresse email</label>\r\n\t\t<input type=\"text\" name=\"Email\" id=\"Email\">\r\n\r\n        <p>\r\n       <label for=\"Annee\">Choisissez l'année d'étude</label><br />\r\n       <select name=\"Annee\" id=\"Annee\">\r\n           <option value=\"2e Master\">2e Master</option>\r\n           <option value=\"1er Master\">1er Master</option>\r\n           <option value=\"3e Bachelier\">3e Bachelier</option>\r\n       </select>\r\n   </p>\r\n        <label for=\"MDP\">Mot de passe</label>\r\n        <input type=\"password\" name=\"MDP\" id=\"MDP\">\r\n\r\n        <label for=\"MDPR\">confirmer le mot de passe</label>\r\n        <input type=\"password\" name=\"MDPR\" id=\"MDPR\">\r\n\r\n    <input type=\"submit\" name=\"submit\" value=\"Submit\">\r\n  </form>\r\n\r\n    <a href=\"../index.php\">Retour en arrière</a>\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Formulaires/createEtudiant.php	(revision 7a6b668fba0e963b5eab1042f3634d0601087762)
++++ Formulaires/createEtudiant.php	(date 1607266443269)
+@@ -3,35 +3,35 @@
+ 	if (isset($_POST['submit'])) {
+   require "../config.php";
+ 
+-  try {
++      try {
+ 
+-    $bdd = new PDO($dsn, $username, $password);
++        $bdd = new PDO($dsn, $username, $password);
+ 
+-		  $IDEMatricule = $_POST['IDEMatricule'];
+-		  $Nom  = $_POST['Nom'];
+-		  $Prenom = $_POST['Prenom'];
+-		  $Email = $_POST['Email'];
+-		  $Annee = $_POST['Annee'];
+-		  $MDP = $_POST['MDP'];
+-		  $MDPR = $_POST['MDPR'];
++              $IDEMatricule = $_POST['IDEMatricule'];
++              $Nom  = $_POST['Nom'];
++              $Prenom = $_POST['Prenom'];
++              $Email = $_POST['Email'];
++              $Annee = $_POST['Annee'];
++              $MDP = $_POST['MDP'];
++              $MDPR = $_POST['MDPR'];
+ 
+-		  require "../Includes/functions.inc.php";
++              require "../Includes/functions.inc.php";
+ 
+-          if(uidExist($conn, $IDEMatricule) !== false){
+-              echo"utilisateur deja exitant<br>";
+-          }
++              if(uidExist($conn, $IDEMatricule) !== false){
++                  echo"utilisateur deja exitant<br>";
++              }
+ 
+-          createEtudiant($conn, $IDEMatricule, $Nom, $Prenom, $Email, $Annee, $MDP);
+-/*
+-		  $sql = "INSERT INTO ETUDIANT (IDEMatricule, Nom, Prenom, Email, Annee)
+-		    VALUES ('$IDEMatricule','$Nom','$Prenom','$Email','$Annee')";
++              createEtudiant($conn, $IDEMatricule, $Nom, $Prenom, $Email, $Annee, $MDP);
++    /*
++              $sql = "INSERT INTO ETUDIANT (IDEMatricule, Nom, Prenom, Email, Annee)
++                VALUES ('$IDEMatricule','$Nom','$Prenom','$Email','$Annee')";
+ 
+-		  $Resultat = $bdd -> exec($sql);
+-		  echo "Ajout reussie avec la base de donnée<br>";
+-*/
+-  } catch(PDOException $error) {
+-    echo $sql . "<br>" . $error->getMessage();
+-  }
++              $Resultat = $bdd -> exec($sql);
++              echo "Ajout reussie avec la base de donnée<br>";
++    */
++      } catch(PDOException $error) {
++        echo $sql . "<br>" . $error->getMessage();
++      }
+ 
+ 	}
+ ?>
+Index: css/ajout.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>body{\r\n    color:black;\r\n\r\n}\r\n.container-choix-creation a{\r\n    min-height:50px;\r\n    min-width:200px;\r\n    max-width:500px;\r\n    display:flex;\r\n    flex-direction: column;\r\n    justify-content:space-around;\r\n    color:black;\r\n    margin-left:4%;\r\n}\r\n.Ensemble{\r\n    display:flex;\r\n    flex-direction:row;\r\n    justify-content:space-around;\r\n    border: 3px solid red;\r\n}\r\n.php{\r\n\r\n}\r\n#tout{\r\n    display: flex;\r\n    flex-direction: column;\r\n\r\n}\r\n#milieu{\r\n    display: flex;\r\n    flex-direction: row;\r\n\r\n\r\n}\r\n.toolbar{\r\n    height:auto;\r\n    width:70px;\r\n    border: 3px solid white;\r\n}\r\n.haut{\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- css/ajout.css	(revision 7a6b668fba0e963b5eab1042f3634d0601087762)
++++ css/ajout.css	(date 1607263459652)
+@@ -5,7 +5,7 @@
+ .container-choix-creation a{
+     min-height:50px;
+     min-width:200px;
+-    max-width:500px;
++    max-width:200px;
+     display:flex;
+     flex-direction: column;
+     justify-content:space-around;
+@@ -13,12 +13,16 @@
+     margin-left:4%;
+ }
+ .Ensemble{
++    width:100%;
+     display:flex;
+     flex-direction:row;
+-    justify-content:space-around;
++    justify-content: flex-start;
+     border: 3px solid red;
+ }
+ .php{
++    width:auto;
++    text-align: center;
++    justify-content: space-around;
+ 
+ }
+ #tout{
