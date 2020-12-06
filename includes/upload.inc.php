@@ -62,7 +62,6 @@ if(isset($_POST['submitE'])){
                 $fileDestination = '../imageE/'.$fileNameNew;
                 echo"salut";
                 move_uploaded_file($fileTmpName, $fileDestination);
-                header("index.php?uploadsucess");
             }else{
                 echo "there was an error";
             }
