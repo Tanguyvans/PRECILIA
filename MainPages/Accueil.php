@@ -13,7 +13,11 @@
     </head>
 
     <body>
-        <?php include '../templates/header.php' ?>
+        <?php
+            include '../templates/header.php';
+            require "../config.php";
+            $bdd = new PDO($dsn, $username, $password);
+        ?>
         <div class="toolbarpage">
             <div class="toolbar">
 
@@ -66,6 +70,17 @@
 
              <section>
                <h2>Nos projets</h2>
+                 <?php
+                 $sql = "SELECT * FROM projetderecherche WHERE dateDebut=date('d/m/Y')";
+                 $result = $bdd->query($sql);
+                 $i = 0;
+                 while($line = $result->fetch(PDO::FETCH_ASSOC) && $i<3){ ?>
+                     <td><?php echo $line['Type'];?> <?php echo $line['Nom'];?> <?php echo $line['Duree'];?></td>
+                    <?php
+                     $i++;
+                 } ?>
+
+                 <a href="Evenements.php">Plus de projets...</a>
              </section>
 
 
@@ -102,21 +117,21 @@
                <h2>Nos partenaires</h2>
                 <div id="AllPartenaires">
                     <div class="partenaire">
-                       <img src="../Images/facebook.jpg" class="images-partenaire-taille">
-                       <h3>Facebook</h3>
+                       <img src="../Images/logo1.png" class="images-partenaire-taille">
+                       <h3>DL</h3>
                        <p>La vie c'est des étapes... La plus douce c'est l'amour...
                         La plus dure c'est la séparation... La plus pénible c'est les adieux...
                         La plus belle c'est les retrouvailles.</p>
                     </div>
                     <div class="partenaire">
-                       <img src="../Images/insta.jpg" class="images-partenaire-taille">
-                       <h3>Instagram</h3>
+                       <img src="../Images/logo2.png" class="images-partenaire-taille">
+                       <h3>AI</h3>
                        <p>Exige beaucoup de toi-même et attends peu des autres.
                         Ainsi beaucoup d'ennuis te seront épargnés.</p>
                     </div>
                     <div class="partenaire">
-                       <img src="../Images/twitter.jpg" class="images-partenaire-taille">
-                       <h3>Twitter</h3>
+                       <img src="../Images/logo3.png" class="images-partenaire-taille">
+                       <h3>DB</h3>
                        <p>Dans la vie on ne fait pas ce que l'on veut mais on
                            est responsable de ce que l'on est.</p>
                     </div>

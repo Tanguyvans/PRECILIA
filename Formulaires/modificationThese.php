@@ -68,7 +68,7 @@
         //recuperation de l'id par l'url
         $IDThese = $_GET['ID'];
         //on cherche toute les infos pour cette id
-        $Execution = $bdd->exec ("SELECT * FROM these WHERE IDThese='$IDThese'");
+        $Execution = $bdd->query ("SELECT * FROM These WHERE IDThese='$IDThese'");
         while($line = $Execution->fetch(PDO::FETCH_ASSOC)){
         ?>
             <form method="post">
@@ -84,25 +84,25 @@
                 <input type="date" name="DateFin" id="DateFin">
 
                 <label for="Description">Description</label>
-                <input type="text" name="Description" id="Description placeholder="<?php echo $line['Description']?>">
+                <input type="text" name="Description" id="Description" placeholder="<?php echo $line['Description']?>">
 
                 <label for="CollaborateurAcademique">Collababorateur académique</label>
-                <input type="text" name="CollaborateurAcademique" id="CollaborateurAcademique" placeholder="<?php echo $line['CollaborateurAcademique']?>>
+                <input type="text" name="CollaborateurAcademique" id="CollaborateurAcademique" placeholder="<?php echo $line['CollaborateurAcademique']?>">
 
                 <label for="CollaborateurIndustrielle">Collaborateur industrielle</label>
-                <input type="text" name="CollaborateurIndustrielle" id="CollaborateurIndustrielle" placeholder="<?php echo $line['CollaborateurIndustrielle']?>>
+                <input type="text" name="CollaborateurIndustrielle" id="CollaborateurIndustrielle" placeholder="<?php echo $line['CollaborateurIndustrielle']?>">
 
                 <label for="NumeroContact">Numéro de contact</label>
-                <input type="number" name="NumeroContact" id="NumeroContact" placeholder="<?php echo $line['NumeroContact']?>>
+                <input type="number" name="NumeroContact" id="NumeroContact" placeholder="<?php echo $line['NumeroContact']?>">
 
                 <label for="MotCle1">Mot-clé 1</label>
-                <input type="text" name="MotCle1" id="MotCle1" placeholder="<?php echo $line['MotCle1']?>>
+                <input type="text" name="MotCle1" id="MotCle1" placeholder="<?php echo $line['MotCle1']?>">
 
                 <label for="MotCle2">Mot-clé 2</label>
-                <input type="text" name="MotCle2" id="MotCle2" placeholder="<?php echo $line['MotCle2']?>>
+                <input type="text" name="MotCle2" id="MotCle2" placeholder="<?php echo $line['MotCle2']?>">
 
                 <label for="DateDefence">Date de défense</label>
-                <input type="date" name="DateDefence" id="DateDefence" placeholder="<?php echo $line['DateDefence']?>>
+                <input type="date" name="DateDefence" id="DateDefence" placeholder="<?php echo $line['DateDefence']?>">
 
                 <input type="submit" name="submit" value="Submit">
             </form>

@@ -8,12 +8,12 @@ if (isset($_POST['submit'])) {
         $Titre = $_POST['Titre'];
         $DateDebut  = $_POST['DateDebut'];
         $DateFin = $_POST['DateFin'];
-				$CollaborateurAcademique = $_POST['CollaborateurAcademique'];
+        $CollaborateurAcademique = $_POST['CollaborateurAcademique'];
         $CollaborateurIndustrielle = $_POST['CollaborateurIndustrielle'];
-				$Description = $_POST['Description'];
+		$Description = $_POST['Description'];
         $NumeroContact = $_POST['NumeroContact'];
         $MotCle1=$_POST['MotCle1'];
-	      $MotCle2=$_POST['MotCle2'];
+	    $MotCle2=$_POST['MotCle2'];
 
         $sql = "INSERT INTO PROJETDERECHERCHE (IDProjet ,Titre, DateDebut, DateFin, Description, CollaborateurAcademique, CollaborateurIndustrielle, NumeroContact, MotCle1, MotCle2)
 			VALUES (NULL,'$Titre', '$DateDebut_new','$DateFin_new','$Description','$CollaborateurAcademique','$CollaborateurIndustrielle','$NumeroContact','$MotCle1','$MotCle2')";

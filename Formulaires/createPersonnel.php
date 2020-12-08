@@ -28,7 +28,7 @@ if (isset($_POST['submit'])) {
       }
 
       if(pwdMatch($MDP, $MDPR) !== false){
-          echo(" mot de passe incorrect");
+          echo("mot de passe incorrect");
       }
 
 

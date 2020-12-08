@@ -29,16 +29,14 @@
         <div id="conteneur1">
             <div class="col-lg-3 col-md-6 footer-info">
                 <h4>Nous contacter</h4>
-                <p> Adresse? <br>
-                    7000 Mons, Belgique<br><br>
-                    <strong>Téléphone:</strong> +32 ???<br>
-                    <strong>Email:</strong> ???<br>
+                <p> <strong>Adresse:</strong><br>
+                    9, rue de Houdain<br>
+                    7000 Mons, Belgique<br>
+                    <strong>Téléphone:</strong><br>
+                    +32(0)65374030<br>
+                    <strong>Site Web Officiel:</strong> <br>
+                    https://web.umons.ac.be
                 </p>
-                <div class="social-links mt-3">
-                    <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                    <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                    <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-                </div>
             </div>
             <div class="col-lg-2 col-md-6 footer-links">
                 <h4>Liens utiles</h4>
