@@ -33,10 +33,12 @@
         <?php
         if ($_GET['table'] == 'These'){
             $ID = $_GET['ID'];
+            echo $ID;
             $sql = "SELECT * FROM These WHERE IDThese = '$ID'";
             $result = $bdd->query($sql);
         ?>
-            <a href="../Formulaires/modificationThese.php?ID='<?php echo($ID); ?>'"><p class="lienAffichage"> Modifier</p></a>
+
+            <a href="../Formulaires/modificationThese.php?ID=<?php echo $ID; ?>"><p class="lienAffichage"> Modifier</p></a>
         <table>
             <!-- PHP CODE pour remplir la table-->
             <?php $ligne = $result->fetch(PDO::FETCH_ASSOC); ?>

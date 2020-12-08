@@ -5,11 +5,13 @@
     require "../config.php";
     require "../includes/functions.inc.php";
     $bdd = new PDO($dsn, $username, $password);
+    ?>
+
+    <?php
     // quand l'utilisateur valide le formulaire
     if (isset($_POST['submit'])) {
         try {
             $IDThese = $_GET['IDThese']; //recuperation de ID par url
-
             $Titre = $_POST['Titre']; //recuperation info du formulaire
             $DateDebut = $_POST['DateDebut'];
             $DateFin = $_POST['DateFin'];
@@ -65,11 +67,17 @@
     ?>
 
     <?php
+    try {
         //recuperation de l'id par l'url
         $IDThese = $_GET['ID'];
+        echo $IDThese;
         //on cherche toute les infos pour cette id
-        $Execution = $bdd->query ("SELECT * FROM These WHERE IDThese='$IDThese'");
+        $Execution = $bdd->query ("SELECT * FROM THESE WHERE IDThese ='$IDThese' ");
+    } catch (Exception $e) {
+        die('Erreur : ' . $e->getMessage());
+    }
         while($line = $Execution->fetch(PDO::FETCH_ASSOC)){
+
         ?>
             <form method="post">
                 <!-- formulaire de creation avce des placeholder pour montrer

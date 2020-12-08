@@ -5,9 +5,6 @@ try{
 
     $sql = "SELECT * FROM Lieu";
     $resultat = $bdd->query($sql);
-
-    echo "le nombre de these dans la base de donnees est : ".$resultat->rowCount().'</strong>';
-    echo "<br>";
 }
 catch (Exception $e){
     die('Erreur : '.$e->getMessage());

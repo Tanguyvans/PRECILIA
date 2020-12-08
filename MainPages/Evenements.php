@@ -20,8 +20,43 @@
 <div>Quatre</div>
 <div>Cinq</div>
 </div> -->
-<h2>Titre ou rien?</h2>
+<h2>Événements </h2>
 <?php include '../Formulaires/affichageEvenement.php'?>
+
+<?php
+if ($_GET['table'] == 'Evenement'){
+    $ID = $_GET['ID'];
+    $sql = "SELECT * FROM evenement WHERE IDEvenement = '$ID'";
+    $result = $bdd->query($sql);
+    ?>
+
+    <table>
+        <!-- PHP CODE pour remplir la table-->
+        <?php $ligne = $result->fetch(PDO::FETCH_ASSOC); ?>
+
+        <!--remplissage de la table avec la base de donnée-->
+        <tr><td>Nom:</td><td><?php echo $ligne['Nom'];?></td></tr>
+        <tr><td>type:</td><td><?php echo $ligne['Type'];?></td></tr>
+        <tr><td>Acronyme:</td><td><?php echo $ligne['Acronyme'];?></td></tr>
+        <tr><td>Duree:</td><td><?php echo $ligne['Duree'];?></td></tr>
+        <tr><td>Description:</td><td><?php echo $ligne['Description'];?></td></tr>
+        <tr><td>Mot cle 1:</td><td><?php echo $ligne['MotCle1'];?></td></tr>
+        <tr><td>Mot cle 2:</td><td><?php echo $ligne['MotCle2'];?></td></tr>
+        <tr><td>Date de debut:</td><td><?php echo $ligne['DateDebut'];?></td></tr>
+        <tr><td>Lieu:</td>
+            <?php
+            $IDLieu = $ligne['IDLieu'];
+            $perso = $bdd->query("SELECT Ville, Pays FROM LIEU WHERE IDLieu = '$IDLieu' ");
+            while($line = $perso->fetch(PDO::FETCH_ASSOC))
+            {
+                ?>
+                <td><?php echo $line['Ville'];?> <?php echo $line['Pays'];?></td>
+                <?php
+            }
+            ?></tr>
+
+    </table>
+<?php } ?>
 
 <?php include '../templates/footer.php' ?>
 </body>
