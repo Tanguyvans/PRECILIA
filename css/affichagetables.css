@@ -1,9 +1,9 @@
-section{
+/*section{
     max-height:200px;
     overflow:scroll;
 }
 
-table{ /* Pq agit aussi sur la table personnel???????*/
+table{
     width:100%;
 }
 td{
