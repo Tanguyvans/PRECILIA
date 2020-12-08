@@ -39,6 +39,7 @@
         ?>
 
             <a href="../Formulaires/modificationThese.php?ID=<?php echo $ID; ?>"><p class="lienAffichage"> Modifier</p></a>
+            <a href="../Formulaires/modificationThese.php?ID=<?php echo $ID; ?>"><p class="lienAffichage"> Supprimer</p></a>
         <table>
             <!-- PHP CODE pour remplir la table-->
             <?php $ligne = $result->fetch(PDO::FETCH_ASSOC); ?>

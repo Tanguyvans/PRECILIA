@@ -78,7 +78,9 @@
                      die('Erreur : ' . $e->getMessage());
                  }
                  while($line = $result->fetch(PDO::FETCH_ASSOC) && $i<3){ ?>
-                     <td><?php echo $line['Type'];?> <?php echo $line['Nom'];?> <?php echo $line['Duree'];?></td>
+                     <?php echo $line['Type'];?>
+                     <?php echo $line['Nom'];?>
+                     <?php echo $line['Duree'];?>
                     <?php
                      $i++;
                  } ?>
