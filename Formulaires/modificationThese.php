@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <link rel="stylesheet" href="../css/affichagetables.css"/>
+    <link rel="stylesheet" href="../css/style.css"/>
     <?php
     require "../config.php";
     require "../includes/functions.inc.php";
@@ -11,7 +11,7 @@
     // quand l'utilisateur valide le formulaire
     if (isset($_POST['submit'])) {
         try {
-            $IDThese = $_GET['IDThese']; //recuperation de ID par url
+            $IDThese = $_GET['ID']; //recuperation de ID par url
             $Titre = $_POST['Titre']; //recuperation info du formulaire
             $DateDebut = $_POST['DateDebut'];
             $DateFin = $_POST['DateFin'];
@@ -67,6 +67,7 @@
     ?>
 
     <?php
+    include "../templates/header.php";
     try {
         //recuperation de l'id par l'url
         $IDThese = $_GET['ID'];
@@ -114,5 +115,8 @@
 
                 <input type="submit" name="submit" value="Submit">
             </form>
-    <?php } ?>
+
+    <?php }
+    include "../templates/footer.php";
+    ?>
 </html>

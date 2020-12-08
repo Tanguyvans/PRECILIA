@@ -71,16 +71,19 @@
              <section>
                <h2>Nos projets</h2>
                  <?php
-                 $sql = "SELECT * FROM projetderecherche WHERE dateDebut=date('d/m/Y')";
-                 $result = $bdd->query($sql);
-                 $i = 0;
+                 try {
+                     $result = $bdd->query("SELECT * FROM projetderecherche WHERE dateDebut=date('d/m/Y')");
+                     $i = 0;
+                 } catch (Exception $e) {
+                     die('Erreur : ' . $e->getMessage());
+                 }
                  while($line = $result->fetch(PDO::FETCH_ASSOC) && $i<3){ ?>
                      <td><?php echo $line['Type'];?> <?php echo $line['Nom'];?> <?php echo $line['Duree'];?></td>
                     <?php
                      $i++;
                  } ?>
 
-                 <a href="Evenements.php">Plus de projets...</a>
+                 <a href="Evenements.php"><p class="lienAffichage">Plus de projets...</p></a>
              </section>
 
 
