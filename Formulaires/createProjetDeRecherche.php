@@ -8,18 +8,24 @@ if (isset($_POST['submit'])) {
         $Titre = $_POST['Titre'];
         $DateDebut  = $_POST['DateDebut'];
         $DateFin = $_POST['DateFin'];
-				$CollaborateurAcademique = $_POST['CollaborateurAcademique'];
+        $CollaborateurAcademique = $_POST['CollaborateurAcademique'];
         $CollaborateurIndustrielle = $_POST['CollaborateurIndustrielle'];
-				$Description = $_POST['Description'];
+        $Description = $_POST['Description'];
         $NumeroContact = $_POST['NumeroContact'];
         $MotCle1=$_POST['MotCle1'];
-	      $MotCle2=$_POST['MotCle2'];
+        $MotCle2=$_POST['MotCle2'];
 
         $sql = "INSERT INTO PROJETDERECHERCHE (IDProjet ,Titre, DateDebut, DateFin, Description, CollaborateurAcademique, CollaborateurIndustrielle, NumeroContact, MotCle1, MotCle2)
-			VALUES (NULL,'$Titre', '$DateDebut_new','$DateFin_new','$Description','$CollaborateurAcademique','$CollaborateurIndustrielle','$NumeroContact','$MotCle1','$MotCle2')";
+			VALUES (NULL,'$Titre', '$DateDebut','$DateFin','$Description','$CollaborateurAcademique','$CollaborateurIndustrielle','$NumeroContact','$MotCle1','$MotCle2')";
 
         $Resultat = $bdd -> exec($sql);
-        echo "Ajout reussie avec la base de donnée<br>";
+
+        $sql = "SELECT TOP 1 FROM ProjetDeRecherche WHERE Titre= '$Titre' AND  ";
+        $resultat = $bdd->query($sql);
+
+
+        echo "<p><em><a href='jointurePersonnelProjet.php?id=' >Commentaires</a></em></p>";
+
 
     } catch(PDOException $error) {
         echo $sql . "<br>" . $error->getMessage();
@@ -28,7 +34,6 @@ if (isset($_POST['submit'])) {
 }
 ?>
 <link rel="stylesheet" href="../css/style.css" />
-
 
 <?php //debut du formulaire, on peut utiliser action: nom de la page php qui v receptionner les donner ?>
 
@@ -43,11 +48,11 @@ if (isset($_POST['submit'])) {
     <label for="DateFin">Date de fin</label>
     <input type="Date" name="DateFin" id="DateFin">
 
-		<label for="Description">Description</label>
+    <label for="Description">Description</label>
     <input type="text" name="Description" id="Description">
 
-		<label for="CollaborateurAcademique">Collaboration academique</label>
-		<input type="text" name="CollaborateurAcademique" id="CollaborateurAcademique">
+    <label for="CollaborateurAcademique">Collaboration academique</label>
+    <input type="text" name="CollaborateurAcademique" id="CollaborateurAcademique">
 
     <label for="CollaborateurIndustrielle">Collaboration industrielle</label>
     <input type="text" name="CollaborateurIndustrielle" id="CollaborateurIndustrielle">
@@ -64,4 +69,4 @@ if (isset($_POST['submit'])) {
     <input type="submit" name="submit" value="Submit">
 </form>
 
-<a href="../index.php">Retour en arrière</a>
+<a href="../index.php" >Retour en arrière</a>

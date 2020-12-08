@@ -8,9 +8,6 @@ try{
 
     $sql = "SELECT * FROM Evenement";
     $resultat = $bdd->query($sql);
-
-    echo "Nombre d'évènements dans la base de donnée : ".$resultat->rowCount().'</strong>';
-    echo "<br>";
 }
 catch (Exception $e){
     die('Erreur : '.$e->getMessage());
@@ -98,15 +95,13 @@ if (isset($_POST['Recherche'])) {
     <!-- contruction de la table-->
     <table>
         <tr>
-            <th>Type</th>
             <th>Nom</th>
+            <th>Type</th>
             <th>Acronyme</th>
-            <th>Duree</th>
-            <th>description</th>
             <th>Mot cle 1</th>
             <th>Mot cle 2</th>
             <th>DateDebut</th>
-            <th>IDLieu</th>
+            <th>Lieu</th>
         </tr>
         <!-- PHP CODE pour remplir la table-->
         <?php
@@ -114,16 +109,24 @@ if (isset($_POST['Recherche'])) {
         {
             ?>
             <tr>
+                <?php $nom = $ligne['IDEvenement'];?>
                 <!--remplissage de la table avec la base de donnée-->
+                <td><a href="Evenements.php?table=Evenement&amp;ID=<?php echo($nom);?>"><p class="lienAffichage"> <?php echo $ligne['Nom'];?> </p></a></td>
                 <td ><?php echo $ligne['Type'];?></td>
-                <td><?php echo $ligne['Nom'];?></td>
                 <td><?php echo $ligne['Acronyme'];?></td>
-                <td><?php echo $ligne['Duree'];?></td>
-                <td><?php echo $ligne['Description'];?></td>
                 <td><?php echo $ligne['MotCle1'];?></td>
                 <td><?php echo $ligne['MotCle2'];?></td>
                 <td><?php echo $ligne['DateDebut'];?></td>
-                <td><?php echo $ligne['IDLieu'];?></td>
+                <?php
+                $IDLieu = $ligne['IDLieu'];
+                $perso = $bdd->query("SELECT Ville, Pays FROM LIEU WHERE IDLieu = '$IDLieu' ");
+                while($line = $perso->fetch(PDO::FETCH_ASSOC))
+                {
+                    ?>
+                    <td><?php echo $line['Ville'];?> <?php echo $line['Pays'];?></td>
+                    <?php
+                }
+                ?>
             </tr>
             <?php
         }

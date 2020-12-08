@@ -24,9 +24,6 @@
         <h2>Personnel</h2>
         <?php include '../Formulaires/affichagePersonnel.php'?>
 
-        <h2>Etudiant</h2>
-        <?php include '../Formulaires/affichageEtudiant.php'?>
-
         <?php include '../templates/footer.php' ?>
     </body>
 </html>
