@@ -10,6 +10,16 @@ function emptyInputSignup($IDPMatricule, $Nom, $Prenom, $Email, $Grade, $MDP, $M
     return $result;
 }
 
+function ifModif($value){
+    if(empty($value)){
+        $result = false;
+    }
+    else {
+        $result = true;
+    }
+    return $result;
+}
+
 function invalidEmail($Email){
     if(!filter_var($Email, FILTER_VALIDATE_EMAIL)) {
         $result = true;
