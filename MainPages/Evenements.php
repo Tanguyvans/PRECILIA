@@ -24,6 +24,21 @@
                 $result = $bdd->query($sql);
                 ?>
 
+                <a href="../Formulaires/modificationEvenement.php?ID=<?php echo $ID; ?>"><p class="lienAffichageR"> Modifier</p></a>
+                <a href="../Formulaires/suppressionEvenement.php?ID=<?php echo $ID; ?>"><p class="lienAffichageR"> Supprimer</p></a>
+
+                <?php
+                // si l'evenement est a venir
+                $CurrentDate = date("Y-m-d");
+                echo $CurrentDate;
+                echo $_GET['Date'];
+                if($_GET['Date'] > $CurrentDate){
+                    ?>
+                    <a href="../Formulaires/inscriptionMembreEvent.php?ID=<?php echo $ID; ?>"><p class="lienAffichageR">inscrire</p></a>
+                    <?php
+                }
+                ?>
+
                 <table>
                     <!-- PHP CODE pour remplir la table-->
                     <?php $ligne = $result->fetch(PDO::FETCH_ASSOC); ?>

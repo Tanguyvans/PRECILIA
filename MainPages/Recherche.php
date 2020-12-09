@@ -21,7 +21,7 @@
             <div class="container-lienAffichageR">
                 <div><a href="Recherche.php?f=../Formulaires/AffichageThese"><p class="lienAffichageR">These</p></a></div>
                 <div><a href="Recherche.php?f=../Formulaires/AffichageProjetDeRecherche"><p class="lienAffichageR">ProjetRecherche</p></a></div>
-                <div><a href="Recherche.php?f=../Formulaires/AffichageStageEnEntreprise"><p class="lienAffichageR">Stage en entreprise</p></a></div>
+                <div><a href="Recherche.php?f=../Formulaires/AffichageStageRecherche"><p class="lienAffichageR">Stage de recherche</p></a></div>
             </div>
             <?php
                 error_reporting(0);

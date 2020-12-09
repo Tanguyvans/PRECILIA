@@ -100,6 +100,7 @@ if (isset($_POST['Recherche'])) {
                 <th>Collaboration industrielle</th>
                 <th>Mot cle 1</th>
                 <th>Mot cle 2</th>
+                <th>Stagiaire</th>
             </tr>
             <?php
                 while($ligne = $resultat->fetch(PDO::FETCH_ASSOC))
@@ -113,6 +114,17 @@ if (isset($_POST['Recherche'])) {
                             <td><?php echo $ligne['CollaborateurIndustrielle'];?></td>
                             <td><?php echo $ligne['MotCle1'];?></td>
                             <td><?php echo $ligne['MotCle2'];?></td>
+
+                            <?php
+                            $Matricule = $ligne['IDPMatricule'];
+                            $perso = $bdd->query("SELECT Nom, Prenom FROM PERSONNEL WHERE IDPMatricule = '$Matricule' ");
+                            while($line = $perso->fetch(PDO::FETCH_ASSOC))
+                            {
+                                ?>
+                                <td><?php echo $line['Nom'];?> <?php echo $line['Prenom'];?></td>
+                                <?php
+                            }
+                            ?>
                         </tr>
                     <?php
                     }

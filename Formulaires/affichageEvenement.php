@@ -62,6 +62,8 @@ catch (Exception $e){
 
     <input type="submit" name="Recherche" value="Recherche">
 
+    <input type="submit" name="Avenir" value="A venir">
+
 </form>
 <!--========== Il faut appuyer sur le boutton recherche ==============-->
 <?php
@@ -91,6 +93,18 @@ if (isset($_POST['Recherche'])) {
 }
 ?>
 
+<?php
+if(isset($_POST['Avenir'])){
+    $CurrentDate = date("Y/m/d");
+    try {
+        $resultat = $bdd->query("SELECT * FROM EVENEMENT WHERE DateDebut > '$CurrentDate'");
+
+    } catch (Exception $e) {
+        die('Erreur : ' . $e->getMessage());
+    }
+}
+?>
+
 <section>
     <!-- contruction de la table-->
     <table>
@@ -110,8 +124,9 @@ if (isset($_POST['Recherche'])) {
             ?>
             <tr>
                 <?php $nom = $ligne['IDEvenement'];?>
+                <?php $DateDebut = $ligne['DateDebut'];?>
                 <!--remplissage de la table avec la base de donnée-->
-                <td><a href="Evenements.php?table=Evenement&amp;ID=<?php echo($nom);?>"><p class="lienAffichage"> <?php echo $ligne['Nom'];?> </p></a></td>
+                <td><a href="Evenements.php?table=Evenement&amp;ID=<?php echo($nom);?>&amp;Date=<?php echo($DateDebut);?>"><p class="lienAffichage"> <?php echo $ligne['Nom'];?> </p></a></td>
                 <td ><?php echo $ligne['Type'];?></td>
                 <td><?php echo $ligne['Acronyme'];?></td>
                 <td><?php echo $ligne['MotCle1'];?></td>
