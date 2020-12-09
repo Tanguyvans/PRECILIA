@@ -59,6 +59,7 @@ Description de la page
                     <?php } ?>
 
                 </table>
+                <a href="../Formulaires/modificationProfil.php"><p class="lienAffichage">Modifier</p></a>
             </div>
             <div class="Image">
 
@@ -81,6 +82,8 @@ Description de la page
                     </form>
                 <?php } ?>
             </div>
+
+
         </div>
 
     </div>
