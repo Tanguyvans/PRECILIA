@@ -12,7 +12,7 @@
     $bdd = new PDO($dsn, $username, $password);
     ?>
     <?php include '../templates/header.php' ?>
-    <div class="container-lienAffichage">
+    <div class="container-lienAffichageR">
         <a href="Enseignement.php?f=../Formulaires/AffichageCours"><p class="lienAffichage">Cours</p></a>
         <a href="Enseignement.php?f=../Formulaires/AffichageTFE"><p class="lienAffichage">TFE</p></a>
         <a href="Enseignement.php?f=../Formulaires/AffichageStageEnEntreprise"><p class="lienAffichage">Stage en entreprise</p></a>

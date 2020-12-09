@@ -69,7 +69,7 @@
 
 
              <section>
-               <h2>Nos projets</h2>
+               <h2>Nos événements</h2>
                  <?php
                  $CurrentDate = date("Y/m/d");
                  try {

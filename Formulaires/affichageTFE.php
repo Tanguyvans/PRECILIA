@@ -21,13 +21,19 @@ catch (Exception $e){
         <?php
         while($ligne = $resultat->fetch(PDO::FETCH_ASSOC))
         {
-            ?>
-            <?php $ID = $ligne['IDTFE'] ?>
+            $ID = $ligne['IDTFE'];
+            $Etudiant = $ligne['IDEMatricule'];
+            $Personnel = $ligne['IDPMatricule']; ?>
+
+            <?php
+            $EtudiantSQL = $bdd->query("SELECT Nom, Prenom FROM Etudiant WHERE IDEMatricule = '$Etudiant' ");
+            $PersonnelSQL = $bdd->query("SELECT Nom,Prenom FROM Personnel WHERE IDPMatricule :'$Personnel'");
+            $lineEtudiant = $Etudiant->fetch(PDO::FETCH_ASSOC);
+            $linePersonnel = $Personnel->fetch(PDO::FETCH_ASSOC);  ?>
             <tr>
-                <!--remplissage de la table avec la base de donnée-->
                 <td><a href="../MainPages/Enseignement.php?table=TFE&amp;ID=<?php echo($ID);?>"><p class="lienAffichage"><?php echo $ligne['Titre'];?></p></a></td>
-                <td><?php echo $ligne['IDEMatricule'];?></td>
-                <td><?php echo $ligne['IDPMatricule'];?></td>
+                <td><?php echo $lineEtudiant['Nom'];?> <?php echo $lineEtudiant['Prenom'];?></td>
+                <td><?php echo $linePersonnel['Nom'];?> <?php echo $linePersonnel['Prenom'];?></td>
             </tr>
             <?php
         }
