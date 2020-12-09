@@ -112,7 +112,7 @@ if (isset($_POST['Recherche'])) {
                 <!--remplissage de la table avec la base de donnée-->
                 <?php $nom = $ligne['IDProjet'];?>
                 <!--remplissage de la table avec la base de donnée-->
-                <td><a href="Recherche.php?table=ProjetDeRecherche&amp;ID=<?php echo($nom);?>"><p class="lienAffichage"> <?php echo $ligne['Titre'];?> </p></a></td>
+                <td><a href="Recherche.php?table=ProjetDeRecherche&amp;ID=<?php echo($nom);?>"><p class="lienAffichageTableau"> <?php echo $ligne['Titre'];?> </p></a></td>
                 <td><?php echo $ligne['DateDebut'];?></td>
                 <td><?php echo $ligne['DateFin'];?></td>
                 <td><?php echo $ligne['NumeroContact'];?></td>

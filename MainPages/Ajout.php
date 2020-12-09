@@ -13,23 +13,23 @@ Description de la page
 =============================================-->
  <body>
 
-  <div id="tout">
+  <div id="toutAj">
 
-      <div class="haut">
+      <div class="hautAj">
           <?php include '../templates/header.php' ?>
       </div>
 
-      <div id="milieu">
-          <div class="toolbar">
+      <div id="milieuAj">
+          <div class="toolbarAj">
               <?php include '../templates/toolbar.php' ?>
 
           </div>
 
 
 
-          <div class="Ensemble">
+          <div class="EnsembleAj">
 
-                <div class="container-choix-creation">
+                <div class="container-choix-creationAj">
                     <a href="Ajout.php?f=../Formulaires/createCours">Cours</a>
                     <a href="Ajout.php?f=../Formulaires/createEtudiant">Etudiant</a>
                     <a href="Ajout.php?f=../Formulaires/createEvenement">Evenement</a>
@@ -42,7 +42,7 @@ Description de la page
                     <a href="Ajout.php?f=../Formulaires/createThese">These</a>
                 </div>
 
-                <div class="php">
+                <div class="phpAj">
                     <?php
                     error_reporting(0);
                     if ($_GET['f']) {include ($_GET['f'].".php");}
@@ -52,7 +52,7 @@ Description de la page
 
       </div>
 
-      <div class="bas">
+      <div class="basAj">
           <?php include '../templates/footer.php' ?>
       </div>
 

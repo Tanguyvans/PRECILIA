@@ -1,4 +1,4 @@
-#ensemble {
+#ensembleT {
 
     background: #344341;
     text-align: center;
@@ -7,11 +7,11 @@
 
 
 }
-#ensemble.active{
+#ensemble.activeT{
     height: auto;
     width:70px; /* si on impose une valeur ca bug*/
 }
-#Liens{
+#LiensT{
     height:100%;
     display: flex;
     flex-direction: column;
@@ -19,6 +19,6 @@
     align-items: center;
 
 }
-a{
-    color:black;
+.activeT a{
+    color:white;
 }
