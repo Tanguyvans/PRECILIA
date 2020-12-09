@@ -5,9 +5,6 @@ try{
 
     $sql = "SELECT * FROM tfe";
     $resultat = $bdd->query($sql);
-
-    echo "le nombre de these dans la base de donnees est : ".$resultat->rowCount().'</strong>';
-    echo "<br>";
 }
 catch (Exception $e){
     die('Erreur : '.$e->getMessage());
@@ -15,8 +12,6 @@ catch (Exception $e){
 ?>
 
 <section>
-    <h1>Tableau</h1>
-    <!-- contruction de la table-->
     <table>
         <tr>
             <th>Titre</th>
@@ -29,14 +24,14 @@ catch (Exception $e){
             <th>IDPMatricule</th>
             <th>IDEMatricule</th>
         </tr>
-        <!-- PHP CODE pour remplir la table-->
         <?php
         while($ligne = $resultat->fetch(PDO::FETCH_ASSOC))
         {
             ?>
+            <?php $ID = $ligne['IDTFE'] ?>
             <tr>
                 <!--remplissage de la table avec la base de donnée-->
-                <td><?php echo $ligne['Titre'];?></td>
+                <td><a href="Recherche.php?table=Cours&amp;ID=<?php echo($ID);?>"><p class="lienAffichage"><?php echo $ligne['Titre'];?></p></a></td>
                 <td><?php echo $ligne['DateDebut'];?></td>
                 <td><?php echo $ligne['DateFin'];?></td>
                 <td><?php echo $ligne['CollaborateurAcademique'];?></td>

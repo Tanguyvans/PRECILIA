@@ -20,28 +20,28 @@ if (isset($_POST['submit'])) {
             $Grade = $_POST['Grade'];
             $MDP = $_POST['MotDePasse'];
             if (ifModif($Nom)) { //modification que des champs modifiés par l utilisateur
-                $sql = "UPDATE Personnel SET Nom='$Nom' WHERE IDEMatricule='$ID'";
+                $sql = "UPDATE Personnel SET Nom='$Nom' WHERE IDPMatricule='$ID'";
                 $Resultat = $bdd->exec($sql);
             }
             if (ifModif($Prenom)) {
-                $sql = "UPDATE Personnel SET Prenom='$Prenom' WHERE IDEMatricule='$ID'";
+                $sql = "UPDATE Personnel SET Prenom='$Prenom' WHERE IDPMatricule='$ID'";
                 $Resultat = $bdd->exec($sql);
             }
             if (ifModif($Email)) {
-                $sql = "UPDATE Personnel SET Email='$Email' WHERE IDEMatricule='$ID'";
+                $sql = "UPDATE Personnel SET Email='$Email' WHERE IDPMatricule='$ID'";
                 $Resultat = $bdd->exec($sql);
             }
             if (ifModif($Telephone)) {
-                $sql = "UPDATE Personnel SET Telephone='$Telephone' WHERE IDEMatricule='$ID'";
+                $sql = "UPDATE Personnel SET Telephone='$Telephone' WHERE IDPMatricule='$ID'";
                 $Resultat = $bdd->exec($sql);
             }
 
             if (ifModif($Grade)) {
-                $sql = "UPDATE Personnel SET Grade='$Grade' WHERE IDEMatricule='$ID'";
+                $sql = "UPDATE Personnel SET Grade='$Grade' WHERE IDPMatricule='$ID'";
                 $Resultat = $bdd->exec($sql);
             }
             if (ifModif($MDP)) {
-                $sql = "UPDATE Personnel SET MotDePasse='$MDP' WHERE IDEMatricule='$ID'";
+                $sql = "UPDATE Personnel SET MotDePasse='$MDP' WHERE IDPMatricule='$ID'";
                 $Resultat = $bdd->exec($sql);
             }
         }

@@ -11,9 +11,9 @@ if (isset($_POST['submit'])) {
         $CollaborateurIndustrielle = $_POST['CollaborateurIndustrielle'];
         $NumeroContact = $_POST['NumeroContact'];
         $MotCle1=$_POST['MotCle1'];
-	      $MotCle2=$_POST['MotCle2'];
+        $MotCle2=$_POST['MotCle2'];
         $IDPMatricule=$_POST['IDPMatricule'];
-	      $IDEMatricule=$_POST['IDEMatricule'];
+        $IDEMatricule=$_POST['IDEMatricule'];
 
         $sql = "INSERT INTO TFE (IDTFE, Titre, DateDebut, DateFin, CollaborateurIndustrielle, NumeroContact, MotCle1, MotCle2, IDPMatricule, IDEMatricule)
 			VALUES (NULL,'$Titre','$DateDebut','$DateFin', '$CollaborateurIndustrielle','$NumeroContact','$MotCle1','$MotCle2','$IDPMatricule','$IDEMatricule')";
