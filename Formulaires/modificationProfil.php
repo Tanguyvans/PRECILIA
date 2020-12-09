@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" href="../css/style.css"/>
+
+<?php
+session_start();
+?>
 <?php
 require "../config.php";
 require "../includes/functions.inc.php";
@@ -41,7 +45,10 @@ if (isset($_POST['submit'])) {
                 $Resultat = $bdd->exec($sql);
             }
             if (ifModif($MDP)) {
-                $sql = "UPDATE Personnel SET MotDePasse='$MDP' WHERE IDPMatricule='$ID'";
+
+                $hashedMDP = password_hash($MDP, PASSWORD_DEFAULT);
+
+                $sql = "UPDATE Personnel SET MotDePasse='$hashedMDP' WHERE IDPMatricule='$ID'";
                 $Resultat = $bdd->exec($sql);
             }
         }
@@ -69,7 +76,10 @@ if (isset($_POST['submit'])) {
                 $Resultat = $bdd->exec($sql);
             }
             if (ifModif($MDP)) {
-                $sql = "UPDATE Etudiant SET MotDePasse='$MDP' WHERE IDEMatricule='$ID'";
+
+                $hashedMDP = password_hash($MDP, PASSWORD_DEFAULT);
+
+                $sql = "UPDATE Etudiant SET MotDePasse='$hashedMDP' WHERE IDEMatricule='$ID'";
                 $Resultat = $bdd->exec($sql);
             }
         }
@@ -84,9 +94,10 @@ if (isset($_POST['submit'])) {
 include "../templates/header.php";
 try {
     //recuperation de l'id par l'url
+
     if(isset($_SESSION["Psession"])){
         $ID = $_SESSION['Psession'];
-        $result = $bdd -> query ('SELECT * FROM Personnel WHERE IDPMatricule ="$ID" ');
+        $result = $bdd -> query ("SELECT * FROM Personnel WHERE IDPMatricule ='$ID' ");
         while($line = $result->fetch(PDO::FETCH_ASSOC)){
         ?>
         <form method="post">
@@ -116,7 +127,7 @@ try {
     }
     if(isset($_SESSION["Esession"])) {
         $ID = $_SESSION['Esession'];
-        $result = $bdd -> query ('SELECT * FROM Etudiant WHERE IDEMatricule ="$ID" ');
+        $result = $bdd -> query ("SELECT * FROM Etudiant WHERE IDEMatricule ='$ID' ");
         while($line = $result->fetch(PDO::FETCH_ASSOC)){ ?>
             <form method="post">
             <label for="Nom">Nom</label>
@@ -125,8 +136,6 @@ try {
             <input type="text" name="Prenom" id="Prenom" placeholder="<?php echo ($line['Prenom']); ?>">
             <label for="Email">Adresse email</label>
             <input type="text" name="Email" id="Email" placeholder="<?php echo ($line['Email']); ?>">
-            <label for="Telephone">Numéro de téléphone</label>
-            <input type="number" name="Telephone" id="Telephone" placeholder="<?php echo ($line['Telephone']); ?>">
             <label for="MotDePasse">Mot de passe</label>
             <input type="password" name="MotDePasse" id="MotDePasse">
             <input type="submit" name="submit" value="Submit">

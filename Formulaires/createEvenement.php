@@ -1,35 +1,7 @@
 <?php
 require "../config.php";
 $bdd = new PDO($dsn, $username, $password);
-
-if (isset($_POST['submit'])) {
-
-    try {
-
-        $Type  = $_POST['Type'];
-        $Nom = $_POST['Nom'];
-        $Acronyme = $_POST['Acronyme'];
-        $Duree = $_POST['Duree'];
-        $Description=$_POST['Description'];
-        $MotCle1=$_POST['MotCle1'];
-        $MotCle2=$_POST['MotCle2'];
-        $DateDebut=$_POST['DateDebut'];
-        $IDLieu=$_POST['IDLieu'];
-
-        $sql = "INSERT INTO EVENEMENT (IDEvenement, Type, Nom, Acronyme, Duree, Description, MotCle1, MotCle2, DateDebut, IDLieu)
-  			VALUES (NULL, '$Type', '$Nom', '$Acronyme', '$Duree', '$Description', '$MotCle1', '$MotCle2', '$DateDebut','$IDLieu')";
-
-  			$Resultat = $bdd -> exec($sql);
-  			echo "Ajout reussie avec la base de donnée<br>";
-
-    } catch(PDOException $error) {
-        echo $sql . "<br>" . $error->getMessage();
-    }
-
-}
 ?>
-
-
 <link rel="stylesheet" href="../css/style.css" />
 
 
@@ -84,9 +56,46 @@ if (isset($_POST['submit'])) {
       <?php endforeach; ?>
     </select>
 
-    <input type="submit" name="submit" value="Submit">
+    <input type="submit" name="submitEvent" value="Submit">
 </form>
 
-<a href="../index.php">Retour en arrière</a>
+<?php
+require "../config.php";
+$bdd = new PDO($dsn, $username, $password);
+
+if (isset($_POST['submitEvent'])) {
+
+    try {
+        $Type  = $_POST['Type'];
+        $Nom = $_POST['Nom'];
+        $Acronyme = $_POST['Acronyme'];
+        $Duree = $_POST['Duree'];
+        $Description=$_POST['Description'];
+        $MotCle1=$_POST['MotCle1'];
+        $MotCle2=$_POST['MotCle2'];
+        $DateDebut=$_POST['DateDebut'];
+        $IDLieu=$_POST['IDLieu'];
+
+        $sql = "INSERT INTO EVENEMENT (IDEvenement, Type, Nom, Acronyme, Duree, Description, MotCle1, MotCle2, DateDebut, IDLieu)
+  			VALUES (NULL, '$Type', '$Nom', '$Acronyme', '$Duree', '$Description', '$MotCle1', '$MotCle2', '$DateDebut','$IDLieu')";
+
+        $Resultat = $bdd -> exec($sql);
+        echo "Ajout reussie avec la base de donnée<br>";
+
+        $newsql = "SELECT IDEvenement, Nom FROM EVENEMENT ORDER BY IDEvenement DESC";
+
+    } catch(PDOException $error) {
+        echo $sql . "<br>" . $error->getMessage();
+    }
+
+    $sql = "SELECT IDEvenement, Nom FROM EVENEMENT ORDER BY IDEvenement DESC";
+    $perso = $bdd->query($sql);
+    $line = $perso->fetch(PDO::FETCH_ASSOC);
+    $IDEvenement = $line['IDEvenement'];
+    $Nom = $line['Nom'];
+
+    echo "<h3><a href='../Formulaires/jointureMembreEvent.php?ID=$IDEvenement'> Inscrire des participants à l'évènement: $Nom</a></h3>";
+}
+?>
 
 
