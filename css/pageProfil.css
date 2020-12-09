@@ -2,16 +2,16 @@ img {
     width:80%;
     height: auto;
 }
-.pageprincipale{
+.pageprincipaleP{
     display:flex;
     flex-direction:row;
     justify-content: flex-start;
 }
-.texte{
+.texteP{
     width:65%;
     text-align:start;
 }
-.Image{
+.ImageP{
     width:35%;
 }
 table{
@@ -19,6 +19,19 @@ table{
     margin:auto;
 }
 
-a {
+.texteP div {
+    text-align:center;
     color:black;
+    width:100px;
+}
+#milieuP{
+    display:flex;
+}
+.toolbarP {
+    height:auto;
+    width:70px;
+    border: 3px solid white;
+}
+.pageprincipaleP h2{
+    text-align:center;
 }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport"> <!--adaptive response to the width of the device-->
-    <title>PRESCILIA - Ajout</title>
+    <title>PRESCILIA - Profil</title>
     <meta content="" name="descriptison"> <!--Description du site lors de la recherche-->
     <meta content="" name="keywords">
     <link href="../css/pageProfil.css" rel="stylesheet" />
@@ -14,20 +14,20 @@ Description de la page
 =============================================-->
 <body>
 
-<div id="tout">
+<div id="toutP">
 
-    <div class="haut">
+    <div class="hautP">
         <?php include '../templates/header.php' ?>
     </div>
 
-    <div id="milieu">
-        <div class="toolbar">
+    <div id="milieuP">
+        <div class="toolbarP">
             <?php include '../templates/toolbar.php' ?>
 
         </div>
 
-        <div class="pageprincipale">
-            <div class="texte">
+        <div class="pageprincipaleP">
+            <div class="texteP">
 
                 <?php
                 if(isset($_SESSION["Psession"])){
@@ -59,9 +59,11 @@ Description de la page
                     <?php } ?>
 
                 </table>
-                <a href="../Formulaires/modificationProfil.php"><p class="lienAffichage">Modifier</p></a>
+                <div>
+                    <a href="../Formulaires/modificationProfil.php"><p class="lienAffichageP">Modifier</p></a>
+                </div>
             </div>
-            <div class="Image">
+            <div class="ImageP">
 
                 <!-- Image-->
                 <?php if(isset($_SESSION["Psession"])){ ?>
@@ -88,7 +90,7 @@ Description de la page
 
     </div>
 
-    <div class="bas">
+    <div class="basP">
         <?php include '../templates/footer.php' ?>
     </div>
 
