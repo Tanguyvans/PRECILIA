@@ -61,7 +61,7 @@
                         }
                         ?></div>
                     <div class="tier"><h2>Collaboration academique:</h2><h3><?php echo $ligne['CollaborateurAcademique'];?></h3></div>
-                    <div class="tier"><h2>Collaboration industrielle:</h2><h3><?php echo $ligne['CollaborateurIndustrielle'];?></h3></div>
+                    <div class="tier"><h2>Collaboration industrielle:</h2><h3><?php echo $ligne['CollaorateurIndustrielle'];?></h3></div>
                 </div>
                 <div class="Ligne3">
                     <div class="tier"><h2>Date de debut:</h2><h3><?php echo $ligne['DateDebut'];?></h3></div>

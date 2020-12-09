@@ -23,11 +23,11 @@
 </head>
 <body>
 <!---->
-<footer id="footer">
-    <div class="footer-top">
+<footer id="footerF">
+    <div class="footer-topF">
         <h3>Prescilia</h3>
-        <div id="conteneur1">
-            <div class="col-lg-3 col-md-6 footer-info">
+        <div id="conteneur1F">
+            <div class="col-lg-3 col-md-6 footer-infoF">
                 <h4>Nous contacter</h4>
                 <p> <strong>Adresse:</strong><br>
                     9, rue de Houdain<br>
@@ -38,21 +38,21 @@
                     https://web.umons.ac.be
                 </p>
             </div>
-            <div class="col-lg-2 col-md-6 footer-links">
+            <div class="col-lg-2 col-md-6 footer-linksF">
                 <h4>Liens utiles</h4>
                 <!-- classes identifiant pour manipuler dans css-->
                 <ul>
-                    <li><i class="bx bx-chevron-right"></i> <a href='../MainPages/Accueil.php'>Accueil</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href='../MainPages/Enseignement.php'>Enseignement</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href='../MainPages/Evenements.php'>Evenements</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href='../MainPages/Membres.php'>Membres</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href='../MainPages/Recherche.php'>Recherche</a></li>
+                    <li><i class="bx bx-chevron-rightF"></i> <a href='../MainPages/Accueil.php'>Accueil</a></li>
+                    <li><i class="bx bx-chevron-rightF"></i> <a href='../MainPages/Enseignement.php'>Enseignement</a></li>
+                    <li><i class="bx bx-chevron-rightF"></i> <a href='../MainPages/Evenements.php'>Evenements</a></li>
+                    <li><i class="bx bx-chevron-rightF"></i> <a href='../MainPages/Membres.php'>Membres</a></li>
+                    <li><i class="bx bx-chevron-rightF"></i> <a href='../MainPages/Recherche.php'>Recherche</a></li>
                 </ul>
             </div>
         </div>
     </div>
-    <div class="conteneur2">
-        <div class="copyright">
+    <div class="conteneur2F">
+        <div class="copyrightF">
             &copy; Copyright <strong><span>Prescilia</span></strong>. Tous droits réservés
         </div>
     </div>

@@ -12,14 +12,14 @@
     <link href="../css/pageT.css" rel="stylesheet">
 </head>
 <body>
-<header id="ensemble">
-    <div id="Liens">
-        <div class="active"><a href='../MainPages/Profil.php'>Profil</a></div>
+<header id="ensembleT">
+    <div id="LiensT">
+        <div class="activeT"><a href='../MainPages/Profil.php'>Profil</a></div>
         <?php if(isset($_SESSION["Psession"])){?>
-            <div class="active"><a href='../MainPages/Ajout.php'>Ajouter</a></div>
+            <div class="activeT"><a href='../MainPages/Ajout.php'>Ajouter</a></div>
         <?php } ?>
-        <div class="active"><a href='../MainPages/adresse'>Autre?</a></div>
-        <div class="active"><a href='../MainPages/inscrire.php'>S'inscire</a></div>
+        <div class="activeT"><a href='../MainPages/adresse'>Autre?</a></div>
+        <div class="activeT"><a href='../MainPages/inscrire.php'>S'inscire</a></div>
     </div>
 </header>
 </body>

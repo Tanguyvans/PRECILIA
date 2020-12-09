@@ -1,10 +1,10 @@
-#header {
+#headerH {
     background: #344341;
     padding: 15px 15px 15px 15px;
     color: #fff;
     font-size: 14px;
 }
-#header h1 {
+#headerH h1 {
     color: #fff;
     font-size: 24px;
     margin: 0 0 20px 0;
@@ -12,11 +12,11 @@
     line-height: 1;
     font-weight: 700;
 }
-#container1{
+#container1H{
     height: 45px;
     background: #3d4f4c;
 }
-#container2{
+#container2H{
     display:flex;
     background: #3d4f4c;
     justify-content:space-around;
@@ -24,7 +24,7 @@
     height:40px;
 }
 
-a{
+#containerH a{
     color:#fff;
 }
 
