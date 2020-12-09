@@ -17,6 +17,11 @@ if (isset($_POST['submit'])) {
         echo $sql . "<br>" . $error->getMessage();
     }
 }
+
+if (isset($_POST['quitter'])) {
+    header("location: ../MainPages/Ajout.php?f=../Formulaires/createProjetDeRecherche");
+}
+
 ?>
 
 <form method="post">
@@ -38,5 +43,7 @@ if (isset($_POST['submit'])) {
     </select>
 
     <input type="submit" name="submit" value="Submit">
+
+    <input type="submit" name="quitter" value="quitter">
 
 </form>

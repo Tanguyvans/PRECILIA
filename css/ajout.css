@@ -11,6 +11,7 @@ body{
     justify-content:space-around;
     color:black;
     margin-left:4%;
+    border: solid #5B6DCD 2px;
 }
 .Ensemble{
     width:100%;

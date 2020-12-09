@@ -71,19 +71,27 @@
              <section>
                <h2>Nos projets</h2>
                  <?php
+                 $CurrentDate = date("Y/m/d");
                  try {
-                     $result = $bdd->query("SELECT * FROM projetderecherche WHERE dateDebut=date('d/m/Y')");
+                     $result = $bdd->query("SELECT * FROM EVENEMENT WHERE DateDebut < '$CurrentDate'");
                      $i = 0;
                  } catch (Exception $e) {
                      die('Erreur : ' . $e->getMessage());
                  }
-                 while($line = $result->fetch(PDO::FETCH_ASSOC) && $i<3){ ?>
-                     <?php echo $line['Type'];?>
-                     <?php echo $line['Nom'];?>
-                     <?php echo $line['Duree'];?>
+                 while ($i<3){
+                     $line = $result->fetch(PDO::FETCH_ASSOC);
+                     echo $line['IDEvenement'];
+                    ?>
+
+                     <img src="../imageEvent/<?php echo $line['IDEvenement']; ?>.jpg" />
+                     <h3>Titre: <?php echo $line['Nom'] ?></h3>
+                     <h4>Type : <?php echo $line['Type'] ?></h4>
+                     <h4>Duree: <?php echo $line['Duree'] ?></h4>
+
                     <?php
                      $i++;
-                 } ?>
+                 }
+                 ?>
 
                  <a href="Evenements.php"><p class="lienAffichage">Plus de projets...</p></a>
              </section>
