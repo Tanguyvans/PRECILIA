@@ -67,12 +67,12 @@
     ?>
 
     <?php
+    //include du header
     include "../templates/header.php";
     try {
         //recuperation de l'id par l'url
         $IDThese = $_GET['ID'];
-        echo $IDThese;
-        //on cherche toute les infos pour cette id
+        //on cherche toutes les infos pour cette id
         $Execution = $bdd->query ("SELECT * FROM THESE WHERE IDThese ='$IDThese' ");
     } catch (Exception $e) {
         die('Erreur : ' . $e->getMessage());
@@ -81,7 +81,7 @@
 
         ?>
             <form method="post">
-                <!-- formulaire de creation avce des placeholder pour montrer
+                <!-- formulaire de creation avec des placeholder pour montrer
                  a l'utilisateur ce qui existe deja dans la table-->
                 <label for="Titre">Titre</label>
                 <input type="text" name="Titre" id="Titre" placeholder="<?php echo $line['Titre']?>">
@@ -116,7 +116,11 @@
                 <input type="submit" name="submit" value="Submit">
             </form>
 
+            <!-- retour faire l affichage des theses -->
+            <a href="../MainPages/Recherche.php?f=../Formulaires/AffichageThese"><p class="lienAffichage">Retour</p></a>
+
     <?php }
+    //include du footer
     include "../templates/footer.php";
     ?>
 </html>

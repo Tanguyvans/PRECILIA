@@ -4,6 +4,7 @@ $bdd = new PDO($dsn, $username, $password);
 
 if (isset($_POST['submit'])) {
     try {
+        $IDCours = $_POST['IDCours'];
         $NombreCredit = $_POST['NombreCredit'];
         $NombreHeure=$_POST['NombreHeure'];
         $Titulaire=$_POST['Titulaire'];
@@ -13,7 +14,7 @@ if (isset($_POST['submit'])) {
         $IDPMatricule=$_POST['IDPMatricule'];
 
         $sql = "INSERT INTO COURS (IDCours, NombreCredit, NombreHeure , Titulaire, UE, MotCle1, MotCle2, IDPMatricule)
-			VALUES (NULL,'$NombreCredit','$NombreHeure','$Titulaire','$UE','$MotCle1','$MotCle2','$IDPMatricule')";
+			VALUES ('$IDCours','$NombreCredit','$NombreHeure','$Titulaire','$UE','$MotCle1','$MotCle2','$IDPMatricule')";
 
         $Resultat = $bdd -> exec($sql);
         echo "Ajout reussie avec la base de donnée<br>";
@@ -30,6 +31,9 @@ if (isset($_POST['submit'])) {
 <?php //debut du formulaire, on peut utiliser action: nom de la page php qui v receptionner les donner ?>
 
 <form method="post">
+
+    <label for="IDCours">IDCours</label>
+    <input type="text" name="IDCours" id="IDCours">
 
     <label for="NombreCredit">Nombre de crédit</label>
     <input type="number" name="NombreCredit" id="NombreCredit">
