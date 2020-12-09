@@ -6,7 +6,6 @@ if (isset($_POST['submit'])) {
 
   try {
       require "../config.php";
-      $bdd = new PDO($dsn, $username, $password);
 
       $IDPMatricule = $_POST['IDPMatricule'];
       $Nom  = $_POST['Nom'];
@@ -36,15 +35,8 @@ if (isset($_POST['submit'])) {
           echo"utilisateur deja exitant<br>";
       }
 
-
       createPersonnel($conn, $IDPMatricule, $Nom, $Prenom, $Email, $Telephone, $Grade, $MDP);
-/*
-      $sql = "INSERT INTO PERSONNEL (IDPMatricule, Nom, Prenom, Email, Telephone, Grade, MotDePasse)
-		VALUES ('$IDPMatricule','$Nom','$Prenom','$Email','$Telephone', '$Grade', '$hashedMDP')";
 
-      $Resultat = $bdd -> exec($sql);
-      echo "Ajout reussie avec la base de donnée<br>";
-*/
   } catch(PDOException $error) {
     echo $sql . "<br>" . $error->getMessage();
   }

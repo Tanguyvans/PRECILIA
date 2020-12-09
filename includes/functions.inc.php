@@ -96,7 +96,7 @@ function createPersonnel($conn, $IDPMatricule, $Nom, $Prenom, $Email, $Telephone
 
     $hashedMDP = password_hash($MDP, PASSWORD_DEFAULT);
 
-    mysqli_stmt_bind_param($stmt, "sssssss", $IDEMatricule, $Nom, $Prenom, $Email, $Telephone, $Grade, $hashedMDP);
+    mysqli_stmt_bind_param($stmt, "sssssss", $IDPMatricule, $Nom, $Prenom, $Email, $Telephone, $Grade, $hashedMDP);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
 

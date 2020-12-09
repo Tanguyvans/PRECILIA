@@ -1,38 +1,4 @@
-<?php
-require "../config.php";
-$bdd = new PDO($dsn, $username, $password);
 
-if (isset($_POST['submit'])) {
-
-    try {
-        $Titre = $_POST['Titre'];
-        $DateDebut  = $_POST['DateDebut'];
-        $DateFin = $_POST['DateFin'];
-        $CollaborateurAcademique = $_POST['CollaborateurAcademique'];
-        $CollaborateurIndustrielle = $_POST['CollaborateurIndustrielle'];
-        $Description = $_POST['Description'];
-        $NumeroContact = $_POST['NumeroContact'];
-        $MotCle1=$_POST['MotCle1'];
-        $MotCle2=$_POST['MotCle2'];
-
-        $sql = "INSERT INTO PROJETDERECHERCHE (IDProjet ,Titre, DateDebut, DateFin, Description, CollaborateurAcademique, CollaborateurIndustrielle, NumeroContact, MotCle1, MotCle2)
-			VALUES (NULL,'$Titre', '$DateDebut','$DateFin','$Description','$CollaborateurAcademique','$CollaborateurIndustrielle','$NumeroContact','$MotCle1','$MotCle2')";
-
-        $Resultat = $bdd -> exec($sql);
-
-        $sql = "SELECT TOP 1 FROM ProjetDeRecherche WHERE Titre= '$Titre' AND  ";
-        $resultat = $bdd->query($sql);
-
-
-        echo "<p><em><a href='jointurePersonnelProjet.php?id=' >Commentaires</a></em></p>";
-
-
-    } catch(PDOException $error) {
-        echo $sql . "<br>" . $error->getMessage();
-    }
-
-}
-?>
 <link rel="stylesheet" href="../css/style.css" />
 
 <?php //debut du formulaire, on peut utiliser action: nom de la page php qui v receptionner les donner ?>
@@ -69,4 +35,41 @@ if (isset($_POST['submit'])) {
     <input type="submit" name="submit" value="Submit">
 </form>
 
-<a href="../index.php" >Retour en arrière</a>
+<?php
+require "../config.php";
+$bdd = new PDO($dsn, $username, $password);
+
+if (isset($_POST['submit'])) {
+
+    try {
+        $Titre = $_POST['Titre'];
+        $DateDebut  = $_POST['DateDebut'];
+        $DateFin = $_POST['DateFin'];
+        $CollaborateurAcademique = $_POST['CollaborateurAcademique'];
+        $CollaborateurIndustrielle = $_POST['CollaborateurIndustrielle'];
+        $Description = $_POST['Description'];
+        $NumeroContact = $_POST['NumeroContact'];
+        $MotCle1=$_POST['MotCle1'];
+        $MotCle2=$_POST['MotCle2'];
+
+        $sql = "INSERT INTO PROJETDERECHERCHE (IDProjet ,Titre, DateDebut, DateFin, Description, CollaborateurAcademique, CollaborateurIndustrielle, NumeroContact, MotCle1, MotCle2)
+			VALUES (NULL,'$Titre', '$DateDebut','$DateFin','$Description','$CollaborateurAcademique','$CollaborateurIndustrielle','$NumeroContact','$MotCle1','$MotCle2')";
+
+        $Resultat = $bdd -> exec($sql);
+
+        echo "<h4>Ajout reussi à la base de donnée</h4>";
+
+    } catch(PDOException $error) {
+        echo $sql . "<br>" . $error->getMessage();
+    }
+
+    $sql = "SELECT IDProjet, Titre FROM PROJETDERECHERCHE ORDER BY IDProjet DESC";
+    $perso = $bdd->query($sql);
+    $line = $perso->fetch(PDO::FETCH_ASSOC);
+    $IDProjet = $line['IDProjet'];
+    $Titre = $line['Titre'];
+
+    echo "<h3><a href='../Formulaires/jointurePersonnelProjet.php?ID=$IDProjet'> Inscrire des participants au projet: $Titre</a></h3>";
+}
+?>
+

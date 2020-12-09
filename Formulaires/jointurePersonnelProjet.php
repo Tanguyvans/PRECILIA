@@ -6,7 +6,7 @@ if (isset($_POST['submit'])) {
     try {
 
         $Personnel  = $_POST['Personnel'];
-        $Projet = $_POST['Projet'];
+        $Projet = $_GET['ID'];
 
         $sql = "INSERT INTO personnel_projetderecherche (IDPMatricule, IDProjet) VALUES ('$Personnel', '$Projet')";
         $Resultat = $bdd -> exec($sql);
@@ -34,27 +34,6 @@ if (isset($_POST['submit'])) {
         <option value="">Select one</option>
         <?php foreach ($IDPM as $test): ?>
             <option value="<?php print_r($test['Personnel']);?>"> <?php print_r($test['Nom']);?>  <?php print_r($test['Prenom']) ?></option>
-        <?php endforeach; ?>
-    </select>
-
-    <!-- ======================== Projet ======================= -->
-    <?php
-    $result = $bdd->query('SELECT IDProjet, Titre FROM projetderecherche');
-    foreach ($result as $row) {
-        $IDC[] = array('Projet' => $row['IDProjet'],'Titre' => $row['Titre']);
-    }
-    ?>
-
-    <label for="Projet">Projet</label>
-
-    <select name="Projet" id="Projet">
-        <option
-            value="">Select one
-        </option>
-        <?php foreach ($IDC as $test): ?>
-            <option
-                value="<?php print_r($test['Projet']); ?>"><?php print_r($test['Titre']);?>
-            </option>
         <?php endforeach; ?>
     </select>
 
