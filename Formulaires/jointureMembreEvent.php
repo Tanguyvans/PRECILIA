@@ -6,7 +6,7 @@ if (isset($_POST['submit'])) {
     try {
 
         $IDMembre  = $_POST['IDMembre'];
-        $IDEvent = $_POST['Event'];
+        $IDEvent = $_GET['ID'];
 
         if($IDMembre[0] == 'P'){
             $IDMembre = substr($IDMembre, 1);;
@@ -24,8 +24,12 @@ if (isset($_POST['submit'])) {
     } catch(PDOException $error) {
         echo $sql . "<br>" . $error->getMessage();
     }
-
 }
+
+if (isset($_POST['quitter'])) {
+    header("location: ../MainPages/Ajout.php?f=../Formulaires/createEvenement");
+}
+
 ?>
 
 <form method="post">
@@ -62,26 +66,15 @@ if (isset($_POST['submit'])) {
     </select>
 
     <!-- ======================== EVENT ======================= -->
-    <?php
-    $result = $bdd->query('SELECT IDEvenement, Type, Nom FROM evenement');
-    foreach ($result as $row) {
-        $IDE[] = array('IDEvenement' => $row['IDEvenement'],'Type' => $row['Type'], 'Nom' => $row['Nom']);
-    }
-    ?>
-
-    <label for="Event">Evenement</label>
-
-    <select name="Event" id="Event">
-        <option
-                value="">Select one
-        </option>
-        <?php foreach ($IDE as $test): ?>
-            <option
-                    value="<?php print_r($test['IDEvenement']); ?>"> <?php print_r($test['Type']);?> <?php print_r($test['Nom']);?>
-            </option>
-        <?php endforeach; ?>
-    </select>
 
     <input type="submit" name="submit" value="Submit">
 
+    <input type="submit" name="quitter" value="quitter">
+
+</form>
+
+<form method="POST" enctype="multipart/form-data">
+    <?php require '../includes/upload.inc.php' ?>
+    <input type="file" name="file">
+    <button type="submit" name="submitEvent">UPLOAD</button>
 </form>
