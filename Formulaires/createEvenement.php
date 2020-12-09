@@ -38,9 +38,6 @@ $bdd = new PDO($dsn, $username, $password);
     <label for="DateDebut">Date de début</label>
     <input type="date" name="DateDebut" id="DateDebut">
 
-    <label for="file">Ajouteur une image</label>
-    <input type="file" name="file">
-
     <!--========== connexion Lieu et remplissage d'une liste ==============-->
     <?php
       $result = $bdd->query('SELECT IDLieu, Ville, Pays FROM LIEU');
