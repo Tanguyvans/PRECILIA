@@ -32,16 +32,16 @@
         <!--- Si on a selectionné une thèse -->
         <?php
         if ($_GET['table'] == 'These'){
+            //recuperation de l id et des infos de cette these
             $ID = $_GET['ID'];
-            echo $ID;
             $sql = "SELECT * FROM These WHERE IDThese = '$ID'";
             $result = $bdd->query($sql);
         ?>
-
+            <!-- possibilité de MODIF ET SUPPRIMER -->
             <a href="../Formulaires/modificationThese.php?ID=<?php echo $ID; ?>"><p class="lienAffichage"> Modifier</p></a>
-            <a href="../Formulaires/modificationThese.php?ID=<?php echo $ID; ?>"><p class="lienAffichage"> Supprimer</p></a>
+            <a href="../Formulaires/suppressionThese.php?ID=<?php echo $ID; ?>"><p class="lienAffichage"> Supprimer</p></a>
         <table>
-            <!-- PHP CODE pour remplir la table-->
+            <!-- remplissage de la table-->
             <?php $ligne = $result->fetch(PDO::FETCH_ASSOC); ?>
 
                     <!--remplissage de la table avec la base de donnée-->
@@ -70,7 +70,7 @@
         </table>
         <?php } ?>
 
-        <!--- Si on a selectionné une thèse -->
+        <!--- Si on a selectionné un projet de recherche -->
         <?php
         if ($_GET['table'] == 'ProjetDeRecherche'){
             $ID = $_GET['ID'];
