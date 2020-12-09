@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" href="../css/style.css"/>
-
 <?php
 session_start();
-?>
-<?php
 require "../config.php";
 require "../includes/functions.inc.php";
 $bdd = new PDO($dsn, $username, $password);

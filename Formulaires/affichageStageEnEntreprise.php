@@ -94,35 +94,28 @@ if (isset($_POST['Recherche'])) {
 ?>
 
 <section>
-     <!-- Contruction de la table-->
         <table>
             <tr>
-                <th>Date de debut</th>
-                <th>date de fin</th>
+                <th>Etudiant</th>
                 <th>Collaboration industrielle</th>
-                <th>Numero de contact</th>
                 <th>Mot cle 1</th>
                 <th>Mot cle 2</th>
-                <th>IDPMatricule</th>
-                <th>IDEMatricule</th>
             </tr>
-            <!-- PHP CODE pour remplir la table-->
             <?php
                 while($ligne = $resultat->fetch(PDO::FETCH_ASSOC))
                 {
-            ?>
-            <tr>
-                <!--Donnée de la base de donnée-->
-                <td><?php echo $ligne['DateDebut'];?></td>
-                <td><?php echo $ligne['DateFin'];?></td>
-                <td><?php echo $ligne['CollaborateurIndustrielle'];?></td>
-                <td><?php echo $ligne['NumeroContact'];?></td>
-                <td><?php echo $ligne['MotCle1'];?></td>
-                <td><?php echo $ligne['MotCle2'];?></td>
-                <td><?php echo $ligne['IDPMatricule'];?></td>
-                <td><?php echo $ligne['IDEMatricule'];?></td>
-            </tr>
-            <?php
+                    $Matricule = $ligne['IDEMatricule'];
+                    $Etudiant = $bdd->query("SELECT Nom, Prenom FROM Etudiant WHERE IDEMatricule = '$Matricule' ");
+                    while($line = $Etudiant->fetch(PDO::FETCH_ASSOC))
+                    { ?>
+                        <tr>
+                            <td><a href="../MainPages/Enseignement.php?table=StageEntreprise&amp;ID=<?php echo(ligne['$IDStageEntreprise']);?>"><p class="lienAffichage"><?php echo $line['Nom'];?> <?php echo $line['Prenom'];?></p></a></td>
+                            <td><?php echo $ligne['CollaborateurIndustrielle'];?></td>
+                            <td><?php echo $ligne['MotCle1'];?></td>
+                            <td><?php echo $ligne['MotCle2'];?></td>
+                        </tr>
+                    <?php
+                    }
                 }
             ?>
       </table>

@@ -80,7 +80,6 @@
                  }
                  while ($i<3){
                      $line = $result->fetch(PDO::FETCH_ASSOC);
-                     echo $line['IDEvenement'];
                     ?>
 
                      <img src="../imageEvent/<?php echo $line['IDEvenement']; ?>.jpg" />

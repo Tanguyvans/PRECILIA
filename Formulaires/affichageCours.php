@@ -15,13 +15,8 @@ catch (Exception $e){
     <table>
         <tr>
             <th>IDCours</th>
-            <th>NombreCredit</th>
-            <th>NombreHeure</th>
-            <th>Titulaire</th>
             <th>UE</th>
-            <th>Mot cle 1</th>
-            <th>Mot cle 2</th>
-            <th>IDPMatricule</th>
+            <th>Titulaire</th>
         </tr>
         <?php
         while($ligne = $resultat->fetch(PDO::FETCH_ASSOC))
@@ -29,14 +24,9 @@ catch (Exception $e){
             ?>
             <?php $ID = $ligne['IDCours'];?>
             <tr>
-                <td><a href="Recherche.php?table=Cours&amp;ID=<?php echo($ID);?>"><p class="lienAffichage"> <?php echo $ligne['IDCours'];?> </p></a></td>
-                <td><?php echo $ligne['NombreCredit'];?></td>
-                <td><?php echo $ligne['NombreHeure'];?></td>
-                <td><?php echo $ligne['Titulaire'];?></td>
+                <td><a href="../MainPages/Enseignement.php?table=Cours&amp;ID=<?php echo($ID);?>"><p class="lienAffichage"> <?php echo $ligne['IDCours'];?> </p></a></td>
                 <td><?php echo $ligne['UE'];?></td>
-                <td><?php echo $ligne['MotCle1'];?></td>
-                <td><?php echo $ligne['MotCle2'];?></td>
-                <td><?php echo $ligne['IDPMatricule'];?></td>
+                <td><?php echo $ligne['Titulaire'];?></td>
             </tr>
             <?php
         }
