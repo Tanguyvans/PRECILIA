@@ -33,14 +33,14 @@ if (isset($_POST["submit"])){
 
     <body>
         <?php include '../templates/header.php' ?>
-        <h1>Page de connexion</h1>
-
-        <form method="post">
-            <input type="text" name="IDPMatricule" placeholder="Matricule...">
-            <input type="password" name="MDP" placeholder="Password...">
-            <button type="submit" name="submit">Log in</button>
-        </form>
-
+        <div class="PageC">
+            <h1>Connexion Personnel</h1>
+            <form method="post">
+                <input type="text" name="IDPMatricule" placeholder="Matricule...">
+                <input type="password" name="MDP" placeholder="Password...">
+                <button type="submit" name="submit">Log in</button>
+            </form>
+        </div>
         <?php include '../templates/footer.php' ?>
     </body>
 </html>

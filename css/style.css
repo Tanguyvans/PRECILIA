@@ -6,6 +6,10 @@ body {
   margin: 0;
   padding: 0;
 }
+/* Liens dans les tableau d'affichage*/
+.lienAffichageTableau{
+  color:black;
+}
 
 /* centrage des titres */
 h2 {
@@ -65,18 +69,22 @@ table {
 
 /* === RECHERCHE.PHP === */
 /* parametre des bouton d'affichage */
-a .lienAffichage{
+a .lienAffichageR{
   color: black;
   text-decoration: underline;
   text-decoration-color: black;
 }
-.container-lienAffichage{
+.container-lienAffichageR{
+  margin-top: 30px;
   display: flex;
   justify-content:space-around;
 }
+.PageR {
+  min-height:200px;
+}
 
 /* === MEMBRE.PHP === */
-.wrapper {
+#Membres.wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr; /*ici,trois colonne qui prennent toutes la largeur dispo*/
 }
@@ -97,4 +105,50 @@ img{
   height:100%;
   justify-content: center;
 }
-.Page div
+/* === ConnexionEtudiant+ConnexionPersonnel === */
+.PageC {
+  margin-top:50px;
+  height: 170px;
+  text-align:center;
+}
+/* === Affichage de l'entiereté de la table === */
+.Donnees{
+  display:flex;
+  flex-direction: column;
+  border: 2px solid red;
+}
+.Ligne1{
+  text-align:center;
+}
+.Ligne2{
+  display:flex;
+  flex-direction:row;
+  justify-content:space-around;
+  border: 2px solid blue;
+  text-align:center;
+}
+.Ligne3{
+  display:flex;
+  flex-direction:row;
+  justify-content:space-around;
+  border: 2px solid green;
+  text-align:center;
+}
+.Ligne4{
+  text-align:center;
+}
+.Ligne5{
+  display:flex;
+  flex-direction:row;
+  justify-content:space-around;
+  border: 2px solid green;
+  text-align:center;
+}
+.tier{
+  border: 2px solid black;
+  width:33%;
+}
+.Donnees h2{
+  color
+}
+
