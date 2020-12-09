@@ -13,16 +13,20 @@
         } catch (Exception $e) {
             die('Erreur : ' . $e->getMessage());
         }
-
-
     }
+
+    include '../templates/header.php';
     ?>
 
     <H4>
         Etês-vous sûr de vouloir supprimer cette thèse?
     </H4>
+
     <form method="post">
         <input type="submit" name="submit" value="Supprimer">
     </form>
 
+    <a href="../MainPages/Recherche.php?f=../Formulaires/AffichageThese"><p class="lienAffichage">Retour</p></a>
+
+    <?php include '../templates/footer.php'; ?>
 </html>
