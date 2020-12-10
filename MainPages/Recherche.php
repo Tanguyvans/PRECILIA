@@ -37,11 +37,17 @@
                 $sql = "SELECT * FROM These WHERE IDThese = '$ID'";
                 $result = $bdd->query($sql);
             ?>
+                <?php
+                if(isset($_SESSION['Psession'])){
+                ?>
                     <div class="EditR">
                         <!-- possibilité de MODIF ET SUPPRIMER -->
                         <a href="../Formulaires/modificationThese.php?ID=<?php echo $ID; ?>"><p class="lienAffichageR"> Modifier</p></a>
                         <a href="../Formulaires/suppressionThese.php?ID=<?php echo $ID; ?>"><p class="lienAffichageR"> Supprimer</p></a>
                     </div>
+                    <?php
+                }
+                ?>
 
                 <!-- remplissage des données-->
                 <?php $ligne = $result->fetch(PDO::FETCH_ASSOC); ?>

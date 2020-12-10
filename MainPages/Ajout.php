@@ -1,3 +1,6 @@
+<?php
+if(isset($_SESSION['Psession'])){
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -59,3 +62,7 @@ Description de la page
   </div>
  </body>
 </html>
+    <?php
+}
+else header("location: Accueil.php");
+?>

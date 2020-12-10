@@ -19,7 +19,7 @@
             <div class="activeT"><a href='../MainPages/Ajout.php'>Ajouter</a></div>
         <?php } ?>
         <div class="activeT"><a href='../MainPages/adresse'>Autre?</a></div>
-        <div class="activeT"><a href='../MainPages/inscrire.php'>S'inscire</a></div>
+        <div class="activeT"><a href='../MainPages/VoirInscription.php'>Inscription</a></div>
     </div>
 </header>
 </body>
