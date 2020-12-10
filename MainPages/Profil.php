@@ -7,7 +7,6 @@
     <meta content="" name="descriptison"> <!--Description du site lors de la recherche-->
     <meta content="" name="keywords">
     <link href="../css/pageProfil.css" rel="stylesheet" />
-    <link href="../css/ajout.css" rel="stylesheet" />
 </head>
 <!--==========================================
 Description de la page

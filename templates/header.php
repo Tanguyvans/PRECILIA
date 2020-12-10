@@ -13,7 +13,7 @@
     <meta content="" name="descriptison">
     <meta content="" name="keywords">
     <!-- Template Main CSS File -->
-    <link href="../css/pageH.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
 </head>
 <body>
 <header id="headerH">

@@ -1,5 +1,5 @@
-img {
-    width:80%;
+.ImageP img {
+    max-width:100%;
     height: auto;
 }
 .pageprincipaleP{
@@ -14,11 +14,13 @@ img {
 .ImageP{
     width:35%;
 }
-table{
+.texteP table{
     text-align:center;
     margin:auto;
 }
-
+.texteP a{
+    color:black;
+}
 .texteP div {
     text-align:center;
     color:black;

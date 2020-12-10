@@ -5,7 +5,7 @@
 
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Header</title>
+    <title>Toolbar</title>
     <meta content="" name="descriptison">
     <meta content="" name="keywords">
     <!-- Template Main CSS File -->

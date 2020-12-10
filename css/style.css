@@ -1,4 +1,156 @@
-/* parametre de la page générale */
+
+
+
+                                             /* === HEADER === */
+
+#headerH {
+ background: #344341;
+ padding: 15px 15px 15px 15px;
+ color: #fff;
+ font-size: 14px;
+}
+#headerH h1 {
+ color: #fff;
+ font-size: 24px;
+ margin: 0 0 20px 0;
+ padding: 2px 0 2px 0;
+ line-height: 1;
+ font-weight: 700;
+}
+#container1H{
+ height: 45px;
+ background: #3d4f4c;
+}
+#container2H{
+ display:flex;
+ background: #3d4f4c;
+ justify-content:space-around;
+ align-items: start;
+ height:40px;
+}
+
+#containerH a{
+ color:#fff;
+}
+
+
+                                              /* === FOOTER === */
+
+#footerF {
+background: #344341;
+padding: 15px 15px 15px 15px;
+color: #fff;
+font-size: 14px;
+}
+
+#footerF .footer-topF {
+background: #3d4f4c;
+border-bottom: 0px solid #4d635f;
+padding: 20px 0 20px 0;
+}
+#conteneur1F{
+display: flex;
+flex-wrap:wrap;
+justify-content:space-around;
+align-items: start;
+height:250px
+
+}
+
+#footerF .footer-topF h3 {
+font-size: 24px;
+margin: 0 0 20px 0;
+padding: 2px 0 2px 0;
+line-height: 1;
+font-weight: 700;
+}
+
+
+#footerF .footer-topF .footer-infoF p {
+font-size: 14px;
+line-height: 24px;
+margin-bottom: 0;
+font-family: "Roboto", sans-serif;
+color: #fff;
+}
+
+#footerF .footer-topF .social-linksF a {
+font-size: 18px;
+display: inline-block;
+background: #58716d;
+color: #fff;
+line-height: 1;
+padding: 8px 0;
+margin-right: 4px;
+border-radius: 50%;
+text-align: center;
+width: 36px;
+height: 36px;
+}
+
+#footerF .footer-topF h4 {
+font-size: 16px;
+font-weight: 600;
+color: #fff;
+position: relative;
+padding-bottom: 12px;
+}
+
+#footerF .footer-topF .footer-linksF ul i {
+padding-right: 0px;
+color: #56e7d0;
+font-size: 18px;
+line-height: 1;
+}
+
+#footerF .footer-topF .footer-linksF ul li {
+padding: 9px 0;
+display: flex;
+align-items: center;
+}
+
+#footerF .footer-topF .footer-linksF ul li:first-child {
+padding-top: 0;
+}
+
+#footerF .footer-topF .footer-linksF ul a {
+color: #fff;
+display: inline-block;
+line-height: 1;
+}
+
+#footerF .copyrightF {
+text-align: center;
+padding-top: 25px;
+}
+
+
+                                             /* === Toolbar === */
+
+
+#ensembleT {
+background: #344341;
+text-align: center;
+width:70px;
+height:100%;
+}
+#ensemble.activeT{
+height: auto;
+width:70px; /* si on impose une valeur ca bug*/
+}
+#LiensT{
+height:100%;
+display: flex;
+flex-direction: column;
+justify-content:space-around;
+align-items: center;
+
+}
+.activeT a{
+color:white;
+}
+
+                                             /* parametre de la page générale */
 body {
   font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
   background-color: white;
@@ -67,20 +219,72 @@ table {
   width: 100px;
 }
 
-/* === RECHERCHE.PHP === */
+                                                    /* === RECHERCHE.PHP === */
+
 /* parametre des bouton d'affichage */
-a .lienAffichageR{
-  color: black;
-  text-decoration: underline;
-  text-decoration-color: black;
-}
 .container-lienAffichageR{
+  color: black;
+  width:100%;
   margin-top: 30px;
   display: flex;
   justify-content:space-around;
 }
+.container-lienAffichageR div{
+  color:black;
+  width:33%;
+  text-align:center;
+}
 .PageR {
   min-height:200px;
+}
+.container-lienAffichageR a{
+  color:black;
+}
+.EditR a{
+  color:black;
+}
+/* === Affichage de l'entiereté de la table === */
+.DonneesR{
+display:flex;
+flex-direction: column;
+border-top: 2px solid black;
+
+}
+.VideHautGauche{
+  width:33%;
+}
+.TitreR{
+  width:33%;
+  margin-top:auto;
+  margin-bottom:auto;
+}
+.EnsembleDatesR{
+  justify-content: center;
+  width:33%;
+}
+
+.Ligne1R{
+  display:flex;
+  justify-content: space-around;
+  text-align:center;
+}
+.Ligne2R{
+  text-align:center;
+}
+.Ligne3R{
+  text-align:start;
+}
+.Ligne4R{
+  margin-bottom:30px;
+  text-align:center;
+  display:flex;
+}
+.tierR{
+  width:33%;
+}
+
+.DonneesR h1{
+  text-decoration-line: underline;
 }
 
 /* === MEMBRE.PHP === */
@@ -111,49 +315,8 @@ img{
   min-height: 170px;
   text-align:center;
 }
-/* === Affichage de l'entiereté de la table === */
-.Donnees{
-  display:flex;
-  flex-direction: column;
-  border-top: 2px solid black;
+                                             /* === RECHERCHE.PHP === */
 
-}
-.Ligne1{
-  margin-bottom:30px;
-  text-align:center;
-}
-.Ligne2{
-  margin-bottom:30px;
-  display:flex;
-  flex-direction:row;
-  justify-content:space-around;
-  text-align:center;
-}
-.Ligne3{
-  margin-bottom:30px;
-  display:flex;
-  flex-direction:row;
-  justify-content:space-around;
-  text-align:center;
-}
-.Ligne4{
-  margin-bottom:30px;
-  text-align:center;
-}
-.Ligne5{
-  margin-bottom:30px;
-  display:flex;
-  flex-direction:row;
-  justify-content:space-around;
-  text-align:center;
-}
-.tier{
-  width:33%;
-}
-.Donnees h2{
-  text-decoration-line: underline;
-}
-
-.Donnees h1{
-  text-decoration-line: underline;
+.PageEns {
+  min-height:200px;
 }
