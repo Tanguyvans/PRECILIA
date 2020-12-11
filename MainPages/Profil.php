@@ -27,40 +27,43 @@ Description de la page
 
         <div class="pageprincipaleP">
             <div class="texteP">
+                <div class="VideP"></div>
+                <div class="CentreP">
 
-                <?php
-                if(isset($_SESSION["Psession"])){
-                    include '../includes/ProfilP.inc.php';
-
-
-                }elseif(isset($_SESSION["Esession"])){
-                    include '../includes/ProfilE.inc.php';
-                }
-
-                ?>
+                    <?php
+                    if(isset($_SESSION["Psession"])){
+                        include '../includes/ProfilP.inc.php';
 
 
-                <h2> Profil de <?php echo $Nom?> <?php echo $Prenom ?></h2>
-                <!-- Donnée-->
-                <table>
-                    <tr><td>Matricule:</td><td><?php echo $Matricule?></td></tr>
-                    <tr><td>Prenom:</td><td><?php echo $Prenom?></td></tr>
-                    <tr><td>Nom:</td><td><?php echo $Nom?></td></tr>
-                    <tr><td>Email:</td><td><?php echo $Email?></td></tr>
+                    }elseif(isset($_SESSION["Esession"])){
+                        include '../includes/ProfilE.inc.php';
+                    }
+
+                    ?>
+
+
+                    <h2> Profil de <?php echo $Nom?> <?php echo $Prenom ?></h2>
+                    <h2>  </h2>
+                    <!-- Donnée-->
+
+                    <h3>Matricule: <?php echo $Matricule?></h3>
+                    <h3>Prenom: <?php echo $Prenom?></h3>
+                    <h3>Nom: <?php echo $Nom?></h3>
+                    <h3>Email: <?php echo $Email?></h3>
 
                     <?php if(isset($_SESSION["Psession"])){ ?>
-                        <tr><td>Telephone:</td><td><?php echo $Telephone?></td></tr>
-                        <tr><td>Grade:</td><td><?php echo $Grade?></td></tr>
+                        <h3>Telephone: <?php echo $Telephone?></h3>
+                        <h3>Grade: <?php echo $Grade?></h3>
                     <?php } ?>
 
                     <?php if(isset($_SESSION["Esession"])){ ?>
-                        <tr><td>Annee:</td><td><?php echo $Annee?></td></tr>
+                        <h3>Annee: <?php echo $Annee?></h3>
                     <?php } ?>
 
-                </table>
-                <div>
-                    <a href="../Formulaires/modificationProfil.php"><p class="lienAffichageP">Modifier</p></a>
+                    <h3><a href="../Formulaires/modificationProfil.php"><p class="lienAffichageP">Modifier</p></a></h3>
+
                 </div>
+                <div class="VideP"></div>
             </div>
             <div class="ImageP">
 
