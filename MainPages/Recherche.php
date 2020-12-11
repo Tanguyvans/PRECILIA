@@ -51,43 +51,43 @@
 
                 <!-- remplissage des données-->
                 <?php $ligne = $result->fetch(PDO::FETCH_ASSOC); ?>
-            <div class="DonneesR">
+                <div class="DonneesR">
 
-                        <!--remplissage de la table avec la base de donnée-->
-                <div class="Ligne1R">
-                    <div class="VideHautGauche"></div>
-                    <div class="TitreR"><h1><?php echo $ligne['Titre'];?></h1></div>
-                    <div class="EnsembleDatesR">
-                        <div class="DateR"><h3>Début: <?php echo $ligne['DateDebut'];?></h3></div>
-                        <div class="DateR"><h3>Fin: <?php echo $ligne['DateFin'];?></h3></div>
-                        <div class="DateR"><h3>Défense: <?php echo $ligne['DateDefence'];?></h3></div>
+                            <!--remplissage de la table avec la base de donnée-->
+                    <div class="Ligne1R">
+                        <div class="VideHautGauche"></div>
+                        <div class="TitreR"><h1><?php echo $ligne['Titre'];?></h1></div>
+                        <div class="EnsembleDatesR">
+                            <div class="DateR"><h3>Début: <?php echo $ligne['DateDebut'];?></h3></div>
+                            <div class="DateR"><h3>Fin: <?php echo $ligne['DateFin'];?></h3></div>
+                            <div class="DateR"><h3>Défense: <?php echo $ligne['DateDefence'];?></h3></div>
+                        </div>
+                    </div>
+                    <div class="Ligne2R">
+                        <h3>Réalisé par
+                            <?php
+                            $Matricule = $ligne['IDPMatricule'];
+                            $perso = $bdd->query("SELECT Nom, Prenom FROM PERSONNEL WHERE IDPMatricule = '$Matricule' ");
+                            while($line = $perso->fetch(PDO::FETCH_ASSOC))
+                            {
+                                ?>
+                                <?php echo $line['Nom'];?> <?php echo $line['Prenom'];?>
+                                <?php
+                            }
+                            ?>
+                                , en collaboration avec <?php echo $ligne['CollaborateurAcademique'];?>
+                                et <?php echo $ligne['CollaorateurIndustrielle'];?>
+                            </h3>
+                    </div>
+                    <div class="Ligne3R">
+                        <h3><?php echo $ligne['Description'];?></h3>
+                    </div>
+                    <div class="Ligne4R">
+                        <div class="tierR"><h3>Mot cle 1: <?php echo $ligne['MotCle1'];?></h3></div>
+                        <div class="tierR"><h3>Mot cle 2: <?php echo $ligne['MotCle2'];?></h3></div>
+                        <div class="tierR"><h3>Numero de contact: <?php echo $ligne['NumeroContact'];?></h3></div>
                     </div>
                 </div>
-                <div class="Ligne2R">
-                    <h3>Réalisé par
-                        <?php
-                        $Matricule = $ligne['IDPMatricule'];
-                        $perso = $bdd->query("SELECT Nom, Prenom FROM PERSONNEL WHERE IDPMatricule = '$Matricule' ");
-                        while($line = $perso->fetch(PDO::FETCH_ASSOC))
-                        {
-                            ?>
-                            <?php echo $line['Nom'];?> <?php echo $line['Prenom'];?>
-                            <?php
-                        }
-                        ?>
-                            , en collaboration avec <?php echo $ligne['CollaborateurAcademique'];?>
-                            et <?php echo $ligne['CollaorateurIndustrielle'];?>
-                        </h3>
-                </div>
-                <div class="Ligne3R">
-                    <h3>Description: <?php echo $ligne['Description'];?></h3>
-                </div>
-                <div class="Ligne4R">
-                    <div class="tierR"><h3>Mot cle 1: <?php echo $ligne['MotCle1'];?></h3></div>
-                    <div class="tierR"><h3>Mot cle 2: <?php echo $ligne['MotCle2'];?></h3></div>
-                    <div class="tierR"><h3>Numero de contact: <?php echo $ligne['NumeroContact'];?></h3></div>
-                </div>
-            </div>
             <?php } ?>
 
             <!--- Si on a selectionné un projet de recherche -->

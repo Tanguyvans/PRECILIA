@@ -129,25 +129,25 @@ padding-top: 25px;
 
 
 #ensembleT {
-background: #344341;
-text-align: center;
-width:70px;
-height:100%;
+    background: #344341;
+    text-align: center;
+    width:70px;
+    height:100%;
 }
 #ensemble.activeT{
-height: auto;
-width:70px; /* si on impose une valeur ca bug*/
+    height: auto;
+    width:70px; /* si on impose une valeur ca bug*/
 }
 #LiensT{
-height:100%;
-display: flex;
-flex-direction: column;
-justify-content:space-around;
-align-items: center;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
 
 }
 .activeT a{
-color:white;
+    color:white;
 }
 
                                              /* parametre de la page générale */
@@ -287,28 +287,21 @@ border-top: 2px solid black;
   text-decoration-line: underline;
 }
 
-/* === MEMBRE.PHP === */
-#Membres.wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr; /*ici,trois colonne qui prennent toutes la largeur dispo*/
+                                                /* === MEMBRE.PHP === */
+
+.img-containerPersonnel img{
+    max-width:45%;
+    min-width:150px;
+    height: auto;
+}
+.img-containerPersonnel{
+   margin-left: 100px;
 }
 
-label {
-  display: block;
-  margin: 5px 0;
-}
-img{
-  width: 100%;
-  height: 600px;
+#col {
+  column-count: 2;
 }
 
-.Page{
-  display:flex;
-  flex-direction:column;
-  min-height:250px;
-  height:100%;
-  justify-content: center;
-}
 /* === ConnexionEtudiant+ConnexionPersonnel === */
 .PageC {
   margin-top:50px;
@@ -319,4 +312,27 @@ img{
 
 .PageEns {
   min-height:200px;
+}
+                                             /* === ACCUEIL.PHP === */
+.Carrousel img{
+  width: 100%;
+  height: 600px;
+}
+#Membres.wrapper {
+ display: grid;
+ grid-template-columns: 1fr 1fr 1fr; /*ici,trois colonne qui prennent toutes la largeur dispo*/
+}
+
+label {
+ display: block;
+ margin: 5px 0;
+}
+
+
+.Page{
+ display:flex;
+ flex-direction:column;
+ min-height:250px;
+ height:100%;
+ justify-content: center;
 }
