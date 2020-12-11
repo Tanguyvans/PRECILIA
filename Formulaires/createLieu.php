@@ -38,4 +38,3 @@ if (isset($_POST['submit'])) {
     <input type="submit" name="submit" value="Submit">
 </form>
 
-<a href="../index.php">Retour en arrière</a>

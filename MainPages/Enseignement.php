@@ -24,7 +24,7 @@
             if ($_GET['f']) {include ($_GET['f'].".php");}
             ?>
 
-            <!--- Si on a selectionné une thèse -->
+            <!--- Si on a selectionné un cours -->
             <?php
             if ($_GET['table'] == 'Cours'){
                 //recuperation de l id et des infos de cette cours
@@ -40,7 +40,7 @@
                     <?php $ligne = $result->fetch(PDO::FETCH_ASSOC); ?>
 
                     <!--remplissage de la table avec la base de donnée-->
-                    <tr><td>Titre:</td><td><?php echo $ligne['Titre'];?></td></tr>
+                    <tr><td>Titre:</td><td><?php echo $ligne['IDcours'];?></td></tr>
                     <tr><td>Date de debut:</td><td><?php echo $ligne['DateDebut'];?></td></tr>
                     <tr><td>Date de fin:</td><td><?php echo $ligne['DateFin'];?></td></tr>
                     <tr><td>Description:</td><td><?php echo $ligne['Description'];?></td></tr>

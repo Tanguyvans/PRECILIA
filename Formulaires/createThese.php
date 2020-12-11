@@ -90,4 +90,3 @@ if (isset($_POST['submit'])) {
 
 </form>
 
-<a href="../index.php">Retour en arrière</a>
