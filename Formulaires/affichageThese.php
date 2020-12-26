@@ -62,6 +62,10 @@ catch (Exception $e){
         <?php endforeach; ?>
     </select>
 
+    <label for="Curent">En cours</label>
+    <input type='Radio' Name='PrmRecherche' value='Curent'>
+
+    <label for="submit"></label>
     <input type="submit" name="Recherche" value="Recherche">
 
 </form>
@@ -71,21 +75,45 @@ if (isset($_POST['Recherche'])) {
     try {
         $MotCleP = $_POST['MotCleP'];
         $MotCleS = $_POST['MotCleS'];
+        $EnCours = $_POST['PrmRecherche'];
 
-        if ($MotCleP == "All" and $MotCleS == "All") {
-            $sql = "SELECT * FROM These";
-            $resultat = $bdd->query($sql);
-        } elseif ($MotCleP != "All" and $MotCleS == "All") {
-            $sql = "SELECT * FROM These WHERE MotCle1='$MotCleP' OR MotCle2='$MotCleP'";
-            $resultat = $bdd->query($sql);
-        } elseif ($MotCleP == 'All' and $MotCleS != "All") {
-            $sql = "SELECT * FROM These WHERE MotCle2= '$MotCleS' OR MotCle1= '$MotCleS'";
-            $resultat = $bdd->query($sql);
-        } else {
-            $sql = "SELECT * FROM These 
+        # Si l'utilsateur n'a pas choisit un radioButton
+        if ($EnCours == NUll){
+            if ($MotCleP == "All" and $MotCleS == "All") {
+                $sql = "SELECT * FROM These";
+                $resultat = $bdd->query($sql);
+            } elseif ($MotCleP != "All" and $MotCleS == "All") {
+                $sql = "SELECT * FROM These WHERE MotCle1='$MotCleP' OR MotCle2='$MotCleP'";
+                $resultat = $bdd->query($sql);
+            } elseif ($MotCleP == 'All' and $MotCleS != "All") {
+                $sql = "SELECT * FROM These WHERE MotCle2= '$MotCleS' OR MotCle1= '$MotCleS'";
+                $resultat = $bdd->query($sql);
+            } else {
+                $sql = "SELECT * FROM These 
                     WHERE MotCle1= '$MotCleP' AND MotCle2= '$MotCleS' 
                     OR MotCle1 = '$MotCleS' AND MotCle2= '$MotCleP' ";
-            $resultat = $bdd->query($sql);
+                $resultat = $bdd->query($sql);
+            }
+        }
+
+        # Si l'utilsateur choisit le radioButton Current
+        elseif ($EnCours == 'Curent'){
+
+            if ($MotCleP == "All" and $MotCleS == "All") {
+                $sql = "SELECT * FROM These WHERE DateFin IS NULL";
+                $resultat = $bdd->query($sql);
+            } elseif ($MotCleP != "All" and $MotCleS == "All") {
+                $sql = "SELECT * FROM These WHERE MotCle1='$MotCleP' AND DateFin IS NULL OR MotCle2='$MotCleP' AND DateFin IS NULL";
+                $resultat = $bdd->query($sql);
+            } elseif ($MotCleP == 'All' and $MotCleS != "All") {
+                $sql = "SELECT * FROM These WHERE MotCle2= '$MotCleS' AND DateFin IS NULL OR MotCle1= '$MotCleS' AND DateFin IS NULL";
+                $resultat = $bdd->query($sql);
+            } else {
+                $sql = "SELECT * FROM These 
+                    WHERE MotCle1= '$MotCleP' AND MotCle2= '$MotCleS' AND DateFin IS NULL 
+                    OR MotCle1 = '$MotCleS' AND MotCle2= '$MotCleP' AND DateFin IS NULL";
+                $resultat = $bdd->query($sql);
+            }
         }
     } catch (Exception $e) {
         die('Erreur : ' . $e->getMessage());

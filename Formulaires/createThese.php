@@ -19,9 +19,14 @@ if (isset($_POST['submit'])) {
         $DateDefence = $_POST['DateDefence'];
         $IDPMatricule = $_POST['IDPMatricule'];
 
+        if ($DateFin == NUll){
+            $DateFin = NULL;
+        }
 
         $sql = "INSERT INTO THESE (IDThese, Titre, DateDebut,DateFin,Description,CollaborateurAcademique,CollaborateurIndustrielle,NumeroContact,MotCle1,MotCle2,DateDefence,IDPMatricule )
 			VALUES (NULL,'$Titre','$DateDebut','$DateFin','$Description','$CollaborateurAcademique','$CollaborateurIndustrielle','$NumeroContact','$MotCle1','$MotCle2','$DateDefence','$IDPMatricule')";
+
+
 
         $Resultat = $bdd -> exec($sql);
         echo "Ajout réussi à la base de données<br>";
