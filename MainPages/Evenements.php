@@ -34,19 +34,52 @@
                 ?>
 
                 <?php
-                if(isset($_SESSION['Psession']) || isset($_SESSION['Esession'])){
+                if(isset($_SESSION['Psession'])){
                     // si l'evenement est a venir
                     $CurrentDate = date("Y-m-d");
-
                     if($_GET['Date'] > $CurrentDate){
-                        ?>
-                        <a href="../Formulaires/inscriptionMembreEvent.php?ID=<?php echo $ID; ?>"><p class="lienAffichageR">inscrire</p></a>
-                        <?php
+                        $IDMembre = $_SESSION['Psession'];
+                        $sql = "SELECT * FROM personnel_evenement WHERE IDEvenement = '$ID' AND IDPMatricule= $IDMembre";
+                        $result = $bdd->query($sql);
+                        $ligne = $result->fetch(PDO::FETCH_ASSOC);
+
+                        if( $ligne['IDPMatricule'] == NULL){
+                            ?>
+                            <a href="../Formulaires/inscriptionMembreEvent.php?ID=<?php echo $ID; ?>"><p class="lienAffichageR">inscrire</p></a>
+                            <?php
+                        }else {
+                            ?>
+                            <a href="../Formulaires/desinscriptionMembreEvent.php?ID=<?php echo $ID; ?>"><p class="lienAffichageR">Désinscrire</p></a>
+                            <?php
+                        }
+
                     }
                 }
                 ?>
 
+                <?php
+                if(isset($_SESSION['Esession'])){
+                    // si l'evenement est a venir
+                    $CurrentDate = date("Y-m-d");
+                    if($_GET['Date'] > $CurrentDate){
+                        $IDMembre = $_SESSION['Esession'];
+                        $sql = "SELECT * FROM etudiant_evenement WHERE IDEvenement = '$ID' AND IDEMatricule= $IDMembre";
+                        $result = $bdd->query($sql);
+                        $ligne = $result->fetch(PDO::FETCH_ASSOC);
 
+                        if( $ligne['IDEMatricule'] == NULL){
+                            ?>
+                            <a href="../Formulaires/inscriptionMembreEvent.php?ID=<?php echo $ID; ?>"><p class="lienAffichageR">inscrire</p></a>
+                            <?php
+                        }else {
+                            ?>
+                            <a href="../Formulaires/desinscriptionMembreEvent.php?ID=<?php echo $ID; ?>"><p class="lienAffichageR">Désinscrire</p></a>
+                            <?php
+                        }
+
+                    }
+                }
+                ?>
                 <table>
                     <!-- PHP CODE pour remplir la table-->
                     <?php $ligne = $result->fetch(PDO::FETCH_ASSOC); ?>
@@ -74,6 +107,23 @@
 
                 </table>
             <?php } ?>
+
+            <?php
+            if($_GET['table'] == 'INSuccess'){
+                ?>
+                <h2>L'ajout a été un succès</h2>
+            <?php
+            }
+            ?>
+
+            <?php
+            if($_GET['table'] == 'OUTSuccess'){
+                ?>
+                <h2>La désinscription a été un succès</h2>
+                <?php
+            }
+            ?>
+
         </div>
         <?php include '../templates/footer.php' ?>
     </body>

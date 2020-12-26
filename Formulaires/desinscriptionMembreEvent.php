@@ -11,8 +11,7 @@
     <link rel="stylesheet" href="../css/style.css"/>
 </head>
     <body>
-        <?php include '../templates/header.php' ?>
-
+    <?php include '../templates/header.php' ?>
 
         <?php
         require "../config.php";
@@ -24,21 +23,22 @@
                 $IDEvent = $_GET['ID'];
                 if(isset($_SESSION["Psession"])){
                     $IDMembre  = $_SESSION['Psession'];
+                    echo $IDMembre;
 
-                    $sql = "INSERT INTO personnel_evenement (IDPMatricule, IDEvenement) VALUES ('$IDMembre', '$IDEvent')";
+                    $sql = "DELETE FROM personnel_evenement WHERE IDPMatricule = '$IDMembre' AND IDEvenement ='$IDEvent'";
                     $Resultat = $bdd -> exec($sql);
-                    echo "Ajout reussie avec la base de donnée<br>";
+
                 }
 
                 if(isset($_SESSION["Esession"])){
                     $IDMembre  = $_SESSION['Esession'];
 
-                    $sql = "INSERT INTO etudiant_evenement (IDEMatricule, IDEvenement) VALUES ('$IDMembre', '$IDEvent')";
+                    echo $IDMembre;
+                    $sql = "DELETE FROM etudiant_evenement WHERE IDEMatricule =  '$IDMembre' AND IDEvenement ='$IDEvent'";
                     $Resultat = $bdd -> exec($sql);
-                    echo "Ajout reussie avec la base de donnée<br>";
                 }
 
-                header("location: ../MainPages/Evenements.php?table=INSuccess");
+                header("location: ../MainPages/Evenements.php?table=OUTSuccess");
 
             } catch(PDOException $error) {
                 echo $sql . "<br>" . $error->getMessage();
@@ -54,9 +54,12 @@
         <form method="post">
             <!-- ======================== MEMBRE ======================= -->
             <input type="submit" name="submit" value="Submit">
+
             <input type="submit" name="quitter" value="quitter">
 
         </form>
-        <?php include '../templates/footer.php' ?>
+
+
+    <?php include '../templates/footer.php' ?>
     </body>
 </html>
