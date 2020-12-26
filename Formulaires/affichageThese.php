@@ -95,7 +95,6 @@ if (isset($_POST['Recherche'])) {
                 $resultat = $bdd->query($sql);
             }
         }
-
         # Si l'utilsateur choisit le radioButton Current
         elseif ($EnCours == 'Curent'){
 

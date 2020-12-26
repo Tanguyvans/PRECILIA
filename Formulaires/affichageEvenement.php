@@ -60,9 +60,11 @@ catch (Exception $e){
         <?php endforeach; ?>
     </select>
 
-    <input type="submit" name="Recherche" value="Recherche">
+    <label for="Avenir"> À venir</label>
+    <input type='Radio' Name='PrmRecherche' value='Avenir'>
 
-    <input type="submit" name="Avenir" value="A venir">
+    <label for="submit"></label>
+    <input type="submit" name="Recherche" value="Recherche">
 
 </form>
 <!--========== Il faut appuyer sur le boutton recherche ==============-->
@@ -71,21 +73,45 @@ if (isset($_POST['Recherche'])) {
     try {
         $MotCleP = $_POST['MotCleP'];
         $MotCleS = $_POST['MotCleS'];
+        $Avenir = $_POST['PrmRecherche'];
 
-        if ($MotCleP == "All" and $MotCleS == "All") {
-            $sql = "SELECT * FROM evenement";
-            $resultat = $bdd->query($sql);
-        } elseif ($MotCleP != "All" and $MotCleS == "All") {
-            $sql = "SELECT * FROM evenement WHERE MotCle1='$MotCleP' OR MotCle2='$MotCleP'";
-            $resultat = $bdd->query($sql);
-        } elseif ($MotCleP == 'All' and $MotCleS != "All") {
-            $sql = "SELECT * FROM evenement WHERE MotCle2= '$MotCleS' OR MotCle1= '$MotCleS'";
-            $resultat = $bdd->query($sql);
-        } else {
-            $sql = "SELECT * FROM evenement 
+        if($Avenir == NULL){
+            if ($MotCleP == "All" and $MotCleS == "All") {
+                $sql = "SELECT * FROM evenement";
+                $resultat = $bdd->query($sql);
+            } elseif ($MotCleP != "All" and $MotCleS == "All") {
+                $sql = "SELECT * FROM evenement WHERE MotCle1='$MotCleP' OR MotCle2='$MotCleP'";
+                $resultat = $bdd->query($sql);
+            } elseif ($MotCleP == 'All' and $MotCleS != "All") {
+                $sql = "SELECT * FROM evenement WHERE MotCle2= '$MotCleS' OR MotCle1= '$MotCleS'";
+                $resultat = $bdd->query($sql);
+            } else {
+                $sql = "SELECT * FROM evenement 
                     WHERE MotCle1= '$MotCleP' AND MotCle2= '$MotCleS' 
                     OR MotCle1 = '$MotCleS' AND MotCle2= '$MotCleP' ";
-            $resultat = $bdd->query($sql);
+                $resultat = $bdd->query($sql);
+            }
+        } elseif ($Avenir == 'Avenir'){
+
+            $CurrentDate = date("Y/m/d");
+
+            if ($MotCleP == "All" and $MotCleS == "All") {
+                $sql = "SELECT * FROM evenement WHERE DateDebut > '$CurrentDate'";
+                $resultat = $bdd->query($sql);
+            } elseif ($MotCleP != "All" and $MotCleS == "All") {
+                $sql = "SELECT * FROM evenement WHERE MotCle1='$MotCleP' AND DateDebut > '$CurrentDate' 
+                           OR MotCle2='$MotCleP' AND DateDebut > '$CurrentDate'";
+                $resultat = $bdd->query($sql);
+            } elseif ($MotCleP == 'All' and $MotCleS != "All") {
+                $sql = "SELECT * FROM evenement WHERE MotCle2='$MotCleS' AND DateDebut > '$CurrentDate' 
+                           OR MotCle1= '$MotCleS' AND DateDebut > '$CurrentDate'";
+                $resultat = $bdd->query($sql);
+            } else {
+                $sql = "SELECT * FROM evenement 
+                    WHERE MotCle1= '$MotCleP' AND MotCle2= '$MotCleS' AND DateDebut > '$CurrentDate' 
+                    OR MotCle1 = '$MotCleS' AND MotCle2= '$MotCleP' AND DateDebut > '$CurrentDate'";
+                $resultat = $bdd->query($sql);
+            }
         }
     } catch (Exception $e) {
         die('Erreur : ' . $e->getMessage());
@@ -93,17 +119,6 @@ if (isset($_POST['Recherche'])) {
 }
 ?>
 
-<?php
-if(isset($_POST['Avenir'])){
-    $CurrentDate = date("Y/m/d");
-    try {
-        $resultat = $bdd->query("SELECT * FROM EVENEMENT WHERE DateDebut > '$CurrentDate'");
-
-    } catch (Exception $e) {
-        die('Erreur : ' . $e->getMessage());
-    }
-}
-?>
 
 <section>
     <!-- contruction de la table-->

@@ -121,7 +121,6 @@ function createEtudiant($conn, $IDEMatricule, $Nom, $Prenom, $Email, $Annee, $MD
 
 }
 
-
 function emptyInputLogin($IDPMatricule, $MDP){
 
     if(empty($IDPMatricule) || empty($MDP)){
