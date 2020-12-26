@@ -108,9 +108,11 @@ if (isset($_POST['Recherche'])) {
             $Matricule = $ligne['IDPMatricule'];
             $Etudiant = $bdd->query("SELECT Nom, Prenom FROM Personnel WHERE IDPMatricule = '$Matricule' ");
             while($line = $Etudiant->fetch(PDO::FETCH_ASSOC))
+
             { ?>
                 <tr>
-                    <td><a href="../MainPages/Recherche.php?table=StageRecherche&amp;ID=<?php echo(ligne['$IDStageRecherche']);?>"><p class="lienAffichage"><?php echo $line['Nom'];?> <?php echo $line['Prenom'];?></p></a></td>
+                    <?php $nom = $ligne['IDStageRecherche'];?>
+                    <td><a href="../MainPages/Recherche.php?table=StageRecherche&amp;ID=<?php echo($nom);?>"><p class="lienAffichage"><?php echo $line['Nom'];?> <?php echo $line['Prenom'];?></p></a></td>
                     <td><?php echo $ligne['CollaborateurIndustrielle'];?></td>
                     <td><?php echo $ligne['MotCle1'];?></td>
                     <td><?php echo $ligne['MotCle2'];?></td>
