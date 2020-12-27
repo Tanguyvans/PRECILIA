@@ -2,7 +2,7 @@
 
 $host       = "localhost";
 $username   = "root";
-$password   = "";
+$password   = "root";
 $dbname     = "prescilia";
 $dsn        = "mysql:host=$host;dbname=$dbname";
 

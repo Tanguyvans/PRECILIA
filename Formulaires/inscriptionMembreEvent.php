@@ -46,7 +46,7 @@
         }
 
         if (isset($_POST['quitter'])) {
-            header("location: ../MainPages/Evenements.php");
+            header("location: ../MainPages/Evenements.php?table=none");
         }
 
         ?>
