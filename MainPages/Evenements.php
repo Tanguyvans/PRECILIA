@@ -124,6 +124,16 @@
             }
             ?>
 
+            <?php
+            if($_GET['table'] == 'SuppSuccess'){
+                ?>
+                <h2>La suppression a été un succès</h2>
+                <?php
+            }
+            ?>
+
+
+
         </div>
         <?php include '../templates/footer.php' ?>
     </body>

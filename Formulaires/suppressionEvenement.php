@@ -10,6 +10,8 @@ if (isset($_POST['submit'])) {
         $ID = $_GET['ID'];
         $sql = "DELETE FROM evenement WHERE IDEvenement='$ID'";
         $Resultat = $bdd->exec($sql);
+
+        header("location: ../MainPages/Evenements.php?table=SuppSuccess");
     } catch (Exception $e) {
         die('Erreur : ' . $e->getMessage());
     }
