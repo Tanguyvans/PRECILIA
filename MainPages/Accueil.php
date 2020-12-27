@@ -97,7 +97,7 @@
                          $line = $result->fetch(PDO::FETCH_ASSOC);
                         ?>
 
-                         <img src="../imageEvent/<?php echo $line['IDEvenement']; ?>.jpg" />
+                         <img src="../imageEvent/<?php echo $line['IDEvenement']; ?>.png" />
                          <h3>Titre: <?php echo $line['Nom'] ?></h3>
                          <h4>Type : <?php echo $line['Type'] ?></h4>
                          <h4>Duree: <?php echo $line['Duree'] ?></h4>
