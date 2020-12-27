@@ -53,6 +53,10 @@ if (isset($_POST['submit'])) {
         die('Erreur : ' . $e->getMessage());
     }
 }
+
+if (isset($_POST['quitter'])) {
+    header("location: ../MainPages/Evenements.php?table=none");
+}
 ?>
 
 <?php
@@ -94,10 +98,9 @@ while($line = $Execution->fetch(PDO::FETCH_ASSOC)){
         <input type="date" name="DateDebut" id="DateDebut">
 
         <input type="submit" name="submit" value="Submit">
-    </form>
 
-    <!-- retour faire l affichage des theses -->
-    <a href="../MainPages/Evenements.php?"><p class="lienAffichage">Retour</p></a>
+        <input type="submit" name="quitter" value="quitter">
+    </form>
 
 <?php }
 //include du footer

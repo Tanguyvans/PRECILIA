@@ -15,6 +15,10 @@ if (isset($_POST['submit'])) {
     }
 }
 
+if (isset($_POST['quitter'])) {
+    header("location: ../MainPages/Evenements.php?table=none");
+}
+
 include '../templates/header.php';
 ?>
 
@@ -24,9 +28,9 @@ include '../templates/header.php';
 
 <form method="post">
     <input type="submit" name="submit" value="Supprimer">
-</form>
 
-<a href="../MainPages/Evenements.php"><p class="lienAffichage">Retour</p></a>
+    <input type="submit" name="quitter" value="quitter">
+</form>
 
 <?php include '../templates/footer.php'; ?>
 </html>
