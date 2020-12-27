@@ -15,7 +15,7 @@
     <input type="Date" name="DateFin" id="DateFin">
 
     <label for="Description">Description</label>
-    <input type="text" name="Description" id="Description">
+    <input type="textarea" name="Description" id="Description">
 
     <label for="CollaborateurAcademique">Collaboration academique</label>
     <input type="text" name="CollaborateurAcademique" id="CollaborateurAcademique">
@@ -63,17 +63,19 @@ if (isset($_POST['submit'])) {
 
         echo "<h4>Ajout reussi à la base de donnée</h4>";
 
+        $sql = "SELECT IDProjet, Titre FROM PROJETDERECHERCHE ORDER BY IDProjet DESC";
+        $perso = $bdd->query($sql);
+        $line = $perso->fetch(PDO::FETCH_ASSOC);
+        $IDProjet = $line['IDProjet'];
+        $Titre = $line['Titre'];
+
+        echo "<h3><a href='../Formulaires/jointurePersonnelProjet.php?ID=$IDProjet'> Inscrire des participants au projet: $Titre</a></h3>";
+
     } catch(PDOException $error) {
         echo $sql . "<br>" . $error->getMessage();
     }
 
-    $sql = "SELECT IDProjet, Titre FROM PROJETDERECHERCHE ORDER BY IDProjet DESC";
-    $perso = $bdd->query($sql);
-    $line = $perso->fetch(PDO::FETCH_ASSOC);
-    $IDProjet = $line['IDProjet'];
-    $Titre = $line['Titre'];
 
-    echo "<h3><a href='../Formulaires/jointurePersonnelProjet.php?ID=$IDProjet'> Inscrire des participants au projet: $Titre</a></h3>";
 }
 ?>
 

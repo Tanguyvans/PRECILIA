@@ -3,39 +3,6 @@
 require "../config.php";
 $bdd = new PDO($dsn, $username, $password);
 
-if (isset($_POST['submit'])) {
-
-    try {
-
-        $Titre  = $_POST['Titre'];
-        $DateDebut = $_POST['DateDebut'];
-        $DateFin = $_POST['DateFin'];
-        $Description = $_POST['Description'];
-        $CollaborateurAcademique = $_POST['CollaborateurAcademique'];
-        $CollaborateurIndustrielle  = $_POST['CollaborateurIndustrielle'];
-        $NumeroContact = $_POST['NumeroContact'];
-        $MotCle1 = $_POST['MotCle1'];
-        $MotCle2 = $_POST['MotCle2'];
-        $DateDefence = $_POST['DateDefence'];
-        $IDPMatricule = $_POST['IDPMatricule'];
-
-        if ($DateFin == NUll){
-            $DateFin = NULL;
-        }
-
-        $sql = "INSERT INTO THESE (IDThese, Titre, DateDebut,DateFin,Description,CollaborateurAcademique,CollaborateurIndustrielle,NumeroContact,MotCle1,MotCle2,DateDefence,IDPMatricule )
-			VALUES (NULL,'$Titre','$DateDebut','$DateFin','$Description','$CollaborateurAcademique','$CollaborateurIndustrielle','$NumeroContact','$MotCle1','$MotCle2','$DateDefence','$IDPMatricule')";
-
-
-
-        $Resultat = $bdd -> exec($sql);
-        echo "Ajout réussi à la base de données<br>";
-
-    } catch(PDOException $error) {
-        echo $sql . "<br>" . $error->getMessage();
-    }
-
-}
 ?>
 
 <link rel="stylesheet" href="../css/style.css" />
@@ -54,7 +21,7 @@ if (isset($_POST['submit'])) {
     <input type="date" name="DateFin" id="DateFin">
 
     <label for="Description">Description</label>
-    <input type="text" name="Description" id="Description">
+    <input type="textarea" name="Description" id="Description">
 
     <label for="CollaborateurAcademique">Collababorateur académique</label>
     <input type="text" name="CollaborateurAcademique" id="CollaborateurAcademique">
@@ -94,4 +61,47 @@ if (isset($_POST['submit'])) {
     <input type="submit" name="submit" value="Submit">
 
 </form>
+
+<?php
+
+if (isset($_POST['submit'])) {
+
+    try {
+
+        $Titre  = $_POST['Titre'];
+        $DateDebut = $_POST['DateDebut'];
+        $DateFin = $_POST['DateFin'];
+        $Description = $_POST['Description'];
+        $CollaborateurAcademique = $_POST['CollaborateurAcademique'];
+        $CollaborateurIndustrielle  = $_POST['CollaborateurIndustrielle'];
+        $NumeroContact = $_POST['NumeroContact'];
+        $MotCle1 = $_POST['MotCle1'];
+        $MotCle2 = $_POST['MotCle2'];
+        $DateDefence = $_POST['DateDefence'];
+        $IDPMatricule = $_POST['IDPMatricule'];
+
+        if ($DateFin == NUll){
+            $DateFin = NULL;
+        }
+
+        $sql = "INSERT INTO THESE (IDThese, Titre, DateDebut,DateFin,Description,CollaborateurAcademique,CollaborateurIndustrielle,NumeroContact,MotCle1,MotCle2,DateDefence,IDPMatricule )
+        VALUES (NULL,'$Titre','$DateDebut','$DateFin','$Description','$CollaborateurAcademique','$CollaborateurIndustrielle','$NumeroContact','$MotCle1','$MotCle2','$DateDefence','$IDPMatricule')";
+
+        $Resultat = $bdd -> exec($sql);
+        echo "Ajout réussi à la base de données<br>";
+
+        $sql = "SELECT IDThese, Titre FROM THESE ORDER BY IDThese DESC";
+        $perso = $bdd->query($sql);
+        $line = $perso->fetch(PDO::FETCH_ASSOC);
+        $IDThese = $line['IDThese'];
+        $Titre = $line['Titre'];
+
+        echo "<h3><a href='../Formulaires/jointurePromoThese.php?ID=$IDThese'> Inscrire des participants au projet: $Titre</a></h3>";
+
+
+    } catch(PDOException $error) {
+        echo $sql . "<br>" . $error->getMessage();
+    }
+}
+?>
 

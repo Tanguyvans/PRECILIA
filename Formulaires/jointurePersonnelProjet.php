@@ -1,49 +1,67 @@
-<?php
-require "../config.php";
-$bdd = new PDO($dsn, $username, $password);
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <!--adaptive response to the width of the device-->
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <title>PRESCILIA - Evènements</title>
+        <!--Description du site lors de la recherche-->
+        <meta content="" name="descriptison">
+        <meta content="" name="keywords">
+        <link rel="stylesheet" href="../css/style.css"/>
+    </head>
+    <body>
+    <?php include '../templates/header.php' ?>
 
-if (isset($_POST['submit'])) {
-    try {
+        <?php
+        require "../config.php";
+        $bdd = new PDO($dsn, $username, $password);
 
-        $Personnel  = $_POST['Personnel'];
-        $Projet = $_GET['ID'];
+        if (isset($_POST['submit'])) {
+            try {
 
-        $sql = "INSERT INTO personnel_projetderecherche (IDPMatricule, IDProjet) VALUES ('$Personnel', '$Projet')";
-        $Resultat = $bdd -> exec($sql);
+                $Personnel  = $_POST['Personnel'];
+                $Projet = $_GET['ID'];
 
-        echo "Ajout reussie avec la base de donnée<br>";
+                $sql = "INSERT INTO personnel_projetderecherche (IDPMatricule, IDProjet) VALUES ('$Personnel', '$Projet')";
+                $Resultat = $bdd -> exec($sql);
 
-    } catch(PDOException $error) {
-        echo $sql . "<br>" . $error->getMessage();
-    }
-}
+                echo "Ajout reussie avec la base de donnée<br>";
 
-if (isset($_POST['quitter'])) {
-    header("location: ../MainPages/Ajout.php?f=../Formulaires/createProjetDeRecherche");
-}
+            } catch(PDOException $error) {
+                echo $sql . "<br>" . $error->getMessage();
+            }
+        }
 
-?>
+        if (isset($_POST['quitter'])) {
+            header("location: ../MainPages/Ajout.php?f=../Formulaires/createProjetDeRecherche");
+        }
 
-<form method="post">
-    <!-- ======================== Personnel ======================= -->
-    <?php
-    $result = $bdd->query('SELECT IDPMatricule, Nom, Prenom FROM personnel');
-    foreach ($result as $row) {
-        $IDPM[] = array('Personnel' => $row['IDPMatricule'],'Nom' => $row['Nom'], 'Prenom' => $row['Prenom']);
-    }
-    ?>
+        ?>
 
-    <label for="Personnel">Personnel</label>
+        <form method="post">
+            <!-- ======================== Personnel ======================= -->
+            <?php
+            $result = $bdd->query('SELECT IDPMatricule, Nom, Prenom FROM personnel');
+            foreach ($result as $row) {
+                $IDPM[] = array('Personnel' => $row['IDPMatricule'],'Nom' => $row['Nom'], 'Prenom' => $row['Prenom']);
+            }
+            ?>
 
-    <select name="Personnel" id="Personnel">
-        <option value="">Select one</option>
-        <?php foreach ($IDPM as $test): ?>
-            <option value="<?php print_r($test['Personnel']);?>"> <?php print_r($test['Nom']);?>  <?php print_r($test['Prenom']) ?></option>
-        <?php endforeach; ?>
-    </select>
+            <label for="Personnel">Personnel</label>
 
-    <input type="submit" name="submit" value="Submit">
+            <select name="Personnel" id="Personnel">
+                <option value="">Select one</option>
+                <?php foreach ($IDPM as $test): ?>
+                    <option value="<?php print_r($test['Personnel']);?>"> <?php print_r($test['Nom']);?>  <?php print_r($test['Prenom']) ?></option>
+                <?php endforeach; ?>
+            </select>
 
-    <input type="submit" name="quitter" value="quitter">
+            <input type="submit" name="submit" value="Submit">
 
-</form>
+            <input type="submit" name="quitter" value="quitter">
+
+        </form>
+        <?php include '../templates/footer.php' ?>
+    </body>
+</html>

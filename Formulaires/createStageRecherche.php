@@ -46,7 +46,7 @@ if (isset($_POST['submit'])) {
     <input type="date" name="DateFin" id="DateFin">
 
     <label for="Description">Description</label>
-    <input type="text" name="Description" id="Description">
+    <input type="textarea" name="Description" id="Description">
 
     <label for="CollaborateurAcademique">Collababorateur académique</label>
     <input type="text" name="CollaborateurAcademique" id="CollaborateurAcademique">

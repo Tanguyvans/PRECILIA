@@ -1,3 +1,18 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <!--adaptive response to the width of the device-->
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>PRESCILIA - Evènements</title>
+    <!--Description du site lors de la recherche-->
+    <meta content="" name="descriptison">
+    <meta content="" name="keywords">
+    <link rel="stylesheet" href="../css/style.css"/>
+</head>
+<body>
+<?php include '../templates/header.php' ?>
+
 <?php
 require "../config.php";
 $bdd = new PDO($dsn, $username, $password);
@@ -6,7 +21,7 @@ if (isset($_POST['submit'])) {
     try {
 
         $Personnel  = $_POST['Personnel'];
-        $Cours = $_POST['Cours'];
+        $Cours = $_GET['ID'];
 
         $sql = "INSERT INTO personnel_cours (IDPMatricule, IDCours) VALUES ('$Personnel', '$Cours')";
         $Resultat = $bdd -> exec($sql);
@@ -16,6 +31,10 @@ if (isset($_POST['submit'])) {
     } catch(PDOException $error) {
         echo $sql . "<br>" . $error->getMessage();
     }
+}
+
+if (isset($_POST['quitter'])) {
+    header("location: ../MainPages/Ajout.php?f=../Formulaires/createCours");
 }
 ?>
 
@@ -37,27 +56,12 @@ if (isset($_POST['submit'])) {
         <?php endforeach; ?>
     </select>
 
-    <!-- ======================== Cours ======================= -->
-    <?php
-    $result = $bdd->query('SELECT IDCours, UE FROM Cours');
-    foreach ($result as $row) {
-        $IDC[] = array('Cours' => $row['IDCours'],'Titre' => $row['UE']);
-    }
-    ?>
-
-    <label for="Cours">Cours</label>
-
-    <select name="Cours" id="Cours">
-        <option
-            value="">Select one
-        </option>
-        <?php foreach ($IDC as $test): ?>
-            <option
-                value="<?php print_r($test['Cours']); ?>"><?php print_r($test['Titre']);?>
-            </option>
-        <?php endforeach; ?>
-    </select>
-
     <input type="submit" name="submit" value="Submit">
 
+    <input type="submit" name="quitter" value="quitter">
+
 </form>
+
+<?php include '../templates/footer.php' ?>
+</body>
+</html>

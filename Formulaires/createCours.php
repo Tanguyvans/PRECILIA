@@ -1,29 +1,6 @@
 <?php
 require "../config.php";
 $bdd = new PDO($dsn, $username, $password);
-
-if (isset($_POST['submit'])) {
-    try {
-        $IDCours = $_POST['IDCours'];
-        $NombreCredit = $_POST['NombreCredit'];
-        $NombreHeure=$_POST['NombreHeure'];
-        $Titulaire=$_POST['Titulaire'];
-        $UE = $_POST['UE'];
-        $MotCle1=$_POST['MotCle1'];
-        $MotCle2=$_POST['MotCle2'];
-        $IDPMatricule=$_POST['IDPMatricule'];
-
-        $sql = "INSERT INTO COURS (IDCours, NombreCredit, NombreHeure , Titulaire, UE, MotCle1, MotCle2, IDPMatricule)
-			VALUES ('$IDCours','$NombreCredit','$NombreHeure','$Titulaire','$UE','$MotCle1','$MotCle2','$IDPMatricule')";
-
-        $Resultat = $bdd -> exec($sql);
-        echo "Ajout reussie avec la base de donnée<br>";
-
-    } catch(PDOException $error) {
-        echo $sql . "<br>" . $error->getMessage();
-    }
-
-}
 ?>
 <link rel="stylesheet" href="../css/style.css" />
 
@@ -53,24 +30,31 @@ if (isset($_POST['submit'])) {
     <label for="MotCle2">Mot-clé 2</label>
     <input type="text" name="MotCle2" id="MotCle2">
 
-    <!--========== connexion PERSONNEL et remplissage d'une liste ==============-->
-    <?php
-      $result = $bdd->query('SELECT IDPMatricule, Nom, Prenom FROM PERSONNEL');
-      foreach ($result as $row) {
-        $IDPM[] = array('IDPMatricule' => $row['IDPMatricule'],'Nom' => $row['Nom'], 'Prenom' => $row['Prenom']);
-      }
-    ?>
-
-    <label for="IDPMatricule">IDPMatricule</label>
-
-    <!--========== Input IDPMatricule ==============-->
-    <select name="IDPMatricule" id="IDPMatricule">
-      <option value="">Select one</option>
-      <?php foreach ($IDPM as $test): ?>
-      <option value="<?php print_r($test['IDPMatricule']); ?>"><?php print_r($test['Nom']);?>  <?php print_r($test['Prenom']) ?></option>
-      <?php endforeach; ?>
-    </select>
-
     <input type="submit" name="submit" value="Submit">
 </form>
+
+<?php
+if (isset($_POST['submit'])) try {
+    $IDCours = $_POST['IDCours'];
+    $NombreCredit = $_POST['NombreCredit'];
+    $NombreHeure=$_POST['NombreHeure'];
+    $Titulaire=$_POST['Titulaire'];
+    $UE = $_POST['UE'];
+    $MotCle1=$_POST['MotCle1'];
+    $MotCle2=$_POST['MotCle2'];
+
+    $sql = "INSERT INTO COURS (IDCours, NombreCredit, NombreHeure , Titulaire, UE, MotCle1, MotCle2)
+        VALUES ('$IDCours','$NombreCredit','$NombreHeure','$Titulaire','$UE','$MotCle1','$MotCle2')";
+
+    $Resultat = $bdd -> exec($sql);
+
+    if($IDCours != NULL){
+        echo "<h3><a href='../Formulaires/jointurePersonnelCours.php?ID=$IDCours'> Nomer professeur au cours: $IDCours</a></h3>";
+    }
+
+} catch(PDOException $error) {
+    echo $sql . "<br>" . $error->getMessage();
+}
+
+?>
 

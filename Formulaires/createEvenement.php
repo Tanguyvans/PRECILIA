@@ -27,7 +27,7 @@ $bdd = new PDO($dsn, $username, $password);
     <input type="text" name="Duree" id="Duree">
 
     <label for="Description">Description</label>
-    <input type="text" name="Description" id="Description">
+    <input type="textarea" name="Description" id="Description">
 
     <label for="MotCle1">Mot-clé 1</label>
     <input type="text" name="MotCle1" id="MotCle1">
