@@ -245,7 +245,7 @@ width:33%;
     color:black;
 }
 
-                                                    /* === RECHERCHE.PHP === */
+                                                         /* === RECHERCHE.PHP === */
 
 /* parametre des bouton d'affichage */
 .container-lienAffichageR{
@@ -269,7 +269,8 @@ width:33%;
 .EditR a{
   color:black;
 }
-/* === Affichage de l'entiereté de la table === */
+                                             /* === Affichage ensemble des données pour RECHERCHE et EVENEMENT === */
+
 .DonneesR{
 display:flex;
 flex-direction: column;
@@ -280,16 +281,22 @@ border-top: 2px solid black;
   width:33%;
 }
 .TitreR{
+    line-height:30px;
+    white-space: normal;
   width:33%;
   margin-top:auto;
   margin-bottom:auto;
 }
 .EnsembleDatesR{
-  justify-content: center;
-  width:33%;
+    margin-top:2%;
+    margin-right:3%;
+    justify-content: center;
+    width:33%;
+    text-align: right;
 }
 
 .Ligne1R{
+    margin-top: 20px;
   display:flex;
   justify-content: space-around;
   text-align:center;
@@ -298,7 +305,10 @@ border-top: 2px solid black;
   text-align:center;
 }
 .Ligne3R{
-  text-align:start;
+    margin-top:30px;
+    text-align:center;
+    margin-bottom:30px;
+    margin-left:3%;
 }
 .Ligne4R{
   margin-bottom:30px;
@@ -308,9 +318,24 @@ border-top: 2px solid black;
 .tierR{
   width:33%;
 }
+.demiEv{
+    width:50%;
+}
 
-.DonneesR h1{
+.DonneesR h2{
+    margin-top: 60px;
   text-decoration-line: underline;
+}
+.VideHautGauche {
+    margin-top:2%;
+    margin-left:3%;
+    text-align: left;
+}
+                                             /* === EVENEMENT.PHP === */
+
+.Page{
+    height:100%;
+    width:100%;
 }
 
                                                 /* === MEMBRE.PHP === */
@@ -358,7 +383,6 @@ border-top: 2px solid black;
     display:flex;
     flex-direction:row;
     justify-content: flex-start;
-    border: 2px solid black;
 }
 .EnsembleVI {
     width:100%;
@@ -372,10 +396,10 @@ border-top: 2px solid black;
     color:black;
 }
 .phpAj{
- width:auto;
- text-align: center;
- justify-content: space-around;
- margin: auto;
+    width:150px;
+    text-align: center;
+    justify-content: space-around;
+    margin: auto;
 
 }
 #toutAj{
