@@ -183,20 +183,27 @@ table {
   empty-cells: show;
 }
 
-/* === ACCUEIL.PHP === */
+                                                              /* === ACCUEIL.PHP === */
 /* séparation des paragraphes en deux parties */
 .doubleParagraphe p{
-  width:90%;
-  min-width: 100px;
-  max-width: 740px;
+
   text-align:justify;
-  margin-left: auto;
-  margin-right:auto;
+
 }
 .doubleParagraphe {
-  display: flex;
-  text-align: start;
-  justify-content:space-around;
+    width:90%;
+    margin-left: auto;
+    margin-right:auto;
+    display: flex;
+    flex-direction:column;
+    text-align: start;
+    justify-content:space-around;
+    height:100%;
+}
+.listesAcc{
+    display:flex;
+    justify-content: space-between;
+
 }
 /* section partenaire */
 #AllPartenaires {
@@ -219,6 +226,15 @@ table {
 .images-partenaire-taille {
   height: 100px;
   width: 100px;
+
+}
+.Carrousel{
+    background:lightGrey;
+    height:600px;
+    margin:auto;
+}
+.Carrousel img{
+    height:600px;
 }
 
                                                     /* === RECHERCHE.PHP === */
