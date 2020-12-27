@@ -6,7 +6,7 @@
     <title>PRESCILIA - Profil</title>
     <meta content="" name="descriptison"> <!--Description du site lors de la recherche-->
     <meta content="" name="keywords">
-    <link href="../css/pageProfil.css" rel="stylesheet" />
+    <link href="../css/style.css" rel="stylesheet" />
 </head>
 <!--==========================================
 Description de la page

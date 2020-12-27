@@ -25,9 +25,12 @@
             <div class="page">
                  <section>
                    <div class="Carrousel">
-                       <img class="mySlides" src="../Images/ph1.jpg" style="width:100%">
-                       <img class="mySlides" src="../Images/ph2.jpg" style="width:100%">
-                       <img class="mySlides" src="../Images/ph3.jpg" style="width:100%">
+                       <img class="mySlides" src="../Images/1.%20Prérequis%20et%20Approches%20de%20l'IA.PNG" style="width:auto">
+                       <img class="mySlides" src="../Images/2.%20Machine%20Learning.PNG" style="width:auto">
+                       <img class="mySlides" src="../Images/3.%20Processus%20Machine%20Learning.png" style="width:auto">
+                       <img class="mySlides" src="../Images/4.%20Explainable%20Artificial%20Intelligence.png" style="width:auto">
+                       <img class="mySlides" src="../Images/5.%20Déploiement%20Cloud%20d'applications%20IA%20.png" style="width:auto">
+                       <img class="mySlides" src="../Images/6.%20Multimedia%20Retrieval%20with%20Big%20Data%20and%20Deep%20Learning.png" style="width:auto">
                    </div>
                    <script>
                        var slideIndex = 0;
@@ -49,21 +52,33 @@
                  <section>
                    <h2>Qui sommes-nous?</h2>
                    <div class="doubleParagraphe">
-                       <div><p>"Être ou ne pas être, telle est la question.
-                               Y a-t-il plus de noblesse d'âme à subir la fronde et les flèches de la fortune outrageante, ou bien à s'armer contre une mer de douleurs et d'y faire front pour y mettre fin?
-                               Mourir... dormir, rien de plus... et dire que, par ce sommeil, nous mettons fin aux maux du cœur et aux mille tortures naturelles qui sont le lot de la chair: c'est là un dénouement qu'on doit souhaiter avec ferveur.
-                               Mourir... dormir; dormir, peut-être rêver.
-                               Oui, voilà l'obstacle.
-                               Car quels rêves peut-il nous venir dans ce sommeil de la mort, quand nous sommes débarrassés du tumulte de cette vie?
-                               C'est cette réflexion-là qui donne à nos malheurs une si longue existence.
-                               Nymphe, dans tes oraisons, souviens-toi de tous mes pêchés."</p></div>
-                       <div><p>"Fils des mères encore vivantes, n’oubliez plus que vos mères sont mortelles.
-                               Je n’aurai pas écrit en vain, si l’un de vous, après avoir lu mon chant de mort est plus doux avec sa mère,
-                               un soir, à cause de moi et de ma mère. Soyez doux chaque jour avec votre mère. Aimez-la mieux que je n’ai su aimer ma mère.
-                               Que chaque jour vous lui apportiez une joie, c’est ce que je vous dis du droit de mon regret, gravement du haut de mon deuil.
-                               Ces paroles que je vous adresse, fils des mères encore vivantes, sont les seules condoléances qu’à moi-même je puisse m’offrir.
-                               Pendant qu’il est temps, fils, pendant qu’elle est encore là. Hâtez-vous, car bientôt l’immobilité sera sur sa face imperceptiblement
-                               souriante virginalement"</p></div>
+                       <div><p>Le service d’Informatique, Logiciel et Intelligence Artificielle (ILIA) fait partie du département IG
+                               à la faculté polytechnique de l’UMONS (FPMS-UMONS). Le service ILIA, représenté par 14 chercheurs dont
+                               4 professeurs, recouvre différentes activités de recherche telles que l’Intelligence Artificielle, le
+                               Cloud et Edge Computing, le Big Data, le calcul à haute performance (HPC), l’internet des objets (IoT),
+                               la vision par ordinateur et recherche multimédia, l’imagerie médicale et outils d’aide à la décision, etc.
+                               Ces activités de recherche sont réalisées en collaboration avec différents services membres des instituts
+                               Infortech et numédiart. En termes d’enseignement, le service ILIA est impliqué dans différentes activités
+                               d’apprentissage à Mons et Charleroi :</p></div>
+
+                       <div><p>Structures de données et algorithmique (Pr. Mohammed Benjelloun et Saïd Mahmoudi) ;
+                               Programmation Orienté Objet (Pr. Mohammed Benjelloun) ;
+                               Projet d’Ingénierie Informatique (Pr. Mohammed Benjelloun) ;
+                               Vision Artificielle (Pr. Mohammed Benjelloun) ;
+                               Applications Mobiles (Pr. Saïd Mahmoudi) ;
+                               Expertise Digitale et Logicielle (Pr. Saïd Mahmoudi) ;
+                               Modélisation de données, Big Data et Projet (Pr. Sidi Ahmed Mahmoudi) ;
+                               Ingénierie des bases de données et projet (Pr. Sidi Ahmed Mahmoudi) ;
+                               Bases de données Web et Web Sémantique (Pr. Sidi Ahmed Mahmoudi) ;</p></div>
+
+                       <div><p>Intelligence Artificielle (Pr. Sidi Ahmed Mahmoudi) ;
+                               Technologies du Web (Pr. Sidi Ahmed Mahmoudi) ;
+                               Machine & Deep for Multimedia Retrieval (Pr. Sidi Ahmed Mahmoudi) ;
+                               Cloud & Edge Computing (Pr. Sidi Ahmed Mahmoudi) ;
+                               Advanced Deep Learning (Pr. Sidi Ahmed Mahmoudi) ;
+                               Workshop en Intelligence Artificielle (Pr. Sidi Ahmed Mahmoudi) ;
+                               Défis en Intelligence Artificielle (Pr. Sidi Ahmed Mahmoudi, Pr. X. Siebert et Pr. S. Ben Taieb) ;
+                               Etc.</p></div>
                    </div>
                  </section>
 
@@ -97,60 +112,78 @@
 
 
                  <section>
-                   <h2>Que faisons-nous?</h2>
+                   <h2>Nos activités</h2>
                    <div class="doubleParagraphe">
-                       <div><p>"Ah! cruel, tu m'as trop entendue.
-                            Je t'en ai dit assez pour te tirer d'erreur.
-                            Eh bien ! connais donc Phèdre et toute sa fureur.
-                            J'aime. Ne pense pas qu'au moment que je t'aime,
-                            Innocente à mes yeux, je m'approuve moi-même,
-                            Ni que du fol amour qui trouble ma raison
-                            Ma lâche complaisance ait nourri le poison.
-                            Objet infortuné des vengeances célestes,
-                            Je m'abhorre encor plus que tu ne me détestes.
-                            Les dieux m'en sont témoins, ces dieux qui dans mon flanc
-                            Ont allumé le feu fatal à tout mon sang,
-                            Ces dieux qui se sont fait une gloire cruelle
-                            De séduire le coeur d'une faible mortelle.
-                            Toi-même en ton esprit rappelle le passé."</p></div>
-                       <div><p>"Et en moi aussi, la marée monte. La vague se gonfle, elle se recourbe. Une fois de plus,
-                            je sens renaître en moi un nouveau désir ; sous moi quelque chose se redresse comme le cheval fier
-                            que son cavalier éperonne et retient tour à tour. Ô toi, ma monture, quel est l'ennemi que nous voyons
-                            s'avancer vers nous, en ce moment où tu frappes du sabot le pavé des rues ? C'est la Mort.
-                            La Mort est notre ennemi. C'est contre la Mort que je chevauche, l'épée au clair et les cheveux flottant au vent comme
-                            ceux d'un jeune homme, comme flottaient au vent les cheveux de Perceval galopant aux Indes.
-                            J'enfonce mes éperons dans les flancs de mon cheval. Invaincu, incapable de demander grâce,
-                            c'est contre toi que je m'élance, ô Mort. "</p></div>
+                       <div><p>Les activités du service ILIA sont liées aux nouvelles technologies de l’information permettant
+                               de collecter, gérer et traiter efficacement différents types de données. Le service ILIA est
+                               fort impliqué dans ces activités :</p></div>
+
+                       <div><p>Développement d’algorithmes d’Intelligence Artificielle et plus particulièrement dans les
+                               domaines de Machine et Deep Learning ;
+                               Déploiement de modèles IA sur ressources HPC parallèles et distribuées
+                               Déploiement de modèles et algorithmes IA sur ressources Cloud et Edge ;
+                               Développement de modèles et algorithmes IA pour la recherche multimédia, analyse de mouvements
+                               (vidéosurveillance), contrôle de production, etc.
+                               Développement d’outils d’aide à la décision dans le domaine d’imagerie médicale ;
+                               Mise en œuvre de services exploitant des capteurs et ressources connectées « IoT » ;
+                               Mise en place de solutions informatique dans le domaine du Smart Framing.
+                               Etc.</p></div>
+
+                       <div><p>
+                               Ces activités sont réalisées en collaboration avec différents partenaires académiques
+                               et industrielle et ce à l’échelle internationale.
+                           </p></div>
                    </div>
                  </section>
 
 
                  <section>
-                   <h2>Nos partenaires</h2>
+                   <h2>Nos partenaires académiques</h2>
                     <div id="AllPartenaires">
                         <div class="partenaire">
-                           <img src="../Images/logo1.png" class="images-partenaire-taille">
-                           <h3>DL</h3>
-                           <p>La vie c'est des étapes... La plus douce c'est l'amour...
-                            La plus dure c'est la séparation... La plus pénible c'est les adieux...
-                            La plus belle c'est les retrouvailles.</p>
+                           <img src="../Images/uliege.png" class="images-partenaire-taille">
+                           <h3>Université de Liège, ULiège (Belgique)</h3>
                         </div>
                         <div class="partenaire">
-                           <img src="../Images/logo2.png" class="images-partenaire-taille">
-                           <h3>AI</h3>
-                           <p>Exige beaucoup de toi-même et attends peu des autres.
-                            Ainsi beaucoup d'ennuis te seront épargnés.</p>
+                           <img src="../Images/lausane%20FP.png" class="images-partenaire-taille">
+                           <h3>Ecole Polytechnique Fédérale de Lausanne (Suisse)</h3>
                         </div>
                         <div class="partenaire">
-                           <img src="../Images/logo3.png" class="images-partenaire-taille">
-                           <h3>DB</h3>
-                           <p>Dans la vie on ne fait pas ce que l'on veut mais on
-                               est responsable de ce que l'on est.</p>
+                            <img src="../Images/lille%201.jpg" class="images-partenaire-taille">
+                            <h3>Université de Lille 1 (France)</h3>
+                        </div>
+                        <div class="partenaire">
+                            <img src="../Images/mohamed.jpg" class="images-partenaire-taille">
+                            <h3>Université de Mohammed V (Rabat, Maroc)</h3>
+                        </div>
+                        <div class="partenaire">
+                            <img src="../Images/tlemcem.png" class="images-partenaire-taille">
+                            <h3>Université de Tlemcen (Algérie)</h3>
                         </div>
                     </div>
                  </section>
-                   </div>
-        </div>
+
+                <section>
+                    <h2>Nos partenaires industriels</h2>
+                    <div id="AllPartenaires">
+                        <div class="partenaire">
+                            <img src="../Images/infrabel.jpg" class="images-partenaire-taille">
+                            <h3>Infrabel</h3>
+                        </div>
+                        <div class="partenaire">
+                            <img src="../Images/eleveo.svg" class="images-partenaire-taille">
+                            <h3>Elevéo</h3>
+                        </div>
+                        <div class="partenaire">
+                            <img src="../Images/sonaca.jpg" class="images-partenaire-taille">
+                            <h3>Sonaca</h3>
+                        </div>
+                        <div class="partenaire">
+                            <img src="../Images/necko.PNG" class="images-partenaire-taille">
+                            <h3>Necko Technologies/h3>
+                        </div>
+                    </div>
+                </section>
 
         <?php include '../templates/footer.php' ?>
     </body>

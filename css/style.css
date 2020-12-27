@@ -131,8 +131,10 @@ padding-top: 25px;
 #ensembleT {
     background: #344341;
     text-align: center;
-    width:70px;
+    width:100px;
+    min-height:200px;
     height:100%;
+
 }
 #ensemble.activeT{
     height: auto;
@@ -314,10 +316,12 @@ border-top: 2px solid black;
   min-height:200px;
 }
                                              /* === ACCUEIL.PHP === */
-.Carrousel img{
-  width: 100%;
-  height: 600px;
+.Carrousel {
+    width: 100%;
+    height: 700px;
 }
+
+
 #Membres.wrapper {
  display: grid;
  grid-template-columns: 1fr 1fr 1fr; /*ici,trois colonne qui prennent toutes la largeur dispo*/
@@ -336,3 +340,108 @@ label {
  height:100%;
  justify-content: center;
 }
+                                             /* === Ajout.PHP et VoirInscriptions.php === */
+
+.container-choix-creationAj a{
+     min-height:50px;
+     width:200px;
+     display:flex;
+     flex-direction: column;
+     justify-content:space-around;
+     color:black;
+}
+.container-choix-creationAj{
+    margin-left:4%;
+}
+.EnsembleAj{
+    width:100%;
+    display:flex;
+    flex-direction:row;
+    justify-content: flex-start;
+    border: 2px solid black;
+}
+.EnsembleVI {
+    width:100%;
+
+}
+.EnsembleVI table{
+    width:100%;
+    text-align:center;
+}
+.EnsembleVI table tr a{
+    color:black;
+}
+.phpAj{
+ width:auto;
+ text-align: center;
+ justify-content: space-around;
+ margin: auto;
+
+}
+#toutAj{
+ display: flex;
+ flex-direction: column;
+
+}
+#milieuAj{
+ display: flex;
+ flex-direction: row;
+
+
+}
+.toolbarAj{
+ height:auto;
+ width:auto;
+ border: 3px solid white;
+}
+.hautAj{
+}
+                                             /* === Profil.PHP === */
+
+
+ .ImageP img {
+     min-width:150px;
+     max-width:100%;
+     height: auto;
+ }
+ .pageprincipaleP{
+     display:flex;
+     flex-direction:row;
+     justify-content: flex-start;
+ }
+ .texteP{
+     display:flex;
+     flex-direction:row;
+     width:60%;
+     justify-content: space-around;
+ }
+ .CentreP{
+     text-align:start;
+ }
+
+ .ImageP{
+     width:40%;
+     margin-right:10%;
+ }
+ .texteP a{
+     color:black;
+ }
+ .texteP div {
+     margin-top:auto;
+     margin-bottom:auto;
+     text-align:start;
+     color:black;
+     width:33%;
+ }
+ #milieuP{
+     display:flex;
+ }
+ .toolbarP {
+     height:auto;
+     width:70px;
+     border: 3px solid white;
+ }
+ .pageprincipaleP h2{
+     text-align:center;
+ }
+
