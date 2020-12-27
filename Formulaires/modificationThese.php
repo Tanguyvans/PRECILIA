@@ -6,9 +6,7 @@
     require "../includes/functions.inc.php";
     $bdd = new PDO($dsn, $username, $password);
     ?>
-
     <?php
-    // quand l'utilisateur valide le formulaire
     if (isset($_POST['submit'])) {
         try {
             $IDThese = $_GET['ID']; //recuperation de ID par url
