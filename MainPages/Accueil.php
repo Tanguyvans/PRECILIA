@@ -138,31 +138,52 @@
 
 
                  <section>
-                   <h2>Nos partenaires</h2>
+                   <h2>Nos partenaires académiques</h2>
                     <div id="AllPartenaires">
                         <div class="partenaire">
-                           <img src="../Images/logo1.png" class="images-partenaire-taille">
-                           <h3>DL</h3>
-                           <p>La vie c'est des étapes... La plus douce c'est l'amour...
-                            La plus dure c'est la séparation... La plus pénible c'est les adieux...
-                            La plus belle c'est les retrouvailles.</p>
+                           <img src="../Images/uliege.png" class="images-partenaire-taille">
+                           <h3>Université de Liège, ULiège (Belgique)</h3>
                         </div>
                         <div class="partenaire">
-                           <img src="../Images/logo2.png" class="images-partenaire-taille">
-                           <h3>AI</h3>
-                           <p>Exige beaucoup de toi-même et attends peu des autres.
-                            Ainsi beaucoup d'ennuis te seront épargnés.</p>
+                           <img src="../Images/lausane%20FP.png" class="images-partenaire-taille">
+                           <h3>Ecole Polytechnique Fédérale de Lausanne (Suisse)</h3>
                         </div>
                         <div class="partenaire">
-                           <img src="../Images/logo3.png" class="images-partenaire-taille">
-                           <h3>DB</h3>
-                           <p>Dans la vie on ne fait pas ce que l'on veut mais on
-                               est responsable de ce que l'on est.</p>
+                            <img src="../Images/lille%201.jpg" class="images-partenaire-taille">
+                            <h3>Université de Lille 1 (France)</h3>
+                        </div>
+                        <div class="partenaire">
+                            <img src="../Images/mohamed.jpg" class="images-partenaire-taille">
+                            <h3>Université de Mohammed V (Rabat, Maroc)</h3>
+                        </div>
+                        <div class="partenaire">
+                            <img src="../Images/tlemcem.png" class="images-partenaire-taille">
+                            <h3>Université de Tlemcen (Algérie)</h3>
                         </div>
                     </div>
                  </section>
-                   </div>
-        </div>
+
+                <section>
+                    <h2>Nos partenaires industriels</h2>
+                    <div id="AllPartenaires">
+                        <div class="partenaire">
+                            <img src="../Images/infrabel.jpg" class="images-partenaire-taille">
+                            <h3>Infrabel</h3>
+                        </div>
+                        <div class="partenaire">
+                            <img src="../Images/eleveo.svg" class="images-partenaire-taille">
+                            <h3>Elevéo</h3>
+                        </div>
+                        <div class="partenaire">
+                            <img src="../Images/sonaca.jpg" class="images-partenaire-taille">
+                            <h3>Sonaca</h3>
+                        </div>
+                        <div class="partenaire">
+                            <img src="../Images/necko.PNG" class="images-partenaire-taille">
+                            <h3>Necko Technologies/h3>
+                        </div>
+                    </div>
+                </section>
 
         <?php include '../templates/footer.php' ?>
     </body>
