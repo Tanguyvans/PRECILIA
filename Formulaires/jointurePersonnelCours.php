@@ -41,7 +41,16 @@ if (isset($_POST['quitter'])) {
 <form method="post">
     <!-- ======================== Personnel ======================= -->
     <?php
-    $result = $bdd->query('SELECT IDPMatricule, Nom, Prenom FROM personnel');
+
+    $Cours = $_GET['ID'];
+
+    $sql = "SELECT personnel.IDPMatricule, personnel.Nom, personnel.Prenom FROM personnel
+                    WHERE NOT IDPMatricule IN
+                    (SELECT personnel.IDPMatricule FROM personnel LEFT JOIN personnel_cours ON personnel.IDPMatricule = personnel_cours.IDPMatricule
+                    WHERE personnel_cours.IDCours = '$Cours')";
+
+    $result = $bdd->query($sql);
+
     foreach ($result as $row) {
         $IDPM[] = array('Personnel' => $row['IDPMatricule'],'Nom' => $row['Nom'], 'Prenom' => $row['Prenom']);
     }

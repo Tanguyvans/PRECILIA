@@ -50,13 +50,30 @@
         <form method="post">
             <!-- ======================== MEMBRE ======================= -->
             <?php
-            $resultpersonnel = $bdd->query('SELECT IDPMatricule, Nom, Prenom FROM personnel');
+
+            $IDEvent = $_GET['ID'];
+
+            $sql = "SELECT personnel.IDPMatricule, personnel.Nom, personnel.Prenom FROM personnel
+                    WHERE NOT IDPMatricule IN
+                    (SELECT personnel.IDPMatricule FROM personnel LEFT JOIN personnel_evenement ON personnel.IDPMatricule = personnel_evenement.IDPMatricule
+                    WHERE personnel_evenement.IDEvenement = '$IDEvent')";
+
+            $resultpersonnel = $bdd->query($sql);
+
             foreach ($resultpersonnel as $row) {
                 $IDPM[] = array('IDPMatricule' => $row['IDPMatricule'],'Nom' => $row['Nom'], 'Prenom' => $row['Prenom']);
             }
             ?>
             <?php
-            $resultetudiant = $bdd->query('SELECT IDEMatricule, Nom, Prenom FROM etudiant');
+
+            $IDEvent = $_GET['ID'];
+
+            $sql = "SELECT etudiant.IDEMatricule, etudiant.Nom, etudiant.Prenom FROM etudiant
+                    WHERE NOT IDEMatricule IN
+                    (SELECT etudiant.IDEMatricule FROM etudiant LEFT JOIN etudiant_evenement ON etudiant.IDEMatricule = etudiant_evenement.IDEMatricule
+                    WHERE etudiant_evenement.IDEvenement = '$IDEvent')";
+
+            $resultetudiant = $bdd->query($sql);
             foreach ($resultetudiant as $row) {
                 $IDEM[] = array('IDEMatricule' => $row['IDEMatricule'],'Nom' => $row['Nom'], 'Prenom' => $row['Prenom']);
             }

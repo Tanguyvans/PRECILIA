@@ -42,7 +42,16 @@
         <form method="post">
             <!-- ======================== Personnel ======================= -->
             <?php
-            $result = $bdd->query('SELECT IDPMatricule, Nom, Prenom FROM personnel');
+
+            $Projet = $_GET['ID'];
+
+            $sql = "SELECT personnel.IDPMatricule, personnel.Nom, personnel.Prenom FROM personnel
+                    WHERE NOT IDPMatricule IN
+                    (SELECT personnel.IDPMatricule FROM personnel  LEFT JOIN personnel_projetderecherche ON personnel.IDPMatricule = personnel_projetderecherche.IDPMatricule
+                    WHERE personnel_projetderecherche.IDProjet = '$Projet')";
+
+            $result = $bdd->query($sql);
+
             foreach ($result as $row) {
                 $IDPM[] = array('Personnel' => $row['IDPMatricule'],'Nom' => $row['Nom'], 'Prenom' => $row['Prenom']);
             }
