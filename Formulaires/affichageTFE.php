@@ -108,7 +108,7 @@ if (isset($_POST['Recherche'])) {
         {
             ?>
             <tr>
-                <?php $nom = $ligne['IDThese'];?>
+                <?php $nom = $ligne['IDTFE'];?>
                 <!--remplissage de la table avec la base de donnée-->
                 <td><a href="Enseignement.php?table=TFE&amp;ID=<?php echo($nom);?>"><p class="lienAffichageTableau"> <?php echo $ligne['Titre'];?> </p></a></td>
                 <td><?php echo $ligne['MotCle1'];?></td>

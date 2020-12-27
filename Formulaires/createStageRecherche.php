@@ -16,6 +16,10 @@ if (isset($_POST['submit'])) {
         $MotCle2=$_POST['MotCle2'];
         $IDPMatricule=$_POST['IDPMatricule'];
 
+        if ($DateFin == NUll){
+            $DateFin = NULL;
+        }
+
         $sql = "INSERT INTO STAGEDERECHERCHE (IDStageRecherche, DateDebut, DateFin , Description, CollaborateurAcademique, CollaborateurIndustrielle, NumeroContact, MotCle1, MotCle2, IDPMatricule)
 			VALUES (NULL,'$DateDebut','$DateFin','$Description','$CollaborateurAcademique','$CollaborateurIndustrielle','$NumeroContact','$MotCle1','$MotCle2','$IDPMatricule')";
 

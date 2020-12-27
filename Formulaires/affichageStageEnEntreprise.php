@@ -100,7 +100,7 @@ if (isset($_POST['Recherche'])) {
                 <th>Collaboration industrielle</th>
                 <th>Mot cle 1</th>
                 <th>Mot cle 2</th>
-                <th>Stagiaire</th>
+                <th>Référant académique</th>
             </tr>
             <?php
                 while($ligne = $resultat->fetch(PDO::FETCH_ASSOC))
@@ -110,7 +110,8 @@ if (isset($_POST['Recherche'])) {
                     while($line = $Etudiant->fetch(PDO::FETCH_ASSOC))
                     { ?>
                         <tr>
-                            <td><a href="../MainPages/Enseignement.php?table=StageEntreprise&amp;ID=<?php echo(ligne['$IDStageEntreprise']);?>"><p class="lienAffichage"><?php echo $line['Nom'];?> <?php echo $line['Prenom'];?></p></a></td>
+                            <?php $nom = $ligne['IDStageEntreprise']; ?>
+                            <td><a href="../MainPages/Enseignement.php?table=StageEntreprise&amp;ID=<?php echo($nom);?>"><p class="lienAffichage"><?php echo $line['Nom'];?> <?php echo $line['Prenom'];?></p></a></td>
                             <td><?php echo $ligne['CollaborateurIndustrielle'];?></td>
                             <td><?php echo $ligne['MotCle1'];?></td>
                             <td><?php echo $ligne['MotCle2'];?></td>

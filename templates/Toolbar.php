@@ -18,8 +18,7 @@
         <?php if(isset($_SESSION["Psession"])){?>
             <div class="activeT"><a href='../MainPages/Ajout.php'>Ajouter</a></div>
         <?php } ?>
-        <div class="activeT"><a href='../MainPages/adresse'>Autre?</a></div>
-        <div class="activeT"><a href='../MainPages/VoirInscription.php'>Inscription</a></div>
+        <div class="activeT"><a href='../MainPages/VoirInscription.php'>Participation(s)</a></div>
     </div>
 </header>
 </body>

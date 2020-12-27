@@ -52,6 +52,10 @@ if (isset($_POST['submit'])) {
         $MotCle1=$_POST['MotCle1'];
         $MotCle2=$_POST['MotCle2'];
 
+        if ($DateFin == NUll){
+            $DateFin = NULL;
+        }
+
         $sql = "INSERT INTO PROJETDERECHERCHE (IDProjet ,Titre, DateDebut, DateFin, Description, CollaborateurAcademique, CollaborateurIndustrielle, NumeroContact, MotCle1, MotCle2)
 			VALUES (NULL,'$Titre', '$DateDebut','$DateFin','$Description','$CollaborateurAcademique','$CollaborateurIndustrielle','$NumeroContact','$MotCle1','$MotCle2')";
 

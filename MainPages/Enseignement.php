@@ -24,82 +24,68 @@
             if ($_GET['f']) {include ($_GET['f'].".php");}
             ?>
 
-            <!--- Si on a selectionné un cours -->
+            <!--- CHOIX I -->
             <?php
             if ($_GET['table'] == 'Cours'){
-                //recuperation de l id et des infos de cette cours
                 $ID = $_GET['ID'];
                 $sql = "SELECT * FROM Cours WHERE IDCours = '$ID'";
                 $result = $bdd->query($sql);
                 ?>
-                <!-- possibilité de MODIF ET SUPPRIMER -->
-                <a href="../Formulaires/modificationThese.php?ID=<?php echo $ID; ?>"><p class="lienAffichage"> Modifier</p></a>
-                <a href="../Formulaires/suppressionThese.php?ID=<?php echo $ID; ?>"><p class="lienAffichage"> Supprimer</p></a>
+                <a href="../Formulaires/modificationCours.php?ID=<?php echo $ID; ?>"><p class="lienAffichage"> Modifier</p></a>
+                <a href="../Formulaires/suppresionCours.php?ID=<?php echo $ID; ?>"><p class="lienAffichage"> Supprimer</p></a>
                 <table>
-                    <!-- remplissage de la table-->
                     <?php $ligne = $result->fetch(PDO::FETCH_ASSOC); ?>
+                    <tr><td>ID:</td><td><?php echo $ligne['IDCours'];?></td></tr>
+                    <tr><td>Nombre de crédit:</td><td><?php echo $ligne['NombreCredit'];?></td></tr>
+                    <tr><td>Nombre d'heure:</td><td><?php echo $ligne['NombreHeure'];?></td></tr>
+                    <tr><td>Titulaire:</td><td><?php echo $ligne['Titulaire'];?></td></tr>
+                    <tr><td>UE:</td><td><?php echo $ligne['UE'];?></td></tr>
+                    <tr><td>Mot clé 1:</td><td><?php echo $ligne['MotCle1'];?></td></tr>
+                    <tr><td>Mot clé 2:</td><td><?php echo $ligne['MotCle2'];?></td></tr>
+                </table>
+            <?php } ?>
 
-                    <!--remplissage de la table avec la base de donnée-->
-                    <tr><td>Titre:</td><td><?php echo $ligne['IDcours'];?></td></tr>
+            <!--- CHOIX II -->
+            <?php
+            if ($_GET['table'] == 'StageEntreprise'){
+                $ID = $_GET['ID'];
+                $sql = "SELECT * FROM stageenentreprise WHERE IDStageEntreprise  = '$ID'";
+                $result = $bdd->query($sql);
+                ?>
+                <a href="../Formulaires/modificationStageEntreprise.php?ID=<?php echo $ID; ?>"><p class="lienAffichage"> Modifier</p></a>
+                <a href="../Formulaires/suppressionStageEntreprise.php?ID=<?php echo $ID; ?>"><p class="lienAffichage"> Supprimer</p></a>
+                <table>
+                    <?php $ligne = $result->fetch(PDO::FETCH_ASSOC); ?>
                     <tr><td>Date de debut:</td><td><?php echo $ligne['DateDebut'];?></td></tr>
                     <tr><td>Date de fin:</td><td><?php echo $ligne['DateFin'];?></td></tr>
-                    <tr><td>Description:</td><td><?php echo $ligne['Description'];?></td></tr>
-                    <tr><td>Collaboration academique:</td><td><?php echo $ligne['CollaborateurAcademique'];?></td></tr>
                     <tr><td>Collaboration industrielle:</td><td><?php echo $ligne['CollaborateurIndustrielle'];?></td></tr>
                     <tr><td>Numero de contact:</td><td><?php echo $ligne['NumeroContact'];?></td></tr>
                     <tr><td>Mot cle 1:</td><td><?php echo $ligne['MotCle1'];?></td></tr>
                     <tr><td>Mot cle 2:</td><td><?php echo $ligne['MotCle2'];?></td></tr>
-                    <tr><td>Date de defence:</td><td><?php echo $ligne['DateDefence'];?></td></tr>
-                    <tr><td>Auteur:</td>
-                        <?php
-                        $Matricule = $ligne['IDPMatricule'];
-                        $perso = $bdd->query("SELECT Nom, Prenom FROM PERSONNEL WHERE IDPMatricule = '$Matricule' ");
-                        while($line = $perso->fetch(PDO::FETCH_ASSOC))
-                        {
-                            ?>
-                            <td><?php echo $line['Nom'];?> <?php echo $line['Prenom'];?></td>
-                            <?php
-                        }
-                        ?></tr>
-
                 </table>
             <?php } ?>
 
-            <!--- Si on a selectionné un projet de recherche -->
+            <!--- CHOIX III -->
             <?php
-            if ($_GET['table'] == 'ProjetDeRecherche'){
+            if ($_GET['table'] == 'TFE'){
                 $ID = $_GET['ID'];
-                $sql = "SELECT * FROM ProjetDeRecherche WHERE IDProjet = '$ID'";
+                $sql = "SELECT * FROM TFE WHERE IDTFE = '$ID'";
                 $result = $bdd->query($sql);
                 ?>
-
+                <a href="../Formulaires/modificationTFE.php?ID=<?php echo $ID; ?>"><p class="lienAffichage"> Modifier</p></a>
+                <a href="../Formulaires/suppressionTFE.php?ID=<?php echo $ID; ?>"><p class="lienAffichage"> Supprimer</p></a>
                 <table>
-                    <!-- PHP CODE pour remplir la table-->
                     <?php $ligne = $result->fetch(PDO::FETCH_ASSOC); ?>
-
-                    <!--remplissage de la table avec la base de donnée-->
                     <tr><td>Titre:</td><td><?php echo $ligne['Titre'];?></td></tr>
                     <tr><td>Date de debut:</td><td><?php echo $ligne['DateDebut'];?></td></tr>
                     <tr><td>Date de fin:</td><td><?php echo $ligne['DateFin'];?></td></tr>
-                    <tr><td>Description:</td><td><?php echo $ligne['Description'];?></td></tr>
-                    <tr><td>Collaboration academique:</td><td><?php echo $ligne['CollaborateurAcademique'];?></td></tr>
                     <tr><td>Collaboration industrielle:</td><td><?php echo $ligne['CollaborateurIndustrielle'];?></td></tr>
                     <tr><td>Numero de contact:</td><td><?php echo $ligne['NumeroContact'];?></td></tr>
                     <tr><td>Mot cle 1:</td><td><?php echo $ligne['MotCle1'];?></td></tr>
                     <tr><td>Mot cle 2:</td><td><?php echo $ligne['MotCle2'];?></td></tr>
-                    <?php
-                    $Matricule = $ligne['IDPMatricule'];
-                    $perso = $bdd->query("SELECT Nom, Prenom FROM PERSONNEL WHERE IDPMatricule = '$Matricule' ");
-                    while($line = $perso->fetch(PDO::FETCH_ASSOC))
-                    {
-                    ?>
-                    <td><?php echo $line['Nom'];?> <?php echo $line['Prenom'];?></td>
-                    <?php
-                    }
-                    ?></tr>
-
                 </table>
             <?php } ?>
+
         </div>
         <?php include '../templates/footer.php' ?>
     </body>
