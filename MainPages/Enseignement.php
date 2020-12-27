@@ -69,14 +69,14 @@
             <?php
             if ($_GET['table'] == 'TFE'){
                 $ID = $_GET['ID'];
-                $sql = "SELECT * FROM TFE WHERE IDCours = '$ID'";
+                $sql = "SELECT * FROM TFE WHERE IDTFE = '$ID'";
                 $result = $bdd->query($sql);
                 ?>
                 <a href="../Formulaires/modificationTFE.php?ID=<?php echo $ID; ?>"><p class="lienAffichage"> Modifier</p></a>
                 <a href="../Formulaires/suppressionTFE.php?ID=<?php echo $ID; ?>"><p class="lienAffichage"> Supprimer</p></a>
                 <table>
                     <?php $ligne = $result->fetch(PDO::FETCH_ASSOC); ?>
-                    <tr><td>Titre:</td><td><?php echo $ligne['IDCours'];?></td></tr>
+                    <tr><td>Titre:</td><td><?php echo $ligne['Titre'];?></td></tr>
                     <tr><td>Date de debut:</td><td><?php echo $ligne['DateDebut'];?></td></tr>
                     <tr><td>Date de fin:</td><td><?php echo $ligne['DateFin'];?></td></tr>
                     <tr><td>Collaboration industrielle:</td><td><?php echo $ligne['CollaborateurIndustrielle'];?></td></tr>

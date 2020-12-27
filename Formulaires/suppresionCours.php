@@ -26,7 +26,7 @@
         <input type="submit" name="submit" value="Supprimer">
     </form>
 
-    <a href="../MainPages/Recherche.php?f=../Formulaires/AffichageCours"><p class="lienAffichage">Retour</p></a>
+    <a href="../MainPages/Enseignement.php?f=../Formulaires/AffichageCours"><p class="lienAffichage">Retour</p></a>
 
     <?php include '../templates/footer.php'; ?>
 </html>
