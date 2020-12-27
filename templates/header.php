@@ -24,7 +24,7 @@
         <nav id="container2H">
             <div class="activeH"><a href='../MainPages/Recherche.php'>Recherche</a></div>
             <div class="activeH"><a href='../MainPages/Membres.php'>Membres</a></div>
-            <div class="activeH"><a href='../MainPages/Evenements.php'>Événements</a></div>
+            <div class="activeH"><a href='../MainPages/Evenements.php?table=none'>Événements</a></div>
             <div class="activeH"><a href='../MainPages/Enseignement.php'>Enseignements</a></div>
             <?php
                 if(isset($_SESSION["Psession"])){
