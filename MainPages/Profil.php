@@ -69,7 +69,7 @@ Description de la page
 
                 <!-- Image-->
                 <?php if(isset($_SESSION["Psession"])){ ?>
-                    <img src="../imageP/<?php echo $Matricule; ?>.jpg" />
+                    <img src="../imageP/<?php echo $Matricule; ?>.png" />
                     <form method="POST" enctype="multipart/form-data">
                         <?php require '../includes/upload.inc.php' ?>
                         <input type="file" name="file">

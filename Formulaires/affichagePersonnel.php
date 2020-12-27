@@ -23,7 +23,7 @@ catch (Exception $e){
             <div id="col">
                     <!--remplissage de la table avec la base de donnée-->
                 <div class = "img-containerPersonnel">
-                    <img src="../imageP/<?php echo $ligne['IDPMatricule']; ?>.jpg" />
+                    <img src="../imageP/<?php echo $ligne['IDPMatricule']; ?>.png" />
                 </div>
                 <div class="descr-container">
                     <h3>Nom: <?php echo $ligne['Nom'];?> <?php echo $ligne['Prenom'];?></h3>
