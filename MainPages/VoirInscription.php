@@ -102,7 +102,7 @@ Description de la page
 
     </div>
 
-    <div class="basAj">
+    <div>
         <?php include '../templates/footer.php' ?>
     </div>
 

@@ -27,7 +27,6 @@ Description de la page
 
         <div class="pageprincipaleP">
             <div class="texteP">
-                <div class="VideP"></div>
                 <div class="CentreP">
 
                     <?php
@@ -63,8 +62,8 @@ Description de la page
                     <h3><a href="../Formulaires/modificationProfil.php"><p class="lienAffichageP">Modifier</p></a></h3>
 
                 </div>
-                <div class="VideP"></div>
             </div>
+
             <div class="ImageP">
 
                 <!-- Image-->

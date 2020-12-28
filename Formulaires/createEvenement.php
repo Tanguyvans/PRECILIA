@@ -9,13 +9,13 @@ $bdd = new PDO($dsn, $username, $password);
 
 <form method="post">
 
-    <label for="Type">Type d'evenement</label>
+    <center><label for="Type">Type d'evenement</label>
     <select name="Type" id="type">
         <option value="">Select one</option>
         <option value="Hackathon">Hackathon</option>
         <option value="Seminaire">Seminaire</option>
         <option value="Workshop">Workshop</option>
-    </select>
+    </select> </center>
 
     <label for="Nom">Nom</label>
     <input type="text" name="Nom" id="Nom">
@@ -27,7 +27,8 @@ $bdd = new PDO($dsn, $username, $password);
     <input type="text" name="Duree" id="Duree">
 
     <label for="Description">Description</label>
-    <input type="textarea" name="Description" id="Description">
+    <textarea rows="5" name="Description" ></textarea>
+    <!--<input type="text" name="Description" id="Description">-->
 
     <label for="MotCle1">Mot-clé 1</label>
     <input type="text" name="MotCle1" id="MotCle1">

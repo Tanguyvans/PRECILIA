@@ -9,7 +9,6 @@
         <meta content="" name="descriptison">
         <meta content="" name="keywords">
         <link rel="stylesheet" href="../css/style.css"/>
-       <!-- <link href="../css/pageMembre.css" rel="stylesheet" /> -->
     </head>
 
     <body>

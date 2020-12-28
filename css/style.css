@@ -37,10 +37,11 @@
                                               /* === FOOTER === */
 
 #footerF {
-background: #344341;
-padding: 15px 15px 15px 15px;
-color: #fff;
-font-size: 14px;
+    background: #344341;
+    padding: 15px 15px 15px 15px;
+    color: #fff;
+    font-size: 14px;
+    width:100%;
 }
 
 #footerF .footer-topF {
@@ -154,11 +155,11 @@ padding-top: 25px;
 
                                              /* parametre de la page générale */
 body {
-  font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
-  background-color: white;
-  color: #333333;
-  margin: 0;
-  padding: 0;
+    font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
+    background-color: white;
+    color: #333333;
+    margin: 0;
+    padding: 0;
 }
 /* Liens dans les tableau d'affichage*/
 .lienAffichageTableau{
@@ -269,6 +270,12 @@ width:33%;
 .EditR a{
   color:black;
 }
+/*.foot{
+    position:absolute;
+    bottom:0;
+    width:100%;
+}
+ */
                                              /* === Affichage ensemble des données pour RECHERCHE et EVENEMENT === */
 
 .DonneesR{
@@ -340,6 +347,9 @@ border-top: 2px solid black;
 
                                                 /* === MEMBRE.PHP === */
 
+.descr-container{
+    padding-top:10%;
+}
 .img-containerPersonnel img{
     max-width:45%;
     min-width:150px;
@@ -352,8 +362,7 @@ border-top: 2px solid black;
 #col {
   column-count: 2;
 }
-
-/* === ConnexionEtudiant+ConnexionPersonnel === */
+                                             /* === ConnexionEtudiant+ConnexionPersonnel === */
 .PageC {
   margin-top:50px;
   min-height: 170px;
@@ -361,9 +370,16 @@ border-top: 2px solid black;
 }
                                              /* === RECHERCHE.PHP === */
 
-.PageEns {
+.PageR {
   min-height:200px;
 }
+                                             /* === Enseignement.PHP === */
+
+.PageEns {
+    min-height:200px;
+}
+
+
 
                                              /* === Ajout.PHP et VoirInscriptions.php === */
 
@@ -396,10 +412,11 @@ border-top: 2px solid black;
     color:black;
 }
 .phpAj{
-    width:150px;
+    width:170px;
     text-align: center;
-    justify-content: space-around;
+    justify-items: center;
     margin: auto;
+    line-height: 25px;
 
 }
 #toutAj{
@@ -431,12 +448,13 @@ border-top: 2px solid black;
  .pageprincipaleP{
      display:flex;
      flex-direction:row;
-     justify-content: flex-start;
+     justify-content: space-between;
+     width:90%;
  }
  .texteP{
      display:flex;
      flex-direction:row;
-     width:60%;
+     width:100%;
      justify-content: space-around;
  }
  .CentreP{
@@ -455,17 +473,19 @@ border-top: 2px solid black;
      margin-bottom:auto;
      text-align:start;
      color:black;
-     width:33%;
  }
  #milieuP{
+     width:100%;
      display:flex;
+     flex-direction:row;
+     justify-content: flex-start;
  }
  .toolbarP {
      height:auto;
-     width:70px;
+     width:10%;
      border: 3px solid white;
  }
  .pageprincipaleP h2{
      text-align:center;
- }
 
+ }

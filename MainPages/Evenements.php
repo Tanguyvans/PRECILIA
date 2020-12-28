@@ -141,7 +141,10 @@
             <?php
         }
         ?>
-        <?php include '../templates/footer.php' ?>
+        <div class="foot">
+            <?php include '../templates/footer.php' ?>
+        </div>
+
     </div>
 </body>
 </html>
