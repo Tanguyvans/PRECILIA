@@ -183,20 +183,27 @@ table {
   empty-cells: show;
 }
 
-/* === ACCUEIL.PHP === */
+                                                              /* === ACCUEIL.PHP === */
 /* séparation des paragraphes en deux parties */
 .doubleParagraphe p{
-  width:90%;
-  min-width: 100px;
-  max-width: 740px;
+
   text-align:justify;
-  margin-left: auto;
-  margin-right:auto;
+
 }
 .doubleParagraphe {
-  display: flex;
-  text-align: start;
-  justify-content:space-around;
+    width:95%;
+    margin-left: auto;
+    margin-right:auto;
+    display: flex;
+    flex-direction:column;
+    text-align: start;
+    justify-content:space-around;
+    height:100%;
+}
+.listesAcc{
+    display:flex;
+    justify-content: space-between;
+
 }
 /* section partenaire */
 #AllPartenaires {
@@ -206,22 +213,39 @@ table {
   align-items: center;
 }
 .partenaire{
-  display: flex;
-  flex-direction: column;
-  max-width:400px;
-  justify-content:space-around;
-}
-.partenaire p{
-  text-align:justify;
-  min-width: 100px;
-  max-width:300px;
+    display: flex;
+    flex-direction: column;
+    max-width:400px;
+    justify-content:space-around;
+    text-align:center;
 }
 .images-partenaire-taille {
-  height: 100px;
-  width: 100px;
+  height: 50px;
+  width: 100%;
+
+}
+.Carrousel{
+    background:ghostwhite;
+    height:600px;
+}
+.mySlides{
+    margin-top:auto;
+    margin-bottom:auto;
+    height:600px;
+}
+.legendesimg{
+    display:flex;
+    justify-content: space-around;
+}
+.legendesimg div{
+width:33%;
+    text-align:center;
+}
+.Plus{
+    color:black;
 }
 
-                                                    /* === RECHERCHE.PHP === */
+                                                         /* === RECHERCHE.PHP === */
 
 /* parametre des bouton d'affichage */
 .container-lienAffichageR{
@@ -245,7 +269,8 @@ table {
 .EditR a{
   color:black;
 }
-/* === Affichage de l'entiereté de la table === */
+                                             /* === Affichage ensemble des données pour RECHERCHE et EVENEMENT === */
+
 .DonneesR{
 display:flex;
 flex-direction: column;
@@ -256,16 +281,22 @@ border-top: 2px solid black;
   width:33%;
 }
 .TitreR{
+    line-height:30px;
+    white-space: normal;
   width:33%;
   margin-top:auto;
   margin-bottom:auto;
 }
 .EnsembleDatesR{
-  justify-content: center;
-  width:33%;
+    margin-top:2%;
+    margin-right:3%;
+    justify-content: center;
+    width:33%;
+    text-align: right;
 }
 
 .Ligne1R{
+    margin-top: 20px;
   display:flex;
   justify-content: space-around;
   text-align:center;
@@ -274,7 +305,10 @@ border-top: 2px solid black;
   text-align:center;
 }
 .Ligne3R{
-  text-align:start;
+    margin-top:30px;
+    text-align:center;
+    margin-bottom:30px;
+    margin-left:3%;
 }
 .Ligne4R{
   margin-bottom:30px;
@@ -284,9 +318,24 @@ border-top: 2px solid black;
 .tierR{
   width:33%;
 }
+.demiEv{
+    width:50%;
+}
 
-.DonneesR h1{
+.DonneesR h2{
+    margin-top: 60px;
   text-decoration-line: underline;
+}
+.VideHautGauche {
+    margin-top:2%;
+    margin-left:3%;
+    text-align: left;
+}
+                                             /* === EVENEMENT.PHP === */
+
+.Page{
+    height:100%;
+    width:100%;
 }
 
                                                 /* === MEMBRE.PHP === */
@@ -315,31 +364,7 @@ border-top: 2px solid black;
 .PageEns {
   min-height:200px;
 }
-                                             /* === ACCUEIL.PHP === */
-.Carrousel {
-    width: 100%;
-    height: 700px;
-}
 
-
-#Membres.wrapper {
- display: grid;
- grid-template-columns: 1fr 1fr 1fr; /*ici,trois colonne qui prennent toutes la largeur dispo*/
-}
-
-label {
- display: block;
- margin: 5px 0;
-}
-
-
-.Page{
- display:flex;
- flex-direction:column;
- min-height:250px;
- height:100%;
- justify-content: center;
-}
                                              /* === Ajout.PHP et VoirInscriptions.php === */
 
 .container-choix-creationAj a{
@@ -358,7 +383,6 @@ label {
     display:flex;
     flex-direction:row;
     justify-content: flex-start;
-    border: 2px solid black;
 }
 .EnsembleVI {
     width:100%;
@@ -372,10 +396,10 @@ label {
     color:black;
 }
 .phpAj{
- width:auto;
- text-align: center;
- justify-content: space-around;
- margin: auto;
+    width:150px;
+    text-align: center;
+    justify-content: space-around;
+    margin: auto;
 
 }
 #toutAj{

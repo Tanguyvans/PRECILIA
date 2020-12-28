@@ -11,89 +11,89 @@
         <link rel="stylesheet" href="../css/style.css"/>
     </head>
 
-    <body>
+<body>
+    <div class="Page">
         <?php include '../templates/header.php' ?>
-        <div class="PageEv">
-            <h2>Événements </h2>
-            <?php include '../Formulaires/affichageEvenement.php'?>
+
+        <h2>Événements </h2>
+        <?php include '../Formulaires/affichageEvenement.php'?>
+
+        <?php
+        if ($_GET['table'] == 'Evenement'){
+            $ID = $_GET['ID'];
+            $sql = "SELECT * FROM evenement WHERE IDEvenement = '$ID'";
+            $result = $bdd->query($sql);
+            ?>
+            <?php
+
+            if(isset($_SESSION['Psession'])){
+                ?>
+                <a href="../Formulaires/modificationEvenement.php?ID=<?php echo $ID; ?>"><p class="lienAffichageR"> Modifier</p></a>
+                <a href="../Formulaires/suppressionEvenement.php?ID=<?php echo $ID; ?>"><p class="lienAffichageR"> Supprimer</p></a>
+                <?php
+            }
+            ?>
 
             <?php
-            if ($_GET['table'] == 'Evenement'){
-                $ID = $_GET['ID'];
-                $sql = "SELECT * FROM evenement WHERE IDEvenement = '$ID'";
-                $result = $bdd->query($sql);
-                ?>
-                <?php
+            if(isset($_SESSION['Psession'])){
+                // si l'evenement est a venir
+                $CurrentDate = date("Y-m-d");
+                if($_GET['Date'] > $CurrentDate){
+                    $IDMembre = $_SESSION['Psession'];
+                    $sql = "SELECT * FROM personnel_evenement WHERE IDEvenement = '$ID' AND IDPMatricule= $IDMembre";
+                    $result = $bdd->query($sql);
+                    $ligne = $result->fetch(PDO::FETCH_ASSOC);
 
-                if(isset($_SESSION['Psession'])){
-                    ?>
-                    <a href="../Formulaires/modificationEvenement.php?ID=<?php echo $ID; ?>"><p class="lienAffichageR"> Modifier</p></a>
-                    <a href="../Formulaires/suppressionEvenement.php?ID=<?php echo $ID; ?>"><p class="lienAffichageR"> Supprimer</p></a>
-                    <?php
-                }
-                ?>
-
-                <?php
-                if(isset($_SESSION['Psession'])){
-                    // si l'evenement est a venir
-                    $CurrentDate = date("Y-m-d");
-                    if($_GET['Date'] > $CurrentDate){
-                        $IDMembre = $_SESSION['Psession'];
-                        $sql = "SELECT * FROM personnel_evenement WHERE IDEvenement = '$ID' AND IDPMatricule= $IDMembre";
-                        $result = $bdd->query($sql);
-                        $ligne = $result->fetch(PDO::FETCH_ASSOC);
-
-                        if( $ligne['IDPMatricule'] == NULL){
-                            ?>
-                            <a href="../Formulaires/inscriptionMembreEvent.php?ID=<?php echo $ID; ?>"><p class="lienAffichageR">inscrire</p></a>
-                            <?php
-                        }else {
-                            ?>
-                            <a href="../Formulaires/desinscriptionMembreEvent.php?ID=<?php echo $ID; ?>"><p class="lienAffichageR">Désinscrire</p></a>
-                            <?php
-                        }
-
+                    if( $ligne['IDPMatricule'] == NULL){
+                        ?>
+                        <a href="../Formulaires/inscriptionMembreEvent.php?ID=<?php echo $ID; ?>"><p class="lienAffichageR">inscrire</p></a>
+                        <?php
+                    }else {
+                        ?>
+                        <a href="../Formulaires/desinscriptionMembreEvent.php?ID=<?php echo $ID; ?>"><p class="lienAffichageR">Désinscrire</p></a>
+                        <?php
                     }
+
                 }
-                ?>
+            }
+            ?>
 
-                <?php
-                if(isset($_SESSION['Esession'])){
-                    // si l'evenement est a venir
-                    $CurrentDate = date("Y-m-d");
-                    if($_GET['Date'] > $CurrentDate){
-                        $IDMembre = $_SESSION['Esession'];
-                        $sql = "SELECT * FROM etudiant_evenement WHERE IDEvenement = '$ID' AND IDEMatricule= $IDMembre";
-                        $result = $bdd->query($sql);
-                        $ligne = $result->fetch(PDO::FETCH_ASSOC);
+            <?php
+            if(isset($_SESSION['Esession'])){
+                // si l'evenement est a venir
+                $CurrentDate = date("Y-m-d");
+                if($_GET['Date'] > $CurrentDate){
+                    $IDMembre = $_SESSION['Esession'];
+                    $sql = "SELECT * FROM etudiant_evenement WHERE IDEvenement = '$ID' AND IDEMatricule= $IDMembre";
+                    $result = $bdd->query($sql);
+                    $ligne = $result->fetch(PDO::FETCH_ASSOC);
 
-                        if( $ligne['IDEMatricule'] == NULL){
-                            ?>
-                            <a href="../Formulaires/inscriptionMembreEvent.php?ID=<?php echo $ID; ?>"><p class="lienAffichageR">inscrire</p></a>
-                            <?php
-                        }else {
-                            ?>
-                            <a href="../Formulaires/desinscriptionMembreEvent.php?ID=<?php echo $ID; ?>"><p class="lienAffichageR">Désinscrire</p></a>
-                            <?php
-                        }
-
+                    if( $ligne['IDEMatricule'] == NULL){
+                        ?>
+                        <a href="../Formulaires/inscriptionMembreEvent.php?ID=<?php echo $ID; ?>"><p class="lienAffichageR">inscrire</p></a>
+                        <?php
+                    }else {
+                        ?>
+                        <a href="../Formulaires/desinscriptionMembreEvent.php?ID=<?php echo $ID; ?>"><p class="lienAffichageR">Désinscrire</p></a>
+                        <?php
                     }
-                }
-                ?>
-                <table>
-                    <!-- PHP CODE pour remplir la table-->
-                    <?php $ligne = $result->fetch(PDO::FETCH_ASSOC); ?>
 
-                    <!--remplissage de la table avec la base de donnée-->
-                    <tr><td>Nom:</td><td><?php echo $ligne['Nom'];?></td></tr>
-                    <tr><td>type:</td><td><?php echo $ligne['Type'];?></td></tr>
-                    <tr><td>Acronyme:</td><td><?php echo $ligne['Acronyme'];?></td></tr>
-                    <tr><td>Duree:</td><td><?php echo $ligne['Duree'];?></td></tr>
-                    <tr><td>Description:</td><td><?php echo $ligne['Description'];?></td></tr>
-                    <tr><td>Mot cle 1:</td><td><?php echo $ligne['MotCle1'];?></td></tr>
-                    <tr><td>Mot cle 2:</td><td><?php echo $ligne['MotCle2'];?></td></tr>
-                    <tr><td>Date de debut:</td><td><?php echo $ligne['DateDebut'];?></td></tr>
-                    <tr><td>Lieu:</td>
+                }
+            }
+            ?>
+
+                <!-- PHP CODE pour remplir la table-->
+        <div class="DonneesR">
+            <?php $ligne = $result->fetch(PDO::FETCH_ASSOC); ?>
+            <div class="Ligne1R">
+                <div class="VideHautGauche">
+                    <text>Acronyme:<?php echo $ligne['Acronyme'];?></text>
+                </div>
+                <div class="TitreR"><h2><?php echo $ligne['Type'];?> : <?php echo $ligne['Nom'];?></h2></div>
+                <div class="EnsembleDatesR">
+                    <div class="DateR"><text>Début: <?php echo $ligne['DateDebut'];?></text></div>
+                    <div class="DateR"><text><?php echo $ligne['Duree'];?></text></div>
+                    <div class="DateR"><text>
                         <?php
                         $IDLieu = $ligne['IDLieu'];
                         $perso = $bdd->query("SELECT Ville, Pays FROM LIEU WHERE IDLieu = '$IDLieu' ");
@@ -101,40 +101,47 @@
                         {
                             ?>
                             <td><?php echo $line['Ville'];?> <?php echo $line['Pays'];?></td>
+                        </text>
                             <?php
                         }
-                        ?></tr>
 
-                </table>
-            <?php } ?>
-
-            <?php
-            if($_GET['table'] == 'INSuccess'){
-                ?>
-                <h2>L'ajout a été un succès</h2>
-            <?php
-            }
-            ?>
-
-            <?php
-            if($_GET['table'] == 'OUTSuccess'){
-                ?>
-                <h2>La désinscription a été un succès</h2>
-                <?php
-            }
-            ?>
-
-            <?php
-            if($_GET['table'] == 'SuppSuccess'){
-                ?>
-                <h2>La suppression a été un succès</h2>
-                <?php
-            }
-            ?>
-
-
-
+                        ?></div>
+                </div>
+            </div>
+            <div class="Ligne3R">
+                <text><?php echo $ligne['Description'];?></text>
+            </div>
+            <div class="Ligne4R">
+                <div class="demiEv"><text>Mot cle 1 : <?php echo $ligne['MotCle1'];?></text></div>
+                <div class="demiEv"><text>Mot cle 2:<?php echo $ligne['MotCle2'];?></text></div>
+            </div>
+                <?php } ?>
         </div>
+
+        <?php
+        if($_GET['table'] == 'INSuccess'){
+            ?>
+            <h2>L'ajout a été un succès</h2>
+        <?php
+        }
+        ?>
+
+        <?php
+        if($_GET['table'] == 'OUTSuccess'){
+            ?>
+            <h2>La désinscription a été un succès</h2>
+            <?php
+        }
+        ?>
+
+        <?php
+        if($_GET['table'] == 'SuppSuccess'){
+            ?>
+            <h2>La suppression a été un succès</h2>
+            <?php
+        }
+        ?>
         <?php include '../templates/footer.php' ?>
-    </body>
+    </div>
+</body>
 </html>
