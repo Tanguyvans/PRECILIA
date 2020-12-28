@@ -41,7 +41,16 @@
     <form method="post">
         <!-- ======================== PROMOTEUR ======================= -->
         <?php
-        $result = $bdd->query('SELECT IDPMatricule, Nom, Prenom FROM personnel');
+
+        $These = $_GET['ID'];
+
+        $sql = "SELECT personnel.IDPMatricule, personnel.Nom, personnel.Prenom FROM personnel
+                WHERE NOT IDPMatricule IN
+                (SELECT personnel.IDPMatricule FROM personnel  LEFT JOIN promoteur_these ON personnel.IDPMatricule = promoteur_these.IDPMatricule
+                WHERE promoteur_these.IDThese = '$These')";
+
+        $result = $bdd->query($sql);
+
         foreach ($result as $row) {
             $IDPM[] = array('Promo' => $row['IDPMatricule'],'Nom' => $row['Nom'], 'Prenom' => $row['Prenom']);
         }
@@ -55,8 +64,6 @@
                 <option value="<?php print_r($test['Promo']);?>"> <?php print_r($test['Nom']);?>  <?php print_r($test['Prenom']) ?></option>
             <?php endforeach; ?>
         </select>
-
-        <!-- ======================== THESE ======================= -->
 
         <input type="submit" name="submit" value="Submit">
 
