@@ -76,6 +76,8 @@ if (isset($_POST['submitEvent'])) {
         $DateDebut=$_POST['DateDebut'];
         $IDLieu=$_POST['IDLieu'];
 
+        # condition a faire
+
         $sql = "INSERT INTO EVENEMENT (IDEvenement, Type, Nom, Acronyme, Duree, Description, MotCle1, MotCle2, DateDebut, IDLieu)
   			VALUES (NULL, '$Type', '$Nom', '$Acronyme', '$Duree', '$Description', '$MotCle1', '$MotCle2', '$DateDebut','$IDLieu')";
 
@@ -84,17 +86,16 @@ if (isset($_POST['submitEvent'])) {
 
         $newsql = "SELECT IDEvenement, Nom FROM EVENEMENT ORDER BY IDEvenement DESC";
 
+        $perso = $bdd->query($newsql);
+        $line = $perso->fetch(PDO::FETCH_ASSOC);
+        $IDEvenement = $line['IDEvenement'];
+        $Nom = $line['Nom'];
+
+        echo "<h3><a href='../Formulaires/jointureMembreEvent.php?ID=$IDEvenement'> Inscrire des participants à l'évènement: $Nom</a></h3>";
+
     } catch(PDOException $error) {
         echo $sql . "<br>" . $error->getMessage();
     }
-
-    $sql = "SELECT IDEvenement, Nom FROM EVENEMENT ORDER BY IDEvenement DESC";
-    $perso = $bdd->query($sql);
-    $line = $perso->fetch(PDO::FETCH_ASSOC);
-    $IDEvenement = $line['IDEvenement'];
-    $Nom = $line['Nom'];
-
-    echo "<h3><a href='../Formulaires/jointureMembreEvent.php?ID=$IDEvenement'> Inscrire des participants à l'évènement: $Nom</a></h3>";
 }
 ?>
 

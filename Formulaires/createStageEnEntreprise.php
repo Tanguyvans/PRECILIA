@@ -11,9 +11,12 @@ if (isset($_POST['submit'])) {
         $CollaborateurIndustrielle = $_POST['CollaborateurIndustrielle'];
         $NumeroContact = $_POST['NumeroContact'];
         $MotCle1=$_POST['MotCle1'];
-	      $MotCle2=$_POST['MotCle2'];
-	      $IDPMatricule=$_POST['IDPMatricule'];
-	      $IDEMatricule=$_POST['IDEMatricule'];
+        $MotCle2=$_POST['MotCle2'];
+        $IDPMatricule=$_POST['IDPMatricule'];
+        $IDEMatricule=$_POST['IDEMatricule'];
+
+        # condition
+
 
         $sql = "INSERT INTO STAGEENENTREPRISE (IDStageEntreprise, DateDebut, DateFin, CollaborateurIndustrielle, NumeroContact, MotCle1, MotCle2, IDPMatricule, IDEMatricule )
 			VALUES (NULL,'$DateDebut','$DateFin','$CollaborateurIndustrielle','$NumeroContact','$MotCle1','$MotCle2','$IDPMatricule','$IDEMatricule')";

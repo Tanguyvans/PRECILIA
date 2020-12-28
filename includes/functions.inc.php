@@ -41,6 +41,27 @@ function pwdMatch($MDP, $MDPR){
     return $result;
 }
 
+function CoursExist($conn, $IDCours){
+
+    $sql = "SELECT * FROM COURS WHERE IDCours = ? ;";
+    $stmt = mysqli_stmt_init($conn);
+
+    if(!mysqli_stmt_prepare($stmt, $sql)){
+        echo"there is an error";
+    }
+
+    mysqli_stmt_bind_param($stmt, "s", $IDCours);
+    mysqli_stmt_execute($stmt);
+
+    $resultData = mysqli_stmt_get_result($stmt);
+    if($row = mysqli_fetch_assoc($resultData)){
+        return $row;
+    }else{
+        return false;
+    }
+    misqli_stmt_close($stmt);
+}
+
 function PersonnelExist($conn, $IDPMatricule){
 
     $sql = "SELECT * FROM PERSONNEL WHERE IDPMatricule = ? ;";

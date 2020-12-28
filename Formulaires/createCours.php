@@ -4,6 +4,36 @@ $bdd = new PDO($dsn, $username, $password);
 ?>
 <link rel="stylesheet" href="../css/style.css" />
 
+<?php
+if (isset($_POST['submit'])) try {
+    $IDCours = $_POST['IDCours'];
+    $NombreCredit = $_POST['NombreCredit'];
+    $NombreHeure=$_POST['NombreHeure'];
+    $Titulaire=$_POST['Titulaire'];
+    $UE = $_POST['UE'];
+    $MotCle1=$_POST['MotCle1'];
+    $MotCle2=$_POST['MotCle2'];
+
+    require "../Includes/functions.inc.php";
+
+    if(emptyInputSignup($IDCours, $NombreCredit, $NombreHeure, $Titulaire, $UE, $MotCle1, $MotCle2) !==false){
+        echo"<h2> empty input </h2>";
+    }
+    elseif(CoursExist($conn, $IDCours) !== false){
+        echo"<h2>Cours deja exitant</h2>";
+    }
+    else {
+        $sql = "INSERT INTO COURS (IDCours, NombreCredit, NombreHeure , Titulaire, UE, MotCle1, MotCle2)
+        VALUES ('$IDCours','$NombreCredit','$NombreHeure','$Titulaire','$UE','$MotCle1','$MotCle2')";
+        $Resultat = $bdd -> exec($sql);
+        echo "<h3><a href='../Formulaires/jointurePersonnelCours.php?ID=$IDCours'> Nomer professeur au cours: $IDCours</a></h3>";
+    }
+
+} catch(PDOException $error) {
+    echo $sql . "<br>" . $error->getMessage();
+}
+
+?>
 
 <?php //debut du formulaire, on peut utiliser action: nom de la page php qui v receptionner les donner ?>
 
@@ -33,28 +63,4 @@ $bdd = new PDO($dsn, $username, $password);
     <input type="submit" name="submit" value="Submit">
 </form>
 
-<?php
-if (isset($_POST['submit'])) try {
-    $IDCours = $_POST['IDCours'];
-    $NombreCredit = $_POST['NombreCredit'];
-    $NombreHeure=$_POST['NombreHeure'];
-    $Titulaire=$_POST['Titulaire'];
-    $UE = $_POST['UE'];
-    $MotCle1=$_POST['MotCle1'];
-    $MotCle2=$_POST['MotCle2'];
-
-    $sql = "INSERT INTO COURS (IDCours, NombreCredit, NombreHeure , Titulaire, UE, MotCle1, MotCle2)
-        VALUES ('$IDCours','$NombreCredit','$NombreHeure','$Titulaire','$UE','$MotCle1','$MotCle2')";
-
-    $Resultat = $bdd -> exec($sql);
-
-    if($IDCours != NULL){
-        echo "<h3><a href='../Formulaires/jointurePersonnelCours.php?ID=$IDCours'> Nomer professeur au cours: $IDCours</a></h3>";
-    }
-
-} catch(PDOException $error) {
-    echo $sql . "<br>" . $error->getMessage();
-}
-
-?>
 

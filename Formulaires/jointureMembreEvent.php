@@ -11,9 +11,11 @@
         <link rel="stylesheet" href="../css/style.css"/>
     </head>
     <body>
+
     <?php include '../templates/header.php' ?>
 
         <?php
+
         require "../config.php";
         $bdd = new PDO($dsn, $username, $password);
 

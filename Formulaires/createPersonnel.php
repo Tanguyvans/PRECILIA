@@ -3,7 +3,6 @@
 
 if (isset($_POST['submit'])) {
 
-
   try {
       require "../config.php";
 
@@ -19,23 +18,21 @@ if (isset($_POST['submit'])) {
       require "../Includes/functions.inc.php";
 
       if(emptyInputSignup($IDPMatricule, $Nom, $Prenom,$Email, $Grade, $MDP, $MDPR) !==false){
-          echo("empty input");
+          echo"empty input";
+
       }
-
-      if(invalidEmail($Email) !== false){
-          echo("invalid email");
+      elseif(invalidEmail($Email) !== false){
+          echo"<h2>invalid email</h2>";
       }
+      elseif(pwdMatch($MDP, $MDPR) !== false){
+          echo"<h2>mot de passe incorrect</h2>";
+      }elseif(PersonnelExist($conn, $IDPMatricule) !== false){
+          echo"<h2>utilisateur deja exitant</h2>";
 
-      if(pwdMatch($MDP, $MDPR) !== false){
-          echo("mot de passe incorrect");
       }
-
-
-      if(PersonnelExist($conn, $IDPMatricule) !== false){
-          echo"utilisateur deja exitant<br>";
+      else{
+          createPersonnel($conn, $IDPMatricule, $Nom, $Prenom, $Email, $Telephone, $Grade, $MDP);
       }
-
-      createPersonnel($conn, $IDPMatricule, $Nom, $Prenom, $Email, $Telephone, $Grade, $MDP);
 
   } catch(PDOException $error) {
     echo $sql . "<br>" . $error->getMessage();
