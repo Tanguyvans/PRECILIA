@@ -13,9 +13,9 @@
     <link rel="stylesheet" href="../css/affichagetables.css"/>
 </head>
 <body>
-
+<?php include '../templates/header.php' ?>
     <div class="PageR">
-        <?php include '../templates/header.php' ?>
+
         <?php
             require "../config.php";
             $bdd = new PDO($dsn, $username, $password);
@@ -182,8 +182,9 @@
                 <tr><td>Mot cle 2:</td><td><?php echo $ligne['MotCle2'];?></td></tr>
             </table>
         <?php } ?>
-        <?php include '../templates/footer.php' ?>
+
     </div>
+<?php include '../templates/footer.php' ?>
 
 </body>
 </html>
