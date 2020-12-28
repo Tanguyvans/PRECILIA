@@ -14,9 +14,9 @@ if (isset($_POST['submit'])) try {
     $MotCle1=$_POST['MotCle1'];
     $MotCle2=$_POST['MotCle2'];
 
+    # condition requise pour pouvoir entrer dans la base de donnée
     require "../Includes/functions.inc.php";
-
-    if(emptyInputSignup($IDCours, $NombreCredit, $NombreHeure, $Titulaire, $UE, $MotCle1, $MotCle2) !==false){
+    if(emptyInputCours($IDCours, $NombreCredit, $NombreHeure, $Titulaire, $UE, $MotCle1, $MotCle2) !==false){
         echo"<h2> empty input </h2>";
     }
     elseif(CoursExist($conn, $IDCours) !== false){

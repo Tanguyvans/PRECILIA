@@ -4,6 +4,46 @@ $bdd = new PDO($dsn, $username, $password);
 ?>
 <link rel="stylesheet" href="../css/style.css" />
 
+<?php
+if (isset($_POST['submitEvent'])) {
+
+    try {
+        $Type  = $_POST['Type'];
+        $Nom = $_POST['Nom'];
+        $Acronyme = $_POST['Acronyme'];
+        $Duree = $_POST['Duree'];
+        $Description=$_POST['Description'];
+        $MotCle1=$_POST['MotCle1'];
+        $MotCle2=$_POST['MotCle2'];
+        $DateDebut=$_POST['DateDebut'];
+        $IDLieu=$_POST['IDLieu'];
+
+        # condition requise pour pouvoir entrer dans la base de donnée
+        require "../Includes/functions.inc.php";
+        if(emptyInputEvent($Type, $Nom, $Acronyme, $Description, $MotCle1, $MotCle2, $DateDebut) !==false){
+            echo"<h2> empty input </h2>";
+        }
+        else {
+            $sql = "INSERT INTO EVENEMENT (IDEvenement, Type, Nom, Acronyme, Duree, Description, MotCle1, MotCle2, DateDebut, IDLieu)
+  			VALUES (NULL, '$Type', '$Nom', '$Acronyme', '$Duree', '$Description', '$MotCle1', '$MotCle2', '$DateDebut','$IDLieu')";
+            $Resultat = $bdd -> exec($sql);
+            echo "Ajout reussie avec la base de donnée<br>";
+
+            $newsql = "SELECT IDEvenement, Nom FROM EVENEMENT ORDER BY IDEvenement DESC";
+
+            $perso = $bdd->query($newsql);
+            $line = $perso->fetch(PDO::FETCH_ASSOC);
+            $IDEvenement = $line['IDEvenement'];
+            $Nom = $line['Nom'];
+
+            echo "<h3><a href='../Formulaires/jointureMembreEvent.php?ID=$IDEvenement'> Inscrire des participants à l'évènement: $Nom</a></h3>";
+
+        }
+    } catch(PDOException $error) {
+        echo $sql . "<br>" . $error->getMessage();
+    }
+}
+?>
 
 <?php //debut du formulaire, on peut utiliser action: nom de la page php qui v receptionner les donner ?>
 
@@ -58,45 +98,5 @@ $bdd = new PDO($dsn, $username, $password);
 
     <input type="submit" name="submitEvent" value="Submit">
 </form>
-
-<?php
-require "../config.php";
-$bdd = new PDO($dsn, $username, $password);
-
-if (isset($_POST['submitEvent'])) {
-
-    try {
-        $Type  = $_POST['Type'];
-        $Nom = $_POST['Nom'];
-        $Acronyme = $_POST['Acronyme'];
-        $Duree = $_POST['Duree'];
-        $Description=$_POST['Description'];
-        $MotCle1=$_POST['MotCle1'];
-        $MotCle2=$_POST['MotCle2'];
-        $DateDebut=$_POST['DateDebut'];
-        $IDLieu=$_POST['IDLieu'];
-
-        # condition a faire
-
-        $sql = "INSERT INTO EVENEMENT (IDEvenement, Type, Nom, Acronyme, Duree, Description, MotCle1, MotCle2, DateDebut, IDLieu)
-  			VALUES (NULL, '$Type', '$Nom', '$Acronyme', '$Duree', '$Description', '$MotCle1', '$MotCle2', '$DateDebut','$IDLieu')";
-
-        $Resultat = $bdd -> exec($sql);
-        echo "Ajout reussie avec la base de donnée<br>";
-
-        $newsql = "SELECT IDEvenement, Nom FROM EVENEMENT ORDER BY IDEvenement DESC";
-
-        $perso = $bdd->query($newsql);
-        $line = $perso->fetch(PDO::FETCH_ASSOC);
-        $IDEvenement = $line['IDEvenement'];
-        $Nom = $line['Nom'];
-
-        echo "<h3><a href='../Formulaires/jointureMembreEvent.php?ID=$IDEvenement'> Inscrire des participants à l'évènement: $Nom</a></h3>";
-
-    } catch(PDOException $error) {
-        echo $sql . "<br>" . $error->getMessage();
-    }
-}
-?>
 
 

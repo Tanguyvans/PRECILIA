@@ -16,7 +16,7 @@
 
               require "../includes/functions.inc.php";
 
-              if(emptyInputSignup($IDEMatricule, $Nom, $Prenom,$Email, $Annee, $MDP, $MDPR) !==false){
+              if(emptyInputEtudiant($IDEMatricule, $Nom, $Prenom,$Email, $Annee, $MDP, $MDPR) !==false){
                   echo"<h2>empty input</h2>";
 
               }

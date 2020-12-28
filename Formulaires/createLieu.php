@@ -6,20 +6,25 @@ $bdd = new PDO($dsn, $username, $password);
 if (isset($_POST['submit'])) {
 
     try {
-
         $Ville  = $_POST['Ville'];
         $Pays = $_POST['Pays'];
 
-        $sql = "INSERT INTO LIEU (IDLieu, Ville, Pays )
-      VALUES (NULL,'$Ville','$Pays')";
-
-        $Resultat = $bdd -> exec($sql);
-        echo "Ajout reussie avec la base de donnée<br>";
-
+        # condition requise pour pouvoir entrer dans la base de donnée
+        require "../Includes/functions.inc.php";
+        if(emptyInputLieu($Ville, $Pays) !==false){
+            echo"<h2> empty input </h2>";
+        }
+        elseif(LieuExist($conn, $Ville, $Pays) !== false){
+            echo"<h2>Lieu déjà exitant</h2>";
+        }
+        else {
+            $sql = "INSERT INTO LIEU (IDLieu, Ville, Pays )VALUES (NULL,'$Ville','$Pays')";
+            $Resultat = $bdd -> exec($sql);
+            echo "Ajout reussie avec la base de donnée<br>";
+        }
     } catch(PDOException $error) {
         echo $sql . "<br>" . $error->getMessage();
     }
-
 }
 ?>
 

@@ -1,7 +1,57 @@
 <?php
 
-function emptyInputSignup($IDPMatricule, $Nom, $Prenom, $Email, $Grade, $MDP, $MDPR){
+function emptyInputPersonnel($IDPMatricule, $Nom, $Prenom, $Email, $Grade, $MDP, $MDPR){
     if(empty($IDPMatricule) || empty($Nom) || empty($Prenom) || empty($Email) || empty($Grade) || empty($MDP) || empty($MDPR)){
+        $result = true;
+    }
+    else {
+        $result = false;
+    }
+    return $result;
+}
+
+function emptyInputEtudiant($IDEMatricule, $Nom, $Prenom, $Email, $Annee, $MDP, $MDPR){
+    if(empty($IDEMatricule) || empty($Nom) || empty($Prenom) || empty($Email) || empty($Annee) || empty($MDP) || empty($MDPR)){
+        $result = true;
+    }
+    else {
+        $result = false;
+    }
+    return $result;
+}
+
+function emptyInputCours($IDCours, $NombreCredit, $NombreHeure, $Titulaire, $UE, $MotCle1, $MotCle2){
+    if(empty($IDCours) || empty($NombreCredit) || empty($NombreHeure) || empty($Titulaire) || empty($UE) || empty($MotCle1) || empty($MotCle2)){
+        $result = true;
+    }
+    else {
+        $result = false;
+    }
+    return $result;
+}
+
+function emptyInputEvent($Type, $Nom, $Acronyme, $Description, $MotCle1, $MotCle2, $DateDebut){
+    if(empty($Type) || empty($Nom) || empty($Acronyme) || empty($Description) || empty($MotCle1) || empty($MotCle2) || empty($DateDebut)){
+        $result = true;
+    }
+    else {
+        $result = false;
+    }
+    return $result;
+}
+
+function emptyInputLieu($Ville, $Pays){
+    if(empty($Ville) || empty($Pays)){
+        $result = true;
+    }
+    else {
+        $result = false;
+    }
+    return $result;
+}
+
+function emptyInputProjet($Titre, $DateDebut, $Description, $MotCle1, $MotCle2){
+    if(empty($Titre) || empty($DateDebut) || empty($Description) || empty($MotCle1) || empty($MotCle2)){
         $result = true;
     }
     else {
@@ -74,6 +124,24 @@ function PersonnelExist($conn, $IDPMatricule){
     mysqli_stmt_bind_param($stmt, "s", $IDPMatricule);
     mysqli_stmt_execute($stmt);
 
+    $resultData = mysqli_stmt_get_result($stmt);
+    if($row = mysqli_fetch_assoc($resultData)){
+        return $row;
+    }else{
+        return false;
+    }
+    misqli_stmt_close($stmt);
+}
+
+function LieuExist($conn, $Ville, $Pays){
+    $sql = "SELECT * FROM LIEU WHERE Ville = ? AND Pays = ? ;";
+    $stmt = mysqli_stmt_init($conn);
+
+    if(!mysqli_stmt_prepare($stmt, $sql)){
+        echo"there is an error";
+    }
+    mysqli_stmt_bind_param($stmt, "ss", $Ville, $Pays);
+    mysqli_stmt_execute($stmt);
     $resultData = mysqli_stmt_get_result($stmt);
     if($row = mysqli_fetch_assoc($resultData)){
         return $row;
