@@ -60,6 +60,46 @@ function emptyInputProjet($Titre, $DateDebut, $Description, $MotCle1, $MotCle2){
     return $result;
 }
 
+function emptyInputStageEnt($DateDebut, $CollaborateurIndustrielle, $MotCle1, $MotCle2, $IDPMatricule, $IDEMatricule){
+    if(empty($DateDebut) || empty($CollaborateurIndustrielle) || empty($MotCle1) || empty($MotCle2) || empty($IDPMatricule) || empty($IDEMatricule)){
+        $result = true;
+    }
+    else {
+        $result = false;
+    }
+    return $result;
+}
+
+function emptyInputStageRch($DateDebut, $MotCle1, $MotCle2, $IDPMatricule){
+    if(empty($DateDebut) || empty($MotCle1) || empty($MotCle2) || empty($IDPMatricule)){
+        $result = true;
+    }
+    else {
+        $result = false;
+    }
+    return $result;
+}
+
+function emptyInputTFE($Titre, $DateDebut, $MotCle1, $MotCle2, $IDPMatricule, $IDEMatricule){
+    if(empty($Titre) || empty($DateDebut) || empty($MotCle1) || empty($MotCle2) || empty($IDPMatricule) ||empty($IDEMatricule)){
+        $result = true;
+    }
+    else {
+        $result = false;
+    }
+    return $result;
+}
+
+function emptyInputThese($Titre, $DateDebut, $Description, $MotCle1, $MotCle2, $IDPMatricule){
+    if(empty($Titre) || empty($DateDebut) || empty($Description) || empty($MotCle1) || empty($MotCle2) ||empty($IDPMatricule)){
+        $result = true;
+    }
+    else {
+        $result = false;
+    }
+    return $result;
+}
+
 function ifModif($value){
     if(empty($value)){
         $result = false;

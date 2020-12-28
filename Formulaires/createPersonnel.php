@@ -18,7 +18,7 @@ if (isset($_POST['submit'])) {
       require "../Includes/functions.inc.php";
 
       if(emptyInputPersonnel($IDPMatricule, $Nom, $Prenom,$Email, $Grade, $MDP, $MDPR) !==false){
-          echo"empty input";
+          echo"<h2>empty input</h2>";
 
       }
       elseif(invalidEmail($Email) !== false){

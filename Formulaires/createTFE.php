@@ -15,11 +15,22 @@ if (isset($_POST['submit'])) {
         $IDPMatricule=$_POST['IDPMatricule'];
         $IDEMatricule=$_POST['IDEMatricule'];
 
-        $sql = "INSERT INTO TFE (IDTFE, Titre, DateDebut, DateFin, CollaborateurIndustrielle, NumeroContact, MotCle1, MotCle2, IDPMatricule, IDEMatricule)
+
+        # condition requise pour pouvoir entrer dans la base de donnée
+        require "../Includes/functions.inc.php";
+        if(emptyInputTFE($Titre, $DateDebut, $MotCle1, $MotCle2, $IDPMatricule, $IDEMatricule) !==false){
+            echo"<h2> empty input </h2>";
+        }
+        else {
+            if ($DateFin == NUll ){
+                $DateFin = NUll;
+            }
+            $sql = "INSERT INTO TFE (IDTFE, Titre, DateDebut, DateFin, CollaborateurIndustrielle, NumeroContact, MotCle1, MotCle2, IDPMatricule, IDEMatricule)
 			VALUES (NULL,'$Titre','$DateDebut','$DateFin', '$CollaborateurIndustrielle','$NumeroContact','$MotCle1','$MotCle2','$IDPMatricule','$IDEMatricule')";
 
-        $Resultat = $bdd -> exec($sql);
-        echo "Ajout reussie avec la base de donnée<br>";
+            $Resultat = $bdd -> exec($sql);
+            echo "Ajout reussie avec la base de donnée<br>";
+        }
 
     } catch(PDOException $error) {
         echo $sql . "<br>" . $error->getMessage();

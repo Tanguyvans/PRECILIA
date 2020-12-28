@@ -16,15 +16,22 @@ if (isset($_POST['submit'])) {
         $MotCle2=$_POST['MotCle2'];
         $IDPMatricule=$_POST['IDPMatricule'];
 
-        if ($DateFin == NUll){
-            $DateFin = NULL;
-        }
 
-        $sql = "INSERT INTO STAGEDERECHERCHE (IDStageRecherche, DateDebut, DateFin , Description, CollaborateurAcademique, CollaborateurIndustrielle, NumeroContact, MotCle1, MotCle2, IDPMatricule)
+        # condition requise pour pouvoir entrer dans la base de donnée
+        require "../Includes/functions.inc.php";
+        if(emptyInputStageRch($DateDebut, $MotCle1, $MotCle2, $IDPMatricule) !==false){
+            echo"<h2> empty input </h2>";
+        }
+        else {
+            if ($DateFin == NUll ){
+                $DateFin = NUll;
+            }
+            $sql = "INSERT INTO STAGEDERECHERCHE (IDStageRecherche, DateDebut, DateFin , Description, CollaborateurAcademique, CollaborateurIndustrielle, NumeroContact, MotCle1, MotCle2, IDPMatricule)
 			VALUES (NULL,'$DateDebut','$DateFin','$Description','$CollaborateurAcademique','$CollaborateurIndustrielle','$NumeroContact','$MotCle1','$MotCle2','$IDPMatricule')";
 
-        $Resultat = $bdd -> exec($sql);
-        echo "Ajout reussie avec la base de donnée<br>";
+            $Resultat = $bdd -> exec($sql);
+            echo "Ajout reussie avec la base de donnée<br>";
+        }
 
     } catch(PDOException $error) {
         echo $sql . "<br>" . $error->getMessage();
