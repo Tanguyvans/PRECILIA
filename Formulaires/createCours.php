@@ -26,6 +26,7 @@ if (isset($_POST['submit'])) try {
         $sql = "INSERT INTO COURS (IDCours, NombreCredit, NombreHeure , Titulaire, UE, MotCle1, MotCle2)
         VALUES ('$IDCours','$NombreCredit','$NombreHeure','$Titulaire','$UE','$MotCle1','$MotCle2')";
         $Resultat = $bdd -> exec($sql);
+        echo"<h2>Ajout réussi</h2>";
         echo "<h3><a href='../Formulaires/jointurePersonnelCours.php?ID=$IDCours'> Nomer professeur au cours: $IDCours</a></h3>";
     }
 

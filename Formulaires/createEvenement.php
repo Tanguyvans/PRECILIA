@@ -27,7 +27,7 @@ if (isset($_POST['submitEvent'])) {
             $sql = "INSERT INTO EVENEMENT (IDEvenement, Type, Nom, Acronyme, Duree, Description, MotCle1, MotCle2, DateDebut, IDLieu)
   			VALUES (NULL, '$Type', '$Nom', '$Acronyme', '$Duree', '$Description', '$MotCle1', '$MotCle2', '$DateDebut','$IDLieu')";
             $Resultat = $bdd -> exec($sql);
-            echo "Ajout reussie avec la base de donnée<br>";
+            echo"<h2>Ajout réussi</h2>";
 
             $newsql = "SELECT IDEvenement, Nom FROM EVENEMENT ORDER BY IDEvenement DESC";
 

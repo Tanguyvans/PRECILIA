@@ -31,6 +31,7 @@
               }
               else{
                   createEtudiant($conn, $IDEMatricule, $Nom, $Prenom, $Email, $Annee, $MDP);
+                  echo"<h2>Ajout réussi</h2>";
               }
 
         } catch(PDOException $error) {

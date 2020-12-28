@@ -26,14 +26,17 @@ if (isset($_POST['submit'])) {
         }
         else {
             if ($DateFin == NUll){
-                $DateFin = NULL;
+
+                $sql = "INSERT INTO PROJETDERECHERCHE (IDProjet ,Titre, DateDebut, DateFin, Description, CollaborateurAcademique, CollaborateurIndustrielle, NumeroContact, MotCle1, MotCle2)
+			    VALUES (NULL,'$Titre', '$DateDebut',NULL,'$Description','$CollaborateurAcademique','$CollaborateurIndustrielle','$NumeroContact','$MotCle1','$MotCle2')";
             }
-            $sql = "INSERT INTO PROJETDERECHERCHE (IDProjet ,Titre, DateDebut, DateFin, Description, CollaborateurAcademique, CollaborateurIndustrielle, NumeroContact, MotCle1, MotCle2)
-			VALUES (NULL,'$Titre', '$DateDebut','$DateFin','$Description','$CollaborateurAcademique','$CollaborateurIndustrielle','$NumeroContact','$MotCle1','$MotCle2')";
+            else {
+                $sql = "INSERT INTO PROJETDERECHERCHE (IDProjet ,Titre, DateDebut, DateFin, Description, CollaborateurAcademique, CollaborateurIndustrielle, NumeroContact, MotCle1, MotCle2)
+			    VALUES (NULL,'$Titre', '$DateDebut','$DateFin','$Description','$CollaborateurAcademique','$CollaborateurIndustrielle','$NumeroContact','$MotCle1','$MotCle2')";
 
+            }
             $Resultat = $bdd -> exec($sql);
-
-            echo "<h4>Ajout reussi à la base de donnée</h4>";
+            echo"<h2>Ajout réussi</h2>";
 
             $sql = "SELECT IDProjet, Titre FROM PROJETDERECHERCHE ORDER BY IDProjet DESC";
             $perso = $bdd->query($sql);

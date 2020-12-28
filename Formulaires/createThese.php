@@ -29,14 +29,33 @@ if (isset($_POST['submit'])) {
             echo"<h2> empty input </h2>";
         }
         else {
-            if ($DateFin == NUll ){
-                $DateFin = NUll;
+            if ($DateFin == NUll && $DateDefence != NULL && $NumeroContact != NULL){
+                $sql = "INSERT INTO THESE (IDThese, Titre, DateDebut,DateFin,Description,CollaborateurAcademique,CollaborateurIndustrielle,NumeroContact,MotCle1,MotCle2,DateDefence,IDPMatricule )
+                VALUES (NULL,'$Titre','$DateDebut',NULL,'$Description','$CollaborateurAcademique','$CollaborateurIndustrielle','$NumeroContact','$MotCle1','$MotCle2','$DateDefence','$IDPMatricule')";
+            }elseif($DateFin != NUll && $DateDefence == NULL && $NumeroContact != NULL){
+                $sql = "INSERT INTO THESE (IDThese, Titre, DateDebut,DateFin,Description,CollaborateurAcademique,CollaborateurIndustrielle,NumeroContact,MotCle1,MotCle2,DateDefence,IDPMatricule )
+                VALUES (NULL,'$Titre','$DateDebut','$DateFin','$Description','$CollaborateurAcademique','$CollaborateurIndustrielle','$NumeroContact','$MotCle1','$MotCle2',NULL,'$IDPMatricule')";
+            }elseif($DateFin != NUll && $DateDefence != NULL && $NumeroContact == NULL){
+                $sql = "INSERT INTO THESE (IDThese, Titre, DateDebut,DateFin,Description,CollaborateurAcademique,CollaborateurIndustrielle,NumeroContact,MotCle1,MotCle2,DateDefence,IDPMatricule )
+                VALUES (NULL,'$Titre','$DateDebut','$DateFin','$Description','$CollaborateurAcademique','$CollaborateurIndustrielle',NULL,'$MotCle1','$MotCle2','$DateDefence','$IDPMatricule')";
+            }elseif($DateFin == NUll && $DateDefence == NULL && $NumeroContact != NULL){
+                $sql = "INSERT INTO THESE (IDThese, Titre, DateDebut,DateFin,Description,CollaborateurAcademique,CollaborateurIndustrielle,NumeroContact,MotCle1,MotCle2,DateDefence,IDPMatricule )
+                VALUES (NULL,'$Titre','$DateDebut',NULL,'$Description','$CollaborateurAcademique','$CollaborateurIndustrielle','$NumeroContact','$MotCle1','$MotCle2',NULL,'$IDPMatricule')";
+            }elseif($DateFin == NUll && $DateDefence != NULL && $NumeroContact == NULL){
+                $sql = "INSERT INTO THESE (IDThese, Titre, DateDebut,DateFin,Description,CollaborateurAcademique,CollaborateurIndustrielle,NumeroContact,MotCle1,MotCle2,DateDefence,IDPMatricule )
+                VALUES (NULL,'$Titre','$DateDebut',NULL,'$Description','$CollaborateurAcademique','$CollaborateurIndustrielle', NULL,'$MotCle1','$MotCle2','$DateDefence','$IDPMatricule')";
+            }elseif($DateFin != NUll && $DateDefence == NULL && $NumeroContact == NULL){
+                $sql = "INSERT INTO THESE (IDThese, Titre, DateDebut,DateFin,Description,CollaborateurAcademique,CollaborateurIndustrielle,NumeroContact,MotCle1,MotCle2,DateDefence,IDPMatricule )
+                VALUES (NULL,'$Titre','$DateDebut','$DateFin','$Description','$CollaborateurAcademique','$CollaborateurIndustrielle',NULL,'$MotCle1','$MotCle2', NULL,'$IDPMatricule')";
+            }elseif($DateFin == NUll && $DateDefence == NULL && $NumeroContact == NULL){
+                $sql = "INSERT INTO THESE (IDThese, Titre, DateDebut,DateFin,Description,CollaborateurAcademique,CollaborateurIndustrielle,NumeroContact,MotCle1,MotCle2,DateDefence,IDPMatricule )
+                VALUES (NULL,'$Titre','$DateDebut', NULL,'$Description','$CollaborateurAcademique','$CollaborateurIndustrielle',NULL,'$MotCle1','$MotCle2', NULL,'$IDPMatricule')";
+            }else{
+                $sql = "INSERT INTO THESE (IDThese, Titre, DateDebut,DateFin,Description,CollaborateurAcademique,CollaborateurIndustrielle,NumeroContact,MotCle1,MotCle2,DateDefence,IDPMatricule )
+                VALUES (NULL,'$Titre','$DateDebut','$DateFin','$Description','$CollaborateurAcademique','$CollaborateurIndustrielle','$NumeroContact','$MotCle1','$MotCle2','$DateDefence','$IDPMatricule')";
             }
-            $sql = "INSERT INTO THESE (IDThese, Titre, DateDebut,DateFin,Description,CollaborateurAcademique,CollaborateurIndustrielle,NumeroContact,MotCle1,MotCle2,DateDefence,IDPMatricule )
-            VALUES (NULL,'$Titre','$DateDebut','$DateFin','$Description','$CollaborateurAcademique','$CollaborateurIndustrielle','$NumeroContact','$MotCle1','$MotCle2','$DateDefence','$IDPMatricule')";
-
             $Resultat = $bdd -> exec($sql);
-            echo "Ajout réussi à la base de données<br>";
+            echo"<h2>Ajout réussi</h2>";
 
             $sql = "SELECT IDThese, Titre FROM THESE ORDER BY IDThese DESC";
             $perso = $bdd->query($sql);

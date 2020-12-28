@@ -20,7 +20,7 @@ if (isset($_POST['submit'])) {
         else {
             $sql = "INSERT INTO LIEU (IDLieu, Ville, Pays )VALUES (NULL,'$Ville','$Pays')";
             $Resultat = $bdd -> exec($sql);
-            echo "Ajout reussie avec la base de donnée<br>";
+            echo"<h2>Ajout réussi</h2>";
         }
     } catch(PDOException $error) {
         echo $sql . "<br>" . $error->getMessage();

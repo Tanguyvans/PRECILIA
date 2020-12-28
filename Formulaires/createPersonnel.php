@@ -32,6 +32,7 @@ if (isset($_POST['submit'])) {
       }
       else{
           createPersonnel($conn, $IDPMatricule, $Nom, $Prenom, $Email, $Telephone, $Grade, $MDP);
+          echo"<h2>Ajout réussi</h2>";
       }
 
   } catch(PDOException $error) {

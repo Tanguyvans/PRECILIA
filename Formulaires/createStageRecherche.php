@@ -23,14 +23,28 @@ if (isset($_POST['submit'])) {
             echo"<h2> empty input </h2>";
         }
         else {
-            if ($DateFin == NUll ){
-                $DateFin = NUll;
-            }
-            $sql = "INSERT INTO STAGEDERECHERCHE (IDStageRecherche, DateDebut, DateFin , Description, CollaborateurAcademique, CollaborateurIndustrielle, NumeroContact, MotCle1, MotCle2, IDPMatricule)
-			VALUES (NULL,'$DateDebut','$DateFin','$Description','$CollaborateurAcademique','$CollaborateurIndustrielle','$NumeroContact','$MotCle1','$MotCle2','$IDPMatricule')";
+            if ($DateFin == NUll && $NumeroContact != NULL ){
 
+                $sql = "INSERT INTO STAGEDERECHERCHE (IDStageRecherche, DateDebut, DateFin , Description, CollaborateurAcademique, CollaborateurIndustrielle, NumeroContact, MotCle1, MotCle2, IDPMatricule)
+			    VALUES (NULL,'$DateDebut',NULL,'$Description','$CollaborateurAcademique','$CollaborateurIndustrielle','$NumeroContact','$MotCle1','$MotCle2','$IDPMatricule')";
+
+            }elseif($DateFin != NUll && $NumeroContact == NULL ){
+
+                $sql = "INSERT INTO STAGEDERECHERCHE (IDStageRecherche, DateDebut, DateFin , Description, CollaborateurAcademique, CollaborateurIndustrielle, NumeroContact, MotCle1, MotCle2, IDPMatricule)
+			    VALUES (NULL,'$DateDebut','$DateFin','$Description','$CollaborateurAcademique','$CollaborateurIndustrielle',NULL,'$MotCle1','$MotCle2','$IDPMatricule')";
+            }
+            elseif($DateFin == NUll && $NumeroContact == NULL ){
+
+                $sql = "INSERT INTO STAGEDERECHERCHE (IDStageRecherche, DateDebut, DateFin , Description, CollaborateurAcademique, CollaborateurIndustrielle, NumeroContact, MotCle1, MotCle2, IDPMatricule)
+			    VALUES (NULL,'$DateDebut',NULL,'$Description','$CollaborateurAcademique','$CollaborateurIndustrielle',NULL,'$MotCle1','$MotCle2','$IDPMatricule')";
+
+            } else {
+
+                $sql = "INSERT INTO STAGEDERECHERCHE (IDStageRecherche, DateDebut, DateFin , Description, CollaborateurAcademique, CollaborateurIndustrielle, NumeroContact, MotCle1, MotCle2, IDPMatricule)
+			    VALUES (NULL,'$DateDebut','$DateFin','$Description','$CollaborateurAcademique','$CollaborateurIndustrielle','$NumeroContact','$MotCle1','$MotCle2','$IDPMatricule')";
+            }
             $Resultat = $bdd -> exec($sql);
-            echo "Ajout reussie avec la base de donnée<br>";
+            echo"<h2>Ajout réussi</h2>";
         }
 
     } catch(PDOException $error) {

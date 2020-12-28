@@ -22,14 +22,29 @@ if (isset($_POST['submit'])) {
             echo"<h2> empty input </h2>";
         }
         else {
-            if ($DateFin == NUll ){
-                $DateFin = NUll;
-            }
-            $sql = "INSERT INTO TFE (IDTFE, Titre, DateDebut, DateFin, CollaborateurIndustrielle, NumeroContact, MotCle1, MotCle2, IDPMatricule, IDEMatricule)
-			VALUES (NULL,'$Titre','$DateDebut','$DateFin', '$CollaborateurIndustrielle','$NumeroContact','$MotCle1','$MotCle2','$IDPMatricule','$IDEMatricule')";
+            if ($DateFin == NUll && $NumeroContact != NULL ){
 
+                $sql = "INSERT INTO TFE (IDTFE, Titre, DateDebut, DateFin, CollaborateurIndustrielle, NumeroContact, MotCle1, MotCle2, IDPMatricule, IDEMatricule)
+			    VALUES (NULL,'$Titre','$DateDebut',NULL, '$CollaborateurIndustrielle','$NumeroContact','$MotCle1','$MotCle2','$IDPMatricule','$IDEMatricule')";
+
+            }elseif($DateFin != NUll && $NumeroContact == NULL ){
+
+                $sql = "INSERT INTO TFE (IDTFE, Titre, DateDebut, DateFin, CollaborateurIndustrielle, NumeroContact, MotCle1, MotCle2, IDPMatricule, IDEMatricule)
+			    VALUES (NULL,'$Titre','$DateDebut','$DateFin', '$CollaborateurIndustrielle', NULL,'$MotCle1','$MotCle2','$IDPMatricule','$IDEMatricule')";
+
+
+            }elseif($DateFin == NUll && $NumeroContact == NULL ){
+
+                $sql = "INSERT INTO TFE (IDTFE, Titre, DateDebut, DateFin, CollaborateurIndustrielle, NumeroContact, MotCle1, MotCle2, IDPMatricule, IDEMatricule)
+			    VALUES (NULL,'$Titre','$DateDebut',NULL, '$CollaborateurIndustrielle', NULL,'$MotCle1','$MotCle2','$IDPMatricule','$IDEMatricule')";
+            } else {
+
+                $sql = "INSERT INTO TFE (IDTFE, Titre, DateDebut, DateFin, CollaborateurIndustrielle, NumeroContact, MotCle1, MotCle2, IDPMatricule, IDEMatricule)
+			    VALUES (NULL,'$Titre','$DateDebut','$DateFin', '$CollaborateurIndustrielle','$NumeroContact','$MotCle1','$MotCle2','$IDPMatricule','$IDEMatricule')";
+
+            }
             $Resultat = $bdd -> exec($sql);
-            echo "Ajout reussie avec la base de donnée<br>";
+            echo"<h2>Ajout réussi</h2>";
         }
 
     } catch(PDOException $error) {
