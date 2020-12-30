@@ -149,7 +149,7 @@ padding-top: 25px;
     align-items: center;
 
 }
-.activeT a{
+#LiensT a{
     color:white;
 }
 
@@ -182,6 +182,9 @@ table {
   border:1px solid black;
   border-collapse: collapse;
   empty-cells: show;
+}
+a {
+    color:black;
 }
 
                                                               /* === ACCUEIL.PHP === */
@@ -264,12 +267,7 @@ width:33%;
 .PageR {
   min-height:200px;
 }
-.container-lienAffichageR a{
-  color:black;
-}
-.EditR a{
-  color:black;
-}
+
 /*.foot{
     position:absolute;
     bottom:0;
@@ -340,10 +338,16 @@ border-top: 2px solid black;
 }
                                              /* === EVENEMENT.PHP === */
 
-.Page{
-    height:100%;
+.PageEv{
+    min-height:200px;
     width:100%;
 }
+.PageEv table{
+    margin-bottom:0;
+}
+ .PageEv.lienAffichageR{
+     margin-top:50px;
+ }
 
                                                 /* === MEMBRE.PHP === */
 
@@ -380,7 +384,6 @@ border-top: 2px solid black;
 }
 
 
-
                                              /* === Ajout.PHP et VoirInscriptions.php === */
 
 .container-choix-creationAj a{
@@ -408,9 +411,7 @@ border-top: 2px solid black;
     width:100%;
     text-align:center;
 }
-.EnsembleVI table tr a{
-    color:black;
-}
+
 .phpAj{
     width:170px;
     text-align: center;
@@ -465,9 +466,6 @@ border-top: 2px solid black;
      width:40%;
      margin-right:10%;
  }
- .texteP a{
-     color:black;
- }
  .texteP div {
      margin-top:auto;
      margin-bottom:auto;
@@ -489,3 +487,11 @@ border-top: 2px solid black;
      text-align:center;
 
  }
+                                             /* === Affichage modification Recherche, Evenement, Enseignements === */
+
+.FormulaireModif{
+    width:170px;
+    text-align:center;
+    margin:auto;
+    line-height:25px;
+}

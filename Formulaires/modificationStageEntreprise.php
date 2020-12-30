@@ -51,7 +51,7 @@
     while($line = $Execution->fetch(PDO::FETCH_ASSOC)){
 
         ?>
-        <form method="post">
+        <form method="post" class="FormulaireModif">
             <label for="DateDebut">Date de début</label>
             <input type="date" name="DateDebut" id="DateDebut">
 

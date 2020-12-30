@@ -97,7 +97,7 @@ try {
         $result = $bdd -> query ("SELECT * FROM Personnel WHERE IDPMatricule ='$ID' ");
         while($line = $result->fetch(PDO::FETCH_ASSOC)){
         ?>
-        <form method="post">
+        <form method="post" class="FormulaireModif">
             <label for="Nom">Nom</label>
             <input type="text" name="Nom" id="Nom" placeholder="<?php echo ($line['Nom']); ?>">
             <label for="Prenom">Prenom</label>

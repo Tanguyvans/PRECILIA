@@ -12,8 +12,9 @@
     </head>
 
 <body>
-    <div class="Page">
-        <?php include '../templates/header.php' ?>
+<?php include '../templates/header.php' ?>
+    <div class="PageEv">
+
 
         <h2>Événements </h2>
         <?php include '../Formulaires/affichageEvenement.php'?>
@@ -141,10 +142,8 @@
             <?php
         }
         ?>
-        <div class="foot">
-            <?php include '../templates/footer.php' ?>
-        </div>
 
     </div>
+    <?php include '../templates/footer.php' ?>
 </body>
 </html>

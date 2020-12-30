@@ -56,7 +56,7 @@
     while($line = $Execution->fetch(PDO::FETCH_ASSOC)){
         ?>
 
-        <form method="post">
+        <form method="post" class="FormulaireModif">
             <label for="NombreCredit">Nombre de crédit</label>
             <input type="number" name="NombreCredit" id="NombreCredit" placeholder="<?php echo $line['NombreCredit']?>">
 

@@ -78,7 +78,7 @@
         while($line = $Execution->fetch(PDO::FETCH_ASSOC)){
 
         ?>
-            <form method="post">
+            <form method="post" class="FormulaireModif">
                 <!-- formulaire de creation avec des placeholder pour montrer
                  a l'utilisateur ce qui existe deja dans la table-->
                 <label for="Titre">Titre</label>

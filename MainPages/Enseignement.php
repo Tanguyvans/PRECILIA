@@ -54,15 +54,54 @@
                 ?>
                 <a href="../Formulaires/modificationStageEntreprise.php?ID=<?php echo $ID; ?>"><p class="lienAffichage"> Modifier</p></a>
                 <a href="../Formulaires/suppressionStageEntreprise.php?ID=<?php echo $ID; ?>"><p class="lienAffichage"> Supprimer</p></a>
-                <table>
-                    <?php $ligne = $result->fetch(PDO::FETCH_ASSOC); ?>
-                    <tr><td>Date de debut:</td><td><?php echo $ligne['DateDebut'];?></td></tr>
-                    <tr><td>Date de fin:</td><td><?php echo $ligne['DateFin'];?></td></tr>
-                    <tr><td>Collaboration industrielle:</td><td><?php echo $ligne['CollaborateurIndustrielle'];?></td></tr>
-                    <tr><td>Numero de contact:</td><td><?php echo $ligne['NumeroContact'];?></td></tr>
-                    <tr><td>Mot cle 1:</td><td><?php echo $ligne['MotCle1'];?></td></tr>
-                    <tr><td>Mot cle 2:</td><td><?php echo $ligne['MotCle2'];?></td></tr>
-                </table>
+
+                <!-- Affichage complet de la these selectionnee -->
+
+                <?php $ligne = $result->fetch(PDO::FETCH_ASSOC); ?>
+                <div class="DonneesR">
+                    <div class="Ligne1R">
+                        <div class="VideHautGauche"></div>
+                        <div class="EnsembleDatesR">
+                            <div class="DateR"><text>Début: <?php echo $ligne['DateDebut'];?></text></div>
+                            <div class="DateR"><text>Fin: <?php echo $ligne['DateFin'];?></text></div>
+                        </div>
+                    </div>
+                    <div class="Ligne2R">
+                        <text>Stage réalisé par
+                            <?php
+                            $Matricule = $ligne['IDEMatricule'];
+                            $perso = $bdd->query("SELECT Nom, Prenom FROM ETUDIANT WHERE IDEMatricule = '$Matricule' ");
+                            while($line = $perso->fetch(PDO::FETCH_ASSOC))
+                            {
+                                ?>
+                                <?php echo $line['Nom'];?> <?php echo $line['Prenom'];?>
+                                <?php
+                            }
+                            ?>
+                            , en collaboration avec <?php echo $ligne['CollaborateurIndustrielle'];?>.
+                        </text>
+                        <text>Responsable:
+                            <?php
+                            $Matricule = $ligne['IDPMatricule'];
+                            $perso = $bdd->query("SELECT Nom, Prenom FROM PERSONNEL WHERE IDPMatricule = '$Matricule' ");
+                            while($line = $perso->fetch(PDO::FETCH_ASSOC))
+                            {
+                                ?>
+                                <?php echo $line['Nom'];?> <?php echo $line['Prenom'];?>
+                                <?php
+                            }
+                            ?>
+                        </text>
+                    </div>
+                    <div class="Ligne3R">
+                    </div>
+
+                    <div class="Ligne4R">
+                        <div class="tierR"><text>Mot cle 1: <?php echo $ligne['MotCle1'];?></text></div>
+                        <div class="tierR"><text>Mot cle 2: <?php echo $ligne['MotCle2'];?></text></div>
+                        <div class="tierR"><text>Numero de contact: <?php echo $ligne['NumeroContact'];?></text></div>
+                    </div>
+                </div>
             <?php } ?>
 
             <!--- CHOIX III -->
@@ -74,16 +113,53 @@
                 ?>
                 <a href="../Formulaires/modificationTFE.php?ID=<?php echo $ID; ?>"><p class="lienAffichage"> Modifier</p></a>
                 <a href="../Formulaires/suppressionTFE.php?ID=<?php echo $ID; ?>"><p class="lienAffichage"> Supprimer</p></a>
-                <table>
-                    <?php $ligne = $result->fetch(PDO::FETCH_ASSOC); ?>
-                    <tr><td>Titre:</td><td><?php echo $ligne['Titre'];?></td></tr>
-                    <tr><td>Date de debut:</td><td><?php echo $ligne['DateDebut'];?></td></tr>
-                    <tr><td>Date de fin:</td><td><?php echo $ligne['DateFin'];?></td></tr>
-                    <tr><td>Collaboration industrielle:</td><td><?php echo $ligne['CollaborateurIndustrielle'];?></td></tr>
-                    <tr><td>Numero de contact:</td><td><?php echo $ligne['NumeroContact'];?></td></tr>
-                    <tr><td>Mot cle 1:</td><td><?php echo $ligne['MotCle1'];?></td></tr>
-                    <tr><td>Mot cle 2:</td><td><?php echo $ligne['MotCle2'];?></td></tr>
-                </table>
+                <?php $ligne = $result->fetch(PDO::FETCH_ASSOC); ?>
+                <div class="DonneesR">
+                    <div class="Ligne1R">
+                        <div class="VideHautGauche"></div>
+                        <div class="TitreR"><h2><?php echo $ligne['Titre'];?></h2></div>
+                        <div class="EnsembleDatesR">
+                            <div class="DateR"><text>Début: <?php echo $ligne['DateDebut'];?></text></div>
+                            <div class="DateR"><text>Fin: <?php echo $ligne['DateFin'];?></text></div>
+                        </div>
+                    </div>
+                    <div class="Ligne2R">
+                        <text>Travail réalisé par
+                            <?php
+                            $Matricule = $ligne['IDEMatricule'];
+                            $perso = $bdd->query("SELECT Nom, Prenom FROM ETUDIANT WHERE IDEMatricule = '$Matricule' ");
+                            while($line = $perso->fetch(PDO::FETCH_ASSOC))
+                            {
+                                ?>
+                                <?php echo $line['Nom'];?> <?php echo $line['Prenom'];?>
+                                <?php
+                            }
+                            ?>
+                            , en collaboration avec <?php echo $ligne['CollaborateurIndustrielle'];?>.
+                        </text>
+                        <text>Promotteur:
+                            <?php
+                            $Matricule = $ligne['IDPMatricule'];
+                            $perso = $bdd->query("SELECT Nom, Prenom FROM PERSONNEL WHERE IDPMatricule = '$Matricule' ");
+                            while($line = $perso->fetch(PDO::FETCH_ASSOC))
+                            {
+                                ?>
+                                <?php echo $line['Nom'];?> <?php echo $line['Prenom'];?>
+                                <?php
+                            }
+                            ?>
+                        </text>
+                    </div>
+                    <div class="Ligne3R">
+                        <text> <?php echo $ligne['Description'];?></text>
+                    </div>
+                    <div class="Ligne4R">
+                        <div class="tierR"><text>Mot cle 1: <?php echo $ligne['MotCle1'];?></text></div>
+                        <div class="tierR"><text>Mot cle 2: <?php echo $ligne['MotCle2'];?></text></div>
+                        <div class="tierR"><text>Numero de contact: <?php echo $ligne['NumeroContact'];?></text></div>
+                    </div>
+                </div>
+
             <?php } ?>
 
         </div>

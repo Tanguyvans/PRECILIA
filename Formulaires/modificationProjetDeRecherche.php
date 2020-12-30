@@ -75,7 +75,7 @@
     }
     while($line = $Execution->fetch(PDO::FETCH_ASSOC)){
         ?>
-        <form method="post">
+        <form method="post" class="FormulaireModif">
             <label for="Titre">Titre</label>
             <input type="text" name="Titre" id="Titre" placeholder="<?php echo $line['Titre']?>">
 
