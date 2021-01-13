@@ -113,7 +113,7 @@
              }
              ?>
 
-             <center><a href="Evenements.php"><p class="Plus">Plus de projets...</p></a></center>
+             <center><a href="Evenements.php"><p class="Plus">Plus d'événements...</p></a></center>
          </section>
 
 
@@ -195,7 +195,7 @@
                 </div>
                 <div class="partenaire">
                     <img src="../Images/necko.PNG" class="images-partenaire-taille">
-                    <h3>Necko Technologies/h3>
+                    <h3>Necko Technologies</h3>
                 </div>
             </div>
         </section>

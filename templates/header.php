@@ -29,10 +29,10 @@
             <?php
                 if(isset($_SESSION["Psession"])){
                     echo "<div class='activeH'><a href='../MainPages/Profil.php'>Profil</a></div>";
-                    echo "<div class='activeH'><a href='../MainPages/logout.inc.php'>log out</a></div>";
+                    echo "<div class='activeH'><a href='../MainPages/logout.inc.php'>Déconnexion</a></div>";
                 }elseif (isset($_SESSION["Esession"])){
                     echo "<div class='activeH'><a href='../MainPages/Profil.php'>Profil</a></div>";
-                    echo "<div class='activeH'><a href='../MainPages/logout.inc.php'>log out</a></div>";
+                    echo "<div class='activeH'><a href='../MainPages/logout.inc.php'>Déconnexion</a></div>";
                 }else{
                     echo "<div class='activeH'><a href='../MainPages/ConnexionPersonnel.php'>Connexion Personnel</a></div>";
                     echo "<div class='activeH'><a href='../MainPages/ConnexionEtudiant.php'>Connexion Etudiant</a></div>";

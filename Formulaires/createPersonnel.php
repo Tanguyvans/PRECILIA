@@ -70,7 +70,7 @@ if (isset($_POST['submit'])) {
                 <option value="Professeur">Professeur</option>
                 <option value="Doctorant">Doctorant</option>
                 <option value="Stagiaire">Stagiaire</option>
-                <option value="Charge de cours">Chargé de cours</option>
+                <option value="Charge de cours">Charge de cours</option>
                 <option value="Assistant">Assistant</option>
                 <option value="Chercheur">Chercheur</option>
                 <option value="Technicien">Technicien</option>
