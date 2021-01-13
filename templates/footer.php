@@ -44,7 +44,7 @@
                 <ul>
                     <li><i class="bx bx-chevron-rightF"></i> <a href='../MainPages/Accueil.php'>Accueil</a></li>
                     <li><i class="bx bx-chevron-rightF"></i> <a href='../MainPages/Enseignement.php'>Enseignement</a></li>
-                    <li><i class="bx bx-chevron-rightF"></i> <a href='../MainPages/Evenements.php'>Evenements</a></li>
+                    <li><i class="bx bx-chevron-rightF"></i> <a href='../MainPages/Evenements.php?table=none'>Evenements</a></li>
                     <li><i class="bx bx-chevron-rightF"></i> <a href='../MainPages/Membres.php'>Membres</a></li>
                     <li><i class="bx bx-chevron-rightF"></i> <a href='../MainPages/Recherche.php'>Recherche</a></li>
                 </ul>
