@@ -67,7 +67,7 @@
                     $IDMembre = $_SESSION['Esession'];
                     $sql2 = "SELECT * FROM etudiant_evenement WHERE IDEvenement = '$ID' AND IDEMatricule= $IDMembre";
                     $result2 = $bdd->query($sql2);
-                    $ligne2 = $result->fetch(PDO::FETCH_ASSOC);
+                    $ligne2 = $result2->fetch(PDO::FETCH_ASSOC);
 
                     if( $ligne2['IDEMatricule'] == NULL){
                         ?>
