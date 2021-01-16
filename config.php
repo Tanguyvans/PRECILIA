@@ -2,8 +2,8 @@
 
 $host       = "localhost";
 $username   = "root";
-$password   = "";
-$dbname     = "prescilia";
+$password   = "root";
+$dbname     = "prescilia2";
 $dsn        = "mysql:host=$host;dbname=$dbname";
 
 $conn = mysqli_connect($host, $username, $password, $dbname);

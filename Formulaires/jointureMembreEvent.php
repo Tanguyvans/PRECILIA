@@ -57,7 +57,8 @@
 
             $sql = "SELECT personnel.IDPMatricule, personnel.Nom, personnel.Prenom FROM personnel
                     WHERE NOT IDPMatricule IN
-                    (SELECT personnel.IDPMatricule FROM personnel LEFT JOIN personnel_evenement ON personnel.IDPMatricule = personnel_evenement.IDPMatricule
+                    (SELECT personnel.IDPMatricule FROM personnel 
+                        LEFT JOIN personnel_evenement ON personnel.IDPMatricule = personnel_evenement.IDPMatricule
                     WHERE personnel_evenement.IDEvenement = '$IDEvent')";
 
             $resultpersonnel = $bdd->query($sql);

@@ -41,11 +41,11 @@
                 $CurrentDate = date("Y-m-d");
                 if($_GET['Date'] > $CurrentDate){
                     $IDMembre = $_SESSION['Psession'];
-                    $sql = "SELECT * FROM personnel_evenement WHERE IDEvenement = '$ID' AND IDPMatricule= $IDMembre";
-                    $result = $bdd->query($sql);
-                    $ligne = $result->fetch(PDO::FETCH_ASSOC);
+                    $sql2 = "SELECT * FROM personnel_evenement WHERE IDEvenement = '$ID' AND IDPMatricule= $IDMembre";
+                    $result2 = $bdd->query($sql2);
+                    $ligne2 = $result2->fetch(PDO::FETCH_ASSOC);
 
-                    if( $ligne['IDPMatricule'] == NULL){
+                    if( $ligne2['IDPMatricule'] == NULL){
                         ?>
                         <a href="../Formulaires/inscriptionMembreEvent.php?ID=<?php echo $ID; ?>"><p class="lienAffichageR">inscrire</p></a>
                         <?php
@@ -65,11 +65,11 @@
                 $CurrentDate = date("Y-m-d");
                 if($_GET['Date'] > $CurrentDate){
                     $IDMembre = $_SESSION['Esession'];
-                    $sql = "SELECT * FROM etudiant_evenement WHERE IDEvenement = '$ID' AND IDEMatricule= $IDMembre";
-                    $result = $bdd->query($sql);
-                    $ligne = $result->fetch(PDO::FETCH_ASSOC);
+                    $sql2 = "SELECT * FROM etudiant_evenement WHERE IDEvenement = '$ID' AND IDEMatricule= $IDMembre";
+                    $result2 = $bdd->query($sql2);
+                    $ligne2 = $result->fetch(PDO::FETCH_ASSOC);
 
-                    if( $ligne['IDEMatricule'] == NULL){
+                    if( $ligne2['IDEMatricule'] == NULL){
                         ?>
                         <a href="../Formulaires/inscriptionMembreEvent.php?ID=<?php echo $ID; ?>"><p class="lienAffichageR">inscrire</p></a>
                         <?php

@@ -139,7 +139,7 @@ if (isset($_POST['Recherche'])) {
             ?>
             <tr>
                 <?php $nom = $ligne['IDEvenement'];?>
-                <?php $DateDebut = $ligne['DateDebut'];?>
+                <?php $DateDebut = $ligne['DateDebut']; ?>
                 <!--remplissage de la table avec la base de donnée-->
                 <td><a href="Evenements.php?table=Evenement&amp;ID=<?php echo($nom);?>&amp;Date=<?php echo($DateDebut);?>"><p class="lienAffichage"> <?php echo $ligne['Nom'];?> </p></a></td>
                 <td ><?php echo $ligne['Type'];?></td>
